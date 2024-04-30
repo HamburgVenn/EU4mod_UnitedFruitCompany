@@ -1,0 +1,60 @@
+# For Government Reforms to identify properly influence and loyalty modifiers, remember to put disqualifying triggers before the has_reform
+
+UFC_staff_estate = {
+	icon = 4
+
+	trigger = {
+		OR = {
+			has_reform = UFC_the_labor_union
+		}
+	}
+
+	# These scale with loyalty & power
+	country_modifier_happy = {
+		global_trade_goods_size_modifier = 0.1
+		global_colonial_growth = 20
+		global_tax_modifier = -0.20
+	}
+	country_modifier_neutral = {
+		global_trade_goods_size_modifier = 0.05
+		global_colonial_growth = 10
+	}	
+	country_modifier_angry = {
+		global_trade_goods_size_modifier = -0.1
+		global_colonial_growth = -10
+		global_tax_modifier = 0.40
+	}
+	land_ownership_modifier = {
+		global_unrest = -1
+	}
+	
+	province_independence_weight = {
+		factor = 4
+	}
+
+	# Influence modifiers
+	base_influence = 20
+
+	#loyalty_modifier = {
+	#
+	#}
+
+	privileges = {
+		UFC_staff_estate_land_rights
+		UFC_staff_estate_more_colonists
+		UFC_staff_estate_more_merchants
+		UFC_staff_estate_more_academics
+		UFC_staff_estate_more_techniques
+		UFC_staff_estate_more_force
+		UFC_staff_estate_more_buildings
+		UFC_staff_estate_tropical_nation
+		UFC_staff_estate_indebted_to_burghers
+	}
+
+	agendas = {
+	}
+
+	color = { 220 20 20 }
+	
+	influence_from_dev_modifier = 1.0
+}

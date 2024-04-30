@@ -1,0 +1,22 @@
+government = republic
+technology_group = muslim
+primary_culture = andalucian
+religion = sunni
+religious_school = maliki_school
+government_rank = 1
+capital = 835	# Philly
+change_estate_land_share = {
+	estate = estate_nobles
+	share = 8
+}
+change_estate_land_share = {
+	estate = estate_church
+	share = -15
+}
+change_estate_land_share = {
+	estate = estate_burghers
+	share = 7
+}
+
+#1700.1.1 = { decision = agricultural_cultivation }
+

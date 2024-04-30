@@ -1,0 +1,579 @@
+namespace = UFC_religion
+
+#Pagan Harmonization
+country_event = {
+	id = UFC_religion.1
+	title = "confucian_events.1.t"
+	desc = "UFC_religion.1.desc"
+	picture = muslimgfx_DIPLOMACY_eventPicture
+
+	is_triggered_only = yes
+
+	immediate = {
+		hidden_effect = {
+			random_owned_province = {
+				limit = { religion_group = pagan }
+				save_event_target_as = pagan_province
+			}
+			clr_country_flag = harmonization_mysticism_conflict
+			clr_country_flag = harmonization_debate
+			clr_country_flag = harmonization_fate_of_advisor
+			clr_country_flag = harmonization_empowering_ceremonies
+		}
+	}
+
+	option = {
+		name = "UFC_religion.1.a"
+		tooltip = {
+			add_country_modifier = {
+				name = "harmonized_pagan"
+				duration = -1
+			}
+		}
+	}
+}
+
+#Christian Harmonization
+country_event = {
+	id = UFC_religion.2
+	title = "confucian_events.2.t"
+	desc = "UFC_religion.2.desc"
+	picture = muslimgfx_DIPLOMACY_eventPicture
+
+	is_triggered_only = yes
+
+	immediate = {
+		hidden_effect = {
+			clr_country_flag = harmonization_mysticism_conflict
+			clr_country_flag = harmonization_debate
+			clr_country_flag = harmonization_fate_of_advisor
+			clr_country_flag = harmonization_empowering_ceremonies
+		}
+	}
+
+	option = {
+		name = "UFC_religion.2.a"
+		tooltip = {
+			add_country_modifier = {
+				name = "harmonized_christian"
+				duration = -1
+			}
+		}
+	}
+}
+
+#Dharmic Harmonization
+country_event = {
+	id = UFC_religion.4
+	title = "confucian_events.4.t"
+	desc = "UFC_religion.4.desc"
+	picture = muslimgfx_DIPLOMACY_eventPicture
+
+	is_triggered_only = yes
+
+	immediate = {
+		hidden_effect = {
+			clr_country_flag = harmonization_mysticism_conflict
+			clr_country_flag = harmonization_debate
+			clr_country_flag = harmonization_fate_of_advisor
+			clr_country_flag = harmonization_empowering_ceremonies
+		}
+	}
+
+	option = {
+		name = "UFC_religion.4.a"
+		tooltip = {
+			add_country_modifier = {
+				name = "harmonized_dharmic"
+				duration = -1
+			}
+		}
+	}
+}
+
+#Jewish Harmonization
+country_event = {
+	id = UFC_religion.5
+	title = "confucian_events.5.t"
+	desc = "UFC_religion.5.desc"
+	picture = muslimgfx_DIPLOMACY_eventPicture
+
+	is_triggered_only = yes
+
+	immediate = {
+		hidden_effect = {
+			clr_country_flag = harmonization_mysticism_conflict
+			clr_country_flag = harmonization_debate
+			clr_country_flag = harmonization_fate_of_advisor
+			clr_country_flag = harmonization_empowering_ceremonies
+		}
+	}
+
+	option = {
+		name = "UFC_religion.5.a"
+		tooltip = {
+			add_country_modifier = {
+				name = "harmonized_jewish_group"
+				duration = -1
+			}
+		}
+	}
+}
+
+#Zoroastrian Harmonization
+country_event = {
+	id = UFC_religion.6
+	title = "confucian_events.6.t"
+	desc = "UFC_religion.6.desc"
+	picture = muslimgfx_DIPLOMACY_eventPicture
+
+	is_triggered_only = yes
+
+	immediate = {
+		hidden_effect = {
+			clr_country_flag = harmonization_mysticism_conflict
+			clr_country_flag = harmonization_debate
+			clr_country_flag = harmonization_fate_of_advisor
+			clr_country_flag = harmonization_empowering_ceremonies
+			random_owned_province = {
+				limit = {
+					religion = zoroastrian
+				}
+				save_event_target_as = zoroastrian_province
+			}
+		}
+	}
+
+	option = {
+		name = "UFC_religion.6.a"
+		tooltip = {
+			add_country_modifier = {
+				name = "harmonized_zoroastrian_group"
+				duration = -1
+			}
+		}
+	}
+}
+
+#Easter Harmonization
+country_event = {
+	id = UFC_religion.7
+	title = "UFC_religion.7.title"
+	desc = "UFC_religion.7.desc"
+	picture = muslimgfx_DIPLOMACY_eventPicture
+
+	is_triggered_only = yes
+
+	immediate = {
+		hidden_effect = {
+			clr_country_flag = harmonization_mysticism_conflict
+			clr_country_flag = harmonization_debate
+			clr_country_flag = harmonization_fate_of_advisor
+			clr_country_flag = harmonization_empowering_ceremonies
+		}
+	}
+
+	option = {
+		name = "UFC_religion.7.a"
+		tooltip = {
+			add_country_modifier = {
+				name = "harmonized_easter"
+				duration = -1
+			}
+		}
+	}
+}
+
+
+#Concept of Shangdi
+country_event = {
+	id = UFC_religion.11
+	title = "UFC_religion.11.title"
+	desc = "UFC_religion.11.desc"
+	picture = MYSTIC_IN_PRAYER_eventPicture
+
+	trigger = {
+		religion = secularism
+		harmonization_progress = 10
+		any_owned_province = {
+			owner = {
+				is_harmonizing_with = PREV
+			}
+		}
+		NOT = { has_country_flag = harmonization_mysticism_conflict }
+	}
+
+	immediate = {
+		hidden_effect = {
+			random_owned_province = {
+				limit = {
+					owner = {
+						is_harmonizing_with = PREV
+					}
+				}
+				save_event_target_as = harmonization_province
+			}
+			set_country_flag = harmonization_mysticismi_conflict
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 400
+
+		modifier = {
+			factor = 0.8
+			harmonization_progress = 40
+		}
+	}
+
+	option = {
+		name = "UFC_religion.11.a" #We must teach them the proper ways!
+		ai_chance = {
+			factor = 30
+		}
+		add_harmonization_progress = -12
+		#increase_legitimacy_medium_effect = yes
+		add_meritocracy_effect = yes
+		add_estate_church_loyalty_effect = yes
+	}
+	option = {
+		name = "UFC_religion.11.b" #Let us accommodate this abstraction.
+		ai_chance = {
+			factor = 70
+		}
+		add_harmonization_progress = 12 #4 years
+		reduce_legitimacy_small_effect = yes
+		reduce_meritocracy_effect = yes
+		reduce_estate_church_loyalty_effect = yes
+	}
+}
+
+
+#Translations of the Classics
+country_event = {
+	id = UFC_religion.12
+	title = "UFC_religion.12.title"
+	desc = "UFC_religion.12.desc"
+	picture = DEBATE_REPUBLICAN_eventPicture
+
+	trigger = {
+		religion = secularism
+		harmonization_progress = 6
+		any_owned_province = {
+			owner = {
+				is_harmonizing_with = PREV
+			}
+		}
+		NOT = { has_country_flag = harmonization_debate }
+	}
+
+	immediate = {
+		hidden_effect = {
+			random_owned_province = {
+				limit = {
+					owner = {
+						is_harmonizing_with = PREV
+					}
+				}
+				save_event_target_as = harmonization_province
+			}
+			set_country_flag = harmonization_debate
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 400
+		modifier = {
+			factor = 0.6
+			harmonization_progress = 25
+		}
+	}
+
+	option = {
+		name = "UFC_religion.12.a" #Let them create their own version of proper form.
+		ai_chance = {
+			factor = 70
+		}
+		add_harmonization_progress = 15 #5 years
+		add_country_modifier = {
+			name = "UFC_modifier_harmonization_debate"
+			duration = 1825
+		}
+	}
+	option = {
+		name = "UFC_religion.12.b" #No, we cannot risk the logical core of our ideology!
+		ai_chance = {
+			factor = 30
+		}
+		add_harmonization_progress = -9
+		add_country_modifier = {
+			name = "UFC_modifier_harmonization_refuse_debate"
+			duration = 1825
+		}
+	}
+}
+
+#Faith of [Root.Adm_Advisor.GetName]
+country_event = {
+	id = UFC_religion.13
+	title = "confucian_events.13.t"
+	desc = "UFC_religion.13.desc"
+	picture = RELIGIOUS_CONVERSION_eventPicture
+
+	trigger = {
+		religion = secularism
+		has_adm_advisor = yes
+		harmonization_progress = 50
+		any_owned_province = {
+			owner = {
+				is_harmonizing_with = PREV
+			}
+		}
+		NOT = { has_country_flag = harmonization_fate_of_advisor }
+	}
+
+	immediate = {
+		hidden_effect = {
+			random_owned_province = {
+				limit = {
+					owner = {
+						is_harmonizing_with = PREV
+					}
+				}
+				save_event_target_as = harmonization_province
+			}
+			set_country_flag = harmonization_fate_of_advisor
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 400
+	}
+
+	option = {
+		name = "UFC_religion.13.a" #Depose this [Root.Adm_Advisor.GetWomanMan]!
+		ai_chance = {
+			factor = 30
+		}
+		add_harmonization_progress = -3
+		remove_advisor_by_category = ADM
+		add_mandate_effect = yes
+		add_stability_or_adm_power = yes
+	}
+	option = {
+		name = "UFC_religion.13.b" #We have much to learn from the [harmonization_province.Religion.GetName] people.
+		ai_chance = {
+			factor = 70
+			modifier = {
+				factor = 0
+				has_reform = celestial_empire
+				NOT = { imperial_mandate = 50 }
+			}
+		}
+		add_harmonization_progress = 9
+		reduce_mandate_effect = yes
+		reduce_legitimacy_small_effect = yes
+		add_country_modifier = {
+			name = "harmonization_converted_minister"
+			duration = 3650
+		}
+	}
+}
+
+
+#Right and Rite
+#Repeatable - local - but not common
+country_event = {
+	id = UFC_religion.14
+	title = "UFC_religion.14.title"
+	desc = "UFC_religion.14.desc"
+	picture = muslimgfx_WESTERNISATION_eventPicture
+
+	trigger = {
+		religion = secularism
+		any_owned_province = {
+			is_state = yes
+			owner = {
+				is_harmonizing_with = PREV
+			}
+		}
+	}
+
+	immediate = {
+		hidden_effect = {
+			random_owned_province = {
+				limit = {
+					is_state = yes
+					owner = {
+						is_harmonizing_with = PREV
+					}
+				}
+				save_event_target_as = harmonization_province
+			}
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 500
+	}
+
+	option = {
+		name = "UFC_religion.14.a" #Barbarians!
+		ai_chance = {
+			factor = 30
+		}
+		add_harmonization_progress = -3 #1 year
+	}
+	option = {
+		name = "UFC_religion.14.b" #Such Minor Things do not Concern us
+		ai_chance = {
+			factor = 70
+		}
+		add_harmonization_progress = 6 #2 years
+		event_target:harmonization_province = {
+			add_local_autonomy = 25
+			area = {
+				limit = {
+					owned_by = ROOT
+					owner = { is_harmonizing_with = PREV }
+				}
+				add_local_autonomy = 25
+			}
+		}
+	}
+}
+
+
+#Bringing Civilization to the Barbarians
+#Repeatable
+country_event = {
+	id = UFC_religion.16
+	title = "UFC_religion.16.title"
+	desc = "UFC_religion.16.desc"
+	picture = northamericagfx_CULTURE_eventPicture
+
+	trigger = {
+		religion = secularism
+		has_dip_advisor = yes
+		any_owned_province = {
+			is_state = yes
+			owner = {
+				is_harmonizing_with = PREV
+			}
+		}
+	}
+
+	immediate = {
+		hidden_effect = {
+			random_owned_province = {
+				limit = {
+					is_state = yes
+					owner = {
+						is_harmonizing_with = PREV
+					}
+				}
+				save_event_target_as = harmonization_province
+				ROOT = {
+					set_saved_name = {
+						key = local_influential_person
+						type = advisor
+						scope = prev
+					}
+				}
+			}
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 500
+	}
+
+	option = {
+		name = "UFC_religion.16.a" #Ignore these barbarians
+		event_target:harmonization_province = {
+			area = {
+				limit = {
+					owned_by = ROOT
+				}
+				add_local_autonomy = 10
+			}
+		}
+	}
+	option = {
+		name = "UFC_religion.16.b" #Let us send our best and brightest to civilize them.
+		reduce_meritocracy_effect = yes #Sending them away
+		add_adm_power = -50
+		add_harmonization_progress = 6
+		event_target:harmonization_province = {
+			area = {
+				limit = {
+					owned_by = ROOT
+				}
+				add_local_autonomy = -25
+			}
+		}
+	}
+	after = {
+		hidden_effect = {
+			clear_saved_name = local_influential_person
+		}
+	}
+}
+
+
+#[harmonization_province.Religion.GetName] Civilization
+country_event = {
+	id = UFC_religion.17
+	title = "UFC_religion.17.title"
+	desc = "UFC_religion.17.desc"
+	picture = muslimgfx_WESTERNISATION_eventPicture
+
+	trigger = {
+		religion = secularism
+		harmonization_progress = 50
+		any_owned_province = {
+			is_state = yes
+			owner = {
+				is_harmonizing_with = PREV
+			}
+		}
+	}
+
+	immediate = {
+		hidden_effect = {
+			random_owned_province = {
+				limit = {
+					is_state = yes
+					owner = {
+						is_harmonizing_with = PREV
+					}
+				}
+				save_event_target_as = harmonization_province
+			}
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 400
+	}
+
+	option = {
+		name = "UFC_religion.17.a"
+		add_harmonization_progress = 9 #3 years
+	}
+	option = {
+		name = "UFC_religion.17.b"
+		event_target:harmonization_province = {
+			change_culture = CAPITAL
+			trigger_switch = {
+				on_trigger = has_port
+				yes = {
+					add_base_production = 1
+				}
+				no = {
+					add_base_tax = 1
+				}
+			}
+		}
+	}
+}

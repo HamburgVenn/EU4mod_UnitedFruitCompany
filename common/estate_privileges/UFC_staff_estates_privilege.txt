@@ -1,0 +1,400 @@
+#员工自治领地
+UFC_staff_estate_land_rights = {
+	icon = privilege_grant_autonomy
+	land_share = 5
+	max_absolutism = -5
+	conditional_modifier = { trigger = { has_absolutism_reduction_for_estate_privileges = yes } modifier = { max_absolutism = 1 } }
+	loyalty = 0.05
+	influence = 0.05
+	can_select = {
+	}
+	on_granted = {
+	}
+	penalties = {
+	}
+	benefits = {
+		governing_capacity = 100
+	}
+	ai_will_do = {
+		factor = 5
+	}
+}
+
+#向拓荒部分配员工
+UFC_staff_estate_more_colonists = {
+	icon = privilege_grant_new_world_charter
+	max_absolutism = -5
+	conditional_modifier = { trigger = { has_absolutism_reduction_for_estate_privileges = yes } modifier = { max_absolutism = 1 } }
+	influence = 0.1
+	can_select = {
+		NOT = { has_estate_privilege = UFC_staff_estate_more_merchants }
+		NOT = { has_estate_privilege = UFC_staff_estate_more_academics}
+		NOT = { has_estate_privilege = UFC_staff_estate_more_techniques}
+		NOT = { has_estate_privilege = UFC_staff_estate_more_force}
+		NOT = { has_estate_privilege = UFC_staff_estate_more_buildings }
+	}
+	on_granted = {
+	}
+	penalties = {
+	}
+	benefits = {
+		colonists = 1
+		global_colonial_growth = 20
+		colony_cost_modifier = -0.2
+	}
+	on_revoked = {
+		custom_tooltip = UFC_tooltip_staff_estate_privilege_change
+		add_estate_loyalty = {
+			estate = UFC_staff_estate
+			loyalty = 15
+		}
+	}
+	cooldown_years = 5
+	ai_will_do = {
+		factor = 1
+	}
+}
+
+#向交通部分配员工
+UFC_staff_estate_more_merchants = {
+	icon = privilege_monopoly
+	max_absolutism = -5
+	conditional_modifier = { trigger = { has_absolutism_reduction_for_estate_privileges = yes } modifier = { max_absolutism = 1 } }
+	influence = 0.05
+	can_select = {
+		NOT = { has_estate_privilege = UFC_staff_estate_more_colonists }
+		NOT = { has_estate_privilege = UFC_staff_estate_more_academics}
+		NOT = { has_estate_privilege = UFC_staff_estate_more_techniques}
+		NOT = { has_estate_privilege = UFC_staff_estate_more_force}
+		NOT = { has_estate_privilege = UFC_staff_estate_more_buildings }
+	}
+	on_granted = {
+		add_mercantilism = 1
+	}
+	penalties = {
+	}
+	benefits = {
+		merchants = 1
+		trade_efficiency = 0.10
+		global_trade_power = 0.1
+	}
+	on_revoked = {
+		custom_tooltip = UFC_tooltip_staff_estate_privilege_change
+		add_estate_loyalty = {
+			estate = UFC_staff_estate
+			loyalty = 15
+		}
+	}
+	cooldown_years = 5
+	ai_will_do = {
+		factor = 1
+	}
+}
+
+#向学术部分配员工
+UFC_staff_estate_more_academics = {
+	icon = privilege_build_jain_temple
+	max_absolutism = -5
+	conditional_modifier = { trigger = { has_absolutism_reduction_for_estate_privileges = yes } modifier = { max_absolutism = 1 } }
+	loyalty = 0.05
+	influence = 0.05
+	can_select = {
+		NOT = { has_estate_privilege = UFC_staff_estate_more_merchants }
+		NOT = { has_estate_privilege = UFC_staff_estate_more_colonists}
+		NOT = { has_estate_privilege = UFC_staff_estate_more_techniques}
+		NOT = { has_estate_privilege = UFC_staff_estate_more_force}
+		NOT = { has_estate_privilege = UFC_staff_estate_more_buildings }
+	}
+	on_granted = {
+		add_prestige = 10
+	}
+	penalties = {
+		stability_cost_modifier = 0.1
+	}
+	benefits = {
+		technology_cost = -0.1
+		idea_cost = -0.1
+		prestige_decay = -0.01
+	}
+	on_revoked = {
+		custom_tooltip = UFC_tooltip_staff_estate_privilege_change
+		add_estate_loyalty = {
+			estate = UFC_staff_estate
+			loyalty = 15
+		}
+	}
+	cooldown_years = 5
+	ai_will_do = {
+		factor = 1
+	}
+}
+
+#向产品开发部分配员工
+UFC_staff_estate_more_techniques = {
+	icon = privilege_diplo_power
+	max_absolutism = -10
+	conditional_modifier = { trigger = { has_absolutism_reduction_for_estate_privileges = yes } modifier = { max_absolutism = 2 } }
+	loyalty = -0.05
+	influence = 0.1
+	can_select = {
+		NOT = { has_estate_privilege = UFC_staff_estate_more_merchants }
+		NOT = { has_estate_privilege = UFC_staff_estate_more_academics}
+		NOT = { has_estate_privilege = UFC_staff_estate_more_colonists}
+		NOT = { has_estate_privilege = UFC_staff_estate_more_force}
+		NOT = { has_estate_privilege = UFC_staff_estate_more_buildings }
+	}
+	on_granted = {
+	}
+	penalties = {
+	}
+	benefits = {
+		country_admin_power = 1
+		country_diplomatic_power = 1
+		country_military_power = 1
+	}
+	on_revoked = {
+		custom_tooltip = UFC_tooltip_staff_estate_privilege_change
+		add_estate_loyalty = {
+			estate = UFC_staff_estate
+			loyalty = 20
+		}
+	}
+	cooldown_years = 5
+	ai_will_do = {
+		factor = 1
+	}
+}
+
+#向军事部分配员工
+UFC_staff_estate_more_force = {
+	icon = privilege_land_force_limit
+	max_absolutism = -5
+	conditional_modifier = { trigger = { has_absolutism_reduction_for_estate_privileges = yes } modifier = { max_absolutism = 1 } }
+	influence = 0.05
+	can_select = {
+		NOT = { has_estate_privilege = UFC_staff_estate_more_merchants }
+		NOT = { has_estate_privilege = UFC_staff_estate_more_academics}
+		NOT = { has_estate_privilege = UFC_staff_estate_more_techniques}
+		NOT = { has_estate_privilege = UFC_staff_estate_more_colonists}
+		NOT = { has_estate_privilege = UFC_staff_estate_more_buildings }
+	}
+	on_granted = {
+		add_army_tradition = 5
+	}
+	penalties = {
+	}
+	benefits = {
+		global_manpower_modifier = 0.2
+		land_morale = 0.1
+		naval_morale = 0.1
+	}
+	on_revoked = {
+		custom_tooltip = UFC_tooltip_staff_estate_privilege_change
+		add_estate_loyalty = {
+			estate = UFC_staff_estate
+			loyalty = 15
+		}
+		add_army_tradition = -5
+	}
+	cooldown_years = 5
+	ai_will_do = {
+		factor = 1
+	}
+}
+
+#向工程部分配员工
+UFC_staff_estate_more_buildings = {
+	icon = privilege_technology
+	max_absolutism = -5
+	conditional_modifier = { trigger = { has_absolutism_reduction_for_estate_privileges = yes } modifier = { max_absolutism = 1 } }
+	influence = 0.05
+	can_select = {
+		NOT = { has_estate_privilege = UFC_staff_estate_more_merchants }
+		NOT = { has_estate_privilege = UFC_staff_estate_more_academics}
+		NOT = { has_estate_privilege = UFC_staff_estate_more_techniques}
+		NOT = { has_estate_privilege = UFC_staff_estate_more_force}
+		NOT = { has_estate_privilege = UFC_staff_estate_more_colonists }
+	}
+	on_granted = {
+	}
+	penalties = {
+	}
+	benefits = {
+		build_time = -0.25
+		build_cost = -0.2
+		great_project_upgrade_cost = -0.2
+	}
+	on_revoked = {
+		custom_tooltip = UFC_tooltip_staff_estate_privilege_change
+		add_estate_loyalty = {
+			estate = UFC_staff_estate
+			loyalty = 15
+		}
+	}
+	cooldown_years = 5
+	ai_will_do = {
+		factor = 1
+	}
+}
+
+UFC_staff_estate_black_staffs = {
+	icon = privilege_technology
+	max_absolutism = 5
+	influence = -0.1
+	loyalty = -0.1
+	is_valid = {
+		OR = {
+			tag = UFC
+			has_estate_privilege = UFC_staff_estate_black_staffs
+		}
+		NOT = { has_country_flag = UFC_revolution }
+	}
+	can_revoke = {
+		custom_trigger_tooltip = {
+			tooltip = UFC_tooltip_black_staffs
+			always = no
+		}
+	}
+	on_granted = {
+	}
+	penalties = {
+		global_unrest = 1
+	}
+	benefits = {
+		global_trade_goods_size_modifier = 0.2
+	}
+	on_revoked = {
+	}
+	ai_will_do = {
+		factor = 0
+	}
+}
+
+UFC_staff_estate_tropical_nation = {
+	icon = privilege_grant_new_world_charter
+	loyalty = 0.05
+	influence = 0.05
+	is_valid = {
+		OR = {
+			tag = UFC
+			has_estate_privilege = UFC_staff_estate_tropical_nation
+		}
+	}
+	can_select = {
+		capital_scope = {
+			has_climate = tropical
+		}
+	}
+	on_granted = {
+		custom_tooltip = estate_burghers_tropical_effect_tooltip
+	}
+	on_granted_province = {
+		if = {
+			limit = {
+				has_climate = tropical
+			}
+			add_province_modifier = {
+				name = estate_burghers_tropical_mod
+				duration = -1
+			}
+		}
+		else_if = {
+			limit = {
+				has_province_modifier = estate_burghers_tropical_mod
+			}
+			remove_province_modifier = estate_burghers_tropical_mod
+		}
+	}
+	on_revoked = {
+		custom_tooltip = estate_burghers_tropical_revoke_effect_tooltip
+	}
+	on_revoked_province = {
+		if = {
+			limit = {
+				has_province_modifier = estate_burghers_tropical_mod
+			}
+			remove_province_modifier = estate_burghers_tropical_mod
+		}
+	}
+	on_invalid = {
+		custom_tooltip = estate_burghers_tropical_revoke_effect_tooltip
+	}
+	on_invalid_province = {
+		if = {
+			limit = {
+				has_province_modifier = estate_burghers_tropical_mod
+			}
+			remove_province_modifier = estate_burghers_tropical_mod
+		}
+	}
+	ai_will_do = {
+		factor = 1000
+	}
+}
+
+UFC_staff_estate_indebted_to_burghers = {
+	icon = privilege_give_money
+	max_absolutism = -5
+	conditional_modifier = { trigger = { has_absolutism_reduction_for_estate_privileges = yes } modifier = { max_absolutism = 1 } }
+	loyalty = -0.05
+	influence = 0.05
+	on_granted = {
+		if = {
+			limit = {
+				has_country_flag = BYZ_buff_burgher_loans_flag
+			}
+			custom_tooltip = BYZ_estate_burghers_indebted_to_burghers_effect_tooltip
+		}
+		else = {
+			custom_tooltip = estate_burghers_indebted_to_burghers_effect_tooltip
+		}
+		tooltip = {
+			add_inflation = 0.5
+		}
+		hidden_effect = {
+			add_loan = {
+				fixed_interest = 1
+				duration = 60
+				estate_loan = yes
+			}
+			add_loan = {
+				fixed_interest = 1
+				duration = 60
+				estate_loan = yes
+			}
+			add_loan = {
+				fixed_interest = 1
+				duration = 60
+				estate_loan = yes
+			}
+			add_loan = {
+				fixed_interest = 1
+				duration = 60
+				estate_loan = yes
+			}
+			add_loan = {
+				fixed_interest = 1
+				duration = 60
+				estate_loan = yes
+			}
+		}
+	}
+	penalties = {
+	}
+	benefits = {
+	}
+	can_select = {
+		if = {
+			limit = {
+				has_estate_privilege = UFC_staff_estate_indebted_to_burghers
+			}
+			has_estate_loan = yes
+		}
+	}
+	can_revoke = {
+		has_estate_loan = no
+	}
+	ai_will_do = {
+		factor = 0
+	}
+}

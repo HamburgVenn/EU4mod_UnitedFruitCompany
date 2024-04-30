@@ -1,0 +1,49 @@
+UFC_republic = {
+	rank = {
+		1 = UFC_REPUBLIC_REFORM
+		2 = UFC_REPUBLIC_REFORM
+		3 = UFC_REPUBLIC_REFORM
+	}
+
+	ruler_male = {
+		1 = UFC_REPUBLIC
+		2 = UFC_REPUBLIC
+		3 = UFC_REPUBLIC
+	}
+
+	ruler_female = {
+		1 = UFC_REPUBLIC_fem
+		2 = UFC_REPUBLIC_fem
+		3 = UFC_REPUBLIC_fem
+	}
+
+	trigger = {
+		has_reform = UFC_government_republic
+	}
+}
+
+UFC_revolution = {
+	rank = {
+		1 = UFC_REPUBLIC_REVOLUTION_REFORM
+		2 = UFC_REPUBLIC_REVOLUTION_REFORM
+		3 = UFC_REPUBLIC_REVOLUTION_REFORM
+	}
+
+	ruler_male = {
+		1 = UFC_REVOLUTION
+		2 = UFC_REVOLUTION
+		3 = UFC_REVOLUTION
+	}
+
+	ruler_female = {
+		1 = UFC_REVOLUTION_fem
+		2 = UFC_REVOLUTION_fem
+		3 = UFC_REVOLUTION_fem
+	}
+
+	trigger = {
+		tag = UFC
+		is_revolutionary_republic_trigger = yes
+	}
+
+}

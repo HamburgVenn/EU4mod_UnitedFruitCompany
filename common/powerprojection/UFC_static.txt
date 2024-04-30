@@ -1,0 +1,5 @@
+UFC_rereconquest = {
+	min = 10
+	power = 1
+	decay = no 
+}

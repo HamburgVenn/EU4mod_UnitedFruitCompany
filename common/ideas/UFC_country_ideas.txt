@@ -1,0 +1,96 @@
+# Do not change tags in here without changing every other reference to them.
+# Do not change tags in here without changing every other reference to them.
+# If adding new groups or ideas, make sure they are unique.
+
+### Nation specific idea groups
+### Modded Nations' Ideas:
+
+UFC_ideas = {
+	start = {
+		colonists = 2
+		effect = { remove_temporary_colonist = yes }
+		reelection_cost = -0.3
+	}
+	bonus = {
+		may_establish_frontier = yes
+	}
+	trigger = {
+		tag = UFC
+		is_revolutionary = no
+	}
+	free = yes 	# will be added at load.
+	
+	ufc_banana_republic = {
+		global_trade_goods_size_modifier = 0.1
+		trade_efficiency = 0.1
+	}
+	ufc_rainforest_exploitation = {
+		development_cost = -0.1
+		development_cost_modifier = -0.1
+	}
+	ufc_capital_overturn = {
+		interest = -1
+		inflation_reduction = 0.2
+	}
+	ufc_expansionist_ambitions = {
+		ignore_coring_distance = yes
+		core_creation = -0.2
+	}
+	ufc_secularism = {
+		tolerance_heathen = 3
+		tolerance_of_heathens_capacity = 3
+	}
+	ufc_trading_empire = {
+		merchants = 1
+		global_trade_power = 0.15
+	}
+	ufc_black_slaves = {
+		global_trade_goods_size = 0.5
+		harsh_treatment_cost = -0.25
+	}
+}
+
+
+UFC_ideas_3 = {
+	start = {
+		artillery_fire = 1.5
+		drill_decay_modifier = -0.5
+	}
+	bonus = {
+		may_establish_frontier = yes
+	}
+	trigger = {
+		tag = UFC
+		is_revolutionary = yes
+	}
+	free = yes 	# will be added at load.
+
+	ufc_banana_republic = {
+		global_trade_goods_size_modifier = 0.1
+		trade_efficiency = 0.1
+	}
+	ufc_rainforest_exploitation = {
+		development_cost = -0.1
+		development_cost_modifier = -0.1
+	}
+	ufc_workers_management = {
+		min_autonomy_in_territories = -0.1
+		governing_cost = -0.1
+	}
+	ufc_liberate_the_world = {
+		ignore_coring_distance = yes
+		core_creation = -0.25
+	}
+	ufc_trading_empire = {
+		merchants = 1
+		global_trade_power = 0.15
+	}
+	ufc_liberate_slaves = {
+		global_trade_goods_size = 0.5
+		harsh_treatment_cost = 0.25
+	}
+	ufc_secularism = {
+		tolerance_of_heathens = 3
+		tolerance_of_heathens_capacity = 3
+	}
+}

@@ -1,0 +1,167 @@
+on_startup = {
+	if = {
+		limit = {
+			tag = GRA
+		}
+		country_event = { id = flavor_UFC.1 days = 10 random = 5}
+	}
+}
+
+on_province_owner_change = {
+	if = {
+		limit = {
+			owner = { has_country_flag = UFC_adopt_jungle_for_future}
+			not = {
+				has_province_modifier = UFC_adopt_jungle
+			}
+			has_terrain = jungle
+		}
+		add_province_modifier = {
+			name = UFC_adopt_jungle
+			duration = -1
+		}
+	}
+}
+
+on_colony_finished = { #ROOT - Province
+	if = {
+		limit = {
+			owner = { has_country_flag = UFC_adopt_jungle_for_future}
+			not = {
+				has_province_modifier = UFC_adopt_jungle
+			}
+			has_terrain = jungle
+		}
+		add_province_modifier = {
+			name = UFC_adopt_jungle
+			duration = -1
+		}
+	}
+	events = { flavor_UFC.24 }
+}
+
+# country
+# root = winning country, from = loser country
+on_war_won = {
+	if = {
+		limit = {
+			from = {
+				or = {
+					tag = CAS
+					tag = POR
+					tag = ARA
+				}
+			}
+			root = {
+				tag = GRA
+			}
+		}
+		ROOT = { country_event = { id = flavor_UFC.15 } }
+	}
+}
+
+
+# province
+# root = location, from = loser country
+on_battle_won_province = {
+	if = {
+		limit = {
+			from = {
+				war_with = UFC
+			}
+			has_global_flag = UFC_start_weapon_test_team
+			units_in_province = UFC
+		}
+		UFC_scripted_weapon_test_team_province_effect = yes
+	}
+}
+
+on_yearly_pulse = {
+	events = { flavor_UFC.21 }
+	if = {
+		limit = {
+			has_country_flag = UFC_flag_low_salary
+		}
+		export_to_variable = {
+			which = BYZ_amount_of_dev
+			value = trigger_value:development
+		}
+	}
+
+}
+
+on_harmonized_pagan = {
+	on_harmonized_effect = yes
+	on_harmonized_religion_estate_privileges_effect = yes
+	if = {
+		limit = {
+			religion = secularism
+		}
+		country_event = { id = UFC_religion.1 }
+	}
+}
+
+on_harmonized_christian = {
+	on_harmonized_effect = yes
+	on_harmonized_religion_estate_privileges_effect = yes
+	if = {
+		limit = {
+			religion = secularism
+		}
+		country_event = { id = UFC_religion.2 }
+	}
+}
+
+on_harmonized_jewish_group = {
+	on_harmonized_effect = yes
+	on_harmonized_religion_estate_privileges_effect = yes
+	if = {
+		limit = {
+			religion = secularism
+		}
+		country_event = { id = UFC_religion.5 }
+	}
+}
+
+on_harmonized_zoroastrian_group = {
+	on_harmonized_effect = yes
+	on_harmonized_religion_estate_privileges_effect = yes
+	if = {
+		limit = {
+			religion = secularism
+		}
+		country_event = { id = UFC_religion.6 }
+	}
+}
+
+on_harmonized_dharmic = {
+	on_harmonized_effect = yes
+	on_harmonized_religion_estate_privileges_effect = yes
+	if = {
+		limit = {
+			religion = secularism
+		}
+		country_event = { id = UFC_religion.4 }
+	}
+}
+
+on_harmonized_eastern = {
+	on_harmonized_effect = yes
+	on_harmonized_religion_estate_privileges_effect = yes
+	if = {
+		limit = {
+			religion = secularism
+		}
+		country_event = { id = UFC_religion.7 }
+	}
+}
+
+on_loan_repaid = {
+	if = {
+		limit = {
+			has_estate_loan = no
+			has_estate_privilege = UFC_staff_estate_indebted_to_burghers
+		}
+		remove_estate_privilege = UFC_staff_estate_indebted_to_burghers
+	}
+}

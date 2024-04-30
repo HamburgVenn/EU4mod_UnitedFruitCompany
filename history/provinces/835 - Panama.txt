@@ -1,0 +1,19 @@
+#835 - Panama 
+
+culture = andalucian
+
+owner = UFC
+controller = UFC
+add_core = UFC
+discovered_by = south_american
+discovered_by = GRA
+is_city = yes
+religion = animism
+capital = "Panama"
+trade_goods = coffee
+hre = no
+base_tax = 5
+base_production = 5
+base_manpower = 4
+extra_cost = 8
+center_of_trade = 1
