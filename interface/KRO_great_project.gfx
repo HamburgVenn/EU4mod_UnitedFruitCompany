@@ -1,0 +1,26 @@
+spriteTypes = {
+        spriteType = {
+		name = "GFX_great_project_Sumera_Monastery"	
+		texturefile = "gfx//interface//great_projects//Sumera_Monastery.dds"
+	}
+                spriteType = {
+		name = "GFX_great_project_Walls_of_Theodosius"	
+		texturefile = "gfx//interface//great_projects//Walls_of_Theodosius.dds"
+	}
+               spriteType = {
+                               name = "GFX_disaster_Rome_Themes_Revolte_dis"
+                               texturefile = "gfx//interface//disasters//Rome_Themes_Revolte_dis.dds"
+                               noOfFrames = 3
+                               loadType = "INGAME"
+                } 
+               spriteType = {
+                               name = "GFX_disaster_Aftermath_of_the_schism_in_EC"
+                               texturefile = "gfx//interface//disasters//Aftermath_of_the_schism_in_Eastern_church.dds"
+                               noOfFrames = 3
+                               loadType = "INGAME"
+                } 
+	spriteType = {
+		name = "GFX_combat_terrain_Constantinople_terrain"
+		texturefile = "gfx/KRO_terrain/combat_terrain_Constantinople_terrain.dds"
+	}
+}
