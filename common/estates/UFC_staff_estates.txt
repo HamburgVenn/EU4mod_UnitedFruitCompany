@@ -49,6 +49,7 @@ UFC_staff_estate = {
 		UFC_staff_estate_more_buildings
 		UFC_staff_estate_tropical_nation
 		UFC_staff_estate_indebted_to_burghers
+		UFC_staff_estate_salary
 	}
 
 	agendas = {

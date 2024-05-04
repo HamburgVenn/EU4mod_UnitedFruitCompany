@@ -77,19 +77,15 @@ on_battle_won_province = {
 }
 
 on_yearly_pulse = {
-	events = { flavor_UFC.21 }
-	if = {
-		limit = {
-			has_country_flag = UFC_flag_low_salary
-		}
-		export_to_variable = {
-			which = BYZ_amount_of_dev
-			value = trigger_value:development
-		}
+	events = {
+		flavor_UFC.21
 	}
-
 }
-
+on_monthly_pulse = {
+	events = {
+		flavor_UFC.32
+	}
+}
 on_harmonized_pagan = {
 	on_harmonized_effect = yes
 	on_harmonized_religion_estate_privileges_effect = yes

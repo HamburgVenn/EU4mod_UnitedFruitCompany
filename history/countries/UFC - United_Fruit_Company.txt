@@ -1,0 +1,9 @@
+government = republic
+mercantilism = 25
+technology_group = muslim
+primary_culture = andalucian
+religion = sunni
+religious_school = maliki_school
+government_rank = 1
+capital = 835
+fixed_capital = 835

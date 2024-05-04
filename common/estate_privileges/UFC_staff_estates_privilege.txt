@@ -116,6 +116,7 @@ UFC_staff_estate_more_academics = {
 		idea_cost = -0.1
 		prestige_decay = -0.01
 	}
+
 	on_revoked = {
 		custom_tooltip = UFC_tooltip_staff_estate_privilege_change
 		add_estate_loyalty = {
@@ -256,6 +257,7 @@ UFC_staff_estate_black_staffs = {
 		}
 	}
 	on_granted = {
+
 	}
 	penalties = {
 		global_unrest = 1
@@ -270,6 +272,58 @@ UFC_staff_estate_black_staffs = {
 	}
 }
 
+UFC_staff_estate_salary = {
+	icon = privilege_give_money
+	max_absolutism = -5
+	influence = 0
+	loyalty = 0.15
+	is_valid = {
+		OR = {
+			tag = UFC
+			has_estate_privilege = UFC_staff_estate_salary
+		}
+	}
+	can_revoke = {
+		custom_trigger_tooltip = {
+			tooltip = UFC_tooltip_must_salary
+			always = no
+		}
+	}
+	on_granted = {
+		if = {
+			limit = {
+				has_country_flag = UFC_flag_medium_salary
+			}
+			add_estate_loyalty_modifier = {
+				estate = UFC_staff_estate
+				loyalty = 0.05
+				duration = -1
+				desc = UFC_tooltip_medium_salary
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = UFC_flag_high_salary
+			}
+			add_estate_loyalty_modifier = {
+				estate = UFC_staff_estate
+				loyalty = 0.10
+				duration = -1
+				desc = UFC_tooltip_high_salary
+			}
+		}
+	}
+	penalties = {
+	}
+	benefits = {
+	}
+	on_revoked = {
+	}
+	ai_will_do = {
+		factor = 1000
+	}
+}
+#移植商人阶级特权 热带开发
 UFC_staff_estate_tropical_nation = {
 	icon = privilege_grant_new_world_charter
 	loyalty = 0.05

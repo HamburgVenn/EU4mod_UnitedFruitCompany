@@ -63,6 +63,13 @@ UFC_mission_slot_1 = {
 			increase_trade_goods_discovery = {
 				trade_goods = sugar
 			}
+			#hidden_effect = {
+			#	country_event = {
+			#		id = flavor_UFC.42
+			#		days = 60
+			#		random = 60
+			#	}
+			#}
 		}
 	}
 
@@ -70,6 +77,12 @@ UFC_mission_slot_1 = {
 		icon = mission_claim_hispaniola
 		position = 3
 		required_missions = { UFC_mission_caribbean }
+		provinces_to_highlight = {
+			owned_by = root
+			trade_goods = sugar
+			is_city = yes
+			not = { base_production = 6 }
+		}
 		trigger = {
 			num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
 				value = 10
@@ -118,6 +131,9 @@ UFC_mission_slot_1 = {
 			}
 			953 = {
 				set_seat_in_parliament = yes
+			}
+			newfoundland_area = {
+				add_permanent_claim = root
 			}
 		}
 	}
@@ -180,6 +196,7 @@ UFC_mission_slot_1 = {
 			}
 		}
 		effect = {
+			custom_tooltip = UFC_tooltip_the_return
 			remove_country_flag = UFC_support_granada
 			if = {
 				limit = {
@@ -187,9 +204,9 @@ UFC_mission_slot_1 = {
 						owned_by = GRA
 					}
 				}
-				vassalize = GRA
+				country_event = { id = flavor_UFC.45 }
 				iberia_region = {
-					add_permanent_claim = GRA
+					add_permanent_claim = root
 				}
 			}
 			else = {
@@ -518,15 +535,29 @@ UFC_mission_slot_2 = {
 		icon = mission_kingdom_of_new_spain
 		position = 2
 		required_missions = { UFC_mission_exploration UFC_mission_panama}
+		provinces_to_highlight = {
+			OR = {
+				area = mexico_area
+				area = guatemala_lowlands_area
+				area = yucatan_area
+			}
+		}
 		trigger = {
 			mexico_area = {
+				type = all
 				has_discovered = root
 			}
 			guatemala_lowlands_area = {
+				type = all
 				has_discovered = root
 			}
 			yucatan_area = {
+				type = all
 				has_discovered = root
+			}
+			has_spy_network_in = {
+				who = AZT
+				value = 40
 			}
 		}
 		effect = {
@@ -536,7 +567,7 @@ UFC_mission_slot_2 = {
 			add_casus_belli = {
 				target = AZT
 				type = cb_vassalize_mission
-				months = 180
+				months = 600
 			}
 		}
 	}
@@ -547,11 +578,7 @@ UFC_mission_slot_2 = {
 		provinces_to_highlight = {
 			OR = {
 				area = mexico_area
-			}
-			OR = {
 				area = guatemala_lowlands_area
-			}
-			OR = {
 				area = yucatan_area
 			}
 		}
@@ -568,6 +595,10 @@ UFC_mission_slot_2 = {
 				type = all
 				country_or_non_sovereign_subject_holds = ROOT
 			}
+			custom_trigger_tooltip = {
+				tooltip = UFC_tooltip_flag_cooper_aztec
+				has_country_flag = UFC_flag_cooper_aztec
+			}
 		}
 		effect = {
 			country_event = { id = flavor_UFC.9 }
@@ -576,6 +607,23 @@ UFC_mission_slot_2 = {
 			}
 			central_america_region = {
 				add_permanent_claim = root
+			}
+			custom_tooltip = UFC_tooltip_integrate_aztec
+			tooltip = {
+				country_event = { id = flavor_UFC.43 }
+			}
+			hidden_effect = {
+				if = {
+					limit = {
+						AZT = {
+							vassal_of = UFC
+							mexico_area = {
+								owned_by = AZT
+							}
+						}
+					}
+					country_event = { id = flavor_UFC.43 }
+				}
 			}
 		}
 	}
@@ -999,6 +1047,7 @@ UFC_mission_slot_3 = {
 			panama_area = {
 				change_trade_goods = cocoa
 				add_base_production = 1
+				add_permanent_claim = root
 			}
 			increase_trade_goods_discovery = {
 				trade_goods = cocoa
@@ -1057,6 +1106,7 @@ UFC_mission_slot_3 = {
 					change_native_size = 10
 				}
 			}
+			add_splendor = 400
 		}
 	}
 
@@ -1639,6 +1689,11 @@ UFC_mission_slot_4 = {
 		icon = develop_the_po_valley
 		position = 2
 		required_missions = { UFC_mission_panama UFC_mission_loan_economics }
+		provinces_to_highlight = {
+			OR = {
+				province_id = 151
+			}
+		}
 		trigger = {
 			num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
 				value = 15
@@ -2282,20 +2337,20 @@ UFC_mission_slot_5 = {
 				base_production = 10
 				trade_goods = livestock
 			}
-			trading_bonus = {
-				trade_goods = livestock
-				value = yes
-			}
+			#trading_bonus = {
+			#	trade_goods = livestock
+			#	value = yes
+			#}
 			num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
 				value = 3
 				is_city = yes
 				base_production = 10
 				trade_goods = grain
 			}
-			trading_bonus = {
-				trade_goods = grain
-				value = yes
-			}
+			#trading_bonus = {
+			#	trade_goods = grain
+			#	value = yes
+			#}
 		}
 		effect = {
 			add_country_modifier = {
@@ -2523,7 +2578,7 @@ UFC_mission_slot_5 = {
 		required_missions = { UFC_mission_genoese_renaissance }
 		trigger = {
 			num_of_harmonized = 3
-			num_accepted_cultures = 5
+			num_accepted_cultures = 3
 			harmony = 95
 			reform_level = 4
 		}

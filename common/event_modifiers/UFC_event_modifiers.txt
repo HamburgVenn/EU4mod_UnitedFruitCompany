@@ -18,8 +18,8 @@ UFC_modifier_aborigines_good = {
 UFC_modifier_aborigines_tense = {
 	global_colonial_growth = 80
 	auto_explore_adjacent_to_colony = yes
-	UFC_staff_estate_influence_modifier = 0.1
-	UFC_staff_estate_loyalty_modifier = -0.05
+	UFC_staff_estate_influence_modifier = 0.05
+	UFC_staff_estate_loyalty_modifier = 0.05
 	colony_cost_modifier = -0.3
 }
 
@@ -34,11 +34,11 @@ UFC_modifier_granada_immigrant = {
 }
 
 UFC_adopt_jungle = {
-	local_development_cost_modifier = -0.35
+	local_development_cost = -0.35
 }
 
 UFC_modifier_buenos_aires = {
-	local_development_cost_modifier = -0.1
+	local_development_cost = -0.1
 	local_unrest = 2
 	trade_goods_size = 0.5
 }
@@ -114,6 +114,7 @@ UFC_modifier_secularism_effect = {
 	global_tax_modifier = -0.3
 	stability_cost_modifier = 0.3
 	religious_unity = 0.25
+	envoy_travel_time = -0.30
 }
 
 UFC_modifier_secularism_flourished = {
@@ -121,6 +122,7 @@ UFC_modifier_secularism_flourished = {
 	stability_cost_modifier = 0.1
 	religious_unity = 0.25
 	harmonization_speed = 0.25
+	envoy_travel_time = -0.15
 	yearly_harmony = 1
 }
 
@@ -267,8 +269,6 @@ UFC_modifier_harmonization_refuse_debate = {
 }
 
 UFC_modifier_staff_hierarchy_egalitarianism = {
-    global_tax_income = -120
-	global_tax_modifier = -0.2
 	stability_cost_modifier = -0.1
 	global_unrest = -2
 	overextension_impact_modifier = -0.1
@@ -282,12 +282,9 @@ UFC_modifier_staff_hierarchy_competion = {
 	global_trade_power = 0.1
 	trade_company_investment_cost = -0.1
 	center_of_trade_upgrade_cost = -0.1
-	trade_steering = 0.1
 }
 
 UFC_modifier_staff_hierarchy_hierarchical = {
-	global_tax_income = 120
-	global_tax_modifier = 0.2
 	global_unrest = 2
 	years_of_nationalism = 5
 	land_morale = 0.1
@@ -296,5 +293,22 @@ UFC_modifier_staff_hierarchy_hierarchical = {
 }
 
 UFC_modifier_staff_hierarchy_cooldown = {
+
+}
+
+UFC_modifier_cocoa_plantation_cooldown = {
+
+}
+
+UFC_modifier_sugar_plantation_cooldown = {
+
+}
+
+UFC_modifier_granada_artillery = {
+	artillery_cost = -0.9
+	artillery_power = -0.9
+}
+
+UFC_modifier_mexico_pepper_plantation_cooldown = {
 
 }

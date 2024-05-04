@@ -24,4 +24,112 @@ country_decisions = {
         ai_importance = 400
     }
 
+    UFC_decision_cocoa_plantation = {
+        potential = {
+            tag = UFC
+            num_of_owned_provinces_with = {
+                value = 4
+                trade_goods = cocoa
+                or = {
+                    colonial_region = colonial_colombia
+                }
+            }
+            num_of_owned_provinces_with = {
+                NOT = {
+                    value = 50
+                }
+                trade_goods = cocoa
+                or = {
+                    colonial_region = colonial_colombia
+                }
+            }
+        }
+        provinces_to_highlight = {
+            not = {
+                trade_goods = cocoa
+            }
+            or = {
+                colonial_region = colonial_colombia
+            }
+        }
+        allow = {
+            custom_trigger_tooltip = {
+                tooltip = UFC_tooltip_plantation_cooldown
+                not = { has_country_modifier = UFC_modifier_cocoa_plantation_cooldown }
+            }
+        }
+        effect = {
+            country_event = {
+                id = flavor_UFC.9002
+            }
+        }
+        ai_will_do = {
+            factor = 1
+        }
+        ai_importance = 400
+    }
+
+    UFC_decision_sugar_plantation = {
+        potential = {
+            tag = UFC
+            mission_completed = UFC_mission_develop_sucrose
+        }
+        provinces_to_highlight = {
+            not = {
+                trade_goods = sugar
+            }
+            or = {
+                colonial_region = colonial_the_carribean
+            }
+        }
+        allow = {
+            custom_trigger_tooltip = {
+                tooltip = UFC_tooltip_plantation_cooldown
+                not = { has_country_modifier = UFC_modifier_sugar_plantation_cooldown }
+            }
+        }
+        effect = {
+            country_event = {
+                id = flavor_UFC.9003
+            }
+        }
+        ai_will_do = {
+            factor = 1
+        }
+        ai_importance = 400
+    }
+
+    UFC_decision_mexico_pepper_plantation = {
+        potential = {
+            tag = UFC
+            has_country_flag = UFC_flag_mexico_pepper_plantation
+        }
+        provinces_to_highlight = {
+            not = {
+                trade_goods = spices
+            }
+            not = {
+                trade_goods = gold
+            }
+            or = {
+                region = mexico_region
+            }
+        }
+        allow = {
+            custom_trigger_tooltip = {
+                tooltip = UFC_tooltip_plantation_cooldown
+                not = { has_country_modifier = UFC_modifier_mexico_pepper_plantation_cooldown }
+            }
+        }
+        effect = {
+            country_event = {
+                id = flavor_UFC.9004
+            }
+        }
+        ai_will_do = {
+            factor = 1
+        }
+        ai_importance = 400
+    }
 }
+

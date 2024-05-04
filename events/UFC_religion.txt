@@ -418,14 +418,14 @@ country_event = {
 	}
 
 	option = {
-		name = "UFC_religion.14.a" #Barbarians!
+		name = "UFC_religion.14.a"
 		ai_chance = {
 			factor = 30
 		}
 		add_harmonization_progress = -3 #1 year
 	}
 	option = {
-		name = "UFC_religion.14.b" #Such Minor Things do not Concern us
+		name = "UFC_religion.14.b"
 		ai_chance = {
 			factor = 70
 		}

@@ -1,8 +1,12 @@
 version="1.0"
 tags={
+	"Alternative History"
 	"Events"
 	"Expansion"
+	"New Nations"
 	"Gameplay"
 }
 name="UFC"
-supported_version="1.36.2"
+picture="thumbnail.png"
+supported_version="1.36.*"
+remote_file_id="3233254830"
