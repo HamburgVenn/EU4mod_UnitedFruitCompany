@@ -17,6 +17,11 @@ country_event = {
 			factor = 0
 		}
 		hidden_effect = {
+			add_ruler_modifier = {
+				name = UFC_modifier_MIX_infertility
+				duration = 36500
+				hidden = yes
+			}
 			835 = {
 				create_colony = 1000
 				add_core = UFC
@@ -167,7 +172,7 @@ country_event = {
 			country_event = { id = flavor_UFC.3 days = 30 }
 			country_event = { id = flavor_UFC.5 days = 60 }
 			country_event = { id = flavor_UFC.6 days = 365 }
-			country_event = { id = flavor_UFC.102 days = 730 random = 365 }
+			country_event = { id = flavor_UFC.102 days = 1460 random = 365 }
 		}
 	}
 }
@@ -387,6 +392,7 @@ country_event = {
 			dip_reward = yes
 		}
 		1988 = {
+			change_trade_goods = tropical_wood
 			set_great_project_tier_3 = {
 				type = moai
 			}
@@ -1331,7 +1337,7 @@ country_event = {
 		CAS = {
 			clr_country_flag = forced_tributary_state
 		}
-		country_event = { id = flavor_UFC.37 days = 7300 }
+		country_event = { id = flavor_UFC.37 days = 9125 }
 	}
 }
 
@@ -1580,7 +1586,159 @@ country_event = {
 			}
 		}
 	}
+	after = {
+		country_event = { id = flavor_UFC.46 days = 730 random = 730 }
+	}
 }
+
+country_event = {
+	id = flavor_UFC.46
+	title = flavor_UFC.46.title
+	desc = flavor_UFC.46.desc
+	picture = DIPLOMACY_SIGNING_eventPicture
+	fire_only_once = yes
+	is_triggered_only = yes
+	immediate = {
+		ADU = {
+			capital_scope = {
+				save_event_target_as = ufc_target_adu_capital
+			}
+		}
+	}
+	goto = ufc_target_adu_capital
+	option = {
+		name = flavor_UFC.46.a
+		ADU = {
+			change_government = republic
+			add_government_reform = trade_company_government
+			change_religion = ROOT
+			add_harmonized_religion = sunni
+			override_country_name = UFC_string_ADU
+		}
+		hidden_effect = {
+			ADU = {
+				add_adm_power = 100
+				add_dip_power = 100
+				add_mil_power = 100
+				add_treasury = 200
+				add_republican_tradition = 100
+			}
+		}
+		add_country_modifier = {
+			name = UFC_modifier_adu_company
+			duration = -1
+			desc = UNTIL_ANNEX_OR_DEPENDANCE
+		}
+	}
+	after = {
+		#country_event = { id = flavor_UFC.47 days = 730 random = 730}
+	}
+}
+
+#new_alhambra
+country_event = {
+	id = flavor_UFC.47
+	title = flavor_UFC.47.title
+	desc = {
+		trigger = {
+			AND = {
+				UFC = {
+					any_subject_country = {
+						tag = ADU
+					}
+				}
+				223 = {
+					owned_by = ADU
+				}
+			}
+		}
+		desc = flavor_UFC.47.desc.a
+	}
+	desc = {
+		trigger = {
+			223 = {
+				owned_by = UFC
+			}
+		}
+		desc = flavor_UFC.47.desc.b
+	}
+	picture = muslimgfx_GREAT_BUILDING_eventPicture
+	fire_only_once = yes
+	goto = 965
+	trigger = {
+		tag = UFC
+		OR = {
+			AND = {
+				UFC = {
+					any_subject_country = {
+						tag = ADU
+					}
+				}
+				223 = {
+					owned_by = ADU
+				}
+			}
+			223 = {
+				owned_by = UFC
+			}
+		}
+		965 = {
+			owned_by = UFC
+			is_city = yes
+		}
+	}
+	mean_time_to_happen = {
+		months = 12
+	}
+	option = {
+		name = flavor_UFC.47.a
+		223 = {
+			destroy_great_project = {
+				type = alhambra
+			}
+		}
+		hidden_effect = {
+			965 = {
+				add_great_project_tier = {
+					type = new_alhambra
+					tier = 1
+				}
+				add_great_project = {
+					type = new_alhambra
+				}
+			}
+		}
+		tooltip = {
+			add_great_project = {
+				type = new_alhambra
+			}
+		}
+		set_country_flag = UFC_flag_removal_alhambra
+		965 = {
+			add_base_tax = 1
+			add_base_production = 1
+			add_base_manpower = 1
+			change_trade_goods = silk
+			change_culture = andalucian
+			center_of_trade = 1
+		}
+	}
+
+	option = {
+		name = flavor_UFC.47.b
+		965 = {
+			add_base_tax = 3
+			add_base_production = 3
+			add_base_manpower = 3
+			change_trade_goods = silk
+			change_culture = andalucian
+			center_of_trade = 1
+		}
+	}
+}
+
+#new_alhambra bonus
+
 #Timur
 country_event = {
 	id = flavor_UFC.133
@@ -1954,7 +2112,7 @@ country_event = {
 		add_adm_power = 10
 		hidden_effect = {
 			change_variable = {
-				which = columbus_fils_dip
+				which = columbus_fils_adm
 				value = 1
 			}
 		}
@@ -2026,11 +2184,189 @@ country_event = {
 		}
 	}
 	after = {
-		country_event = { id = flavor_UFC.1031 days = 60 }
+		country_event = { id = flavor_UFC.1031 days = 1460 }
 	}
 }
 
-#couper
+#-- 21 years old
+country_event = {
+	id = flavor_UFC.1031
+	title = flavor_UFC.1031.title
+	desc = flavor_UFC.1031.desc
+	picture = TRADEGOODS_eventPicture
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = flavor_UFC.1031.a
+		add_adm_power = 10
+		add_sailors = 1
+		hidden_effect = {
+			change_variable = {
+				which = columbus_fils_adm
+				value = 1
+			}
+		}
+	}
+	after = {
+		country_event = { id = flavor_UFC.1032 days = 730 }
+	}
+}
+
+#--23 years old
+country_event = {
+	id = flavor_UFC.1032
+	title = flavor_UFC.1032.title
+	desc = flavor_UFC.1032.desc
+	picture = indiangfx_HARBOUR_eventPicture
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = flavor_UFC.1032.a
+		add_adm_power = 10
+		add_dip_power = 10
+		hidden_effect = {
+			change_variable = {
+				which = columbus_fils_dip
+				value = 1
+			}
+			change_variable = {
+				which = columbus_fils_mil
+				value = 1
+			}
+		}
+		custom_tooltip = UFC_tooltip_find_east_route
+		hidden_effect = {
+			add_country_modifier = {
+				name = UFC_modifier_find_east_route_timer
+				duration = 3650
+				hidden = yes
+			}
+		}
+		define_explorer = {
+			name = "Christopher Columbus"
+			fire = 3
+			shock = 3
+			manuever = 6
+			siege = 2
+		}
+	}
+	after = {
+		country_event = {
+			id = flavor_UFC.1035 days = 4015
+		}
+	}
+}
+
+country_event = {
+	id = flavor_UFC.1033
+	title = flavor_UFC.1033.title
+	desc = flavor_UFC.1033.desc
+	picture = east_asian_CITY_DEVELOPMENT_eventPicture
+	fire_only_once = yes
+	trigger = {
+		tag = UFC
+		4227 = {
+			has_discovered = root
+		}
+		2139 = {
+			has_discovered = root
+		}
+		4359 = {
+			has_discovered = root
+		}
+	}
+	mean_time_to_happen = {
+		months = 1
+	}
+	immediate = {
+		if = {
+			limit = {
+				has_country_modifier = UFC_modifier_find_east_route_timer
+			}
+			set_country_flag = UFC_flag_find_east_route
+		}
+	}
+	option = {
+		name = flavor_UFC.1033.a
+		if = {
+			limit = {
+				has_country_modifier = UFC_modifier_find_east_route_timer
+			}
+			custom_tooltip = UFC_tooltip_find_east_route_success
+			hidden_effect = {
+				country_event = { id = flavor_UFC.1034 days = 5 }
+			}
+		}
+	}
+}
+
+country_event = {
+	id = flavor_UFC.1034
+	title = flavor_UFC.1034.title
+	desc = flavor_UFC.1034.desc
+	picture = east_asian_COLONIZATION_eventPicture
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = flavor_UFC.1034.a
+	}
+}
+
+#-- 34 years old
+country_event = {
+	id = flavor_UFC.1035
+	title = flavor_UFC.1035.title
+	desc = flavor_UFC.1035.desc
+	picture = BYZ_ADVISOR_eventPicture
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = flavor_UFC.1035.a
+		define_ruler = {
+			name = "Christopher Columbus"
+			adm = 0
+			dip = 0
+			mil = 0
+			age = 34
+		}
+		custom_tooltip = UFC_tooltip_columbus_fil_education
+		hidden_effect = {
+			for_variable_amount = {
+				variable = columbus_fils_adm
+				effect = "
+						change_adm = 1
+					"
+			}
+			for_variable_amount = {
+				variable = columbus_fils_dip
+				effect = "
+						change_dip = 1
+					"
+			}
+			for_variable_amount = {
+				variable = columbus_fils_mil
+				effect = "
+						change_mil = 1
+					"
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = UFC_flag_find_east_route
+			}
+			add_ruler_personality = legendary_conqueror_personality
+			add_ruler_personality = legendary_pirate_personality
+			add_ruler_modifier = {
+				name = UFC_modifier_columbus_fils_longevity
+				duration = -1
+				hidden = yes
+			}
+		}
+	}
+}
+
+
+#couper 1459
 country_event = {
 	id = flavor_UFC.109
 	title = flavor_UFC.109.title
@@ -2052,6 +2388,7 @@ country_event = {
 	}
 }
 
+#1460
 country_event = {
 	id = flavor_UFC.1091
 	title = flavor_UFC.1091.title
@@ -2094,6 +2431,7 @@ country_event = {
 	}
 }
 
+#1462
 country_event = {
 	id = flavor_UFC.1092
 	title = flavor_UFC.1092.title
@@ -2111,27 +2449,51 @@ country_event = {
 	}
 }
 
+#1472
 country_event = {
 	id = flavor_UFC.1093
 	title = flavor_UFC.1093.title
 	desc = flavor_UFC.1093.desc
 	picture = EP_POLYNESIAN_HORN_eventPicture
-	fire_only_once = yes
 	is_triggered_only = yes
 	option = {
 		name = flavor_UFC.1093.a
-		1989 = {
-			owner = {
-				save_event_target_as = ufc_target_tonga
+		hidden_effect = {
+			1989 = {
+				owner = {
+					save_event_target_as = ufc_target_tonga
+				}
 			}
-		}
-		declare_war_with_cb = {
-			who = event_target:ufc_target_tonga
-			casus_belli = cb_core
+			capital = {
+				discover_country = event_target:ufc_target_tonga
+			}
+			1739 = {
+				discover_country = root
+			}
+			1737 = {
+				discover_country = root
+			}
+			1736 = {
+				discover_country = root
+			}
+			1738 = {
+				discover_country = root
+			}
+			1733 = {
+				discover_country = root
+			}
+			1726 = {
+				discover_country = root
+			}
 		}
 		1989 = {
 			add_core = root
 			change_controller = root
+		}
+		declare_war_with_cb = {
+			who = event_target:ufc_target_tonga
+			casus_belli = cb_core
+			war_goal_province = 1989
 		}
 		hidden_effect = {
 			country_event = { id = flavor_UFC.1094 days = 730 }
@@ -2139,6 +2501,7 @@ country_event = {
 	}
 }
 
+#1474
 country_event = {
 	id = flavor_UFC.1094
 	title = flavor_UFC.1094.title
@@ -2525,6 +2888,7 @@ country_event = {
 					not = {
 						trade_goods = gold
 					}
+					not = { has_province_flag = UFC_flag_plantation_1 }
 				}
 				set_province_flag = UFC_flag_plantation_2
 				save_event_target_as = ufc_target_plantation_second_province
@@ -2606,29 +2970,127 @@ country_event = {
 	}
 }
 
+#decision tobacco plantation
+country_event = {
+	id = flavor_UFC.9005
+	title = flavor_UFC.9005.title
+	desc = flavor_UFC.9005.desc
+	picture = TRADEGOODS_eventPicture
+	is_triggered_only = yes
+	immediate = {
+		hidden_effect = {
+			random_owned_province = {
+				limit = {
+					not = {
+						trade_goods = tobacco
+					}
+					or = {
+						region = northeast_america_region
+						region = southeast_america_region
+					}
+					is_eligible_for_trade_good = { trade_goods = tobacco }
+				}
+				set_province_flag = UFC_flag_plantation_1
+				save_event_target_as = ufc_target_plantation_first_province
+			}
+			random_owned_province = {
+				limit = {
+					not = {
+						trade_goods = tobacco
+					}
+					or = {
+						region = northeast_america_region
+						region = southeast_america_region
+					}
+					not = { has_province_flag = UFC_flag_plantation_1 }
+					is_eligible_for_trade_good = { trade_goods = tobacco }
+				}
+				set_province_flag = UFC_flag_plantation_2
+				save_event_target_as = ufc_target_plantation_second_province
+			}
+			random_owned_province = {
+				limit = {
+					not = {
+						trade_goods = tobacco
+					}
+					or = {
+						region = northeast_america_region
+						region = southeast_america_region
+					}
+					not = {
+						or = {
+							has_province_flag = UFC_flag_plantation_1
+							has_province_flag = UFC_flag_plantation_2
+						}
+					}
+					is_eligible_for_trade_good = { trade_goods = tobacco }
+				}
+				save_event_target_as = ufc_target_plantation_third_province
+			}
+		}
+	}
+	option = {
+		name = flavor_UFC.9005.a
+		goto = ufc_target_plantation_first_province
+		event_target:ufc_target_plantation_first_province = {
+			change_trade_goods = tobacco
+		}
+		add_country_modifier = {
+			name = UFC_modifier_tobacco_plantation_cooldown
+			duration = 1095
+			hidden = yes
+		}
+	}
+	option = {
+		name = flavor_UFC.9005.b
+		goto = ufc_target_plantation_second_province
+		event_target:ufc_target_plantation_second_province = {
+			change_trade_goods = tobacco
+		}
+		add_country_modifier = {
+			name = UFC_modifier_tobacco_plantation_cooldown
+			duration = 1095
+			hidden = yes
+		}
+	}
+	option = {
+		name = flavor_UFC.9005.c
+		goto = ufc_target_plantation_third_province
+		event_target:ufc_target_plantation_third_province = {
+			change_trade_goods = tobacco
+		}
+		add_country_modifier = {
+			name = UFC_modifier_tobacco_plantation_cooldown
+			duration = 1095
+			hidden = yes
+		}
+	}
+	option = {
+		name = flavor_UFC.9005.d
+		country_event = {
+			id = flavor_UFC.9004 days = 1
+		}
+	}
+	option = {
+		name = flavor_UFC.9005.e
+	}
+	after = {
+		event_target:ufc_target_plantation_first_province = {
+			clr_province_flag = UFC_flag_plantation_1
+		}
+		event_target:ufc_target_plantation_second_province = {
+			clr_province_flag = UFC_flag_plantation_2
+		}
+	}
+}
 #test
 country_event = {
 	id = flavor_UFC.10086
 	picture = TRADEGOODS_eventPicture
 	is_triggered_only = yes
-	trigger = {  }
+	trigger = {
+	}
 	option = {
 		name = flavor_UFC.10086.a
-		if = {
-			limit = {
-				upper_andalucia_area = {
-					owned_by = GRA
-				}
-			}
-			country_event = { id = flavor_UFC.45 }
-			iberia_region = {
-				add_permanent_claim = root
-			}
-		}
-		else = {
-			iberia_region = {
-				add_permanent_claim = root
-			}
-		}
 	}
 }

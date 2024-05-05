@@ -161,3 +161,53 @@ on_loan_repaid = {
 		remove_estate_privilege = UFC_staff_estate_indebted_to_burghers
 	}
 }
+
+# country (country annexing, root = target)
+on_diplomatic_annex = {
+	UFC = {
+		if = {
+			limit = {
+				NOT = {
+					any_subject_country = {
+						tag = ADU
+					}
+				}
+				has_country_modifier = UFC_modifier_adu_company
+			}
+			remove_country_modifier = UFC_modifier_adu_company
+		}
+	}
+}
+
+on_annexed = {
+	UFC = {
+		if = {
+			limit = {
+				NOT = {
+					any_subject_country = {
+						tag = ADU
+					}
+				}
+				has_country_modifier = UFC_modifier_adu_company
+			}
+			remove_country_modifier = UFC_modifier_adu_company
+		}
+	}
+}
+
+on_dependency_gained = {
+	UFC = {
+		if = {
+			limit = {
+				NOT = {
+					any_subject_country = {
+						tag = ADU
+					}
+				}
+				has_country_modifier = UFC_modifier_adu_company
+			}
+			remove_country_modifier = UFC_modifier_adu_company
+		}
+	}
+}
+

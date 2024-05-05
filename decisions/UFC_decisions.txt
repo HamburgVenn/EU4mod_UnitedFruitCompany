@@ -131,5 +131,36 @@ country_decisions = {
         }
         ai_importance = 400
     }
+
+    UFC_decision_tobacco_plantation = {
+        potential = {
+            tag = UFC
+            mission_completed = UFC_mission_coast_of_freedom
+        }
+        provinces_to_highlight = {
+            not = {
+                trade_goods = tobacco
+            }
+            or = {
+                region = northeast_america_region
+                region = southeast_america_region
+            }
+        }
+        allow = {
+            custom_trigger_tooltip = {
+                tooltip = UFC_tooltip_plantation_cooldown
+                not = { has_country_modifier = UFC_modifier_tobacco_plantation_cooldown }
+            }
+        }
+        effect = {
+            country_event = {
+                id = flavor_UFC.9005
+            }
+        }
+        ai_will_do = {
+            factor = 1
+        }
+        ai_importance = 400
+    }
 }
 

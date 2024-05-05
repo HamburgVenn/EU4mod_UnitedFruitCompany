@@ -247,9 +247,15 @@ UFC_modifier_join_defence_of_gra = {
 	naval_attrition = -0.9
 	transport_attrition = -0.9
 }
-
+UFC_modifier_MIX_infertility = {
+	heir_chance = -10
+}
 UFC_modifier_ummayad_longevity = {
 	monarch_lifespan = 10
+}
+
+UFC_modifier_columbus_fils_longevity = {
+	monarch_lifespan = 0.5
 }
 
 UFC_modifier_por_migrants = {
@@ -311,4 +317,12 @@ UFC_modifier_granada_artillery = {
 
 UFC_modifier_mexico_pepper_plantation_cooldown = {
 
+}
+
+UFC_modifier_adu_company = {
+	trade_efficiency = 0.05
+	global_trade_goods_size_modifier = 0.05
+	global_foreign_trade_power = 0.2
+	merchants = 1
+	diplomatic_upkeep = 1
 }

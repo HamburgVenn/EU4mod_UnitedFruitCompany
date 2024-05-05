@@ -108,7 +108,6 @@ headquarters_panama = {
 
 		#what modifiers are added to the country when we have this project here on this tier
 		country_modifiers = {
-			reelection_cost = -0.05
 			state_governing_cost = -0.025
 		}
 
@@ -140,8 +139,8 @@ headquarters_panama = {
 
 		#what modifiers are added to the country when we have this project here on this tier
 		country_modifiers = {
-			reelection_cost = -0.1
 			state_governing_cost = -0.05
+			min_autonomy_in_territories = -0.025
 		}
 
 		#what effects happen when this tier is achieved
@@ -173,12 +172,14 @@ headquarters_panama = {
 		#what modifiers are added to the country when we have this project here on this tier
 		country_modifiers = {
 			development_cost = -0.1
-			reelection_cost = -0.2
+			development_cost_modifier = -0.1
 			state_governing_cost = -0.1
+			min_autonomy_in_territories = -0.05
 		}
 
 		#what effects happen when this tier is achieved
 		on_upgraded = {
+
 		}
 	}
 }
@@ -562,6 +563,188 @@ el_mutun = {
 		#what effects happen when this tier is achieved
 		on_upgraded = {
 			add_base_production = 3
+		}
+	}
+}
+
+new_alhambra = {
+	start = 965
+	date = 1812.01.01
+	time = {
+		months = 1
+	}
+	build_cost = 1000
+	can_be_moved = no
+	move_days_per_unit_distance = 10
+	starting_tier = 0
+	type = monument
+	build_trigger = {
+		owner = {
+			OR = {
+				tag = UFC
+				was_tag = UFC
+			}
+			has_country_flag = UFC_flag_removal_alhambra
+		}
+	}
+	on_built = {
+	}
+	on_destroyed = {
+	}
+	can_use_modifiers_trigger = {
+		custom_trigger_tooltip = {
+			tooltip = UFC_tooltip_removal_alhambra
+			owner = {
+				has_country_flag = UFC_flag_removal_alhambra
+			}
+		}
+	}
+	can_upgrade_trigger = {
+		custom_trigger_tooltip = {
+			tooltip = UFC_tooltip_removal_alhambra
+			owner = {
+				has_country_flag = UFC_flag_removal_alhambra
+			}
+		}
+	}
+	keep_trigger = {
+	}
+	tier_0 = {
+		upgrade_time = {
+			months = 6
+		}
+		cost_to_upgrade = {
+			factor = 100
+		}
+		province_modifiers = {
+		}
+		area_modifier = {
+		}
+		country_modifiers = {
+		}
+		on_upgraded = {
+
+		}
+	}
+	tier_1 = {
+		#time to upgrade to this level (0 for tier 0)
+		upgrade_time = {
+			months = 120
+		}
+
+		#cost to upgrade to this level (0 for tier 0)
+		cost_to_upgrade = {
+			factor = 1000
+		}
+
+		#what modifiers are added to the province when we have this project here on this tier
+		province_modifiers = {
+			local_development_cost = -0.15
+		}
+
+		#what modifiers are added to the provinces in the map area when we have this project here on this tier
+		area_modifier = {
+		}
+
+		#what modifiers are added to the country when we have this project here on this tier
+		country_modifiers = {
+			vassal_income = 0.1
+			reduced_liberty_desire = 5
+		}
+
+		#what effects happen when this tier is achieved
+		on_upgraded = {
+		}
+	}
+	tier_2 = {
+		#time to upgrade to this level (0 for tier 0)
+		upgrade_time = {
+			months = 240
+		}
+
+		#cost to upgrade to this level (0 for tier 0)
+		cost_to_upgrade = {
+			factor = 2500
+		}
+
+		#what modifiers are added to the province when we have this project here on this tier
+		province_modifiers = {
+			local_development_cost = -0.15
+		}
+
+		#what modifiers are added to the provinces in the map area when we have this project here on this tier
+		area_modifier = {
+		}
+
+		#what modifiers are added to the country when we have this project here on this tier
+		country_modifiers = {
+			vassal_income = 0.1
+			reduced_liberty_desire = 5
+			diplomatic_reputation = 1
+			min_autonomy_in_territories = -0.025
+		}
+
+		#what effects happen when this tier is achieved
+		on_upgraded = {
+		}
+	}
+	tier_3 = {
+		#time to upgrade to this level (0 for tier 0)
+		upgrade_time = {
+			months = 480
+		}
+
+		#cost to upgrade to this level (0 for tier 0)
+		cost_to_upgrade = {
+			factor = 5000
+		}
+
+		#what modifiers are added to the province when we have this project here on this tier
+		province_modifiers = {
+			local_development_cost = -0.15
+		}
+
+		#what modifiers are added to the provinces in the map area when we have this project here on this tier
+		area_modifier = {
+		}
+
+		#what modifiers are added to the country when we have this project here on this tier
+		country_modifiers = {
+			administrative_efficiency = 0.05
+			vassal_income = 0.1
+			reduced_liberty_desire = 10
+			diplomatic_reputation = 1
+			min_autonomy_in_territories = -0.05
+		}
+
+		conditional_modifier = {
+			trigger = {
+				custom_trigger_tooltip = {
+					owner = {
+						has_country_flag = UFC_flag_new_alhambra_bonus
+					}
+					tooltip = UFC_tooltip_new_alhambra_bonus
+				}
+			}
+			modifier = {
+				all_power_cost = -0.05
+			}
+		}
+
+		#what effects happen when this tier is achieved
+		on_upgraded = {
+			hidden_effect = {
+				if = {
+					limit = {
+						not = {
+							is_year = 1501
+						}
+					}
+					owner = {
+						set_country_flag = UFC_flag_new_alhambra_bonus
+					}
+				}
+			}
 		}
 	}
 }

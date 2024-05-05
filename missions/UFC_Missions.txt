@@ -104,8 +104,11 @@ UFC_mission_slot_1 = {
 		provinces_to_highlight = {
 			OR = {
 				colonial_region = colonial_eastern_america
+				province_id = 953
+				province_id = 965
 			}
 			has_port = yes
+			not = { owned_by = root }
 		}
 		trigger = {
 			num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
@@ -113,6 +116,14 @@ UFC_mission_slot_1 = {
 				is_city = yes
 				has_port = yes
 				colonial_region = colonial_eastern_america
+			}
+			953 = {
+				owned_by = root
+				is_city = yes
+			}
+			965 = {
+				owned_by = root
+				is_city = yes
 			}
 		}
 		effect = {
@@ -145,8 +156,9 @@ UFC_mission_slot_1 = {
 		provinces_to_highlight = {
 			OR = {
 				trade_goods = tobacco
-				is_city = yes
+				owned_by = root
 			}
+			is_city = yes
 			not = { base_production = 10 }
 		}
 		trigger = {
@@ -685,6 +697,7 @@ UFC_mission_slot_2 = {
 			2499 = {
 				change_trade_goods = cotton
 				add_base_production = 1
+				center_of_trade = 1
 			}
 			893 = {
 				change_trade_goods = cotton
@@ -702,8 +715,8 @@ UFC_mission_slot_2 = {
 				owned_by = root
 				trade_goods = cotton
 				trade_goods = fur
-				is_city = yes
 			}
+			is_city = yes
 			not = { base_production = 10 }
 		}
 		trigger = {
@@ -1123,7 +1136,7 @@ UFC_mission_slot_3 = {
 			4637 = {
 				owned_by = ROOT
 				is_core = ROOT
-				development = 6
+				base_production = 6
 			}
 		}
 		effect = {
@@ -1148,17 +1161,12 @@ UFC_mission_slot_3 = {
 			OR = {
 				province_id = 1988
 			}
-			OR = {
-				has_dock_building_trigger = no
-				has_shipyard_building_trigger = no
-			}
 		}
 		trigger = {
 			1988 = {
 				owned_by = ROOT
 				is_core = ROOT
-				has_dock_building_trigger = no
-				has_shipyard_building_trigger = no
+				has_dock_building_trigger = yes
 			}
 		}
 		effect = {
@@ -1222,7 +1230,7 @@ UFC_mission_slot_3 = {
 		required_missions = { UFC_mission_from_the_southpole_to_red_river_valley }
 		trigger = {
 			num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
-				value = 50
+				value = 100
 				continent = north_america
 			}
 			num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
@@ -1234,6 +1242,14 @@ UFC_mission_slot_3 = {
 			add_country_modifier = {
 				name = UFC_modifier_american_hegemony
 				duration = -1
+			}
+			hidden_effect = {
+				south_america = {
+					add_permanent_claim = root
+				}
+				north_america = {
+					add_permanent_claim = root
+				}
 			}
 			custom_tooltip = UFC_tooltip_cocoa_prices
 			country_event = { id = prices.29 }
@@ -1755,6 +1771,12 @@ UFC_mission_slot_4 = {
 			increase_trade_goods_discovery = {
 				trade_goods = tropical_wood
 			}
+			peru_region = {
+				discover_country = UFC
+			}
+			upper_peru_region = {
+				discover_country = UFC
+			}
 		}
 	}
 
@@ -1769,31 +1791,33 @@ UFC_mission_slot_4 = {
 		}
 		trigger = {
 			OR = {
-				AND = {
-					795 = {
-						owner = {
-							OR = {
-								has_opinion_modifier = {
-									who = ROOT
-									modifier = scornfully_insulted
-								}
-								has_opinion_modifier = {
-									who = ROOT
-									modifier = insulted
-								}
+				795 = {
+					owner = {
+						OR = {
+							has_opinion_modifier = {
+								who = ROOT
+								modifier = scornfully_insulted
+							}
+							has_opinion_modifier = {
+								who = ROOT
+								modifier = insulted
 							}
 						}
 					}
 				}
-				AND = {
-					795 = {
-						owner = {
-							alliance_with = ROOT
-							has_opinion = {
-								who = ROOT
-								value = 180
-							}
+				795 = {
+					owner = {
+						alliance_with = ROOT
+						has_opinion = {
+							who = ROOT
+							value = 180
 						}
+					}
+				}
+				795 = {
+					or = {
+						owned_by = root
+						owned_by_subject_of = root
 					}
 				}
 			}
@@ -1823,9 +1847,25 @@ UFC_mission_slot_4 = {
 					cede_province = root
 				}
 			}
-			else = {
+			elseif = {
+				limit = {
+					795 = {
+						owner = {
+							alliance_with = ROOT
+							has_opinion = {
+								who = ROOT
+								value = 180
+							}
+						}
+					}
+				}
 				potosi_area = {
 					add_permanent_claim = ROOT
+				}
+			}
+			else = {
+				795 = {
+					add_base_production = 2
 				}
 			}
 		}
@@ -1907,7 +1947,7 @@ UFC_mission_slot_4 = {
 							continent = north_america
 							continent = south_america
 						}
-						value = 50
+						value = 150
 					}
 				}
 				and = {
@@ -1917,7 +1957,7 @@ UFC_mission_slot_4 = {
 							continent = north_america
 							continent = south_america
 						}
-						value = 75
+						value = 200
 					}
 				}
 			}
@@ -2325,8 +2365,8 @@ UFC_mission_slot_5 = {
 			OR = {
 				trade_goods = livestock
 				trade_goods = grain
-				is_city = yes
 			}
+			is_city = yes
 			owned_by = root
 			not = { base_production = 10 }
 		}

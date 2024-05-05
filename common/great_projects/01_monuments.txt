@@ -4898,6 +4898,12 @@ alhambra = {
 
 	#can we build it?
 	build_trigger = {
+		custom_trigger_tooltip = {
+			UFC = {
+				not = { has_country_flag = UFC_flag_removal_alhambra }
+			}
+			tooltip = UFC_tooltip_removal_alhambra
+		}
 	}
 
 	#what to do when it's built
