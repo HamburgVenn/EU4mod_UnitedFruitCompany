@@ -1,0 +1,15 @@
+UFC_province_triggered_modifier_reconstruction = {
+	potential = {
+	}
+	trigger = {
+		has_state_edict = UFC_edict_reconstruction
+		or = {
+			continent = south_america
+			continent = north_america
+			continent = oceania
+		}
+		religion_group = pagan
+	}
+	local_development_cost = -0.05
+	local_monthly_devastation = -1
+}

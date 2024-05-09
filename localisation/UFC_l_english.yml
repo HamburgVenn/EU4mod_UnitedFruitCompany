@@ -222,6 +222,7 @@
  UFC_string_ADU:0 "‰R¾bS¯elQøS"
  UNTIL_ANNEX_OR_DEPENDANCE:0 "ôv0RÖNìNNQ/fbìN„vPRlQøS"
  UFC_modifier_adu_company:0 "‰R¾bS¯ePRlQøS"
+ UFC_triggered_modifier_adu_company:0 "‰R¾bS¯ePRlQøS"
  UFC_string_ADU_ADJ:0 "‰R¾bS¯elQøS"
 
  new_alhambra:0 "°e?–SU^Éb«R"
@@ -232,6 +233,19 @@
  flavor_UFC.47.a:0 "Šbçe¿k,dzzÿbìN‰Sb.hQ°e„v?–SU^Éb«Rÿ"
  flavor_UFC.47.b:0 "–¿OîO*N'Y+R…X1S—V†N0"
  UFC_tooltip_new_alhambra_bonus: "‚YœgbìNïSåN(W§Y1500§!t^MRSvQÐcGS0RÄ–OîXKN„vIrµu"
+
+ flavor_UFC.48.title:0 "ùR[MCA.GetName]„vn"
+ flavor_UFC.48.desc:0 "(W[MCA.GetName]„vô•ŒTbìN2—ÿÌR¶^„v[MCA.GetName]èK„	gN/eárMOwÛS›QOþVÍS—b[MCA.GetRulerTitleAndNameOrRegency]0‚YœgbìNSÖN¥c0RôTÿblšI`èegÿbìNïSåNSÖNS:NSV0WI`cwåN·ƒÖSSV0W„vµc6RCg0"
+ flavor_UFC.48.a:0 "r^—Vo®N"
+ UFC_tooltip_infiltration:0 "bìN°s(WVËYïSåNO(un:g6RÿSVbìNùRÐgýV„vô•ŒQ:V¦^¾0R60åNNöeÿS	gïSýw·ƒ—Vå‹ýV–™ý:SßW„v8lEN'`±Rðyÿ\n8lEN'`±RðyùRŽN,gtag^—8^Í‘‰ÿåNT`O1SåwS:NÀNHNfU~"
+ flavor_UFC.49.title:0 "ùR[ufc_target_spy_network_country.GetName]„vn"
+ flavor_UFC.49.desc:0 "(W[ufc_target_spy_network_country.GetName]„vô•ŒTbìN2—ÿÌR¶^„v[ufc_target_spy_network_country.GetName]–™ý:SßW	gN/eárMOwÛS›QOþVÍS—b[ufc_target_spy_network_country.GetRulerTitleAndNameOrRegency]0‚YœgbìNSÖN‰RhQ¥c0RôTÿblšI`èegÿbìNïSåNSÖNS:NSV0WI`cwåN·ƒÖSSV0W„vµc6RCg0"
+ flavor_UFC.49.a:0 "r^—Vo®Nÿ"
+ flavor_UFC.49.b:0 "°s(WØN/föeP0"
+ flavor_UFC.50.title:0 "ôTÿblšÐ³lú^b"
+ flavor_UFC.50.desc:0 "SVåTzèbŸRSNX‚Ð“9‚ÎNôTÿblš„vS¸SVeQµu/WSS„vôTÿblšÐ³lÿQÇBSµu„v4lø•S9‚êSÎNWS¹VúQöeÿ0k|TðXÍT‰V†Nte*NôTÿblšI`è0\n\nôTÿblšÐ³l/fTwTœgÁTåTzèZPúQ„v>NN©wîv„vGYùÿƒRVhTôV„vVn4lŒT³l4lÛeQ4lSÿÇNBSNBS„v4lkW”–»y…Qè4lnNwm4l0:N†NÏQS4lkW…Qè„v4lnAm1YÿÐ³l³lŠ^N'Ywm¥cYKSÏ‘s^PŸÿSV9‚êSzÇ4lø•öeÿ‰˜z˜”^noPlÿàVdkÏk)YêS	gúVšRöeô•ïSåNzŠ0\n\nFOsSO‚YdkÿôTÿblšÐ³l„vú^bmN:NTwTœgÁT„vib.Vú”s^†NSïÿN/e¢ci––òTÏuúQÑSÿV/T†NôTÿblšWS¹„v'Ywm„v¢c0t0"
+ flavor_UFC.50.a:0 "*gegïSgÿ"
+
 
  #character stories
  flavor_UFC.102.title:0 "°eu"#Columbus
@@ -371,6 +385,7 @@
  UFC_mission_the_moais_desc:0 "Î‘ÃVÃRÃR„vWS¹e¢ci––<ONNv^¡l	gËYÈu¿lNwwm¸S*‚Lˆÿw/fgNw‰WS¹eTLˆÛ0AS)YTÿÖNìNÑS°s†NN*NäNºNÊ`GY„vS›SÿNb—ßz6q	gpe*NçT:Y)YåT„vºNb—ówÏPÿ‰vF–„v±)Yp`0N²egê^Ébísyr„v9‚XT†^kyÀNHNYIm‚‚„våePRÿùR—RYe.oNsQÃV„vc„‹NOybÆQ†NYIm‚‚›SÙ*N‹TT0"
  UFC_mission_brazilian_wood_title:0 "¢u(gKNaN"
  UFC_mission_brazilian_wood_desc:0 "ôT‰ÿÙ/fNGr«ˆíp&^è–—gŒRhQ†‰Öv„vW0W0Nbx^TwTœgÁTlQøS„vVRƒy˜îvòTÏu«ˆû|ßuSÿbìNýwY(WÙGrW0WN¾‹ËzôfY„v8f/n0	gÜÁ‰SSÆ‹„vN›N4lKbŒTFUºNwÍ‘†NÙÌ‘„v(gPg„v÷N<PÿTc„‹NO3u÷‹N‰(u^Jkpôv¥cÁk—gVRƒ0Ïuc„‹NO…QèO®‹¨‹º‹ÿÙy˜3u÷‹«ˆybÆQÿN1uµNÁTxÑSèhQCg#íp&^(gPgµNNþ”„v„gú^0"
+ UFC_tooltip_tropical_wood_plantation:0 "/T(u§Yûyi¢u(g§!„vøvsQ³Q®‹0\nSÐc:yÿ(WŸSHragöNNÿ§Yíp&^(gPg§!„vgØš÷N<h:N3.00¤"
  UFC_mission_buenos_aires_title:0 "z˜Î˜KNÎW"
  UFC_mission_buenos_aires_desc:0 "^œRú‹¯eŒ‚)R¯eÿ(W‰åTyr¹eŠ-Na:Nz˜Î˜KNÎWÿPWK„(WÉbnfÉbTX³l„veQwmãSY0ÙÌ‘0W¿Rs^teÿ)YØš‘NámÿtS»yíp&^ÇŽNeÜÿNTòTåw„vÏuNmjOirÍyiÿSV0WXTåTIN‰ÎN‹NÏuNmHeÊvNON„vœQN0àVdkÿÝÍSlQøSÄ‰šR„vXTåTN,‚1S«ˆ‰R’c0RÙÌ‘åTjOÿÙÌ‘„vXTåT„vŒ—S÷‹Bl8^«ˆsšÞV0"
  UFC_modifier_buenos_aires:0 "z˜Î˜KNÎWÿ2OÃVKN0W"
@@ -378,8 +393,10 @@
  UFC_tooltip_buenos_aires:0 "ÝÍSlQøSÄ‰šR„vXTåTS(WÙÌ‘:NlQøSIY.sYOu0\n§RÖNìN8lÜNOQ¯r•§!"
  UFC_mission_coast_of_freedom_title:0 "ê1uKNèn"
  UFC_mission_coast_of_freedom_desc:0 "SVlQøS„vVÓbèè•XTåTŽNÙGrW0WöeÿÖNìN„vupB›<ONN×S0R†NÐgÍyaÓg0c„‹NONOó`0RÿSVÙÌ‘„v/nãS™q™qeeKNöeÿÙÌ‘„vûylOTŽVNÍyT:Nê1u„vN‰0ÖNìN‰Bl(WåTOuó/fc„‹NO-Nåb	góSN*N-^MOÿ&TRÖNìNSÒbÝu³uz0"
+ UFC_tooltip_enable_tobacco_plantation:0 "/T(u§YûyißpIƒ§!„vøvsQ³Q®‹0"
  UFC_mission_harbor_of_the_lone_star_title:0 "dRfKNŒn"
  UFC_mission_harbor_of_the_lone_star_desc:0 "lQøS¥c³u†NNybñ‚<hpQûylÿjO:NÓbRƒ–„vbXT#ÙGr/nŒn¿l¸SW0W„vVÑS0FO/fOÔk)RšN„vwXTåTìNmNT–klèè•±Rðy†NÙGrW0W„vÓbRƒCg0–klèÏutTöeybÆQ†N2N*NÓbRƒ–ùRøv»W0W„vVÑSÿP``NENÙÌ‘1SOÛwþvÍ‘Í‘0"
+ UFC_tooltip_enable_cotton_plantation:0 "/T(u§YûyiÉh±‚§!„vøvsQ³Q®‹0"
  UFC_mission_cerro_de_potosi_title:0 "ÌRv™KNqS"
  UFC_mission_cerro_de_potosi_desc:0 "SVèÇôTÿblšÐ³lÿ¿lNwWS¸S*‚Lˆpeåeÿ1SïSåN¥cæ‰0RàQ*NäSwwK„T„v‡ef0ÖNìN(W²qSNú^Ëz†NÎW^ŒT¯h0uÿáOðN*Y3–^yÿPWåb0NÌR„vö”ÿwwNêåw0lQøS„vfR/gxvzèè•Å4xÑ‹†NSV0Wí‹Šÿv^NgØšK‘•ú^Ëz†NTwû|0îvMRFd(Wc„‹NO<wMR„vêS	g2N*N	ébÿÇ®|ß˜0IƒoƒŒTNRFUÁT-pN‹s QŒTCgVgÿbwÇ¾uÅu0e™RƒŒTb‰N:VÖSjŒ:Y0"
  UFC_mission_mapuche_title:0 "NHSKNl"
@@ -407,12 +424,30 @@
  UFC_modifier_grain_supply:0 "EQ³„v7Œir›OÙu"
  UFC_mission_from_the_southpole_to_red_river_valley_title:0 "ÎNgWSKN0W0R¢u³lKN7Œ"
  UFC_mission_from_the_southpole_to_red_river_valley_desc:0 "TwTœgÁTlQøS„vib.VòTÏuàQÑ†‰ÖvŽ2mhQƒX0TÍy—RYe0‡eS„vûylPŸZwNXÿqQTVÑSÙGru:gÃRÃR„v'YF–0TwTœgÁTlQøSSËYÈuÉyc?–jSjgÉb·O¦žöS„v`ó`ÿR.N*N‡eSYCQ0N×OININ„vNLuèT‹WON0"
+ UFC_tooltip_estate_culture_pluralism:0 "»lNNb	gáOðN§Y[Root.Religion.GetName]§!ÿFON/f§Yøv¹R‡eS§!b§Y[Root.Culture.GetGroupName]‡eSÄu§!„vwýNÿS·ƒ—V§Y0YCQ‡eSININ0§!îOckÿHeœg:Nÿ§YÖSˆmÏu0qQŒTýV‡eS¹RÍV0îOckTiRYO„v‡eSN¹RÍVé`Z0§!\n,g0WÛSqN¦^ÿ§G-1.5§!\n,g0Wz6eîOckÿ§G+23%§!\n,g0W.OYe:V¦^ÿ§G+2%§!\n,g0WºN›RîOckÿ§G+23%§!\n,g0W4lKbîOckÿ§G+15%§!"
+ UFC_tooltip_estate_culture_pluralism_revoke:0 "án³agöN„vwýNS1Y»S§Y0YCQ‡eSININ0§!îOckÿb`YÏu0qQŒTýV‡eS¹RÍV0îOckTiRYO„v‡eSN¹RÍVé`Z0"
+ UFC_modifier_staff_culture_pluralism:0 "‡eSYCQININ"
+ UFC_tooltip_enable_estate_culture_pluralism:0 "/T(uXTåT6–BSyrCgÿ§Y‡eSYCQ§!"
  UFC_mission_american_hegemony_title:0 "Ž2m8—Cg"
  UFC_mission_american_hegemony_desc:0 "O¦žöS0åT&O^0ÃWÌ‘KQŒg0“^Às&&c„‹NONãNãN¾|f:Vr^„vc„‹N•&^†˜TwTœgÁTlQøS(WÙ^²ˆ„vŽ2m'Y0WNib.V0bìN„vFUÁTVS0R†NNLuT0WÿˆVYµNNý¾0R†N„W­e0WMOÿ0ÌRnnN­e0WAmeQlQøS„v&îv0bìNSb:NŽ2m„v8—CgÿS0ÌRR«NÙuÏk*N?aaVÓb°e)Y0W„vºNÿ"
  UFC_mission_the_return_title:0 "RVaN"
  UFC_mission_the_return_desc:0 "–NwNãN²NÿfÿàQNNˆVSºNØ°‹—Vÿ?–jSjgÉb·O¦žöSÎNçe—RIN<hÉb³u¾ÃWs|SýVKb-NP—V†N,rNvhÑ‘ÿÎNdkVR†N—Ê`NLu„vTwTœgÁTlQøS0‚YÊNÿ<hÉb³u¾ÃWs|SýVòTÏu4xK„N*Xÿ:V'Y„vbìN—‰±Rðyv^¥c¡rÙGrW0WN/f:N†N—RYeb/flÏeÿw/fjO:NÞVRVçeNLu„vóg0"
  UFC_mission_the_rereconquest_title:0 "QQVgÐ¨R"
  UFC_mission_the_rereconquest_desc:0 "(Wpe*NNªu…Qÿ?–Éb/OºNÙuOÔk)RšNJS›S&^eg†NHQÛ„vœQNŽb/gŒTfR/gåwÆ‹ÿÙuÙGrÑž—f„v/k'YF–&^eg†NIQf0±›Nê'Y„v)YINYe’VåN—RYeb‰N„vTINùRidSºNÑSw†NQVgÐ¨R0(WTwTœgÁTlQøSwegÿÙGrW0Wàeº‹áOðN‚YUOÿgR5„v”^å‹/fºNlŒTFUÁT0‰R¾bS‰šN„vTÔˆI`	gN)YOÞV0RÙGrEeWÿåNŒcµc^Xôu)RšN8f„vTINÿ"
+ UFC_tooltip_no_horse_for_cavalry:0 "`O	éb†N§Y0‘šuQjOb0§!&&\n`O(Wó`ÀNHNJUÿŽ2mâe¡l	g5ÏemN¡l	glšÿ"
+ UFC_modifier_rereconquest_drill_reform:0 "8^YÜV›Q"
+ UFC_modifier_rereconquest_artillery_reform:0 "IeÎWÜV›Q"
+ UFC_modifier_rereconquest_marine_reform:0 "wmmÜV›Q"
+ UFC_modifier_rereconquest_mercenary_reform:0 "cOuQÜV›Q"
+ UFC_modifier_rereconquest_tercio_reform:0 "'YF–ÜV›Q"
+ UFC_modifier_rereconquest_more_tercio_reform:0 "'YF–ÜV›Q"
+ UFC_tooltip_rereconquest_reform_if_drill:0 "‚YœgbìNÇ‘(u†N?eœ^9ei—§Y0	gÄuÇu„vÂSŒèè•0§!b§Y0cíu­‹Ãu0§!"
+ UFC_tooltip_rereconquest_reform_if_artillery:0 "‚YœgbìNÇ‘(u†N?eœ^9ei—§Y0›Q‹NåTz0§!b§Y02–¡VÿY`0§!"
+ UFC_tooltip_rereconquest_reform_if_marine:0 "‚YœgbìNÇ‘(u†N?eœ^9ei—§Y02NhN¾|0§!b§Y0wm›QLwNS0§!"
+ UFC_tooltip_rereconquest_reform_if_mercenary:0 "‚YœgbìNÇ‘(u†N?eœ^9ei—§Y0cOuQ†˜üR0§!b§Y0¾|ñ‚Ç–cOuQ0§!"
+ UFC_tooltip_rereconquest_reform_if_tercio:0 "‚YœgbìNÇ‘(u†N?eœ^9ei—§Y0'Y¹e5–uQâV0§!"
+ UFC_tooltip_rereconquest_reform_if_cavalry:0 "‚YœgbìNÇ‘(u†N?eœ^9ei—§Y0‘šuQjOb0§!"
+
  UFC_mission_business_associate_title:0 "FUNTjOO4O"
  UFC_mission_business_associate_desc:0 "‹†6qbìNêðyTwTœgÁTlQøSÿFO(W±›NH–çe`ó`„v'k2mºNwegÿbìNŒTFUNqQŒTýVmN¡lÀNHN,g(:S+R0‚YœgbìNïSåNŒT'k2m„vFUNqQŒTýVìNbVbFUNTjOsQû|ÿmN¸‹ïSåN’NøvÖSˆm8fÁX’Wÿ:NbìN„vFUÁTŒb0Rôf‹Y„v•ï0\níp±šN/fbìN„v–™	ÿíp±šN9‚+Y/flQøS„vVRCQËRÿ1SÞc„‹NOŒTåTO-Ný	gNSíp±šNºNÿvQ/k/fZ<S¯eºNÿÖNìN*jZwárÈ‹ÿFONbìN„v8f)RÊvsQû|*SEmÿgT/fIl(„Tßvÿ‚YœgbìNó`‰ÓgcS'kÿ1SÅV‰˜,Tî•ÖNìN„vaÁ‰0"
  UFC_mission_monopoly_and_dumping_title:0 "„W­eN>P•"
@@ -427,7 +462,15 @@
  UFC_mission_global_business_empire_title:0 "hQtFUN^ýV"
  UFC_mission_global_business_empire_desc:0 "°e„vc„‹NO•ÛSYewÉbeS·lšSKQ¯eÿ:YÖS†Nte*NTwTœgÁTlQøS„vµc6RCg0ÖNlšNÍ‘Äuc„‹NOÿb/fNO÷N6epN·ƒ—VTwTœgÁT„v¡wýNÿb/fåN Q•QX‡v„vt1uôv¥ceR:Yçec„‹N„v¡wCg0lšSKQ¯eö^íu†N,rNãNc„‹NO„v‡eSŒT—RYe?eVrÿFOùRŸSOOl0XTåTbYegûyl„vsQèlz¦^tS'YN‚YMR†N0\nlšSKQ¯e‰Sb.„vÿ/fN*N·Qw‘wØšHe„vhQtFUN^ýV0"
  UFC_tooltip_newgameplus:0 ",rŒNãNc„‹NOòTÏu:YÖS†NCg›R"
- UFC_tooltip_global_business_empire:0 "[root.GetName]S·ƒ—VhQNLu/nãSwýNŒT8f-NÃV„v8lEN'`±Rðyÿ"
+ UFC_tooltip_global_business_empire:0 "[root.GetName]S·ƒ—VhQNLu/nãSwýNŒT8f-NÃV„v8lEN'`±Rðyÿ\n·ƒ—VùRNb	gåb	g/nãSb8f-NÃVýV¶R„v±Rbt1uÿ§YVè•ÿê1u8fÿ§!"
+ cb_UFC_open_to_trade:0 "Vè•ÿê1u8fÿ"
+ cb_UFC_open_to_trade_desc:0 "TwTœgÁTÅV‰˜INüRå‹0W:S„v8fAm0"
+ UFC_wargoal_open_to_trade:0 ":YÖS/nãSŒT8f-NÃV"
+ UFC_wargoal_open_to_trade_desc:0 ":YÖS/nãSŒT8f-NÃV"
+ UFC_OPEN_TO_TRADE_WAR_NAME:0 "$ORDER$$FIRST$ùR$SECOND_NAME$„v:Vë8fb‰N"
+ PEACE_po_UFC_reduce_mercantilism:0 "O6RÍ‘FUININ"
+ CB_ALLOWED_po_UFC_reduce_mercantilism: "Vè•ÿê1u8fÿ"
+ po_UFC_reduce_mercantilism_desc:0 "å‹ýV„vÍ‘FUININÅV‰˜«ˆO6Rÿê1u8fMb/f*geg0\nå‹ýV„vÍ‘FUININSôv¥cÏQS10%"
  UFC_mission_east_asia_tea_title:0 "NšN„v6ƒ"
  UFC_mission_east_asia_tea_desc:0 "6ƒÿNÍynŽN-NýV„vØšµun™™eÿ(WäNàepe'k2mŒT-NN5Ïeý‹KNå‚jž0SV?–Éb/OºN*b­e†N'k2mºN¿lNwNøuKNïN»S„vSTÿ6ƒöS„v÷N<h1SËYÈuØšESNN0‚YœgbìNïSåN·ƒ—VNšN„v6ƒöS8fÿÙSÐc›OèT'Y„v)R¦mzzô•0"
  UFC_tooltip_tea_prices:0 "bìNSàeagöNæ‰ÑS§M6ƒöSŒTÖ|§!„v÷N<hØS¨R‹NöN"
@@ -498,6 +541,7 @@
 
  UFC_mission_workers_and_board_title:0 "åTONc„‹NO"
  UFC_mission_workers_and_board_desc:0 "c„‹NO-N	gÙ7hN*NV‰|ÿegêíp±šN„v4lKbwåT&O^I`/fŒT9‚XTìNSbbNGr0¡l	gºN¨‹ŒSwåT&O^ÿÖN/f4lKbãS-Nle1r„vw9‚•ÿmN/f–O¦žöSVRTwTœgÁT„vŸRËRSSW„„vºN04lKbìN(WwåT&O^„v&^†˜NRú^†NN*NëSZPåTO„vÄuÇuÿNVËYêS/f9‚+YìNÿTegàQNNÏk*NKYb(WÓbRƒ,rN¿u„vXTåTý ReQ†NåTO0c„‹NOÅV‰˜NaÍ‘YtŒTåTOKNô•„vsQû|ÿN‰ó`NwÖSƒRÿ±/fN¡wýwY9e)Ybc0W„v›RÏ‘0"
+ UFC_parliament_name:0 "åTO"
  UFC_staff_estate:0 "XTåT"
  UFC_staff_estate_desc:0 "TwTœgÁTlQøS„vXTåT/fcNºN‹NèŒr¢‹†N³R¨RTT„vckVÇ–XT0ÖNìNïSýw/fegêçe'YF–„v9‚XT0FUºN0s^lb1Y»SW0W„vçe5ÏeÿgÈu(WN¸uOS¦ub—MRb:N†N0WMOs^Ir„vºN0ÖNìNNT:NTwTœgÁT„vIQf*gegTYâlÿmNOPŸÃVOS›RNc„‹NOþRÃV—eÒ‰0‚Yº‹‚YUOÿêS‰³R¨R›R÷N<P„vs^aˆN«ˆSb4xÿÖNìN8lÜý/flQøSgàVÚ‹„vÇ–XT0"
  land_ownership_modifier:0 "XTåT0µN"
@@ -531,6 +575,7 @@
  UFC_mission_genoese_renaissance_desc:0 "wåT&O^ÑgI`/fÙVŽNYeÖN„v°eu?QPRKQÌ‘¯eXbVfRÉbNí‹ŒT?–Éb/Oí‹ÿFOSV,Tû•¶RaN±¹Þ‹u†N°e„v‡eSÐ¨RöeÿÖNØ/fSSÙVÙVJT+R†N¶RºNŒTc„‹NOÿ&^NwFU–Ð‹NwïSïSÞV†Nçe'YF–0SVÖNÔÞVöeÿ9‚NNÅNÅN/fö”^ŒTÄžÑ‘ÿØ	g°eØmeg„va'Y)RØuIuŒTÕ–QX0"
  UFC_mission_cradle_of_colonialism_title:0 "–klININÑSn0W"
  UFC_mission_cradle_of_colonialism_desc:0 "'k2m„vN›NýV¶RùRbìNTwTœgÁTlQøS„vÑSUS/jV^—8^‹YGYÿ²‹:NÙÍyTSŸSOOl0VÓb°e†˜W„vJSµOeuVib.V¹eV^—8^T¹Lu†ußWÔkƒúVšR„v'k2mýV¶RHeÿNÿv^SÙÍyib.Vï„Vðy:N–klININ0>f6qÿôTÿblš„vbŸR:NÖNìNhËz†Nœi7h0"
+ UFC_tooltip_only_new_world_i:0 "‚YœgbìN(W§Y–klININ§!«ˆÑS°sMRŒRbûN¡Rÿ\n[Root.Capital.GetCapitalName]Sb:N§Y–klININ§!„v/UNwn0Wÿ\n\n‚YœgbìN(W§Y–klININ§!«ˆÑS°sTŒRbûN¡Rÿ"
  UFC_mission_secularism_flourished_title:0 "N×OININì„ÃRÑSUS"
  UFC_mission_secularism_flourished_desc:0 "‡eSYCQ0—RYeê1u0ýBl)RÊv0TSt'`0Ù1S/fwO¦žöS<w-N„vN×OININ0N×OININ(WTwTœgÁTlQøS…QèòTÏuAmLˆ†NpeASt^†NÿfR/gè²‹:NÿÙNÅNÅN/f1uŽNwO¦žöS„v†˜üRŒT¨cLˆÿmN/fONßu6RÏuNm„vÅV6qÓuœg0SV6qÿmN	gga<wKNºNcúQÿfR/gèè•(WXTåT„v¾|^yÄRXb¹eb—ÄRˆN†N^—8^Y„v.^©R0"
  UFC_modifier_secularism_flourished:0 "N×OININì„ÃRÑSUS"
@@ -624,7 +669,10 @@
  UFC_tooltip_staff_estate_privilege_change:0 "å‹yrCg²d•öeÅNmc1Y5%£estate_loyalty£àVÚ‹¦^0"
  UFC_staff_estate_salary:0 "ÑS>eåTª…"
  UFC_staff_estate_salary_desc:0 "Ïkt^ÑSåTD„vöePý/fTwTœgÁTXTåTìNgØštQ„vöePÿuó	gºNÐc®‹²‹ÑSª…åejO:NÕlšR‚‚GPåeÿÙ*NÐc®‹«ˆc„‹NO(WNSöe…Q¨‹º‹sšÞV0"
- UFC_stuff_estate_ownership:0 "XTåT†˜0Wåb	gCg"
+ UFC_stuff_estate_ownership_desc:0 "XTåT†˜0Wåb	gCg"
+ UFC_staff_estate_culture_pluralism:0 "‡eSYCQ"
+ UFC_staff_estate_culture_pluralism_desc:0 "SVTwTœgÁTlQøS(WŽ2mÙz3zßöeÿT*N‡eS„vûylýb:N†NTwTœgÁT„vckVXTåT0êS‰ÏuÇN×OININYe²wÿeg†N1S/fTwTœgÁTºN0"
+
 #religion
  secular_humanism_group:0 "N×OºN‡eININÄu"
  secularism:0 "N×OININ"
@@ -644,7 +692,10 @@
  UFC_religion.7.desc:0 "Nó`aŒ-N„vNTÿ-NNS‡eSW…Q„vN¹eáOðNáOO/fv^N/f±7h¹Rf¥c×SN×OININ„vÂ‰¹p0‹†6qN¹eáOðNøvƒŽNšN/OÉbUN^yYenfMåb	gƒ:NËRŒg„vYeagÿFO9hñm‚„úV„vaNWÂ‰õVŒTÑS¾„vòTfRSOû|ýùRbìN„vN×OININÂ‰¹pXR(WNS²QûQ0dkYÿTÍyiOYeýøvSVýBl^yØyININ„vØy.OÿÙùRN×OS/fNS„v²QûQ0àeº‹‚YUOÿáOIYQ¶RòTfR„v-NýVºN–™HQ¥c×S†NbìN„vN×OININÂ‰¹pÿ'YÏ‘èlÍ‘ÊNN„vb1SŒT«N×S„v-NýVFUºNVËYNwmÏuFU0FOùRŽNÐg›N‹˜úV„viOYeŒT^ySáO’VwŠÿN×OSïSýwØ—‰Nµköeô•0"
  UFC_religion.7.a:0 "*gåwuÿ	qåw‰kÿ"
  harmonized_easter:0 "‡TN¹eáOðN"
-
+ flavor_UFC.7005.title:0 "-NýV„vTwTœgÁTFU–"
+ flavor_UFC.7005.desc:0 "–Nw'YÏ‘TwTœgÁTFUºNŒmeQ-NýVÿ÷thV„v—BlÞ˜¨m0-NýV÷thV(W'k2m'Y×S0kÎÿTöeÿ-NýVºNZPpNVSêS¥c×SwÑ‘‹vö”0"
+ flavor_UFC.7012.title:0 "^—2maŒYr„vVeQ"
+ flavor_UFC.7012.desc:0 "–Nw°Qg„vnÛeQÿNWSšN„v'YaŒÍy²peÏ‘N­eÏQS06qwÿ^:WùRaŒYr6RÁT„v—BltSÎN*gÏQSÿ¸‹Y‹s²R«R÷^^gýwY·ƒÖSôfY„vaŒYr6RÁT0Nbx^ÿN^—aŒYr„vVeQïSåNo‚‹Y0W%VT^:W—Bl0"
  UFC_religion.11.title:0 "^yØyININYeâV"
  UFC_religion.11.desc:0 "–îO0æ‚îO0Øy.O0Ï‚òƒ>m0îOSb–&&Ù›NYeâV(WVYe>y:S…QãNhˆNwgûRBl^yØyININupa„v—RYeÓu>yâVSO0Ú‹6qÿƒRìNùRbìNXTåT„v¾|^yNLuQX.wQ	gøvSVf>f„vHeœgÿ(W#c—VúW,gåTDTÿÙ›NYeâV…Q„våTºNìNŽVŽVO»SûRŒb¾|^yÄRXbw^—ûRBlN×O„vëVPN0\n\nàeº‹‚YUOÿÇ¦^„v^yØyININýBl/f	g–`ŽNN×OºN‡eININ¾|^y„vÿbìN”^å‹±R^Ù›NYeâV:N^—ÕlÿSÙ›NûRBl^yØyININ„váO’VìNÉbÞVckSTÿ"
  UFC_religion.11.a:0 "R:NLˆ8Sp‰wÿNjOdRB›Î‘<›0"
@@ -729,8 +780,33 @@
  flavor_UFC.9005.d:0 "Ø	g¡l	gôf‹Y„v	éb¹eHhÿ"
  flavor_UFC.9005.e:0 "ýÀNHNt^ãN†NÿØ(WKhÍy.OßußpIƒ0"
 
+ UFC_decision_cotton_plantation_title:0 "ûyiÉh±‚"
+ UFC_decision_cotton_plantation_desc:0 "âl¯eFUºN:NbìN&^eg†NN›NegNwpS¦^ŒT-NýV„vÍyPRÉh±‚0ÙÍyiir„vœgžR-Nt…+TNwÔgowšSžR„v²uôuÿvQÝO–fz¦^ŒTÏuNm÷N<PÜ…Ûk®v0bìNïSåNSÕ‹(WÙGr'Y0WN­dÍyÙÍyiirÿêS/f—‰N›NºNKbegÛLˆÇ‘Xd0"
+ flavor_UFC.9006.title:0 "ûyiÉh±‚"
+ flavor_UFC.9006.desc:0 "ÓbRƒèÄ‰R†NN›NTÍyiÉh±‚„v0W:Sÿ‚YœgbìN(W[ufc_target_plantation_first_province.GetName]0[ufc_target_plantation_second_province.GetName]bw[ufc_target_plantation_third_province.GetName]ûyiÉh±‚ÿSO·ƒ—VNrÔkƒ0NšS„v)R¦m0ÓbRƒèO(W¥cNeg„vNµköeô•Ì‘ÿÄuÇuºNKb(W	šR„v0W:SùW²wÉh±‚0"
+ flavor_UFC.9006.a:0 "(W[ufc_target_plantation_first_province.GetName]ûyiÉh±‚"
+ flavor_UFC.9006.b:0 "(W[ufc_target_plantation_second_province.GetName]ûyiÉh±‚"
+ flavor_UFC.9006.c:0 "(W[ufc_target_plantation_third_province.GetName]ûyiÉh±‚"
+ flavor_UFC.9006.d:0 "Ø	g¡l	gôf‹Y„v	éb¹eHhÿ"
+ flavor_UFC.9006.e:0 "—r†Nÿdk‹NåNTQô‹0"
+
+ UFC_decision_tropical_wood_plantation_title:0 "ûyi¢u(g"
+ UFC_decision_tropical_wood_plantation_desc:0 "ôT‰ÿ(W‰åTyr¹eŠÌ‘/f¢u(g„va`0ôT‰Ï‚(g„v(g¹uz˜ôv0(g(ZWç—ÿvQhr^HT°s¢ur‚ÿ/f)Y6q„vÓg™ebR0FOî•˜˜(WŽNÿå‹Íyh(gu•ƒ:Nba0bìNïSýw—‰'YÏ‘KhùWÿåNÏ‘ÖSÜw0"
+ flavor_UFC.9007.title:0 "ûyi¢u(g"
+ flavor_UFC.9007.desc:0 "ÓbRƒèÄ‰R†NN›NTÍyi¢u(g„v0W:Sÿ‚YœgbìN(W[ufc_target_plantation_first_province.GetName]0[ufc_target_plantation_second_province.GetName]bw[ufc_target_plantation_third_province.GetName]ûyi¢u(gÿSO·ƒ—VNrÔkƒ0NšS„v)R¦m0ÓbRƒèO(W¥cNeg„vNµköeô•Ì‘ÿÄuÇuºNKb(W	šR„v0W:SùW²w¢u(g0"
+ flavor_UFC.9007.a:0 "(W[ufc_target_plantation_first_province.GetName]ûyi¢u(g"
+ flavor_UFC.9007.b:0 "(W[ufc_target_plantation_second_province.GetName]ûyi¢u(g"
+ flavor_UFC.9007.c:0 "(W[ufc_target_plantation_third_province.GetName]ûyi¢u(g"
+ flavor_UFC.9007.d:0 "Ø	g¡l	gôf‹Y„v	éb¹eHhÿ"
+ flavor_UFC.9007.e:0 "—r†Nÿdk‹NåNTQô‹0"
+
  #monuments
  headquarters_panama:0 "ôTÿblšI`è"
  UFC_tooltip_build_macondo:0 ",rŒNãNc„‹NO•VÓb†NlšTRYSG•0"
  macondo:0 "lšTRYSG•"
  el_mutun:0 "Fz'YÁ”ÿw"
+
+ #edicts
+ UFC_edict_reconstruction:0 "Í‘ú^Rƒ0W"
+ UFC_province_triggered_modifier_reconstruction:0 "Í‘ú^Rƒ0W"
+ UFC_tooltip_enable_edict_reconstruction:0 "/T(uôv^SÞTÕläNÿ§YÍ‘ú^Rƒ0W§!\nå‹ÕläNïSåN.^©RÅÏQSŸSOOlÁ™V&^eg„vRƒŸ^ÿêSýw(W0Wt'YÑS°söeãNO(u0"

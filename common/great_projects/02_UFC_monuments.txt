@@ -108,6 +108,7 @@ headquarters_panama = {
 
 		#what modifiers are added to the country when we have this project here on this tier
 		country_modifiers = {
+			development_cost = -0.05
 			state_governing_cost = -0.025
 		}
 
@@ -139,6 +140,7 @@ headquarters_panama = {
 
 		#what modifiers are added to the country when we have this project here on this tier
 		country_modifiers = {
+			development_cost = -0.1
 			state_governing_cost = -0.05
 			min_autonomy_in_territories = -0.025
 		}

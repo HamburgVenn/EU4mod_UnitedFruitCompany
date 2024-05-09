@@ -95,7 +95,7 @@ UFC_modifier_the_man_of_war = {
 }
 
 UFC_modifier_trained_marines = {
-	land_morale = 0.1
+	morale_damage = 0.15
 	fire_damage = 0.1
 	shock_damage_received = -0.1
 	land_maintenance_modifier = 0.1
@@ -310,6 +310,13 @@ UFC_modifier_sugar_plantation_cooldown = {
 
 }
 
+UFC_modifier_cotton_plantation_cooldown = {
+
+}
+
+UFC_modifier_tobacco_plantation_cooldown = {
+
+}
 UFC_modifier_granada_artillery = {
 	artillery_cost = -0.9
 	artillery_power = -0.9
@@ -318,11 +325,63 @@ UFC_modifier_granada_artillery = {
 UFC_modifier_mexico_pepper_plantation_cooldown = {
 
 }
+UFC_modifier_find_east_route_timer = {
 
+}
+
+UFC_modifier_tropical_wood_plantation_cooldown = {
+
+}
+#only for tooltip
 UFC_modifier_adu_company = {
 	trade_efficiency = 0.05
 	global_trade_goods_size_modifier = 0.05
 	global_foreign_trade_power = 0.2
 	merchants = 1
 	diplomatic_upkeep = 1
+}
+
+UFC_modifier_staff_culture_pluralism = {
+	local_unrest = -1.5
+	local_tax_modifier = 0.23
+	local_missionary_strength = 0.02
+	local_manpower_modifier = 0.23
+	local_sailors_modifier = 0.15
+}
+
+UFC_modifier_rereconquest_drill_reform = {
+	global_supply_limit_modifier = 0.15
+	military_tactics = 0.1
+	drill_decay_modifier = -0.2
+}
+
+UFC_modifier_rereconquest_artillery_reform = {
+	siege_ability = 0.15
+	defensiveness = 0.2
+	artillery_power = 0.05
+}
+
+UFC_modifier_rereconquest_marine_reform = {
+	discipline = 0.05
+	fire_damage_received = -0.1
+	shock_damage_received = -0.1
+	is_marine_modifier = yes
+}
+
+UFC_modifier_rereconquest_mercenary_reform = {
+	mercenary_discipline = 0.05
+	merc_leader_army_tradition = 0.5
+	mercenary_manpower = 0.5
+}
+
+UFC_modifier_rereconquest_tercio_reform = {
+	discipline = 0.05
+	fire_damage_received = -0.15
+	allowed_tercio_fraction = 0.25
+	is_tercio_modifier = yes
+}
+
+UFC_modifier_rereconquest_more_tercio_reform = {
+	has_tercio = yes
+	allowed_tercio_fraction = 0.25
 }

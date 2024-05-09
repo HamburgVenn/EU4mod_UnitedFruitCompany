@@ -1,0 +1,33 @@
+UFC_edict_reconstruction = {
+	potential = {
+		tag = UFC
+		current_age = age_of_discovery
+	}
+	
+	allow = {
+		current_age = age_of_discovery
+		mission_completed = UFC_mission_panama
+	}
+	
+	modifier = {
+		local_monthly_devastation = -2
+		local_development_cost = -0.05
+	}
+
+	notify_trigger = {
+		NOT = {
+			from = {
+				any_province_in_state = {
+					devastation = 1
+				}
+			}
+		}
+	}
+
+	color = { 69 238 161 }
+	
+	ai_will_do = {
+		factor = 0
+	}
+
+}

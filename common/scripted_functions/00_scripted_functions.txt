@@ -178,8 +178,10 @@ can_have_colonial_nations = {
 	condition = {
 		potential = {
 			FROM = {
-				has_country_flag = no_colonial_nations
-				has_reform = UFC_government_republic
+				OR = {
+					has_country_flag = no_colonial_nations
+					has_reform = UFC_government_republic
+				}
 			}
 		}
 		allow = {

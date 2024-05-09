@@ -93,7 +93,7 @@ UFC_mission_slot_1 = {
 		}
 		effect = {
 			custom_tooltip = sugar_price_ahead_of_time
-			country_event = { id = flavor_UFC.8 }
+			country_event = { id = flavor_UFC.7001 }
 		}
 	}
 
@@ -146,6 +146,7 @@ UFC_mission_slot_1 = {
 			newfoundland_area = {
 				add_permanent_claim = root
 			}
+			custom_tooltip = UFC_tooltip_enable_tobacco_plantation
 		}
 	}
 
@@ -156,8 +157,8 @@ UFC_mission_slot_1 = {
 		provinces_to_highlight = {
 			OR = {
 				trade_goods = tobacco
-				owned_by = root
 			}
+			owned_by = root
 			is_city = yes
 			not = { base_production = 10 }
 		}
@@ -177,9 +178,9 @@ UFC_mission_slot_1 = {
 			custom_tooltip = tobacco_price_ahead_of_time
 			if = {
 				limit = {
-					NOT = { has_global_flag = felt_hats_happened }
+					NOT = { has_global_flag = popularization_of_tobacco_happened }
 				}
-				country_event = { id = prices.30 }
+				country_event = { id = flavor_UFC.7002 }
 			}
 			add_years_of_owned_provinces_production_income = {
 				years = 10
@@ -250,51 +251,196 @@ UFC_mission_slot_1 = {
 				province_has_center_of_trade_of_level = 2
 				region = iberia_region
 			}
-			1293 = {
-				trade_share = {
-					country = ROOT
-					share = 70
+			or = {
+				and = {
+					1293 = {
+						trade_share = {
+							country = ROOT
+							share = 75
+						}
+					}
+					1295 = {
+						trade_share = {
+							country = ROOT
+							share = 75
+						}
+					}
+				}
+				any_subject_country = {
+					1293 = {
+						trade_share = {
+							country = prev
+							share = 75
+						}
+					}
+					1295 = {
+						trade_share = {
+							country = prev
+							share = 75
+						}
+					}
 				}
 			}
-			1295 = {
-				trade_share = {
-					country = ROOT
-					share = 70
-				}
-			}
+			reform_level = 5
 		}
 		effect = {
-			every_owned_province = {
-				if = {
-					limit = {
-						province_has_center_of_trade_of_level = 2
-						region = iberia_region
-					}
-					add_province_modifier = {
-						name = regulated_economic_growth
-						duration = 36500
-					}
-				}
-			}
-			add_prestige_or_monarch_power = { amount = 20 }
 			add_power_projection = {
 				type = UFC_rereconquest
-				amount = 10
+				amount = 25
 			}
-			1293 = {
-				add_trade_modifier = {
-					who = ROOT
-					duration = -1
-					power = 100
-					key = UFC_rereconquest_trade_modifier
+			if = {
+				limit = {
+					ADU = {
+						exists = yes
+						is_subject_of = root
+					}
+				}
+				1293 = {
+					add_trade_modifier = {
+						who = ADU
+						duration = -1
+						power = 100
+						key = UFC_rereconquest_trade_modifier
+					}
+				}
+				1295 = {
+					add_trade_modifier = {
+						who = ADU
+						duration = -1
+						power = 100
+						key = UFC_rereconquest_trade_modifier
+					}
+				}
+				every_subject_country = {
+					limit = {
+						capital_scope = {
+							region = iberia_region
+						}
+						not = {
+							tag = ADU
+						}
+					}
+					ADU = {
+						inherit = prev
+					}
 				}
 			}
-			1295 = {
-				add_trade_modifier = {
-					who = ROOT
+			else = {
+				1293 = {
+					add_trade_modifier = {
+						who = root
+						duration = -1
+						power = 100
+						key = UFC_rereconquest_trade_modifier
+					}
+				}
+				1295 = {
+					add_trade_modifier = {
+						who = root
+						duration = -1
+						power = 100
+						key = UFC_rereconquest_trade_modifier
+					}
+				}
+			}
+			custom_tooltip = UFC_tooltip_rereconquest_reform_if_drill
+			tooltip = {
+				add_country_modifier = {
+					name = UFC_modifier_rereconquest_drill_reform
 					duration = -1
-					power = 100
-					key = UFC_rereconquest_trade_modifier
+				}
+			}
+			custom_tooltip = UFC_tooltip_rereconquest_reform_if_artillery
+			tooltip = {
+				add_country_modifier = {
+					name = UFC_modifier_rereconquest_artillery_reform
+					duration = -1
+				}
+			}
+			custom_tooltip = UFC_tooltip_rereconquest_reform_if_marine
+			tooltip = {
+				add_country_modifier = {
+					name = UFC_modifier_rereconquest_marine_reform
+					duration = -1
+				}
+			}
+			custom_tooltip = UFC_tooltip_rereconquest_reform_if_mercenary
+			tooltip = {
+				add_country_modifier = {
+					name = UFC_modifier_rereconquest_mercenary_reform
+					duration = -1
+				}
+			}
+			custom_tooltip = UFC_tooltip_rereconquest_reform_if_tercio
+			tooltip = {
+				add_country_modifier = {
+					name = UFC_modifier_rereconquest_tercio_reform
+					duration = -1
+				}
+			}
+			custom_tooltip = UFC_tooltip_rereconquest_reform_if_cavalry
+			custom_tooltip = UFC_tooltip_no_horse_for_cavalry
+			hidden_effect = {
+				if = {
+					limit = {
+						OR = {
+							has_reform = organized_military_staff_reform
+							has_reform = sustained_discipline_reform
+						}
+					}
+					add_country_modifier = {
+						name = UFC_modifier_rereconquest_drill_reform
+						duration = -1
+					}
+				}
+				if = {
+					limit = {
+						OR = {
+							has_reform = military_engineering_reform
+							has_reform = defensive_stance_reform
+						}
+					}
+					add_country_modifier = {
+						name = UFC_modifier_rereconquest_artillery_reform
+						duration = -1
+					}
+				}
+				if = {
+					limit = {
+						OR = {
+							has_reform = amphibious_specialization_reform
+							has_reform = maritime_military_reform
+						}
+					}
+					add_country_modifier = {
+						name = UFC_modifier_rereconquest_marine_reform
+						duration = -1
+					}
+				}
+				if = {
+					limit = {
+						OR = {
+							has_reform = mercenary_leadership_reform
+							has_reform = doppelsoldner_reform
+						}
+					}
+					add_country_modifier = {
+						name = UFC_modifier_rereconquest_mercenary_reform
+						duration = -1
+					}
+				}
+				if = {
+					limit = {
+						has_reform = tercio_reform
+					}
+					add_country_modifier = {
+						name = UFC_modifier_rereconquest_tercio_reform
+						duration = -1
+					}
+					add_country_modifier = {
+						name = UFC_modifier_rereconquest_more_tercio_reform
+						duration = -1
+					}
 				}
 			}
 		}
@@ -419,7 +565,7 @@ UFC_mission_slot_1_NGP = {
 		}
 		effect = {
 			custom_tooltip = UFC_tooltip_tea_prices
-			country_event = { id = prices.7 }
+			country_event = { id = flavor_UFC.7003 }
 		}
 	}
 
@@ -526,9 +672,9 @@ UFC_mission_slot_1_NGP = {
 		}
 		effect = {
 			custom_tooltip = UFC_tooltip_silk_prices
-			country_event = { id = prices.24 }
-			country_event = { id = prices.2 }
-			remove_global_flag = europeans_in_china_happened
+			country_event = { id = flavor_UFC.7004 }
+			country_event = { id = flavor_UFC.7005 }
+			set_global_flag = europeans_in_china_happened
 		}
 	}
 }
@@ -703,6 +849,7 @@ UFC_mission_slot_2 = {
 				change_trade_goods = cotton
 				add_base_production = 1
 			}
+			custom_tooltip = UFC_tooltip_enable_cotton_plantation
 		}
 	}
 
@@ -712,10 +859,10 @@ UFC_mission_slot_2 = {
 		required_missions = { UFC_mission_harbor_of_the_lone_star }
 		provinces_to_highlight = {
 			OR = {
-				owned_by = root
 				trade_goods = cotton
 				trade_goods = fur
 			}
+			owned_by = root
 			is_city = yes
 			not = { base_production = 10 }
 		}
@@ -748,13 +895,13 @@ UFC_mission_slot_2 = {
 				limit = {
 					not = { has_global_flag = calicoes_happened }
 				}
-				country_event = { id = prices.16 }
+				country_event = { id = flavor_UFC.7006 }
 			}
 			if = {
 				limit = {
 					not = { has_global_flag = felt_hats_happened }
 				}
-				country_event = { id = prices.18 }
+				country_event = { id = flavor_UFC.7007 }
 			}
 			add_country_modifier = {
 				name = UFC_modifier_cotton_military_uniform
@@ -928,7 +1075,7 @@ UFC_mission_slot_2_NGP = {
 		}
 		effect = {
 			custom_tooltip = UFC_tooltip_spice_prices
-			country_event = { id = prices.8 }
+			country_event = { id = flavor_UFC.7008 }
 			trade_company_coromandel = {
 				add_permanent_claim = root
 			}
@@ -1066,6 +1213,7 @@ UFC_mission_slot_3 = {
 				trade_goods = cocoa
 			}
 			add_splendor = 200
+			custom_tooltip = UFC_tooltip_enable_edict_reconstruction
 		}
 	}
 
@@ -1221,6 +1369,7 @@ UFC_mission_slot_3 = {
 		}
 		effect = {
 			country_event = { id = flavor_UFC.13 }
+			custom_tooltip = UFC_tooltip_enable_estate_culture_pluralism
 		}
 	}
 
@@ -1252,7 +1401,7 @@ UFC_mission_slot_3 = {
 				}
 			}
 			custom_tooltip = UFC_tooltip_cocoa_prices
-			country_event = { id = prices.29 }
+			country_event = { id = flavor_UFC.7009 }
 			country_event = { id = flavor_UFC.16 days = 90 ramdom = 90}
 			#swap_non_generic_missions = yes
 		}
@@ -1284,7 +1433,7 @@ UFC_mission_slot_3 = {
 		required_missions = { UFC_mission_technique_or_doctrine }
 		trigger = {
 			num_of_owned_provinces_with = {
-				OR = {
+				AND = {
 					has_shipyard_building_trigger = yes
 					has_dock_building_trigger = yes
 				}
@@ -1777,6 +1926,7 @@ UFC_mission_slot_4 = {
 			upper_peru_region = {
 				discover_country = UFC
 			}
+			custom_tooltip = UFC_tooltip_tropical_wood_plantation
 		}
 	}
 
@@ -1847,14 +1997,19 @@ UFC_mission_slot_4 = {
 					cede_province = root
 				}
 			}
-			elseif = {
+			else_if = {
 				limit = {
 					795 = {
 						owner = {
-							alliance_with = ROOT
-							has_opinion = {
-								who = ROOT
-								value = 180
+							OR = {
+								has_opinion_modifier = {
+									who = ROOT
+									modifier = scornfully_insulted
+								}
+								has_opinion_modifier = {
+									who = ROOT
+									modifier = insulted
+								}
 							}
 						}
 					}
@@ -1912,13 +2067,13 @@ UFC_mission_slot_4 = {
 				limit = {
 					not = { has_global_flag = veneering_happened }
 				}
-				country_event = { id = prices.26 }
+				country_event = { id = flavor_UFC.7010 }
 			}
 			if = {
 				limit = {
 					not = { has_global_flag = coffee_boom_happened }
 				}
-				country_event = { id = prices.5 }
+				country_event = { id = flavor_UFC.7011 }
 			}
 			tihama_al_yemen_area = {
 				add_permanent_claim = ROOT
@@ -1963,10 +2118,38 @@ UFC_mission_slot_4 = {
 			}
 		}
 		effect = {
-			835 = {
-				add_institution_embracement = {
-					which = new_world_i
-					value = 100
+			custom_tooltip = UFC_tooltip_only_new_world_i
+			tooltip = {
+				835 = {
+					add_institution_embracement = {
+						which = new_world_i
+						value = 100
+					}
+				}
+			}
+			hidden_effect = {
+				if = {
+					limit = {
+						is_year = 1495
+						not = { is_institution_enabled = new_world_i }
+						num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+							OR = {
+								continent = north_america
+								continent = south_america
+							}
+							value = 150
+						}
+					}
+					set_global_flag = UFC_global_flag_only_new_world_i
+					set_country_flag = UFC_flag_only_new_world_i
+				}
+				else = {
+					835 = {
+						add_institution_embracement = {
+							which = new_world_i
+							value = 100
+						}
+					}
 				}
 			}
 		}
@@ -2266,9 +2449,9 @@ UFC_mission_slot_5 = {
 		required_missions = { UFC_mission_loan_economics }
 		trigger = {
 			num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
-				value = 20
+				value = 16
 				is_city = yes
-				colonial_region = colonial_colombia
+				region = colombia_region
 			}
 			num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
 				value = 10
@@ -2788,7 +2971,7 @@ UFC_mission_slot_5_NGP = {
 		}
 		effect = {
 			custom_tooltip = UFC_tooltip_ivory_prices
-			country_event = { id = prices.27 }
+			country_event = { id = flavor_UFC.7012 }
 			1196 = {
 				add_province_modifier = {
 					name = UFC_modifier_kilwa_archaeology

@@ -1,0 +1,38 @@
+UFC_wargoal_open_to_trade = {
+	type = take_province
+
+	attacker = {
+		badboy_factor = 0.5
+		prestige_factor = 1
+		peace_cost_factor = 0.9
+
+		allowed_provinces = {
+			is_permanent_claim = root
+		}
+		allowed_provinces_are_eligible = yes
+
+		peace_options = {
+			po_release_vassals
+			po_release_annexed
+			po_return_cores
+			po_demand_provinces
+			po_UFC_reduce_mercantilism
+		}
+	}
+
+	defender = {
+		badboy_factor = 1
+		prestige_factor = 1
+		peace_cost_factor = 1
+
+		peace_options = {
+			po_demand_provinces
+			po_release_annexed
+			po_release_vassals
+			po_revoke_cores
+			po_return_cores
+		}
+	}
+
+	war_name = UFC_OPEN_TO_TRADE_WAR_NAME
+}

@@ -17,6 +17,7 @@ country_event = {
 			factor = 0
 		}
 		hidden_effect = {
+			add_truce_with = CAS
 			add_ruler_modifier = {
 				name = UFC_modifier_MIX_infertility
 				duration = 36500
@@ -169,10 +170,11 @@ country_event = {
 				duration = 36500
 				hidden = yes
 			}
+			set_country_flag = no_colonial_nations
 			country_event = { id = flavor_UFC.3 days = 30 }
 			country_event = { id = flavor_UFC.5 days = 60 }
 			country_event = { id = flavor_UFC.6 days = 365 }
-			country_event = { id = flavor_UFC.102 days = 1460 random = 365 }
+			country_event = { id = flavor_UFC.102 days = 1460 random = 60 }
 		}
 	}
 }
@@ -297,58 +299,6 @@ country_event = {
 	}
 }
 
-#可可涨价事件
-country_event = {
-	id = flavor_UFC.7
-	title = flavor_UFC.7.title
-	desc = flavor_UFC.7.desc
-	picture = TRADEGOODS_eventPicture
-	fire_only_once = yes
-	major = yes
-	is_triggered_only = yes
-	option = {
-		name = flavor_UFC.7.a
-		add_prestige = 15
-		change_price = {
-			trade_goods = cocoa
-			key = COCOA_REPUBLIC
-			value = 0.25
-			duration = -1
-		}
-		835 = {
-			add_base_production = 2
-			add_base_manpower = 2
-		}
-		add_years_of_income = 1
-		set_government_rank = 2
-		add_yearly_manpower = 1
-		add_yearly_sailors = 1
-	}
-}
-
-#replace origin prices.23
-country_event = {
-	id = flavor_UFC.8
-	title = flavor_UFC.8.title
-	desc = flavor_UFC.8.desc
-	picture = TRADE_GOODS_PLANTATION_GOODS_IN_WAREHOUSE_eventPicture
-	fire_only_once = yes
-	major = yes
-	is_triggered_only = yes
-	option = {
-		name = flavor_UFC.8.a
-		add_prestige = 15
-		change_price = {
-			trade_goods = sugar
-			key = POPULARIZATION_OF_SUGAR
-			value = 0.5
-			duration = -1
-		}
-		add_years_of_income = 1
-		set_global_flag = popularization_of_sugar_happened
-	}
-}
-
 #mission doomsayer
 country_event = {
 	id = flavor_UFC.9
@@ -449,6 +399,7 @@ country_event = {
 		name = flavor_UFC.12.a
 		4935 = {
 			change_controller = root
+			add_core = root
 		}
 		add_stability = 2
 		add_war_exhaustion = -5
@@ -1319,6 +1270,11 @@ country_event = {
 					subject = GRA
 				}
 			}
+			GRA = {
+				break_alliance = MOR
+				break_alliance = TUN
+				break_alliance = TUR
+			}
 		}
 	}
 	option = {
@@ -1560,6 +1516,11 @@ country_event = {
 	option = {
 		name = flavor_UFC.45.a
 		vassalize = GRA
+		upper_andalucia_area = {
+			add_core = GRA
+			cede_province = GRA
+			hidden_effect = { add_local_autonomy = -50 }
+		}
 		lower_andalucia_area = {
 			add_core = GRA
 			cede_province = GRA
@@ -1624,10 +1585,12 @@ country_event = {
 				add_republican_tradition = 100
 			}
 		}
-		add_country_modifier = {
-			name = UFC_modifier_adu_company
-			duration = -1
-			desc = UNTIL_ANNEX_OR_DEPENDANCE
+		tooltip = {
+			add_country_modifier = {
+				name = UFC_modifier_adu_company
+				duration = -1
+				desc = UNTIL_ANNEX_OR_DEPENDANCE
+			}
 		}
 	}
 	after = {
@@ -1737,7 +1700,174 @@ country_event = {
 	}
 }
 
-#new_alhambra bonus
+#infiltrate MCA
+country_event = {
+	id = flavor_UFC.48
+	title = flavor_UFC.48.title
+	desc = flavor_UFC.48.desc
+	picture = northamericagfx_SPY_eventPicture
+	fire_only_once = yes
+	trigger = {
+		tag = UFC
+		has_spy_network_in = {
+			who = MCA
+			value = 20
+		}
+	}
+	mean_time_to_happen = {
+		months = 1
+	}
+	option = {
+		name = flavor_UFC.48.a
+		bogota_area = {
+			add_permanent_claim = root
+		}
+		custom_tooltip = UFC_tooltip_infiltration
+	}
+}
+
+
+#infiltrate any country
+country_event = {
+	id = flavor_UFC.49
+	title = flavor_UFC.49.title
+	desc = flavor_UFC.49.desc
+	picture = SPY_eventPicture
+	trigger = {
+		tag = UFC
+		any_known_country = {
+			has_spy_network_from = {
+				who = UFC
+				value = 60
+			}
+			capital_scope = {
+				area = {
+					not = {
+						is_permanent_claim = root
+					}
+				}
+			}
+		}
+	}
+	mean_time_to_happen = {
+		months = 24
+		modifier = {
+			factor = 0.75
+			event_target:ufc_target_spy_network_country = {
+				has_spy_network_from = {
+					who = UFC
+					value = 80
+				}
+			}
+		}
+		modifier = {
+			factor = 0.75
+			event_target:ufc_target_spy_network_country = {
+				has_spy_network_from = {
+					who = UFC
+					value = 100
+				}
+			}
+		}
+	}
+	immediate = {
+		hidden_effect = {
+			random_known_country = {
+				limit = {
+					has_spy_network_from = {
+						who = UFC
+						value = 60
+					}
+				}
+				save_event_target_as = ufc_target_spy_network_country
+			}
+		}
+	}
+	option = {
+		name = flavor_UFC.49.a
+		event_target:ufc_target_spy_network_country = {
+			capital_scope = {
+				area = {
+					add_permanent_claim = root
+				}
+			}
+		}
+		add_dip_power = -25
+	}
+	option = {
+		name = flavor_UFC.49.b
+	}
+}
+
+#after panama canal
+country_event = {
+	id = flavor_UFC.50
+	title = flavor_UFC.50.title
+	desc = flavor_UFC.50.desc
+	picture = USA_EXPLORERS_eventPicture
+	fire_only_once = yes
+	trigger = {
+		tag = UFC
+		835 = {
+			has_great_project = {
+				type = panama_canal
+				tier = 3
+			}
+		}
+		2002 = {
+			has_discovered = root
+		}
+	}
+	mean_time_to_happen = {
+		months = 3
+	}
+	option = {
+		name = flavor_UFC.50.a
+		create_colony_mission_reward = {
+			province = 2002
+		}
+	}
+}
+
+#testing declare war cas to gra
+country_event = {
+	id = flavor_UFC.51
+	hidden = yes
+	fire_only_once = yes
+	trigger = {
+		tag = UFC
+		has_country_flag = UFC_support_granada
+		ADU = {
+			exists = no
+		}
+		SPA = {
+			exists = no
+		}
+		GRA = {
+			exists = yes
+		}
+		CAS = {
+			exists = yes
+		}
+		is_year = 1479
+		not = {
+			CAS = {
+				truce_with = GRA
+			}
+		}
+	}
+	mean_time_to_happen = {
+		months = 1
+	}
+	immediate = {
+		CAS = {
+			declare_war_with_cb = {
+				who = GRA
+				casus_belli = cb_crusade
+			}
+		}
+	}
+}
 
 #Timur
 country_event = {
@@ -2329,6 +2459,7 @@ country_event = {
 			mil = 0
 			age = 34
 		}
+		add_ruler_personality = expansionist_personality
 		custom_tooltip = UFC_tooltip_columbus_fil_education
 		hidden_effect = {
 			for_variable_amount = {
@@ -3068,7 +3199,7 @@ country_event = {
 	option = {
 		name = flavor_UFC.9005.d
 		country_event = {
-			id = flavor_UFC.9004 days = 1
+			id = flavor_UFC.9005 days = 1
 		}
 	}
 	option = {
@@ -3083,14 +3214,386 @@ country_event = {
 		}
 	}
 }
+
+
+#decision cotton plantation
+country_event = {
+	id = flavor_UFC.9006
+	title = flavor_UFC.9006.title
+	desc = flavor_UFC.9006.desc
+	picture = TRADEGOODS_eventPicture
+	is_triggered_only = yes
+	immediate = {
+		hidden_effect = {
+			random_owned_province = {
+				limit = {
+					not = {
+						trade_goods = cotton
+					}
+					or = {
+						region = rio_grande_region
+						region = mississippi_region
+					}
+				}
+				set_province_flag = UFC_flag_plantation_1
+				save_event_target_as = ufc_target_plantation_first_province
+			}
+			random_owned_province = {
+				limit = {
+					not = {
+						trade_goods = cotton
+					}
+					or = {
+						region = rio_grande_region
+						region = mississippi_region
+					}
+					not = { has_province_flag = UFC_flag_plantation_1 }
+				}
+				set_province_flag = UFC_flag_plantation_2
+				save_event_target_as = ufc_target_plantation_second_province
+			}
+			random_owned_province = {
+				limit = {
+					not = {
+						trade_goods = cotton
+					}
+					or = {
+						region = rio_grande_region
+						region = mississippi_region
+					}
+					not = {
+						or = {
+							has_province_flag = UFC_flag_plantation_1
+							has_province_flag = UFC_flag_plantation_2
+						}
+					}
+				}
+				save_event_target_as = ufc_target_plantation_third_province
+			}
+		}
+	}
+	option = {
+		name = flavor_UFC.9006.a
+		goto = ufc_target_plantation_first_province
+		event_target:ufc_target_plantation_first_province = {
+			change_trade_goods = cotton
+		}
+		add_country_modifier = {
+			name = UFC_modifier_cotton_plantation_cooldown
+			duration = 1095
+			hidden = yes
+		}
+	}
+	option = {
+		name = flavor_UFC.9006.b
+		goto = ufc_target_plantation_second_province
+		event_target:ufc_target_plantation_second_province = {
+			change_trade_goods = cotton
+		}
+		add_country_modifier = {
+			name = UFC_modifier_cotton_plantation_cooldown
+			duration = 1095
+			hidden = yes
+		}
+	}
+	option = {
+		name = flavor_UFC.9006.c
+		goto = ufc_target_plantation_third_province
+		event_target:ufc_target_plantation_third_province = {
+			change_trade_goods = cotton
+		}
+		add_country_modifier = {
+			name = UFC_modifier_cotton_plantation_cooldown
+			duration = 1095
+			hidden = yes
+		}
+	}
+	option = {
+		name = flavor_UFC.9006.d
+		country_event = {
+			id = flavor_UFC.9006 days = 1
+		}
+	}
+	option = {
+		name = flavor_UFC.9006.e
+	}
+	after = {
+		event_target:ufc_target_plantation_first_province = {
+			clr_province_flag = UFC_flag_plantation_1
+		}
+		event_target:ufc_target_plantation_second_province = {
+			clr_province_flag = UFC_flag_plantation_2
+		}
+	}
+}
+
+#decision tropical_wood plantation
+country_event = {
+	id = flavor_UFC.9007
+	title = flavor_UFC.9007.title
+	desc = flavor_UFC.9007.desc
+	picture = TRADEGOODS_eventPicture
+	is_triggered_only = yes
+	immediate = {
+		hidden_effect = {
+			random_owned_province = {
+				limit = {
+					not = {
+						trade_goods = tropical_wood
+					}
+					or = {
+						region = brazil_region
+					}
+				}
+				set_province_flag = UFC_flag_plantation_1
+				save_event_target_as = ufc_target_plantation_first_province
+			}
+			random_owned_province = {
+				limit = {
+					not = {
+						trade_goods = tropical_wood
+					}
+					or = {
+						region = brazil_region
+					}
+					not = { has_province_flag = UFC_flag_plantation_1 }
+				}
+				set_province_flag = UFC_flag_plantation_2
+				save_event_target_as = ufc_target_plantation_second_province
+			}
+			random_owned_province = {
+				limit = {
+					not = {
+						trade_goods = tropical_wood
+					}
+					or = {
+						region = brazil_region
+					}
+					not = {
+						or = {
+							has_province_flag = UFC_flag_plantation_1
+							has_province_flag = UFC_flag_plantation_2
+						}
+					}
+				}
+				save_event_target_as = ufc_target_plantation_third_province
+			}
+		}
+	}
+	option = {
+		name = flavor_UFC.9007.a
+		goto = ufc_target_plantation_first_province
+		event_target:ufc_target_plantation_first_province = {
+			change_trade_goods = tropical_wood
+		}
+		add_country_modifier = {
+			name = UFC_modifier_tropical_wood_plantation_cooldown
+			duration = 1095
+			hidden = yes
+		}
+	}
+	option = {
+		name = flavor_UFC.9007.b
+		goto = ufc_target_plantation_second_province
+		event_target:ufc_target_plantation_second_province = {
+			change_trade_goods = tropical_wood
+		}
+		add_country_modifier = {
+			name = UFC_modifier_tropical_wood_plantation_cooldown
+			duration = 1095
+			hidden = yes
+		}
+	}
+	option = {
+		name = flavor_UFC.9007.c
+		goto = ufc_target_plantation_third_province
+		event_target:ufc_target_plantation_third_province = {
+			change_trade_goods = tropical_wood
+		}
+		add_country_modifier = {
+			name = UFC_modifier_tropical_wood_plantation_cooldown
+			duration = 1095
+			hidden = yes
+		}
+	}
+	option = {
+		name = flavor_UFC.9007.d
+		country_event = {
+			id = flavor_UFC.9007 days = 1
+		}
+	}
+	option = {
+		name = flavor_UFC.9007.e
+	}
+	after = {
+		event_target:ufc_target_plantation_first_province = {
+			clr_province_flag = UFC_flag_plantation_1
+		}
+		event_target:ufc_target_plantation_second_province = {
+			clr_province_flag = UFC_flag_plantation_2
+		}
+	}
+}
+
 #test
 country_event = {
 	id = flavor_UFC.10086
 	picture = TRADEGOODS_eventPicture
 	is_triggered_only = yes
 	trigger = {
+		num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+			value = 7
+			province_has_center_of_trade_of_level = 2
+			region = iberia_region
+		}
+		or = {
+			and = {
+				1293 = {
+					trade_share = {
+						country = ROOT
+						share = 75
+					}
+				}
+				1295 = {
+					trade_share = {
+						country = ROOT
+						share = 75
+					}
+				}
+			}
+			any_subject_country = {
+				1293 = {
+					trade_share = {
+						country = prev
+						share = 75
+					}
+				}
+				1295 = {
+					trade_share = {
+						country = prev
+						share = 75
+					}
+				}
+			}
+		}
+		government_rank = 5
 	}
 	option = {
-		name = flavor_UFC.10086.a
+		name = t
+		if = {
+			limit = {
+				ADU = {
+					exists = yes
+					is_subject_of = root
+				}
+			}
+			1293 = {
+				add_trade_modifier = {
+					who = ADU
+					duration = -1
+					power = 100
+					key = UFC_rereconquest_trade_modifier
+				}
+			}
+			1295 = {
+				add_trade_modifier = {
+					who = ADU
+					duration = -1
+					power = 100
+					key = UFC_rereconquest_trade_modifier
+				}
+			}
+			every_subject_country = {
+				limit = {
+					capital_scope = {
+						region = iberia_region
+					}
+				}
+				ADU = {
+					inherit = prev
+				}
+			}
+		}
+		else = {
+			1293 = {
+				add_trade_modifier = {
+					who = root
+					duration = -1
+					power = 100
+					key = UFC_rereconquest_trade_modifier
+				}
+			}
+			1295 = {
+				add_trade_modifier = {
+					who = root
+					duration = -1
+					power = 100
+					key = UFC_rereconquest_trade_modifier
+				}
+			}
+		}
+		if = {
+			limit = {
+				OR = {
+					has_reform = organized_military_staff_reform
+					has_reform = sustained_discipline_reform
+				}
+			}
+			add_country_modifier = {
+				name = UFC_modifier_rereconquest_drill_reform
+				duration = -1
+			}
+		}
+		if = {
+			limit = {
+				OR = {
+					has_reform = military_engineering_reform
+					has_reform = defensive_stance_reform
+				}
+			}
+			add_country_modifier = {
+				name = UFC_modifier_rereconquest_artillery_reform
+				duration = -1
+			}
+		}
+		if = {
+			limit = {
+				OR = {
+					has_reform = amphibious_specialization_reform
+					has_reform = maritime_military_reform
+				}
+			}
+			add_country_modifier = {
+				name = UFC_modifier_rereconquest_marine_reform
+				duration = -1
+			}
+		}
+		if = {
+			limit = {
+				OR = {
+					has_reform = mercenary_leadership_reform
+					has_reform = doppelsoldner_reform
+				}
+			}
+			add_country_modifier = {
+				name = UFC_modifier_rereconquest_mercenary_reform
+				duration = -1
+			}
+		}
+		if = {
+			limit = {
+				has_reform = tercio_reform
+			}
+			add_country_modifier = {
+				name = UFC_modifier_rereconquest_tercio_reform
+				duration = -1
+			}
+		}
+		if = {
+			limit = {
+				has_reform = cavalry_warfare_reform
+			}
+			custom_tooltip = UFC_tooltip_no_horse_for_cavalry
+		}
 	}
 }

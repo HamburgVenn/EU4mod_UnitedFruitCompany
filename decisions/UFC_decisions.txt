@@ -28,7 +28,7 @@ country_decisions = {
         potential = {
             tag = UFC
             num_of_owned_provinces_with = {
-                value = 4
+                value = 3
                 trade_goods = cocoa
                 or = {
                     colonial_region = colonial_colombia
@@ -155,6 +155,67 @@ country_decisions = {
         effect = {
             country_event = {
                 id = flavor_UFC.9005
+            }
+        }
+        ai_will_do = {
+            factor = 1
+        }
+        ai_importance = 400
+    }
+
+    UFC_decision_cotton_plantation = {
+        potential = {
+            tag = UFC
+            mission_completed = UFC_mission_harbor_of_the_lone_star
+        }
+        provinces_to_highlight = {
+            not = {
+                trade_goods = cotton
+            }
+            or = {
+                region = rio_grande_region
+                region = mississippi_region
+            }
+        }
+        allow = {
+            custom_trigger_tooltip = {
+                tooltip = UFC_tooltip_plantation_cooldown
+                not = { has_country_modifier = UFC_modifier_cotton_plantation_cooldown }
+            }
+        }
+        effect = {
+            country_event = {
+                id = flavor_UFC.9006
+            }
+        }
+        ai_will_do = {
+            factor = 1
+        }
+        ai_importance = 400
+    }
+
+    UFC_decision_tropical_wood_plantation = {
+        potential = {
+            tag = UFC
+            mission_completed = UFC_mission_brazilian_wood
+        }
+        provinces_to_highlight = {
+            not = {
+                trade_goods = tropical_wood
+            }
+            or = {
+                region = brazil_region
+            }
+        }
+        allow = {
+            custom_trigger_tooltip = {
+                tooltip = UFC_tooltip_plantation_cooldown
+                not = { has_country_modifier = UFC_modifier_tropical_wood_plantation_cooldown }
+            }
+        }
+        effect = {
+            country_event = {
+                id = flavor_UFC.9007
             }
         }
         ai_will_do = {
