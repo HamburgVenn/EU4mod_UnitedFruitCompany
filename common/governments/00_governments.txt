@@ -659,6 +659,7 @@ republic = {
 				legislative_assembly_reform
 				national_constituent_reform
 				national_assembly_reform
+				UFC_consolidation_of_president_power_reform #ufc
 			}
 		}
 		republic_and_religion = {

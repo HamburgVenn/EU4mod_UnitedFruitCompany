@@ -14,6 +14,7 @@ UFC_staff_estate = {
 		global_trade_goods_size_modifier = 0.1
 		global_colonial_growth = 20
 		global_tax_modifier = -0.20
+		monthly_mechanical_clock_dip_power = -0.1
 	}
 	country_modifier_neutral = {
 		global_trade_goods_size_modifier = 0.05
@@ -23,9 +24,12 @@ UFC_staff_estate = {
 		global_trade_goods_size_modifier = -0.1
 		global_colonial_growth = -10
 		global_tax_modifier = 0.40
+		monthly_mechanical_clock_dip_power = 0.1
 	}
 	land_ownership_modifier = {
 		global_unrest = -1
+		UFC_staff_estate_loyalty_modifier = 0.20
+		monthly_mechanical_clock_dip_power = -0.1
 	}
 	
 	province_independence_weight = {

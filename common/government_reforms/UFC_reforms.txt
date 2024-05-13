@@ -26,7 +26,7 @@ UFC_government_republic = {
 		republican_tradition = 0.5
 		naval_forcelimit_modifier = 0.2
 		allowed_marine_fraction = 0.5
-		candidate_random_bonus = 1
+		transport_attrition = -0.25
 	}
 	custom_attributes = {
 		locked_government_type = yes
@@ -76,6 +76,7 @@ UFC_the_financial_system = {
 		}
 	}
 	modifiers = {
+		administrative_efficiency = 0.025
 		max_absolutism = 30
 	}
 	effect = {
@@ -88,7 +89,7 @@ UFC_the_financial_system = {
 
 UFC_the_stock_system = {
 	icon = "paper_with_seal_3"
-	lock_level_when_selected = yes
+	#lock_level_when_selected = yes
 	potential = {
 		tag = UFC
 		or = {
@@ -97,11 +98,10 @@ UFC_the_stock_system = {
 		}
 	}
 	modifiers = {
-		candidate_random_bonus = -1
+		candidate_random_bonus = 1
 		administrative_efficiency = 0.025
 	}
 	custom_attributes = {
-		bonus_stats_for_elected_ruler = yes
 		enables_natives_idea_group = yes
 	}
 	ai = {
@@ -167,5 +167,35 @@ lottery_reform = {
 	has_term_election = no
 	ai = {
 		factor = 1
+	}
+}
+
+
+UFC_consolidation_of_president_power_reform = {
+	icon = "paper_with_seal"
+	lock_level_when_selected = yes
+	potential = {
+		tag = UFC
+		or = {
+			has_reform = UFC_consolidation_of_president_power_reform
+			have_had_reform = UFC_consolidation_of_president_power_reform
+		}
+	}
+	valid_for_nation_designer = no
+	modifiers = {
+		max_absolutism = 15
+		election_cycle = 2
+		max_terms = 10
+		candidate_random_bonus = 3
+	}
+	effect = {
+		custom_tooltip = UFC_tooltip_consolidation_of_president_power
+	}
+	government_abilities = {
+		ufc_mechanic_mechanical_clock
+		ufc_calibrate_the_clock
+	}
+	custom_attributes = {
+		can_sell_crownland_to_single_estates = yes
 	}
 }

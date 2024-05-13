@@ -1,0 +1,151 @@
+ufc_calibrate_the_clock = {
+	available = {
+		tag = UFC
+		not = {
+			has_country_flag = UFC_flag_end_mechanic_mechanical_clock
+		}
+	}
+	powers = {
+		mechanical_reform_power = {
+			gui = egyptian_westernization_gov_mech
+			max = 100	#conservatives
+			min = 0	#Parliament direction
+			base_monthly_growth = 0.15
+			development_scaled_monthly_growth = -0.02
+			is_good = yes
+			show_before_interactions = yes
+			default = 50
+			scaled_modifier = {
+				modifier = {
+					UFC_staff_estate_loyalty_modifier = 0.3
+					monthly_mechanical_clock_adm_power = -0.3
+					monthly_mechanical_clock_dip_power = -0.3
+					monthly_mechanical_clock_mil_power = -0.3
+				}
+				start_value = 0
+				end_value = 100
+			}
+			reverse_scaled_modifier = {
+				modifier = {
+					stability_cost_modifier = -0.3
+					global_trade_goods_size = 0.3
+					global_unrest = -3
+				}
+				start_value = 0
+				end_value = 50
+			}
+			scaled_modifier = {
+				modifier = {
+					stability_cost_modifier = 0.3
+					global_trade_goods_size = -0.3
+					global_unrest = 3
+					monthly_mechanical_clock_adm_power = -0.15
+					monthly_mechanical_clock_dip_power = -0.15
+					monthly_mechanical_clock_mil_power = -0.15
+				}
+				start_value = 50
+				end_value = 100
+			}
+		}
+	}
+	interactions = {
+		UFC_adm_reduce_interaction = {
+			icon = GFX_study_western_administration
+			gui = "egyptian_westernization_interaction_button"
+			cost_type = mechanical_reform_power
+			cost = 15
+			trigger = {
+				adm_power_cost = 100
+			}
+			effect = {
+				adm_power_cost = 100
+				add_years_of_income = -0.3
+				add_government_power = {
+					mechanic_type = ufc_mechanic_mechanical_clock
+					power_type = mechanical_clock_adm_power
+					value = -10
+				}
+				if = {
+					limit = {
+						has_country_modifier = UFC_modifier_adm_interaction
+					}
+					remove_country_modifier = UFC_modifier_adm_interaction
+				}
+				capital_scope = {
+					spawn_rebels = {
+						type = anti_tax_rebels
+						size = 8
+					}
+				}
+				random_owned_province = {
+					spawn_rebels = {
+						type = anti_tax_rebels
+						size = 4
+					}
+				}
+				random_owned_province = {
+					spawn_rebels = {
+						type = anti_tax_rebels
+						size = 4
+					}
+				}
+			}
+			cooldown_years = 5
+		}
+		UFC_dip_reduce_interaction = {
+			icon = GFX_study_western_manufacturing
+			gui = "egyptian_westernization_interaction_button"
+			cost_type = mechanical_reform_power
+			cost = 15
+			trigger = {
+				dip_power_cost = 100
+			}
+			effect = {
+				dip_power_cost = -100
+				add_years_of_income = -0.3
+				add_inflation = 2
+				if = {
+					limit = {
+						has_country_modifier = UFC_modifier_dip_interaction
+					}
+					remove_country_modifier = UFC_modifier_dip_interaction
+				}
+				add_government_power = {
+					mechanic_type = ufc_mechanic_mechanical_clock
+					power_type = mechanical_clock_dip_power
+					value = -10
+				}
+			}
+			cooldown_years = 5
+		}
+		UFC_mil_reduce_interaction = {
+			icon = GFX_study_western_military
+			gui = "egyptian_westernization_interaction_button"
+			cost_type = mechanical_reform_power
+			cost = 15
+			trigger = {
+				mil_power_cost = 100
+			}
+			effect = {
+				mil_power_cost = -100
+				add_yearly_manpower = -0.5
+				add_yearly_sailors = -0.5
+				kill_leader = {
+					type = general
+				}
+				add_government_power = {
+					mechanic_type = ufc_mechanic_mechanical_clock
+					power_type = mechanical_clock_mil_power
+					value = -10
+				}
+				if = {
+					limit = {
+						has_country_modifier = UFC_modifier_mil_interaction
+					}
+					remove_country_modifier = UFC_modifier_mil_interaction
+				}
+			}
+			cooldown_years = 5
+		}
+	}
+}

@@ -1,0 +1,136 @@
+ufc_mechanic_mechanical_clock = {
+	alert_icon_gfx = GFX_alerticons_government_mechanics
+	alert_icon_index = 1
+
+	available = {
+		tag = UFC
+		not = {
+			has_country_flag = UFC_flag_end_mechanic_mechanical_clock
+		}
+	}
+	powers = {
+		mechanical_clock_adm_power = { #腐败润滑，越腐败，外交和军事压力越小
+			max = 100
+			#monarch_power = ADM
+			base_monthly_growth = 0.5
+			development_scaled_monthly_growth = 0.01
+			default = 50
+			scaled_modifier = {
+				max = 100
+				modifier = {
+					yearly_corruption = 0.6
+					inflation_reduction = -1
+					global_unrest = -3
+					administrative_efficiency = -0.05
+					monthly_mechanical_clock_dip_power = -0.2
+					monthly_mechanical_clock_mil_power = -0.1
+				}
+			}
+			is_good = no
+		}
+		mechanical_clock_dip_power = { #外交条指贫富差距，贫富差距越大生产越多，反抗也越大
+			max = 100
+			#monarch_power = DIP
+			base_monthly_growth = 0.5
+			development_scaled_monthly_growth = 0.01
+			default = 50
+			scaled_modifier = {
+				max = 100
+				modifier = {
+					development_cost = 0.3
+					global_colonial_growth = -50
+					UFC_staff_estate_loyalty_modifier = -0.4
+					global_tax_modifier = 0.5
+					global_trade_goods_size_modifier = 0.3
+					global_unrest = 12
+				}
+			}
+			is_good = no
+		}
+		mechanical_clock_mil_power = { #扩张发条，模拟对外转移矛盾、缓解内部压力的倾向和期望。数值越高军队忠诚越低。
+			max = 100
+			#monarch_power = MIL
+			base_monthly_growth = 0.5
+			development_scaled_monthly_growth = 0.01
+			default = 50
+			scaled_modifier = {
+				max = 100
+				modifier = {
+					land_morale = -0.15
+					naval_morale = -0.15
+					land_maintenance_modifier = 0.3
+					core_creation = -0.15
+					monthly_mechanical_clock_dip_power = -0.1
+					global_unrest = -3
+				}
+			}
+			is_good = no
+		}
+	}
+	
+	interactions = {
+		UFC_ADM_interaction = {
+			gui = russian_mechanics_interaction_gui
+			icon = GFX_promote_culture_in_government_button
+			cost_type = mechanical_clock_adm_power
+			cost = -10
+			trigger = {
+			}
+			effect = {
+				add_adm_power = 50
+				add_years_of_income = -0.2
+				add_republican_tradition = -3
+				add_government_power = { # adds the specified amount of power
+					mechanic_type = ufc_mechanic_mechanical_clock
+					power_type = mechanical_clock_dip_power
+					value = -5
+				}
+				add_government_power = { # adds the specified amount of power
+					mechanic_type = ufc_mechanic_mechanical_clock
+					power_type = mechanical_clock_mil_power
+					value = -5
+				}
+				add_country_modifier = {
+					name = UFC_modifier_adm_interaction
+					duration = 1095
+				}
+			}
+			cooldown_years = 3
+		}
+		UFC_DIP_interaction = {
+			gui = russian_mechanics_interaction_gui
+			icon = GFX_sell_off_culture_slaves_button
+			cost_type = mechanical_clock_dip_power
+			cost = -10
+			trigger = {
+			}
+			effect = {
+				add_years_of_income = 0.8
+				add_country_modifier = {
+					name = UFC_modifier_dip_interaction
+					duration = 1095
+				}
+			}
+			cooldown_years = 3
+		}
+		UFC_MIL_interaction = {
+			gui = russian_mechanics_interaction_gui
+			icon = GFX_recruit_from_culture_lands_button
+			cost_type = mechanical_clock_mil_power
+			cost = -10
+			trigger = {
+
+			}
+			effect = {
+				add_yearly_manpower = 1
+				add_yearly_sailors = 1
+				add_country_modifier = {
+					name = UFC_modifier_mil_interaction
+					duration = 1095
+				}
+			}
+			cooldown_years = 3
+		}
+
+	}
+}

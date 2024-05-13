@@ -490,20 +490,31 @@ country_event = {
 	option = {
 		name = flavor_UFC.16.a
 		set_country_flag = UFC_new_game_plus
-		set_country_flag = UFC_flag_build_macondo#set it for the moment
 		swap_non_generic_missions = yes
 		set_global_flag = UFC_start_weapon_test_team
+		set_country_flag = UFC_flag_marquez_happended
 		define_ruler = {
 			name = "Raphael Marquez"
 			adm = 5
 			dip = 5
 			mil = 1
-			age = 37
+			age = 35
+			culture = castillian
+			religion = secularism
 		}
+		add_ruler_modifier = {
+			name = UFC_modifier_ummayad_longevity
+			duration = 36500
+			hidden = yes
+		}
+		add_ruler_personality = embezzler_personality
+		add_ruler_personality = intricate_web_weaver_personality
+		add_ruler_personality = craven_personality
+	}
+	after = {
+		country_event = { id = flavor_UFC.106 days = 15 random = 15	}
 	}
 }
-
-
 
 #Marquez
 country_event = {
@@ -512,19 +523,18 @@ country_event = {
 	desc = flavor_UFC.106.desc
 	picture = ADVISOR_eventPicture
 	fire_only_once = yes
+	is_triggered_only = yes
 	trigger = {
 		tag = UFC
-		is_year = 1515
-	}
-	mean_time_to_happen = {
-		months = 120
 	}
 	option = {
 		name = flavor_UFC.106.a
-		add_dip_power = 50
+		add_adm_power = 25
+		add_dip_power = 25
+		add_mil_power = -25
 		hidden_effect = {
-			country_event = { id = flavor_UFC.107 days = 720 random = 360 }
-			set_country_flag = UFC_flag_marquez_happended
+			country_event = { id = flavor_UFC.107 days = 120 random = 60 }
+			country_event = { id = flavor_UFC.1061 days = 180 random = 90 }
 		}
 	}
 }
@@ -537,10 +547,194 @@ country_event = {
 	is_triggered_only = yes
 	option = {
 		name = flavor_UFC.107.a
-		add_dip_power = 50
+		add_dip_power = 10
+	}
+	after = {
+		country_event = { id = flavor_UFC.1071 days = 720 random = 360 }
+	}
+}
+country_event = {
+	id = flavor_UFC.1061
+	title = flavor_UFC.1061.title
+	desc = flavor_UFC.1061.desc
+	picture = REFORM_eventPicture
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = flavor_UFC.1061.a
+		add_adm_power = 10
+		remove_ruler_personality = embezzler_personality
+		add_ruler_personality = reformist_personality
+	}
+	after = {
+		country_event = { id = flavor_UFC.1062 days = 365 random = 180 }
 	}
 }
 
+country_event = {
+	id = flavor_UFC.1062
+	title = flavor_UFC.1062.title
+	desc = flavor_UFC.1062.desc
+	picture = ACCUSATION_eventPicture
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = flavor_UFC.1062.a
+		add_dip_power = 10
+		remove_ruler_personality = intricate_web_weaver_personality
+		add_ruler_personality = lawgiver_personality
+	}
+	after = {
+		country_event = { id = flavor_UFC.1063 days = 365 random = 180 }
+	}
+}
+
+country_event = {
+	id = flavor_UFC.1063
+	title = flavor_UFC.1063.title
+	desc = flavor_UFC.1063.desc
+	picture = PLAGUE_eventPicture
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = flavor_UFC.1063.a
+		add_adm_power = -10
+		add_ruler_modifier = {
+			name = UFC_modifier_safety_regulations
+			duration = -1
+		}
+	}
+	option = {
+		name = flavor_UFC.1063.b
+		add_dip_power = -10
+		add_ruler_modifier = {
+			name = UFC_modifier_reform_measures
+			duration = -1
+		}
+	}
+	option = {
+		name = flavor_UFC.1063.c
+		add_mil_power = -10
+		complete_mission = UFC_mission_not_think_but_work
+		custom_tooltip = UFC_tooltip_small_brave_new_world
+		add_country_modifier = {
+			name = UFC_modifier_small_brave_new_world
+			duration = -1
+		}
+	}
+	after = {
+		country_event = { id = flavor_UFC.1064 days = 730 random = 365 }
+	}
+}
+
+country_event = {
+	id = flavor_UFC.1064
+	title = flavor_UFC.1064.title
+	desc = flavor_UFC.1064.desc
+	picture = DISCIPLINED_SOLDIERS_eventPicture
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = flavor_UFC.1064.a
+		add_mil_power = 10
+		remove_ruler_personality = craven_personality
+		add_ruler_personality = strict_personality
+	}
+	after = {
+		country_event = { id = flavor_UFC.1065 days = 365 random = 180 }
+	}
+}
+
+country_event = {
+	id = flavor_UFC.1065
+	title = flavor_UFC.1065.title
+	desc = flavor_UFC.1065.desc
+	picture = EXPLORERS_eventPicture
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = flavor_UFC.1065.a
+		add_adm_power = 10
+		set_country_flag = UFC_flag_build_macondo
+		custom_tooltip = UFC_tooltip_enable_build_macondo
+	}
+	after = {
+		country_event = { id = flavor_UFC.1066 days = 365 random = 180 }
+	}
+}
+
+country_event = {
+	id = flavor_UFC.1066
+	title = flavor_UFC.1066.title
+	desc = flavor_UFC.1066.desc
+	picture = CORRUPTION_eventPicture
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = flavor_UFC.1066.a
+		add_corruption = 0.2
+		custom_tooltip = UFC_tooltip_panama_university
+		add_years_of_income = -0.2
+		835 = {
+			add_building = university
+		}
+		add_corruption = -0.1
+	}
+	after = {
+		country_event = { id = flavor_UFC.1067 days = 60 random = 30 }
+	}
+}
+
+country_event = {
+	id = flavor_UFC.1067
+	title = flavor_UFC.1067.title
+	desc = flavor_UFC.1067.desc
+	picture = iberian_COLONIZATION_eventPicture
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = flavor_UFC.1067.a
+		add_years_of_income = 1
+		add_country_modifier = {
+			name = UFC_modifier_lack_of_foreign_immigrant
+			duration = 3650
+		}
+	}
+	after = {
+		country_event = { id = flavor_UFC.1068 days = 365 random = 180 }
+	}
+}
+
+country_event = {
+	id = flavor_UFC.1068
+	title = flavor_UFC.1068.title
+	desc = flavor_UFC.1068.desc
+	picture = INVENTION_eventPicture
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = flavor_UFC.1068.a
+		add_government_reform = UFC_consolidation_of_president_power_reform
+		#custom_tooltip = UFC_tooltip_start_the_mechanical_clock
+	}
+}
+
+
+country_event = {
+	id = flavor_UFC.1071
+	title = flavor_UFC.1071.title
+	desc = flavor_UFC.1071.desc
+	picture = THEATRE_eventPicture
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = flavor_UFC.1071.a
+		add_dip_power = 10
+	}
+	after = {
+		country_event = { id = flavor_UFC.1072 days = 120 random = 60 }
+	}
+}
 #mission technique_or_doctrine
 country_event = {
 	id = flavor_UFC.17
@@ -1140,7 +1334,7 @@ country_event = {
 		}
 	}
 	mean_time_to_happen = {
-		days = 30
+		days = 20
 	}
 	option = {
 		name = flavor_UFC.33.a
@@ -1533,6 +1727,7 @@ country_event = {
 			change_tag = ADU
 			on_change_tag_effect = yes
 			swap_non_generic_missions = yes
+			swap_free_idea_group = yes
 			remove_non_electors_emperors_from_empire_effect = yes
 			if = {
 				limit = {
@@ -1545,6 +1740,14 @@ country_event = {
 				name = centralization_modifier
 				duration = 3650
 			}
+			add_country_modifier = {
+				name = UFC_modifier_ban_adu_colonize
+				duration = -1
+				hidden = yes
+			}
+		}
+		ADU = {
+			add_mercantilism = 75
 		}
 	}
 	after = {
@@ -1569,6 +1772,7 @@ country_event = {
 	goto = ufc_target_adu_capital
 	option = {
 		name = flavor_UFC.46.a
+		goto = 965
 		ADU = {
 			change_government = republic
 			add_government_reform = trade_company_government
@@ -1640,6 +1844,9 @@ country_event = {
 				223 = {
 					owned_by = ADU
 				}
+				ADU = {
+					has_reform = trade_company_government
+				}
 			}
 			223 = {
 				owned_by = UFC
@@ -1651,7 +1858,7 @@ country_event = {
 		}
 	}
 	mean_time_to_happen = {
-		months = 12
+		months = 3
 	}
 	option = {
 		name = flavor_UFC.47.a
@@ -3441,159 +3648,16 @@ country_event = {
 	picture = TRADEGOODS_eventPicture
 	is_triggered_only = yes
 	trigger = {
-		num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
-			value = 7
-			province_has_center_of_trade_of_level = 2
-			region = iberia_region
-		}
-		or = {
-			and = {
-				1293 = {
-					trade_share = {
-						country = ROOT
-						share = 75
-					}
-				}
-				1295 = {
-					trade_share = {
-						country = ROOT
-						share = 75
-					}
-				}
-			}
-			any_subject_country = {
-				1293 = {
-					trade_share = {
-						country = prev
-						share = 75
-					}
-				}
-				1295 = {
-					trade_share = {
-						country = prev
-						share = 75
-					}
-				}
-			}
-		}
-		government_rank = 5
+		adm_power_cost =
 	}
 	option = {
-		name = t
-		if = {
-			limit = {
-				ADU = {
-					exists = yes
-					is_subject_of = root
-				}
-			}
-			1293 = {
-				add_trade_modifier = {
-					who = ADU
-					duration = -1
-					power = 100
-					key = UFC_rereconquest_trade_modifier
-				}
-			}
-			1295 = {
-				add_trade_modifier = {
-					who = ADU
-					duration = -1
-					power = 100
-					key = UFC_rereconquest_trade_modifier
-				}
-			}
-			every_subject_country = {
-				limit = {
-					capital_scope = {
-						region = iberia_region
-					}
-				}
-				ADU = {
-					inherit = prev
-				}
-			}
+		name = flavor_UFC.10086.a
+		kill_leader = {
+			type = general
 		}
-		else = {
-			1293 = {
-				add_trade_modifier = {
-					who = root
-					duration = -1
-					power = 100
-					key = UFC_rereconquest_trade_modifier
-				}
-			}
-			1295 = {
-				add_trade_modifier = {
-					who = root
-					duration = -1
-					power = 100
-					key = UFC_rereconquest_trade_modifier
-				}
-			}
+		random_owned_province = {
+
 		}
-		if = {
-			limit = {
-				OR = {
-					has_reform = organized_military_staff_reform
-					has_reform = sustained_discipline_reform
-				}
-			}
-			add_country_modifier = {
-				name = UFC_modifier_rereconquest_drill_reform
-				duration = -1
-			}
-		}
-		if = {
-			limit = {
-				OR = {
-					has_reform = military_engineering_reform
-					has_reform = defensive_stance_reform
-				}
-			}
-			add_country_modifier = {
-				name = UFC_modifier_rereconquest_artillery_reform
-				duration = -1
-			}
-		}
-		if = {
-			limit = {
-				OR = {
-					has_reform = amphibious_specialization_reform
-					has_reform = maritime_military_reform
-				}
-			}
-			add_country_modifier = {
-				name = UFC_modifier_rereconquest_marine_reform
-				duration = -1
-			}
-		}
-		if = {
-			limit = {
-				OR = {
-					has_reform = mercenary_leadership_reform
-					has_reform = doppelsoldner_reform
-				}
-			}
-			add_country_modifier = {
-				name = UFC_modifier_rereconquest_mercenary_reform
-				duration = -1
-			}
-		}
-		if = {
-			limit = {
-				has_reform = tercio_reform
-			}
-			add_country_modifier = {
-				name = UFC_modifier_rereconquest_tercio_reform
-				duration = -1
-			}
-		}
-		if = {
-			limit = {
-				has_reform = cavalry_warfare_reform
-			}
-			custom_tooltip = UFC_tooltip_no_horse_for_cavalry
-		}
+		add_years_of_income =
 	}
 }

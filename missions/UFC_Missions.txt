@@ -164,7 +164,7 @@ UFC_mission_slot_1 = {
 		}
 		trigger = {
 			num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
-				value = 4
+				value = 3
 				is_city = yes
 				base_production = 10
 				trade_goods = tobacco
@@ -185,7 +185,7 @@ UFC_mission_slot_1 = {
 			add_years_of_owned_provinces_production_income = {
 				years = 10
 				trigger = {
-					trade_goods = tobbaco
+					trade_goods = tobacco
 				}
 			}
 			add_dip_power = 100
@@ -227,6 +227,9 @@ UFC_mission_slot_1 = {
 					add_permanent_claim = root
 				}
 			}
+			223 = {
+				center_of_trade = 1
+			}
 		}
 	}
 
@@ -262,7 +265,7 @@ UFC_mission_slot_1 = {
 					1295 = {
 						trade_share = {
 							country = ROOT
-							share = 75
+							share = 50
 						}
 					}
 				}
@@ -276,7 +279,7 @@ UFC_mission_slot_1 = {
 					1295 = {
 						trade_share = {
 							country = prev
-							share = 75
+							share = 50
 						}
 					}
 				}
@@ -322,6 +325,12 @@ UFC_mission_slot_1 = {
 					}
 					ADU = {
 						inherit = prev
+					}
+				}
+				ADU = {
+					add_country_modifier = {
+						name = UFC_modifier_andalucian_reunification
+						duration = -1
 					}
 				}
 			}
@@ -1375,17 +1384,19 @@ UFC_mission_slot_3 = {
 
 	UFC_mission_american_hegemony = {
 		icon = mission_ruler_of_north_america
+		icon = mission_ruler_of_north_america
 		position = 7
 		required_missions = { UFC_mission_from_the_southpole_to_red_river_valley }
 		trigger = {
 			num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
-				value = 100
+				value = 150
 				continent = north_america
 			}
 			num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
 				value = 50
 				continent = south_america
 			}
+			#is_year = 1500
 		}
 		effect = {
 			add_country_modifier = {

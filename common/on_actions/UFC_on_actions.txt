@@ -37,6 +37,18 @@ on_colony_finished = { #ROOT - Province
 			duration = -1
 		}
 	}
+	owner = {
+		if = {
+			limit = {
+				has_government_mechanic = ufc_calibrate_the_clock
+			}
+			add_government_power = { # adds the specified amount of power
+				mechanic_type = ufc_calibrate_the_clock
+				power_type = mechanical_reform_power
+				value = 0.25
+			}
+		}
+	}
 	events = { flavor_UFC.24 }
 }
 
@@ -158,5 +170,102 @@ on_loan_repaid = {
 			has_estate_privilege = UFC_staff_estate_indebted_to_burghers
 		}
 		remove_estate_privilege = UFC_staff_estate_indebted_to_burghers
+	}
+}
+
+# this = country
+on_rebels_break_country = {
+	if = {
+		limit = {
+			has_government_mechanic = ufc_mechanic_mechanical_clock
+		}
+		add_government_power = { # adds the specified amount of power
+			mechanic_type = ufc_mechanic_mechanical_clock
+			power_type = mechanical_clock_adm_power
+			value = 5
+		}
+	}
+}
+
+on_tech_taken = { #ROOT - Country
+	if = {
+		limit = {
+			has_government_mechanic = ufc_mechanic_mechanical_clock
+		}
+		add_government_power = { # adds the specified amount of power
+			mechanic_type = ufc_mechanic_mechanical_clock
+			power_type = mechanical_clock_adm_power
+			value = -2
+		}
+	}
+	if = {
+		limit = {
+			has_government_mechanic = ufc_calibrate_the_clock
+		}
+		add_government_power = { # adds the specified amount of power
+			mechanic_type = ufc_calibrate_the_clock
+			power_type = mechanical_reform_power
+			value = 2
+		}
+	}
+}
+
+on_parliament_seat_given = {
+	if = {
+		limit = {
+			has_government_mechanic = ufc_mechanic_mechanical_clock
+			NOT = { current_size_of_parliament = 20 }
+		}
+		add_government_power = { # adds the specified amount of power
+			mechanic_type = ufc_mechanic_mechanical_clock
+			power_type = mechanical_clock_dip_power
+			value = -0.1
+		}
+	}
+}
+
+on_dip_development = {
+	owner = {
+		if = {
+			limit = {
+				has_government_mechanic = ufc_mechanic_mechanical_clock
+			}
+			add_government_power = { # adds the specified amount of power
+				mechanic_type = ufc_mechanic_mechanical_clock
+				power_type = mechanical_clock_dip_power
+				value = -0.02
+			}
+		}
+	}
+}
+
+
+# country
+# root = winning country, from = loser country
+on_battle_won_country = {
+	if = {
+		limit = {
+			has_government_mechanic = ufc_calibrate_the_clock
+		}
+		add_government_power = { # adds the specified amount of power
+			mechanic_type = ufc_calibrate_the_clock
+			power_type = mechanical_reform_power
+			value = 0.25
+		}
+	}
+}
+
+# country
+# root = winning country, from = loser country
+on_main_war_won = {
+	if = {
+		limit = {
+			has_government_mechanic = ufc_calibrate_the_clock
+		}
+		add_government_power = { # adds the specified amount of power
+			mechanic_type = ufc_calibrate_the_clock
+			power_type = mechanical_reform_power
+			value = 2.5
+		}
 	}
 }
