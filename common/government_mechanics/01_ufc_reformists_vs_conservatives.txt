@@ -73,19 +73,19 @@ ufc_calibrate_the_clock = {
 				}
 				capital_scope = {
 					spawn_rebels = {
-						type = anti_tax_rebels
+						type = particularist_rebels
 						size = 8
 					}
 				}
 				random_owned_province = {
 					spawn_rebels = {
-						type = anti_tax_rebels
+						type = particularist_rebels
 						size = 4
 					}
 				}
 				random_owned_province = {
 					spawn_rebels = {
-						type = anti_tax_rebels
+						type = particularist_rebels
 						size = 4
 					}
 				}

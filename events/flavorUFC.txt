@@ -67,8 +67,8 @@ country_event = {
 				add_dip_power = 120
 				add_mil_power = 60
 				add_treasury = 100
-				add_manpower = 8
-				add_sailors = 5000
+				add_manpower = 6
+				add_sailors = 6000
 				add_army_tradition = 10
 				add_navy_tradition = 30
 				random_owned_province = {
@@ -174,7 +174,7 @@ country_event = {
 			country_event = { id = flavor_UFC.3 days = 30 }
 			country_event = { id = flavor_UFC.5 days = 60 }
 			country_event = { id = flavor_UFC.6 days = 365 }
-			country_event = { id = flavor_UFC.102 days = 1460 random = 60 }
+			country_event = { id = flavor_UFC.102 days = 1095 random = 60 }
 		}
 	}
 }
@@ -298,6 +298,8 @@ country_event = {
 		}
 	}
 }
+
+#7 and 8 are price changing events. 70xx
 
 #mission doomsayer
 country_event = {
@@ -507,6 +509,7 @@ country_event = {
 			duration = 36500
 			hidden = yes
 		}
+		set_ruler_flag = UFC_flag_marquez
 		add_ruler_personality = embezzler_personality
 		add_ruler_personality = intricate_web_weaver_personality
 		add_ruler_personality = craven_personality
@@ -533,8 +536,8 @@ country_event = {
 		add_dip_power = 25
 		add_mil_power = -25
 		hidden_effect = {
-			country_event = { id = flavor_UFC.107 days = 120 random = 60 }
-			country_event = { id = flavor_UFC.1061 days = 180 random = 90 }
+			country_event = { id = flavor_UFC.107 days = 30 random = 30 }
+			country_event = { id = flavor_UFC.1061 days = 120 random = 60 }
 		}
 	}
 }
@@ -550,7 +553,7 @@ country_event = {
 		add_dip_power = 10
 	}
 	after = {
-		country_event = { id = flavor_UFC.1071 days = 720 random = 360 }
+		country_event = { id = flavor_UFC.1071 days = 365 random = 30 }
 	}
 }
 country_event = {
@@ -567,7 +570,7 @@ country_event = {
 		add_ruler_personality = reformist_personality
 	}
 	after = {
-		country_event = { id = flavor_UFC.1062 days = 365 random = 180 }
+		country_event = { id = flavor_UFC.1062 days = 120 random = 60 }
 	}
 }
 
@@ -585,7 +588,7 @@ country_event = {
 		add_ruler_personality = lawgiver_personality
 	}
 	after = {
-		country_event = { id = flavor_UFC.1063 days = 365 random = 180 }
+		country_event = { id = flavor_UFC.1063 days = 120 random = 60 }
 	}
 }
 
@@ -623,7 +626,7 @@ country_event = {
 		}
 	}
 	after = {
-		country_event = { id = flavor_UFC.1064 days = 730 random = 365 }
+		country_event = { id = flavor_UFC.1064 days = 120 random = 60 }
 	}
 }
 
@@ -641,7 +644,7 @@ country_event = {
 		add_ruler_personality = strict_personality
 	}
 	after = {
-		country_event = { id = flavor_UFC.1065 days = 365 random = 180 }
+		country_event = { id = flavor_UFC.1065 days = 240 random = 120 }
 	}
 }
 
@@ -659,7 +662,7 @@ country_event = {
 		custom_tooltip = UFC_tooltip_enable_build_macondo
 	}
 	after = {
-		country_event = { id = flavor_UFC.1066 days = 365 random = 180 }
+		country_event = { id = flavor_UFC.1066 days = 365 random = 30 }
 	}
 }
 
@@ -681,7 +684,7 @@ country_event = {
 		add_corruption = -0.1
 	}
 	after = {
-		country_event = { id = flavor_UFC.1067 days = 60 random = 30 }
+		country_event = { id = flavor_UFC.1067 days = 5 random = 5 }
 	}
 }
 
@@ -701,7 +704,7 @@ country_event = {
 		}
 	}
 	after = {
-		country_event = { id = flavor_UFC.1068 days = 365 random = 180 }
+		country_event = { id = flavor_UFC.1068 days = 365 random = 30 }
 	}
 }
 
@@ -717,8 +720,10 @@ country_event = {
 		add_government_reform = UFC_consolidation_of_president_power_reform
 		#custom_tooltip = UFC_tooltip_start_the_mechanical_clock
 	}
+	after = {
+		country_event = { id = flavor_UFC.56 days = 5 random = 5} #the end of ummayad zakat
+	}
 }
-
 
 country_event = {
 	id = flavor_UFC.1071
@@ -732,9 +737,78 @@ country_event = {
 		add_dip_power = 10
 	}
 	after = {
-		country_event = { id = flavor_UFC.1072 days = 120 random = 60 }
+		country_event = { id = flavor_UFC.1072 days = 730 random = 120 }
 	}
 }
+
+country_event = {
+	id = flavor_UFC.1072
+	title = flavor_UFC.1072.title
+	desc = flavor_UFC.1072.desc
+	picture = muslimgfx_BIG_BOOK_eventPicture
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = flavor_UFC.1072.a
+		add_adm_power = 10
+	}
+	after = {
+		country_event = { id = flavor_UFC.1073 days = 1095 random = 365 }
+	}
+}
+
+country_event = {
+	id = flavor_UFC.1073
+	title = flavor_UFC.1073.title
+	desc = flavor_UFC.1073.desc
+	picture = BIG_BOOK_eventPicture
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = flavor_UFC.1073.a
+		add_dip_power = 10
+	}
+	after = {
+		country_event = { id = flavor_UFC.1074 days = 730 random = 365 }
+	}
+}
+
+country_event = {
+	id = flavor_UFC.1074
+	title = flavor_UFC.1074.title
+	desc = flavor_UFC.1074.desc
+	picture = muslimgfx_FARMING_eventPicture
+	fire_only_once = yes
+	is_triggered_only = yes
+	goto = 829
+	option = {
+		name = flavor_UFC.1074.a
+		add_adm_power = 10
+	}
+	after = {
+		country_event = { id = flavor_UFC.1075 days = 3650 random = 3650 }
+	}
+}
+
+country_event = {
+	id = flavor_UFC.1075
+	title = flavor_UFC.1075.title
+	desc = flavor_UFC.1075.desc
+	picture = PRAYING_eventPicture
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = flavor_UFC.1075.a
+		custom_tooltip = UFC_tooltip_marquez_death
+		if = {
+			limit = {
+				has_ruler_flag = UFC_flag_marquez
+			}
+			kill_ruler = yes
+		}
+	}
+}
+
 #mission technique_or_doctrine
 country_event = {
 	id = flavor_UFC.17
@@ -776,6 +850,9 @@ country_event = {
 			name = UFC_modifier_secularism_effect
 			duration = -1
 		}
+	}
+	after = {
+		country_event = { id = flavor_UFC.55 days = 10 random = 5 }
 	}
 }
 
@@ -1213,7 +1290,6 @@ country_event = {
 	}
 }
 
-
 #salary
 country_event = {
 	id = flavor_UFC.31
@@ -1315,7 +1391,6 @@ country_event = {
 		}
 	}
 }
-
 
 #granada disaster EVENTS 33-37
 country_event = {
@@ -1562,6 +1637,9 @@ country_event = {
 	option = {
 		name = flavor_UFC.38.a
 		add_years_of_income = 0.5
+	}
+	after = {
+		country_event = { id = flavor_UFC.53 days = 30 random = 30 }
 	}
 }
 country_event = {
@@ -1944,20 +2022,36 @@ country_event = {
 		tag = UFC
 		any_known_country = {
 			has_spy_network_from = {
-				who = UFC
+				who = ROOT
 				value = 60
 			}
 			capital_scope = {
-				area = {
-					not = {
-						is_permanent_claim = root
-					}
+				not = {
+					is_permanent_claim = ROOT
 				}
 			}
 		}
 	}
+	immediate = {
+		hidden_effect = {
+			random_known_country = {
+				limit = {
+					has_spy_network_from = {
+						who = UFC
+						value = 60
+					}
+					capital_scope = {
+						not = {
+							is_permanent_claim = ROOT
+						}
+					}
+				}
+				save_event_target_as = ufc_target_spy_network_country
+			}
+		}
+	}
 	mean_time_to_happen = {
-		months = 24
+		months = 18
 		modifier = {
 			factor = 0.75
 			event_target:ufc_target_spy_network_country = {
@@ -1977,29 +2071,23 @@ country_event = {
 			}
 		}
 	}
-	immediate = {
-		hidden_effect = {
-			random_known_country = {
-				limit = {
-					has_spy_network_from = {
-						who = UFC
-						value = 60
-					}
-				}
-				save_event_target_as = ufc_target_spy_network_country
-			}
-		}
-	}
 	option = {
 		name = flavor_UFC.49.a
 		event_target:ufc_target_spy_network_country = {
 			capital_scope = {
 				area = {
+					limit = {
+						owned_by = event_target:ufc_target_spy_network_country
+					}
 					add_permanent_claim = root
 				}
 			}
+			add_spy_network_from = {
+				who = root
+				value = -20
+			}
 		}
-		add_dip_power = -25
+		add_dip_power = -10
 	}
 	option = {
 		name = flavor_UFC.49.b
@@ -2064,7 +2152,7 @@ country_event = {
 		}
 	}
 	mean_time_to_happen = {
-		months = 1
+		months = 6
 	}
 	immediate = {
 		CAS = {
@@ -2075,6 +2163,309 @@ country_event = {
 		}
 	}
 }
+
+#from east to west
+country_event = {
+	id = flavor_UFC.52
+	title = flavor_UFC.52.title
+	desc = flavor_UFC.52.desc
+	picture = COASTLINE_MAP_eventPicture
+	fire_only_once = yes
+	trigger = {
+		tag = UFC
+		or = {
+			has_country_flag = circumnavigation_first
+			has_country_flag = circumnavigation_done
+		}
+		has_country_flag = UFC_flag_find_east_route
+		num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+			area = upper_andalucia_area
+			value = 4
+		}
+	}
+	mean_time_to_happen = {
+		months = 3
+	}
+	option = {
+		name = flavor_UFC.52.a
+		custom_tooltip = UFC_tooltip_enable_east_indian_trade_route
+		set_country_flag = UFC_flag_enable_east_indian_trade_route
+	}
+}
+
+#berber mercenary
+country_event = {
+	id = flavor_UFC.53
+	title = flavor_UFC.53.title
+	desc = flavor_UFC.53.desc
+	picture = muslimgfx_HORDE_ON_HORSEBACK_eventPicture
+	fire_only_once = yes
+	is_triggered_only = yes
+	goto = 835
+	option = {
+		name = flavor_UFC.53.a
+		835 = {
+			add_base_manpower = 1
+		}
+		set_country_flag = UFC_flag_enable_mercenaries_berber
+		custom_tooltip = UFC_tooltip_enable_mercenaries_berber
+	}
+}
+
+#infiltrate MCA before
+country_event = {
+	id = flavor_UFC.54
+	title = flavor_UFC.54.title
+	desc = flavor_UFC.54.desc
+	picture = GOLDEN_CITY_eventPicture
+	fire_only_once = yes
+	trigger = {
+		tag = UFC
+		has_discovered = 4603
+		has_discovered = 832
+		has_discovered = 825
+	}
+	mean_time_to_happen = {
+		months = 1
+	}
+	goto = 825
+	option = {
+		name = flavor_UFC.54.a
+		trigger = {
+			has_dlc = "El Dorado"
+			hidden_trigger = {
+				NOT = {
+					OR = {
+						has_country_flag = sce_eventchain_flag
+						has_country_flag = sce_end_eldorado_flag
+					}
+				}
+			}
+		}
+		highlight = yes
+		set_country_flag = sce_eventchain_flag
+		set_country_flag = sce_action01_flag
+		add_country_modifier = {
+			name = sce_search_eldorado
+			duration = -1
+		}
+		add_country_modifier = {
+			name = UFC_modifier_infiltrate_natives
+			duration = 7300
+		}
+	}
+	option = {
+		name = flavor_UFC.54.b
+		add_adm_power = 50
+		add_country_modifier = {
+			name = UFC_modifier_infiltrate_natives
+			duration = 7300
+		}
+	}
+}
+
+#zakat
+country_event = {
+	id = flavor_UFC.55
+	title = flavor_UFC.55.title
+	desc = flavor_UFC.55.desc
+	picture = muslimgfx_HAJJ_eventPicture
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = flavor_UFC.55.a
+		set_country_flag = UFC_flag_enable_ummayad_zakat
+		custom_tooltip = UFC_tooltip_enable_ummayad_zakat
+		hidden_effect = {
+			set_variable = {
+				which = ummayad_zakat_fundation
+				value = 0
+			}
+		}
+	}
+}
+
+#the end of zakat
+country_event = {
+	id = flavor_UFC.56
+	title = flavor_UFC.56.title
+	desc = flavor_UFC.56.desc
+	picture = muslimgfx_ECONOMY_eventPicture
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = flavor_UFC.56.a
+		clr_country_flag = UFC_flag_enable_ummayad_zakat
+		custom_tooltip = UFC_tooltip_ummayad_zakat_recovery
+		add_government_power = {
+			mechanic_type = ufc_mechanic_mechanical_clock
+			power_type = mechanical_clock_dip_power
+			value = -3
+		}
+		hidden_effect = {
+			for_variable_amount = {
+				variable = ummayad_zakat_fundation
+				effect = "
+						 add_years_of_income = 0.025
+					"
+			}
+		}
+	}
+	option = {
+		name = flavor_UFC.56.b
+		clr_country_flag = UFC_flag_enable_ummayad_zakat
+		custom_tooltip = UFC_tooltip_ummayad_zakat_last_use
+		add_government_power = {
+			mechanic_type = ufc_mechanic_mechanical_clock
+			power_type = mechanical_clock_dip_power
+			value = -3
+		}
+		hidden_effect = {
+			for_variable_amount = {
+				variable = ummayad_zakat_fundation
+				effect = "
+						 add_government_power = {
+							mechanic_type = ufc_mechanic_mechanical_clock
+							power_type = mechanical_clock_dip_power
+							value = -0.25
+						}
+					"
+			}
+		}
+	}
+}
+
+#abu bakr
+country_event = {
+	id = flavor_UFC.57
+	title = flavor_UFC.57.title
+	desc = flavor_UFC.57.desc
+	picture = muslimgfx_SHIP_SAILING_eventPicture
+	fire_only_once = yes
+	trigger = {
+		tag = UFC
+		has_discovered = 755
+	}
+	mean_time_to_happen = {
+		days = 15
+	}
+	goto = 755
+	option = {
+		name = flavor_UFC.57.a
+		add_years_of_income = 0.1
+		755 = {
+			add_permanent_province_modifier = {
+				name = UFC_modifier_mali_survivor
+				duration = -1
+			}
+			change_native_size = 5
+			change_culture = mali
+			change_religion = sunni
+		}
+	}
+}
+
+country_event = {
+	id = flavor_UFC.58
+	title = flavor_UFC.58.title
+	desc = flavor_UFC.58.desc
+	picture = southamericagfx_COURT_eventPicture
+	fire_only_once = yes
+	mean_time_to_happen = {
+		months = 1
+	}
+	goto = 825
+	trigger = {
+		tag = UFC
+		825 = {
+			owned_by = root
+		}
+	}
+	option = {
+		name = flavor_UFC.58.a
+		825 = {
+			add_permanent_province_modifier = {
+				name = UFC_modifier_bogota_emerald_mine
+				duration = -1
+			}
+		}
+		custom_tooltip = UFC_tooltip_bogota_emerald_mine
+	}
+}
+
+country_event = {
+	id = flavor_UFC.59
+	hidden = yes
+	fire_only_once = yes
+	mean_time_to_happen = {
+		months = 1
+	}
+	trigger = {
+		OR = {
+			825 = {
+				base_production = 20
+			}
+			825 = {
+				has_province_modifier = diamond_district
+			}
+		}
+	}
+	immediate = {
+		set_global_flag = brazilian_gems_happened
+	}
+}
+
+#the jungle line
+country_event = {
+	id = flavor_UFC.60
+	title = flavor_UFC.60.title
+	desc = flavor_UFC.60.desc
+	picture = muslimgfx_WOUNDED_SOLDIERS_eventPicture
+	fire_only_once = yes
+	mean_time_to_happen = {
+		months = 6
+	}
+	trigger = {
+		tag = UFC
+		num_of_owned_provinces_with = {
+			region = central_america_region
+			value = 5
+		}
+		4595 = {
+			owned_by = root
+		}
+	}
+	option = {
+		name = flavor_UFC.60.a
+		central_america_region = {
+			limit = {
+				is_city = no
+			}
+			add_province_modifier = {
+				name = UFC_modifier_jungle_line
+				duration = -1
+			}
+		}
+		custom_tooltip = UFC_tooltip_jungle_line
+		4595 = {
+			add_base_production = 1
+		}
+	}
+}
+
+# Trade partner
+country_event = {
+	id = flavor_UFC.60
+	title = flavor_UFC.60.title
+	desc = flavor_UFC.60.desc
+	picture = muslimgfx_WOUNDED_SOLDIERS_eventPicture
+	fire_only_once = yes
+	mean_time_to_happen = {
+		months = 6
+	}
+
+}
+
 
 #Timur
 country_event = {
@@ -2870,6 +3261,625 @@ country_event = {
 	}
 }
 
+#mechanic events
+country_event = {
+	id = flavor_UFC.2001
+	title = flavor_UFC.2001.title
+	desc = flavor_UFC.2001.desc
+	picture = ECONOMY_eventPicture
+	fire_only_once = yes
+	mean_time_to_happen = {
+		months = 240
+	}
+	trigger = {
+		has_government_mechanic = ufc_mechanic_mechanical_clock
+	}
+	option = {
+		name = flavor_UFC.2001.a
+		add_government_power = {
+			mechanic_type = ufc_mechanic_mechanical_clock
+			power_type = mechanical_clock_dip_power
+			value = -10
+		}
+		add_government_power = {
+			mechanic_type = ufc_calibrate_the_clock
+			power_type = mechanical_reform_power
+			value = 5
+		}
+	}
+}
+
+country_event = {
+	id = flavor_UFC.2002
+	title = flavor_UFC.2002.title
+	desc = flavor_UFC.2002.desc
+	picture = CONQUEST_eventPicture
+	is_triggered_only = yes
+	trigger = {
+		tag = UFC
+		has_government_mechanic = ufc_mechanic_mechanical_clock
+	}
+	immediate = {
+		hidden_effect = {
+			random_owned_province = {
+				limit = {
+					is_city = yes
+				}
+				save_event_target_as = ufc_target_mechanical_province
+			}
+		}
+	}
+	goto = ufc_target_mechanical_province
+	option = {
+		name = flavor_UFC.2002.a
+		add_government_power = {
+			mechanic_type = ufc_mechanic_mechanical_clock
+			power_type = mechanical_clock_adm_power
+			value = -2
+		}
+		add_government_power = {
+			mechanic_type = ufc_mechanic_mechanical_clock
+			power_type = mechanical_clock_dip_power
+			value = -1
+		}
+		event_target:ufc_target_mechanical_province = {
+			add_base_production = 1
+			add_base_tax = -1
+		}
+	}
+}
+
+country_event = {
+	id = flavor_UFC.2003
+	title = flavor_UFC.2003.title
+	desc = flavor_UFC.2003.desc
+	picture = CORRUPTION_eventPicture
+	is_triggered_only = yes
+	trigger = {
+		tag = UFC
+		has_government_mechanic = ufc_mechanic_mechanical_clock
+	}
+	immediate = {
+		hidden_effect = {
+			random_owned_province = {
+				limit = {
+					is_city = yes
+				}
+				save_event_target_as = ufc_target_mechanical_province
+			}
+		}
+	}
+	goto = ufc_target_mechanical_province
+	option = {
+		name = flavor_UFC.2003.a
+		add_government_power = {
+			mechanic_type = ufc_mechanic_mechanical_clock
+			power_type = mechanical_clock_adm_power
+			value = 2
+		}
+		add_prestige = -10
+		add_years_of_income = 0.05
+	}
+}
+
+country_event = {
+	id = flavor_UFC.2004
+	title = flavor_UFC.2004.title
+	desc = flavor_UFC.2004.desc
+	picture = muslimgfx_DEBATE_REPUBLICAN_eventPicture
+	is_triggered_only = yes
+	trigger = {
+		tag = UFC
+		has_government_mechanic = ufc_mechanic_mechanical_clock
+	}
+	immediate = {
+		hidden_effect = {
+			random_owned_province = {
+				limit = {
+					is_city = yes
+					has_seat_in_parliament = yes
+				}
+				save_event_target_as = ufc_target_mechanical_province
+			}
+		}
+	}
+	goto = ufc_target_mechanical_province
+	option = {
+		name = flavor_UFC.2004.a
+		add_government_power_scaled_to_seats = {
+			mechanic_type = ufc_mechanic_mechanical_clock
+			power_type = mechanical_clock_adm_power
+			value = 25
+		}
+		add_government_power = {
+			mechanic_type = ufc_calibrate_the_clock
+			power_type = mechanical_reform_power
+			value = 2
+		}
+		add_manpower = -0.002
+	}
+}
+
+country_event = {
+	id = flavor_UFC.2005
+	title = flavor_UFC.2005.title
+	desc = flavor_UFC.2005.desc
+	picture = ADVISOR_eventPicture
+	is_triggered_only = yes
+	trigger = {
+		tag = UFC
+		has_government_mechanic = ufc_mechanic_mechanical_clock
+		has_government_power = {
+			mechanic_type = ufc_calibrate_the_clock
+			power_type = mechanical_reform_power
+			value = 75
+		}
+	}
+	option = {
+		name = flavor_UFC.2005.a
+		add_government_power = {
+			mechanic_type = ufc_mechanic_mechanical_clock
+			power_type = mechanical_clock_adm_power
+			value = -2
+		}
+		add_government_power = {
+			mechanic_type = ufc_mechanic_mechanical_clock
+			power_type = mechanical_clock_dip_power
+			value = -2
+		}
+		add_government_power = {
+			mechanic_type = ufc_mechanic_mechanical_clock
+			power_type = mechanical_clock_mil_power
+			value = -2
+		}
+		add_government_power = {
+			mechanic_type = ufc_calibrate_the_clock
+			power_type = mechanical_reform_power
+			value = -5
+		}
+		add_years_of_income = -0.1
+	}
+}
+
+country_event = {
+	id = flavor_UFC.2006
+	title = flavor_UFC.2006.title
+	desc = flavor_UFC.2006.desc
+	picture = muslimgfx_REVOLUTION_eventPicture
+	is_triggered_only = yes
+	trigger = {
+		tag = UFC
+		has_government_mechanic = ufc_mechanic_mechanical_clock
+	}
+	immediate = {
+		hidden_effect = {
+			random_owned_province = {
+				limit = {
+					is_city = yes
+				}
+				save_event_target_as = ufc_target_mechanical_province
+			}
+		}
+	}
+	goto = ufc_target_mechanical_province
+	option = {
+		name = flavor_UFC.2006.a
+		add_government_power = {
+			mechanic_type = ufc_mechanic_mechanical_clock
+			power_type = mechanical_clock_dip_power
+			value = -3
+		}
+		add_prestige = -10
+		event_target:ufc_target_mechanical_province = {
+			add_base_tax = -1
+			add_base_manpower = -1
+			add_local_autonomy = 33
+			add_province_modifier = {
+				name = UFC_modifier_province_strike
+				duration = 7300
+			}
+		}
+	}
+	option = {
+		name = flavor_UFC.2006.b
+		add_government_power = {
+			mechanic_type = ufc_mechanic_mechanical_clock
+			power_type = mechanical_clock_adm_power
+			value = 1
+		}
+		add_government_power = {
+			mechanic_type = ufc_mechanic_mechanical_clock
+			power_type = mechanical_clock_dip_power
+			value = -2
+		}
+		event_target:ufc_target_mechanical_province = {
+			add_local_autonomy = 10
+			add_province_modifier = {
+				name = UFC_modifier_province_strike
+				duration = 3650
+			}
+		}
+	}
+	option = {
+		name = flavor_UFC.2006.c
+		add_government_power = {
+			mechanic_type = ufc_mechanic_mechanical_clock
+			power_type = mechanical_clock_mil_power
+			value = -1
+		}
+		add_government_power = {
+			mechanic_type = ufc_mechanic_mechanical_clock
+			power_type = mechanical_clock_dip_power
+			value = 2
+		}
+		event_target:ufc_target_mechanical_province = {
+			add_local_autonomy = -10
+			add_province_modifier = {
+				name = UFC_modifier_province_strike
+				duration = 1825
+			}
+			spawn_rebels = {
+				size = 4
+				type = anti_tax_rebels
+			}
+		}
+	}
+}
+
+country_event = {
+	id = flavor_UFC.2007
+	title = flavor_UFC.2007.title
+	desc = flavor_UFC.2007.desc
+	picture = ECONOMY_eventPicture
+	is_triggered_only = yes
+	trigger = {
+		tag = UFC
+		has_government_mechanic = ufc_mechanic_mechanical_clock
+		overextension_percentage = 0.75
+	}
+	option = {
+		name = flavor_UFC.2007.a
+		add_government_power = {
+			mechanic_type = ufc_mechanic_mechanical_clock
+			power_type = mechanical_clock_adm_power
+			value = 3
+		}
+		add_government_power = {
+			mechanic_type = ufc_mechanic_mechanical_clock
+			power_type = mechanical_clock_dip_power
+			value = -1
+		}
+		add_government_power = {
+			mechanic_type = ufc_mechanic_mechanical_clock
+			power_type = mechanical_clock_mil_power
+			value = -5
+		}
+	}
+}
+
+country_event = {
+	id = flavor_UFC.2008
+	title = flavor_UFC.2008.title
+	desc = flavor_UFC.2008.desc
+	picture = muslimgfx_BANKRUPTCY_eventPicture
+	is_triggered_only = yes
+	trigger = {
+		tag = UFC
+		has_government_mechanic = ufc_mechanic_mechanical_clock
+	}
+	immediate = {
+		hidden_effect = {
+			random_owned_province = {
+				limit = {
+					is_city = yes
+				}
+				save_event_target_as = ufc_target_mechanical_province
+			}
+		}
+	}
+	goto = ufc_target_mechanical_province
+	option = {
+		name = flavor_UFC.2008.a
+		add_government_power = {
+			mechanic_type = ufc_mechanic_mechanical_clock
+			power_type = mechanical_clock_adm_power
+			value = 3
+		}
+		add_loan = {
+			fixed_interest = 5
+			duration = 60
+		}
+		event_target:ufc_target_mechanical_province = {
+			add_province_modifier = {
+				name = UFC_modifier_province_meaningless_monument
+				duration = -1
+			}
+		}
+	}
+	option = {
+		name = flavor_UFC.2008.b
+		add_inflation = 2
+		add_government_power = {
+			mechanic_type = ufc_mechanic_mechanical_clock
+			power_type = mechanical_clock_adm_power
+			value = 1
+		}
+		add_government_power = {
+			mechanic_type = ufc_mechanic_mechanical_clock
+			power_type = mechanical_clock_dip_power
+			value = 2
+		}
+		event_target:ufc_target_mechanical_province = {
+			add_province_modifier = {
+				name = UFC_modifier_province_meaningless_monument
+				duration = -1
+			}
+		}
+	}
+	option = {
+		name = flavor_UFC.2008.c
+		add_government_power = {
+			mechanic_type = ufc_mechanic_mechanical_clock
+			power_type = mechanical_clock_adm_power
+			value = -3
+		}
+		add_government_power = {
+			mechanic_type = ufc_calibrate_the_clock
+			power_type = mechanical_reform_power
+			value = -5
+		}
+		add_years_of_income = -0.33
+		add_manpower = -0.001
+		event_target:ufc_target_mechanical_province = {
+			add_province_modifier = {
+				name = UFC_modifier_province_meaningless_monument
+				duration = -1
+			}
+		}
+	}
+}
+
+country_event = {
+	id = flavor_UFC.2009
+	title = flavor_UFC.2009.title
+	desc = flavor_UFC.2009.desc
+	picture = muslimgfx_GOOD_WITH_MONARCH_eventPicture
+	is_triggered_only = yes
+	trigger = {
+		tag = UFC
+		has_government_mechanic = ufc_mechanic_mechanical_clock
+	}
+	immediate = {
+		hidden_effect = {
+			random_owned_province = {
+				limit = {
+					is_city = yes
+				}
+				save_event_target_as = ufc_target_mechanical_province
+			}
+		}
+	}
+	goto = ufc_target_mechanical_province
+	option = {
+		name = flavor_UFC.2009.a
+		add_government_power = {
+			mechanic_type = ufc_mechanic_mechanical_clock
+			power_type = mechanical_clock_dip_power
+			value = 1
+		}
+		event_target:ufc_target_mechanical_province = {
+			add_base_production = 1
+		}
+	}
+}
+
+country_event = {
+	id = flavor_UFC.2010
+	title = flavor_UFC.2010.title
+	desc = flavor_UFC.2010.desc
+	picture = ELECTION_REPUBLICAN_eventPicture
+	is_triggered_only = yes
+	trigger = {
+		tag = UFC
+		has_government_mechanic = ufc_mechanic_mechanical_clock
+	}
+	immediate = {
+		hidden_effect = {
+			random_owned_province = {
+				limit = {
+					is_city = yes
+				}
+				save_event_target_as = ufc_target_mechanical_province
+			}
+		}
+	}
+	goto = ufc_target_mechanical_province
+	option = {
+		name = flavor_UFC.2010.a
+		add_government_power = {
+			mechanic_type = ufc_mechanic_mechanical_clock
+			power_type = mechanical_clock_adm_power
+			value = 1
+		}
+		add_government_power = {
+			mechanic_type = ufc_mechanic_mechanical_clock
+			power_type = mechanical_clock_dip_power
+			value = 1
+		}
+		add_years_of_income = 0.4
+		event_target:ufc_target_mechanical_province = {
+			add_base_tax = 1
+		}
+	}
+	option = {
+		name = flavor_UFC.2010.b
+		add_government_power = {
+			mechanic_type = ufc_mechanic_mechanical_clock
+			power_type = mechanical_clock_adm_power
+			value = 1
+		}
+		add_government_power = {
+			mechanic_type = ufc_mechanic_mechanical_clock
+			power_type = mechanical_clock_dip_power
+			value = -2
+		}
+		add_years_of_income = 0.05
+	}
+	option = {
+		name = flavor_UFC.2010.c
+		add_government_power = {
+			mechanic_type = ufc_mechanic_mechanical_clock
+			power_type = mechanical_clock_adm_power
+			value = 1
+		}
+		add_treasury = -100
+		random_list = {
+			25 = {
+				add_treasury = 0
+			}
+			40 = {
+				add_treasury = 20
+			}
+			20 = {
+				add_treasury = 100
+			}
+			10 = {
+				add_treasury = 200
+			}
+			4 = {
+				add_treasury = 500
+			}
+			1 = {
+				tooltip = {
+					add_treasury = 100000
+				}
+			}
+		}
+	}
+}
+
+country_event = {
+	id = flavor_UFC.2011
+	title = flavor_UFC.2011.title
+	desc = flavor_UFC.2011.desc
+	picture = NAVAL_MILITARY_eventPicture
+	is_triggered_only = yes
+	trigger = {
+		tag = UFC
+		has_government_mechanic = ufc_mechanic_mechanical_clock
+		not = {
+			has_country_flag = UFC_flag_ban_military_corruption
+		}
+	}
+	immediate = {
+		hidden_effect = {
+			random_active_trade_node = {
+				limit = {
+					strongest_trade_power = {
+						tag = prev
+					}
+					has_merchant = prev
+				}
+				save_event_target_as = ufc_target_mechanical_province
+			}
+		}
+	}
+	goto = ufc_target_mechanical_province
+	option = {
+		name = flavor_UFC.2011.a
+		add_government_power = {
+			mechanic_type = ufc_mechanic_mechanical_clock
+			power_type = mechanical_clock_adm_power
+			value = 3
+		}
+		add_government_power = {
+			mechanic_type = ufc_mechanic_mechanical_clock
+			power_type = mechanical_clock_mil_power
+			value = -2
+		}
+		event_target:ufc_target_mechanical_province = {
+			add_trade_node_income = 5
+		}
+	}
+	option = {
+		name = flavor_UFC.2011.b
+		add_government_power = {
+			mechanic_type = ufc_mechanic_mechanical_clock
+			power_type = mechanical_clock_adm_power
+			value = 2
+		}
+		add_government_power = {
+			mechanic_type = ufc_mechanic_mechanical_clock
+			power_type = mechanical_clock_mil_power
+			value = -3
+		}
+		add_yearly_sailors = -0.25
+	}
+}
+
+country_event = {
+	id = flavor_UFC.2012
+	title = flavor_UFC.2012.title
+	desc = flavor_UFC.2012.desc
+	picture = muslimgfx_MILITARY_CAMP_eventPicture
+	is_triggered_only = yes
+	trigger = {
+		tag = UFC
+		has_government_mechanic = ufc_mechanic_mechanical_clock
+		not = {
+			has_country_flag = UFC_flag_ban_military_corruption
+		}
+	}
+	immediate = {
+		hidden_effect = {
+			random_owned_province = {
+				limit = {
+					is_city = yes
+					can_spawn_rebels = nationalist_rebels
+				}
+				save_event_target_as = ufc_target_mechanical_province
+			}
+		}
+	}
+	goto = ufc_target_mechanical_province
+	option = {
+		name = flavor_UFC.2012.a
+		add_government_power = {
+			mechanic_type = ufc_mechanic_mechanical_clock
+			power_type = mechanical_clock_adm_power
+			value = 1
+		}
+		add_government_power = {
+			mechanic_type = ufc_mechanic_mechanical_clock
+			power_type = mechanical_clock_mil_power
+			value = -2
+		}
+		add_government_power = {
+			mechanic_type = ufc_calibrate_the_clock
+			power_type = mechanical_reform_power
+			value = -2
+		}
+		add_years_of_income = -0.1
+	}
+	option = {
+		name = flavor_UFC.2012.b
+		add_government_power = {
+			mechanic_type = ufc_mechanic_mechanical_clock
+			power_type = mechanical_clock_mil_power
+			value = 2
+		}
+		add_rebel_progress = {
+			value = -30
+			rebel_type = nationalist_rebels
+		}
+		event_target:ufc_target_mechanical_province = {
+			spawn_rebels = {
+				type = nationalist_rebels
+				size = 2
+			}
+		}
+	}
+}
 
 #REVOLUTION!
 country_event = {

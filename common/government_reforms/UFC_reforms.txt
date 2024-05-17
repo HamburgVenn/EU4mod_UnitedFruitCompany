@@ -120,8 +120,8 @@ UFC_the_secularism_reform = {
 		}
 	}
 	modifiers = {
-		tolerance_of_heathens_capacity = 2
 		tolerance_own = 1
+		native_uprising_chance = -0.5
 		native_assimilation = 0.5
 		idea_cost = -0.05
 	}

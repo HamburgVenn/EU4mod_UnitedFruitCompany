@@ -70,9 +70,9 @@ UFC_modifier_american_hegemony = {
 	core_creation = -0.05
 	administrative_efficiency = 0.05
 	global_trade_goods_size_modifier = 0.1
-	trade_efficiency = 0.01
+	trade_efficiency = 0.1
 	global_manpower_modifier = 0.1
-	global_supply_limit_modifier = 0.33
+	global_supply_limit_modifier = 0.15
 }
 
 UFC_modifier_academic_department_1 = {
@@ -329,6 +329,7 @@ UFC_modifier_tobacco_plantation_cooldown = {
 UFC_modifier_granada_artillery = {
 	artillery_cost = -0.9
 	artillery_power = -0.9
+	artillery_barrage_cost = -0.45
 }
 
 UFC_modifier_mexico_pepper_plantation_cooldown = {
@@ -435,4 +436,42 @@ UFC_modifier_mil_interaction = {
 
 UFC_modifier_ban_adu_colonize = {
 	can_not_build_colonies = yes
+}
+
+UFC_modifier_province_strike = {
+	trade_goods_size_modifier = -0.2
+	local_unrest = 2
+	local_institution_spread = 0.5
+	institution_growth = 0.2
+	local_development_cost = -0.1
+}
+
+UFC_modifier_province_meaningless_monument = {
+	local_tax_modifier = 0.01
+	local_unrest = -0.01
+	local_development_cost = -0.01
+}
+
+UFC_modifier_infiltrate_natives = {
+	spy_offence = 0.2
+	spy_action_cost_modifier = -0.1
+}
+
+UFC_modifier_ummayad_zakat_cooldown = {
+
+}
+
+UFC_modifier_mali_survivor = {
+	local_development_cost = -0.25
+	trade_goods_size = 0.25
+	local_colonial_growth = 50
+}
+
+UFC_modifier_bogota_emerald_mine = {
+	trade_goods_size_modifier = 0.1
+	local_development_cost = -0.15
+}
+
+UFC_modifier_jungle_line = {
+	local_hostile_movement_speed = 0.5
 }

@@ -269,3 +269,47 @@ on_main_war_won = {
 		}
 	}
 }
+
+# country
+on_death_election = {
+	if = {
+		limit = {
+			has_ruler_flag = UFC_flag_marquez
+		}
+		clr_ruler_flag = UFC_flag_marquez
+		country_event = { id = flavor_UFC.1075 }
+	}
+}
+
+on_bi_yearly_pulse_2 = {
+	random_events = {
+		200 = flavor_UFC.2001
+		100 = flavor_UFC.2002
+		100 = flavor_UFC.2003
+		100 = flavor_UFC.2004
+		100 = flavor_UFC.2005
+		100 = flavor_UFC.2006
+		100 = flavor_UFC.2007
+		100 = flavor_UFC.2008
+		100 = flavor_UFC.2009
+		100 = flavor_UFC.2010
+		100 = flavor_UFC.2011
+		100 = flavor_UFC.2012
+		1300 = 0
+	}
+}
+
+# THIS = Province, FROM = Country, ROOT = Merc Unit
+on_mercenary_recruited = {
+	if = {
+		limit = {
+			ROOT = { mercenary_company = merc_ufc_berber_company }
+		}
+		835 = {
+			random_province_in_state = {
+				add_base_manpower = -1
+			}
+		}
+		FROM = { add_army_professionalism = 0.05 }
+	}
+}
