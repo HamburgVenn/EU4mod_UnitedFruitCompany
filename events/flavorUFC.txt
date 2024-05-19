@@ -172,7 +172,7 @@ country_event = {
 			}
 			set_country_flag = no_colonial_nations
 			country_event = { id = flavor_UFC.3 days = 30 }
-			country_event = { id = flavor_UFC.5 days = 60 }
+			country_event = { id = flavor_UFC.5 days = 50 }
 			country_event = { id = flavor_UFC.6 days = 365 }
 			country_event = { id = flavor_UFC.102 days = 1095 random = 60 }
 		}
@@ -1299,7 +1299,7 @@ country_event = {
 	fire_only_once = yes
 	trigger = {
 		tag = UFC
-		has_estate = UFC_staff_estate
+		has_estate = estate_ufc_staff
 	}
 	mean_time_to_happen = {
 		months = 6
@@ -1308,7 +1308,7 @@ country_event = {
 		name = flavor_UFC.31.a
 		set_country_flag = UFC_flag_low_salary
 		custom_tooltip = UFC_tooltip_low_salary
-		set_estate_privilege = UFC_staff_estate_salary
+		set_estate_privilege = estate_ufc_staff_salary
 	}
 	after = {
 		country_event = { id = flavor_UFC.41 days = 30 random = 30}
@@ -1628,7 +1628,7 @@ country_event = {
 	picture = TRADE_GOODS_PLANTATION_GOODS_IN_WAREHOUSE_eventPicture
 	fire_only_once = yes
 	mean_time_to_happen = {
-		months = 12
+		months = 3
 	}
 	trigger = {
 		tag = UFC
@@ -1649,7 +1649,7 @@ country_event = {
 	picture = TRADE_GOODS_PLANTATION_GOODS_IN_WAREHOUSE_eventPicture
 	fire_only_once = yes
 	mean_time_to_happen = {
-		months = 12
+		months = 3
 	}
 	trigger = {
 		tag = UFC
@@ -1667,7 +1667,7 @@ country_event = {
 	picture = TRADE_GOODS_PLANTATION_GOODS_IN_WAREHOUSE_eventPicture
 	fire_only_once = yes
 	mean_time_to_happen = {
-		months = 12
+		months = 3
 	}
 	trigger = {
 		tag = UFC
@@ -1728,7 +1728,7 @@ country_event = {
 		mexico_area = {
 			add_local_autonomy = 50
 		}
-		give_estate_land_share_massive = { estate = UFC_staff_estate }
+		give_estate_land_share_massive = { estate = estate_ufc_staff }
 		custom_tooltip = UFC_tooltip_integrate_aztec_harmony
 		if = {
 			limit = {
@@ -2455,18 +2455,352 @@ country_event = {
 
 # Trade partner
 country_event = {
-	id = flavor_UFC.60
-	title = flavor_UFC.60.title
-	desc = flavor_UFC.60.desc
-	picture = muslimgfx_WOUNDED_SOLDIERS_eventPicture
+	id = flavor_UFC.61
+	title = flavor_UFC.61.title
+	desc = flavor_UFC.61.desc
+	picture = muslimgfx_DIPLOMACY_eventPicture
 	fire_only_once = yes
 	mean_time_to_happen = {
 		months = 6
 	}
-
+	trigger = {
+		tag = UFC
+		num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+			area = upper_andalucia_area
+			value = 4
+		}
+	}
+	option = {
+		name = flavor_UFC.61.a
+		trigger = {
+			GEN = {
+				exists = yes
+			}
+		}
+		create_alliance = GEN
+		add_country_modifier = {
+			name = UFC_modifier_ally_with_gen
+			duration = -1
+			desc = UNTIL_ALLIANCE_BREAK
+		}
+	}
+	option = {
+		name = flavor_UFC.61.b
+		trigger = {
+			VEN = {
+				exists = yes
+			}
+		}
+		create_alliance = VEN
+		add_country_modifier = {
+			name = UFC_modifier_ally_with_ven
+			duration = -1
+			desc = UNTIL_ALLIANCE_BREAK
+		}
+	}
+	option = {
+		name = flavor_UFC.61.c
+		trigger = {
+			HSA = {
+				exists = yes
+			}
+		}
+		create_alliance = HSA
+		add_country_modifier = {
+			name = UFC_modifier_ally_with_hsa
+			duration = -1
+			desc = UNTIL_ALLIANCE_BREAK
+		}
+	}
+	option = {
+		name = flavor_UFC.61.d
+		add_mercantilism = 5
+		45 = {
+			add_permanent_claim = root
+		}
+		101 = {
+			add_permanent_claim = root
+		}
+		112 = {
+			add_permanent_claim = root
+		}
+	}
 }
 
+country_event = {
+	id = flavor_UFC.62
+	title = flavor_UFC.62.title
+	desc = flavor_UFC.62.desc
+	picture = indiangfx_ECONOMY_eventPicture
+	is_triggered_only = yes
+	immediate = {
+		hidden_effect = {
+			event_target:ufc_target_dumping_country = {
+				export_to_variable = {
+					which = ufc_mission_trade_income_variable
+					value = trigger_value:trade_income_percentage
+				}
+				multiply_variable = {
+					which = ufc_mission_trade_income_variable
+					value = 400
+				}
+				export_to_variable = {
+					which = ufc_mission_mercantilism
+					value = trigger_value:mercantilism
+				}
+				change_variable = {
+					which = ufc_mission_mercantilism
+					value = 1
+				}
+				divide_variable = {
+					which = ufc_mission_trade_income_variable
+					which = ufc_mission_mercantilism
+				}
+				round_variable = {
+					which = ufc_mission_trade_income_variable
+					value = -1
+				}
+			}
+		}
+	}
+	option = {
+		name = flavor_UFC.62.a
+		custom_tooltip = UFC_tooltip_dumping_event
+		add_country_modifier = {
+			name = UFC_modifier_dumping_cooldown
+			duration = 1825
+		}
+		add_years_of_income = -0.05
+	}
+}
 
+#Andes
+country_event = {
+	id = flavor_UFC.63
+	title = flavor_UFC.63.title
+	desc = flavor_UFC.63.desc
+	picture = southamericagfx_CITY_VIEW_eventPicture
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = flavor_UFC.63.a
+		peru_region = {
+			discover_country = UFC
+		}
+		upper_peru_region = {
+			discover_country = UFC
+		}
+		country_event = { id = flavor_UFC.64 days = 5 random = 5}
+	}
+}
+
+country_event = {
+	id = flavor_UFC.64
+	title = flavor_UFC.64.title
+	desc = flavor_UFC.64.desc
+	picture = southamericagfx_ANGRY_MOB_eventPicture
+	is_triggered_only = yes
+	option = {
+		name = flavor_UFC.64.a
+		trigger = {
+			QTO = {
+				exists = yes
+			}
+			CHM = {
+				exists = yes
+			}
+		}
+		set_country_flag = UFC_flag_andes_chain_north_infiltrate
+		custom_tooltip = UFC_tooltip_andes_chain_north_infiltrate
+	}
+	option = {
+		name = flavor_UFC.64.b
+		trigger = {
+			CRA = {
+				exists = yes
+			}
+		}
+		795 = {
+			add_core = root
+			cede_province = root
+		}
+		create_alliance = CRA
+		set_country_flag = UFC_flag_andes_chain_south_ally
+		custom_tooltip = UFC_tooltip_andes_chain_south_ally
+	}
+	option = {
+		name = flavor_UFC.64.c
+		set_country_flag = UFC_flag_andes_chain_middle_rush
+		custom_tooltip = UFC_tooltip_andes_chain_middle_rush
+
+	}
+	option = {
+		name = flavor_UFC.64.d
+		set_country_flag = UFC_flag_andes_chain_huge_crowd
+		custom_tooltip = UFC_tooltip_andes_chain_huge_crowd
+	}
+	option = {
+		name = flavor_UFC.64.e
+		set_country_flag = UFC_flag_andes_chain_wait
+		custom_tooltip = UFC_tooltip_andes_chain_wait
+	}
+}
+
+country_event = {
+	id = flavor_UFC.65
+	title = flavor_UFC.65.title
+	desc = flavor_UFC.65.desc
+	picture = southamericagfx_DIPLOMACY_eventPicture
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = flavor_UFC.65.a
+		upper_peru_region = {
+			add_permanent_claim = UFC
+		}
+		hidden_effect = {
+			CLA = {
+				break_alliance = PCJ
+				break_alliance = CRA
+				break_alliance = CCQ
+			}
+			PCJ = {
+				break_alliance = CRA
+				break_alliance = CCQ
+			}
+			CRA = {
+				break_alliance = CCQ
+			}
+		}
+		declare_war_with_cb = {
+			who = CLA
+			casus_belli = cb_conquest
+			war_goal_province = 804
+		}
+		declare_war_with_cb = {
+			who = PCJ
+			casus_belli = cb_conquest
+			war_goal_province = 2831
+		}
+		declare_war_with_cb = {
+			who = CRA
+			casus_belli = cb_conquest
+			war_goal_province = 2942
+		}
+		declare_war_with_cb = {
+			who = CCQ
+			casus_belli = cb_conquest
+			war_goal_province = 794
+		}
+	}
+	option = {
+		name = flavor_UFC.65.b
+		upper_peru_region = {
+			add_permanent_claim = UFC
+		}
+	}
+}
+
+country_event = {
+	id = flavor_UFC.66
+	title = flavor_UFC.66.title
+	desc = flavor_UFC.66.desc
+	picture = southamericagfx_DIPLOMACY_eventPicture
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = flavor_UFC.66.b
+		peru_region = {
+			add_permanent_claim = UFC
+		}
+	}
+}
+country_event = {
+	id = flavor_UFC.67
+	title = flavor_UFC.67.title
+	desc = flavor_UFC.67.desc
+	picture = southamericagfx_DIPLOMACY_eventPicture
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = flavor_UFC.66.b
+		peru_region = {
+			add_permanent_claim = UFC
+		}
+		upper_peru_region = {
+			add_permanent_claim = UFC
+		}
+		add_country_modifier = {
+			name = UFC_modifier_blitzkrieg_aftermath
+			duration = 3650
+		}
+	}
+}
+
+country_event = {
+	id = flavor_UFC.68
+	title = flavor_UFC.68.title
+	desc = flavor_UFC.68.desc
+	picture = southamericagfx_DIPLOMACY_eventPicture
+	trigger = {
+		tag = UFC
+		has_country_flag = UFC_flag_andes_chain_north_infiltrate_2
+		num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+			or = {
+				region = peru_region
+				region = upper_peru_region
+			}
+			value = 38
+		}
+	}
+	mean_time_to_happen = {
+		months = 1
+	}
+	fire_only_once = yes
+	option = {
+		name = flavor_UFC.68.a
+		inherit = QTO
+		inherit = CHM
+		peru_region = {
+			add_local_autonomy = 20
+		}
+		upper_peru_region = {
+			add_local_autonomy = 20
+		}
+	}
+}
+
+country_event = {
+	id = flavor_UFC.69
+	title = flavor_UFC.69.title
+	desc = flavor_UFC.69.desc
+	picture = southamericagfx_DIPLOMACY_eventPicture
+	trigger = {
+		tag = UFC
+		has_country_flag = UFC_flag_andes_chain_south_ally_2
+		num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+			or = {
+				region = peru_region
+				region = upper_peru_region
+			}
+			value = 38
+		}
+	}
+	mean_time_to_happen = {
+		months = 1
+	}
+	fire_only_once = yes
+	option = {
+		name = flavor_UFC.69.a
+		inherit = CRA
+		peru_region = {
+			add_local_autonomy = 20
+		}
+		upper_peru_region = {
+			add_local_autonomy = 20
+		}
+	}
+}
 #Timur
 country_event = {
 	id = flavor_UFC.133
@@ -2508,6 +2842,110 @@ country_event = {
 		name = flavor_UFC.1331.a
 		change_innovativeness = 3
 		remove_comet_sighted_events = yes
+	}
+}
+
+#Mustafa and Isabel
+country_event = {
+	id = flavor_UFC.1040
+	title = flavor_UFC.1040.title
+	desc = flavor_UFC.1040.desc
+	picture = wihgfx_FEMALE_SCHOLAR_eventPicture
+	fire_only_once = yes
+	trigger = {
+		tag = UFC
+		mission_completed = UFC_mission_from_the_southpole_to_red_river_valley
+	}
+	mean_time_to_happen = {
+		months = 6
+	}
+	option = {
+		name = flavor_UFC.1040.a
+		add_adm_power = 50
+	}
+	after = { country_event = { id = flavor_UFC.1041 days = 180 random = 180 } }
+}
+country_event = {
+	id = flavor_UFC.1041
+	title = flavor_UFC.1041.title
+	desc = flavor_UFC.1041.desc
+	picture = SIERRA_DE_LA_PLATA_eventPicture
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = flavor_UFC.1041.a
+		add_adm_power = 10
+		add_years_of_income = -0.01
+	}
+	after = { country_event = { id = flavor_UFC.1042 days = 180 random = 180 } }
+}
+country_event = {
+	id = flavor_UFC.1042
+	title = flavor_UFC.1042.title
+	desc = flavor_UFC.1042.desc
+	picture = EP_ISLAND_eventPicture
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = flavor_UFC.1042.a
+		add_adm_power = 10
+		change_innovativeness = 3
+		2002 = {
+			add_province_modifier = {
+				name = UFC_modifier_galapagos_conservation
+				duration = -1
+			}
+		}
+	}
+	after = { country_event = { id = flavor_UFC.1043 days = 180 random = 180 } }
+}
+country_event = {
+	id = flavor_UFC.1043
+	title = flavor_UFC.1043.title
+	desc = flavor_UFC.1043.desc
+	picture = PRAYING_eventPicture
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = flavor_UFC.1043.a
+		add_adm_power = 10
+	}
+	after = { country_event = { id = flavor_UFC.1044 days = 30 random = 30 } }
+}
+country_event = {
+	id = flavor_UFC.1044
+	title = flavor_UFC.1044.title
+	desc = flavor_UFC.1044.desc
+	picture = RUNESTONE_eventPicture
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = flavor_UFC.1044.a
+		980 = {
+			add_permanent_province_modifier = {
+				name = UFC_modifier_erikson_monuments
+				duration = -1
+			}
+		}
+	}
+	after = { country_event = { id = flavor_UFC.1045 days = 1825 random = 365 } }
+}
+country_event = {
+	id = flavor_UFC.1045
+	title = flavor_UFC.1045.title
+	desc = flavor_UFC.1045.desc
+	picture = wihgfx_FEMALE_SCHOLAR_eventPicture
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = flavor_UFC.1045.a
+		add_stability_or_adm_power = yes
+	}
+	option = {
+		name = flavor_UFC.1045.b
+		every_known_country = {
+			add_stability = -1
+		}
 	}
 }
 
@@ -3218,6 +3656,12 @@ country_event = {
 		1989 = {
 			add_core = root
 			change_controller = root
+		}
+		event_target:ufc_target_tonga = {
+			break_alliance = LAI
+			break_alliance = VIL
+			break_alliance = VNL
+			break_alliance = SAM
 		}
 		declare_war_with_cb = {
 			who = event_target:ufc_target_tonga
@@ -4658,16 +5102,33 @@ country_event = {
 	picture = TRADEGOODS_eventPicture
 	is_triggered_only = yes
 	trigger = {
-		adm_power_cost =
 	}
 	option = {
 		name = flavor_UFC.10086.a
-		kill_leader = {
-			type = general
+		export_to_variable = {
+			which = ufc_mission_trade_income_variable
+			value = trigger_value:trade_income_percentage
 		}
-		random_owned_province = {
-
+		multiply_variable = {
+			which = ufc_mission_trade_income_variable
+			value = 400
 		}
-		add_years_of_income =
+		export_to_variable = {
+			which = ufc_mission_mercantilism
+			value = trigger_value:mercantilism
+		}
+		change_variable = {
+			which = ufc_mission_mercantilism
+			value = 1
+		}
+		divide_variable = {
+			which = ufc_mission_trade_income_variable
+			which = ufc_mission_mercantilism
+		}
+		for_variable_amount = {
+			variable = ufc_mission_trade_income_variable
+			effect = "
+						add_inflation = 1"
+		}
 	}
 }

@@ -289,10 +289,71 @@
  UFC_modifier_jungle_line:0 "è–—g¿u"
  UFC_modifier_jungle_line_desc:0 "^—ÕlûylÇpÙag¿uåNÄ‰¡RågÿÖNìNNÜ`(uu‹TVŸ†NSï0"
  UFC_tooltip_jungle_line:0 "bìN„v›Q–°s(WïSåNôfëVzÇÙag«ˆVŸ„vï¿u0\nå‹îOckO(W–klw0RegT1YHe0"
-
- flavor_UFC.61.title:0 "商业合作伙伴"
- flavor_UFC.61.desc:0 ""
-
+ flavor_UFC.61.title:0 ":V™Ÿ¾–‹S0W4YÇ†"
+ flavor_UFC.61.desc:0 "Ç‰R¾bS‰šN„vógÿTwTœgÁTÊNåewckV¥ceQ†N'k2m…Qè„v^:WÿwNQ/fÎNS^—ŒT'k2m‰wm¸S·ƒ—VåRåR„v8f)R¦m0\n\n6qwFd(WbìNb—MR„v/f8^t^åNegØvŽ(W'k2m'YF–N„v8fqQŒTýVìNÿÎN„SÒRwmáS¹„vIl(„Tßv0R)RäSÌ‘šNwmN„víp±šNÿNS*j/'k2m'YF–„vÁ”U^K„N0ôfN(uÐcÊSŒcµcNw1r4twmŒTZS¯enfœ¯ewmáS²N‰S„v‚Yåe-N)Y„veY¯eüf^ýVÿƒRµc6RNwbìNÓgcÑžwmCNóâl¯e8f„vÍ‘‰*‚¿u0\n\nFO/fTwTœgÁTlQøS„vFUÁT÷N<PmNN¹RSÑ‰ÿbìN„W­eNwte*N'k2m„vïSïS8fÿegê RÒRÔk„v…Ö|0egê¨X‰åT„v±i0egêê1uwm¸S„vßpIƒÿý/f„W­e'`(„v8fFUÁT0dkYÿbìNØ	gâlåT'YúQµN„vÿuRówÿ(Wte*N'k2mmN/fÎ˜a—Nöe0\n\nàeº‹‚YUOÿ‚YœgbìNó`S8fñmeQ'k2m…QèÿNN*N:V'Y„v8fqQŒTýVÝOcTjOsQû|/fÅVNïSS„v0"
+ flavor_UFC.61.a:0 "©‹bìNŒTåT&O^„v¶RaNíp±šNqQŒTýV¥cKm0"
+ flavor_UFC.61.b:0 "Z<S¯eI`cw„vhh^9‚O.^©RbìN(W0W-Nwm‰RhQ8f0"
+ flavor_UFC.61.c:0 "ÃWÌ‘KQŒgþfÐcÊSâlW„vwm¿l¸S	gYHNÌR¶^0"
+ flavor_UFC.61.d:0 "ÖNìNýSÜbP(WbìNb—MRÿ"
+ UFC_modifier_ally_with_gen:0 "íp±šNFUNO4O"
+ UFC_modifier_ally_with_ven:0 "Z<S¯e8fTwT"
+ UFC_modifier_ally_with_hsa:0 "Il(„FUNTßv"
+ flavor_UFC.62.title:0 "FUÁT>P•ÿ"
+ flavor_UFC.62.desc:0 "1uŽNTwTœgÁTN[ufc_target_dumping_country.GetName]KNô•„v8fÛwþvaÑSS•ÿÖNìN„v8fÝO²bININ>PTm0R†NTwTœgÁT„v:VÈp4Œ#0(WsQzŒ2R‰V•^4xÂˆTÿTwTœgÁT:d&^NwV8^É^÷N„vFUÁT²QÛ†N[ufc_target_dumping_country.GetName]„v^:W0\n\nSVsQŽNÍS>P•ÕlHh„vIƒ?zØºŽ(W[ufc_target_dumping_country.GetRulerAdjAndTitle]„vLhHhNaw'YÉ‰öeÿ8fbòTÏu(WhQýVƒôV…QSbÍT0É^÷N„v®|ß˜0^9S0ïSïS0Rów&&NRTwTœgÁTFUÁTSýV…Q^:W2c`S0RT,g•.UÿýV¶R'^mNÅ,<Pÿ?eœ^VËYN—VN7>kã‰³QýV…QFUºN0œQgrNŒT6R.N)Tƒn„vî•˜˜0"
+ flavor_UFC.62.a:0 "Ñ‘±”ÜwŽNRQR"
+ UFC_tooltip_dumping_event:0 "ùR¹e(W,g/k>P•-N§RžX R§!„v'¨Àw:Nÿ[ufc_target_dumping_country.ufc_mission_trade_income_variable.GetValue]"
+ UFC_modifier_dumping_cooldown:0 "ÑgžRËe†N>P•"
+ #Andes
+ flavor_UFC.63.title:0 ">e<wWS¹e"
+ flavor_UFC.63.desc:0 "TwTœgÁT¢ci––òTÏuØu6R‹Y„vte*NWSè'YF–„v0WþVÿbìN„vÓbRƒ:SIN‰Æ–-N(WWS'YF–„vNwm¸SYÿÙÌ‘ºNßpzS0nonŽpípÿtSV8^TïSïS0–TaUŒTíp&^(gPg„vÍyiÿ:NlQøS&^eg†NØš˜8f)R¦m0\n\n'YF–„v-N.Y/fNGrN<wgN0RKS4Y„vè–—gÿsSO/fgDñm„v¢ci–wmN¾–åNNÏ‘ƒR„vËR¦^ÿ*jz'YF–ùRŽNTwTœgÁT›Q–egô‹îvMRÍN/f)Y¹eY-Œ0NdkTöeÿ'YF–„vWS¹åNzhIƒŸS:NINÿÙÌ‘)YØš‘NámtSºNßpzSÿ¾–åNVUSyr+R	g÷N<P„vÏuNmIm¨R0\n\n<P—Vèla„v/fÿ'YF–„v‰µO/fõuö^óKS4Y„v‰R,r¯eqS	ÿÎNâlåT'Y0Rkp0W›S/zte*N'YF–0(WÙ²qSKNNÿpe*NàV‚„èK„ØvŽ(Wdkÿ^'Y„vÎW^ŒTSïQÔb0Wwwÿuóú^.†Nø‹YZWúV„vqSô•ÎW^X0ncMRŽV„v¢ci–w¥bJTÿÙÌ‘	gNwpeNKS„v‹vö”ÿwÏ…ÿwSV0WºNùRÙ›N‹vö”ŽVŽVv^NASRÍ‘Æ‰0FO/fÙ›NZwK„ìN…Qè—e‰NN­eÿPå‚TwTœgÁT´f›Rr^‰mÙÌ‘„v?e»lÿó`ÅVÖNìNSOÝQÓubN¡w:V'Y„vùRY›RÏ‘0"
+ flavor_UFC.63.a:0 "bìNïSåNËeåNçT¡‹ÿ©‹ÖNìNÎN…QèW)Tætã‰0"
+ flavor_UFC.64.title:0 "Rw»lKN"
+ flavor_UFC.64.desc:0 "HQ©‹¢ci––•eg²‹²‹Ù›NàV‚„èK„„vŽV‹N'Tÿ	cgqÖNìN„v.Oô‹ÿ“^¯eÑy‹sýV/f1uüfÑy·aS^KQ(W2NŒvt^MRú^Ëz„v0ck(WO¦žöSc„‹N•ú^ËzTwTœgÁTlQøS„vmQt^MRÿO'Y„v^åg“^Ðc·2SXoúWçuMO0TwTœgÁT(W-NŽ2m„v–klÓbRƒv^¡l	gÊ`pb“^¯eÑy„vib.VÄ–ÃVÿ(W^åg“^Ðc„v‡e»lfkŸRNÿ“^¯eÑyòTÏuÎNN*NSZwK„ÑSUSb:NqVÍT›RMÊSte*N‰R,r¯eqS	„v^ýV0\n\n‚YÊN„v‰R,r¯eø‹¦ýV-NÿGY^ågºNú^Ëz„vúWY‹sýV0ú^¾‹†NffÎW^X„vGYFz‹sýVýùR“^¯eÑy„vib.VASRÌVî`ÿ(WWS¹ePWåbâlXb‰ÌRv™qS„vågaS‹sýVIr‰R,r¯eø‹¦‹†6q¡l	gŒT“^¯eÑy„vôv¥c²QzÿFOU¡NŸÒR„vStÖNìNmNv^^—Nýwtã‰0‚YÊNÿlšNÔkNhTôV„vpe*NSèK„òTÏuKSpe«ˆTv^ÿ‚YœgTwTœgÁTNÒcKbÙÌ‘„v?e»lÿ“^¯eÑyßuNpS R^ýVÅVšRêS/föeô•î•˜˜0\n\nùRŽN‰R,r¯e„vpS RèK„ÿîvMRbìN	gåNNàQÍy	ébÿ\n10(WúWY‹sýVŒTGYFz‹sýV-NVrR?eØSÿvbibìN„vŽP/Q?eCgÿ)R(uSV0WºNl„vÇNh`NTùR—b“^¯eÑy‹sýV0Ù7hbìNïSåNuQNNˆR0Wµc6RúWYŒTffÎW^Xÿv^6e·ƒàVŽNlQøS„vSV0WŸSOOl0\n20NWSèôv¥cŒcµcâlXb‰ÌRv™qS„vågaS‹sýVÓußvÿbìNSÐc›OHQÛ„vfkhVÅˆYÿwÖNìNSÐc›OnnN­e„v‹vö”0ÎNWSèÌw:R“^¯eÑy‹sýVSSbÖNìNN*NªcKbNÊS0\n30(WØyœwm¸S„v³u¯eaSÎWú^Ëzwm›QúW0WÿÙÌ‘Ý»ylšNÔkNêS	g	N)YæTóS„vLˆzÿN:Wê•5ubSÅgdÁk“^¯eÑy1V„v2–¡VSOû|0ncô‹³u¯eaSØåb	gNwGY*`„vWùÿ‚Yœg	gºNùRdkatQ±„vÝ‹ÿmNO/fNrNN„v•bD0\n40–NwbìNùR<hÉb³u¾®pf„vŸq`NŒT¨c^ÿÇkp®p:VLˆûQ4xÙ›Nú^Ëz(WqS-N„vÎW^XmNv^^—NïSýw0FO‚YœgÇfk›R:VLˆ²QûQÙÌ‘„v?e»lSOû|„vÝ‹ÿbìNïSýw—‰ZP‹YNhQÆQY0"
+ flavor_UFC.64.a:0 "S¹»yôTÿblšˆVÑÿ©‹bìNVËYnåTjO'T0"
+ UFC_tooltip_andes_chain_north_infiltrate:0 "/T¨R³Q®‹ÿ§Yekek:N%„§!ÿSVbìNùR§YúWY§!0§YGYFz§!„vô•ŒQ¾0R40öeïSåN/T¨R³QbIe¿RÿSåNÖNìN:NógñmeQ“^¯eÑy‹sýV0\n‹NbKNTÿbìNS	g:gOSàVÚ‹„vPRlìN³u:NTwTœgÁTXTåT0"
+ flavor_UFC.64.b:0 "‚YœgbìNýwYôv¥cùR¥c0RâlXb‰ÿö”ÿw/fùRbìN0?e„vg'YeˆEQ0"
+ UFC_tooltip_andes_chain_south_ally:0 "/T¨R³Q®‹ÿ§YÌwTEcR§!ÿSVbìN„vè–0R¾§YâlXb‰§!öeïSåN/T¨R³QbIe¿RÿÎNWSèø‹¦Ìw:RTSib.V„v“^¯eÑy‹sýV0"
+ flavor_UFC.64.c:0 "¡l	gÔkz‚YvQeg„v)RRôvÒcÃVôfô‹T„v0"
+ UFC_tooltip_andes_chain_middle_rush:0 "/T¨R³Q®‹ÿ§Y¢bén‰vF–§!ÿSVŒRhQ–kl†N§YØyœwm¸S§!öeïSåN/T¨R³QbIe¿RÿÎNwm¸SeˆÙuúW0WôvÒc“^¯eÑy‹sýV„vÃV0"
+ flavor_UFC.64.d:0 "©‹Ù²‰R,r¯eŸSËYºNNwN'Tÿbvöeô•ÿ"
+ UFC_tooltip_andes_chain_huge_crowd:0 "/T¨R³Q®‹ÿ§YºNwmIe¿R§!ÿ`O§R–öe§!ýïSåNTte*NàV‚„ø‹¦ýVÑSwcEˆÿ«N×S‰R,r¯eºNlb‰N„vjlm'Ywm'Tÿ"
+ flavor_UFC.64.e:0 "°s(WØN/fZPúQÍ‘'Ybeu³QVr„vöeIR0"
+ UFC_tooltip_andes_chain_wait:0 "/T¨R³Q®‹ÿ§YRw»lKN§!ÿKNTïSåNÍ‘°eæ‰ÑS,g‹NöNÿKSëVŒRb`O„vbeuèr'T0"
+ UFC_tooltip_andes_chain_north_infiltrate_first:0 "TwTœgÁTlQøSSTwTSV0WŸSOOlÑS¨R“^¯eÑyS¹ebyV0\nNb	g“^¯eÑyWSè¦ýVSNOÂSN0Rdk/k—e‰N-N0"
+ UFC_decision_andes_chain_north_infiltrate_title:0 "ekek:N%„"
+ UFC_decision_andes_chain_north_infiltrate_desc:0 "bìNS(WGYFz‹sýVŒTúWY‹sýVvbcŽP/Q?eCgÿTSV0W„vŸSOOl±R.Oegê“^¯eÑy„vZÁw0\nTwTœgÁT8lÜ/fpS RºNgZWžR„vTþv0"
+ flavor_UFC.65.title:0 "WS¹eèK„›Q‹N¨RT"
+ flavor_UFC.65.desc:0 "–NwlšNÔkNK„eQTwTœgÁTKNKbÿ'YÏ‘„vpS RºNb(Wb‰N-N«ˆNg³RÿbàVv«uŒTe™Rƒw‰k¡NÿêS	gSèRpS RESl«ˆ³ueQXTåTºN‹Nû|ßuÿ«N×S0R†NåTª…ŒTIS—ug¡R0\n\nÙ7h„vb‰N>f6qÊ`¨R†N±›NWS¹eèK„‹sýVÿ•gåNegƒRìNN“^¯eÑyÝOcNwÑ<OŽNg/„vsQû|ÿ“^¯eÑy‹sýV„vætã‰Ote*N‰R,r¯eàV‚„èK„„vCg›Rs^aˆ«ˆ‰V•^Sb4x0\n\n‚YÊNÿWS¹eèK„„v…Qè—e‰NŒTegêTwTœgÁT„vYè‹S›RTöeðVpbNwÖNìNÿTwTœgÁTÅV‰˜—V0RâlXb‰ö”ÿwÿàeº‹/f`7h„vKbµk0"
+ flavor_UFC.65.a:0 "lšNteƒw›Q–ÿùRÙ›NèK„*NûQ4x0"
+ flavor_UFC.65.b:0 "°s(WØN/föe:g0"
+ UFC_tooltip_andes_chain_south_ally_first:0 "TwTœgÁTlQøSSTwTSV0WŸSOOlÑS¨R“^¯eÑyWS¹ebyV0\nNb	g“^¯eÑySè¦ýVSNOÂSN0Rdk/k—e‰N-N0"
+ UFC_decision_andes_chain_south_ally_title:0 "ÌwTEcR"
+ UFC_decision_andes_chain_south_ally_desc:0 "TwTœgÁTlQøSbú‹:NågaSºNÐc›O›Q‹Nôc©RåNã‰³QWSèø‹¦„v…QbÿNb—‰„vãN÷NÅNÅN/fN›NÉ^÷N„v‹vö”ŒTÖNìN„vINCgwòT0"
+ flavor_UFC.66.title:0 "S¹eèK„›Q‹N¨RT"
+ flavor_UFC.66.desc:0 "–NwlšNÔkNK„eQTwTœgÁTKNKbÿ'YÏ‘„vpS RºNb(Wb‰N-N«ˆNg³RÿbàVv«uŒTe™Rƒw‰k¡NÿêS	gSèRpS RESl«ˆ³ueQXTåTºN‹Nû|ßuÿ«N×S0R†NåTª…ŒTIS—ug¡R0\n\nÙ7h„vb‰N>f6qÊ`¨R†N±›NS¹eèK„‹sýVÿ•gåNegƒRìNN“^¯eÑy„vsQû|¿RT4lkpÿ“^¯eÑy‹sýV„vætã‰Ote*N‰R,r¯eàV‚„èK„„vCg›Rs^aˆ«ˆ‰V•^Sb4x0\n\n‚YÊNÿS¹eèK„„v…Qè—e‰NŒTegêôTÿblšŒT“^¯eÑy„vÌSÍ‘‹S›RTöeðVpbNwÖNìNÿTwTœgÁTÅV‰˜Œcµcte*N‰R,r¯eqS	„v8fÿàeº‹/f`7h„vKbµk0"
+ flavor_UFC.66.a:0 "óSÿ°s(W/f2Nb—S9YKN¿R0"
+ UFC_tooltip_andes_chain_south_middle_rush:0 "TwTœgÁTlQøSSÑS¨R“^¯eÑyê•5ubÿ¡l	gûNUON*NßvËSSOeg—VÊSôc©R“^¯eÑy0"
+ UNTIL_THE_END_OF_SIEGE:0 "ôv0RN/kôVÎWÓumg"
+ UFC_decision_andes_chain_middle_rush_title:0 "¢bén‰vF–"
+ UFC_decision_andes_chain_middle_rush_desc:0 "TwTœgÁT„vwm›QF–b–ŒT®puQòTÏu–K…(W³u¯eaS„vÓbRƒ–^÷rÌ‘peåe†NÿêS‰‰‰9ŽNNÿ“^¯eÑyÙµ^4xKSPR1SOp6qPLX0"
+ UFC_tooltip_andes_chain_south_huge_crowd:0 "SS„vY²NcEˆ1SO©‹Ù²Î‘î†ºNkp’Q	NNÿÖNìN…Qè„vRgkÈSNO©‹ÖNìNâVÓuNôÙ/fNQSbKS„vg‹Y¹eHh0"
+ UFC_modifier_blitzkrieg:0 "ê•5ub"
+ UFC_decision_andes_chain_wait_title:0 "Rw»lKN"
+ UFC_decision_andes_chain_wait_desc:0 "ZPúQbeu³QVr†NTÿó`‹Y†N1Sr^ÿ"
+ flavor_UFC.67.title:0 "—VG–g‡"
+ flavor_UFC.67.desc:0 "–NwlšNÔkN(W'Y®p„vpûQN¬wô•K„eQTwTœgÁTKNKbÿ'YÏ‘„vpS RºNb(Wb‰N-N«ˆNg³RÿbàVv«uŒTe™Rƒw‰k¡NÿêS	gSèRpS RESl«ˆ³ueQXTåTºN‹Nû|ßuÿ«N×S0R†NåTª…ŒTIS—ug¡R0\n\nÙ7h„vb‰N>f6qÊ`¨R†NvQÖN‰R,r¯eèK„‹sýVÿ•gåNegƒRìNN“^¯eÑy„vsQû|b¿RT4lkpÿb²N‚YKb³ÿ“^¯eÑy‹sýV„vætã‰Ote*N‰R,r¯eàV‚„èK„„vCg›Rs^aˆ«ˆ‰V•^Sb4x0\n\n‚YÊNÿiRYO„v‰R,r¯eèK„:S†N²RLeŒT`—qSÿÖNìNêSýw¥bâVÖS–fÿ|VdkKNô•„vTwßvb¸‹Oôf R'tÆR0"
+ flavor_UFC.67.a:0 "œRSiRÇRýwzÇR0"
+ UFC_modifier_blitzkrieg_aftermath:0 "ê•5ub„vYOâl"
+ UFC_decision_andes_chain_huge_crowd_title:0 "ºNwmIe¿R"
+ UFC_decision_andes_chain_huge_crowd_desc:0 "êS‰lQøS›Q‹NÔYXTOZP‹Y†NNhQÆQYÿNN*NWW„egÿNN*NWW„‰k0"
+ flavor_UFC.68.title:0 "‰R,r¯eb‰N„vÈuÓu"
+ flavor_UFC.68.desc:0 "–NwTwTœgÁT(W‰R,r¯eqS	N„vÞbÞwcÿàV‚„ø‹¦ýVýòTÏužR(NYŽNTwTœgÁTlQøS„v¿R›RƒôV…Q0t’ŽNTwTœgÁTNbåb	g„vHQÛfkhV0ØšHeÏuNmŒTIS—u4ls^ÿŠegŠY„v‰R,r¯eŸSOOlbIN¨Rb«ˆ¨R0W«ˆ³u:NlQøSXTåT0\n\nlQøS:NIN¨R ReQ„vŸS5ÏeŒTmyøSý‰R’c†NSV0WI`cw„vckoRKbLwMOÿ:N†NôucSV0W?e»l„v3zšRÿ(WøvSVNµköeô•…QïSýwýÅV‰˜¹RÍVÙ›Nçe¿R›R„vyrCg0"
+ flavor_UFC.68.a:0 "?e»l„v8hÃV‰IN1S/f¥YOS0"
+ flavor_UFC.69.title:0 "‰R,r¯eb‰N„vÈuÓu"
+ flavor_UFC.69.desc:0 "–NwTwTœgÁT(W‰R,r¯eqS	N„vÞbÞwcÿàV‚„ø‹¦ýVýòTÏužR(NYŽNTwTœgÁTlQøS„v¿R›RƒôV…Q0t’ŽNTwTœgÁTNbåb	g„vHQÛfkhV0ØšHeÏuNmŒTIS—u4ls^ÿŠegŠY„v‰R,r¯eŸSOOlbIN¨Rb«ˆ¨R0W«ˆ³u:NlQøSXTåT0\n\nlQøS:NIN¨R ReQ„vŸS5ÏeŒTmyøSý‰R’c†NSV0WI`cw„vckoRKbLwMOÿ:N†NôucSV0W?e»l„v3zšRÿ(WøvSVNµköeô•…QïSýwýÅV‰˜¹RÍVÙ›Nçe¿R›R„vyrCg0"
+ flavor_UFC.69.a:0 "?e»l„v8hÃV‰IN1S/f¥YOS0"
+ nazca_lines:0 "³u¯eaS¿uag"
+ UFC_tooltip_nazca_lines_dessert_dev:0 "ÊNTSVbìN(Wwm¸S™l.ob™l.o0WbV-NÐcGSúWNxuµN£production_icon£ öeÿSO˜Y·ƒ—V1¹púWNxuµN0"
  #character stories
  flavor_UFC.102.title:0 "°eu"#Columbus
  flavor_UFC.102.desc:0 "46S„vm&OPO·åT&O^/fegêíp±šN„v¹r*YºN9‚åT0wåT&O^ÌSKb•Nw—|šS„vw'ƒÿÂŽ«ˆwmN„vÈpåeRfb†NäSÜ”r‚ÿ8^t^(Whh^9‚N*‚Lˆèx¼púQ†NÖN0NÌR„vwmNÏuŒš0\n\nSVwåT&O^Ø/f*NiRPR„vöePÿ1S8^8^,TÖN6r²N:NÖN²‹ðlšïSâlW„vEe‹Nÿ±MOpMNLu„vÅeLˆw(Wíp±šNrŽÇÑvñrÿAm.OúQNS.OGY0t^‰„vwåT&O^‰^ó`êñTmNýw8n†S0ReÜ„vN¹e»Sÿ»SN*NŽKNwÌR¶^„výV¦^ÿÇN0NÕˆwx^y„våePRÿFOÎb—„v0W-NwmwmÎ˜Ø/fŠbÖNÉbÞV†N°sžR-NêñT„vS9‚N0\n\nwåT&O^¡l	giRPRÿNbx^ÖNs^öe…VºNŒT„Uÿ«Ž¹„v4lKbŒT9‚XTìNI`/fOÙuwåT&O^NSu¡‹N„vgqŒ˜ÿÖNÈS/f±7h„vwžRw)nšSÿåNóŽN¾|SbÆu—r„víp±šNFUºN(Wßy(uÖN„v9‚êSöeÎNNNÖN¨‹÷NØ÷N0\n\n–NwwåT&O^Nt^t^ØSwÿKbN„vw'ƒŠÓuŠšSÿÖNn¥c×S†N°sžR„væ‚©mŒTs^ám0‹NÅ`„vl:g/fN/k»SŽV<hÉb³u¾„v8fÿ(WáOöNN™QNw'ir„v¥c6e¹e/fO¦žöSÿáOSN3bNw5Ïe„vpSål0\n\nO¦žöS²NR0W(ua'Y)Rí‹â‹î•ÖN‰N‰»SeÜ„vpS¦^ŒT-NýV°x°xÐlÿ‹†6qNåw/f&TïSåNáOûNÙMO<wMR„vVYe’VR—t^5ÏeÿFOwåT&O^ÃV-N„qmp†NYt^„vkp0qØ/f«ˆO¦žöS±Ÿ¨RºNÃV„vÝ‹í‹Í‘°e¹pÃq†Nweg0ÔÞVíp±šN„vwåT&O^(uO¦žöS„v^©R9ÄuÇuw†NN'Yyb9‚åTÿSV6qTLˆ„vØ	gÖN„v»YPR0\n\nêeg0RôTÿblšTÿwåT&O^¾|^yÍwÄ”ÿwt^—VPR„vÖNŠb»YPR`UR„vˆmo`JTM†NÖN„v9‚XTìNÿ?aN^ÝOQOÖN*gúQu„viRPR0"
@@ -337,7 +398,7 @@
  flavor_UFC.1031.desc:0 "b„vYr(WAmNˆÿISumN»lN‹Y0b—r‚Í‚‹v„v'YoRÌÌždžd0WSbV†N9‚•²R„vè•0\n\n1uŽN(Wb‰N-NËz†NŸRÿ—V0R6r²NkƒK…„vSåT&O^(W²Nè-NŒ—V†N9‚•„vLwMO0Ù/fNX‚M‘Y†N”NASè•0‚®p„vÍ‘‹W0‚9‚ÿò•öeFU(uböe0‚(uòTÏub:N†NTwTœgÁT9‚êS„vhM‘ÿåNóŽNÏk/kÇwmáSöeý‰àVM‘YfkhVî•˜˜ŒTSV0W2–kSèè• u.¸‹EN0\n\n×S0R6r²NŒTwåT&O^„vqVÍTÿSåT&O^ˆVsQÃVÖN„v4lKbìN0ÖNùR'YoR„veP·^î•˜˜æppb†Ntete	N)Yÿ(W'Y‰m„v+ƒ+ƒwmb—NÿdRìra²Q7RNwÏk*NºN„vu‹T0FOSVÖN1Žek0RÓN“^öeÿÒ‰K„Ì‘„vN¹bœœ¢u©‹ÖNÞVÆVwASt^MR6r²N&^ÖNúQwm„v±*NPZf0\n\n‹slQ5ÏeT†N‰kÿ+lŒvÓYT†NIm0SåT&O^Šb±v`T›„vœgžRÙu†N#Oß˜„v'Y¨SÿÊN)Y'YoR„v™ß˜-NNšR‰ RNÙ*N0àV:Nßu6RÏuNm„vbVbÿ4lKbìNˆVSêñTÎN°e'YF–&^'»SVSÿv`T›„vœgžRmNˆVS«ˆºNìNsQèl0\n\n(WÞVz„v9‚Nÿ'YoR&^NwŽß˜ImfŽqNó0WÑÛ†N9‚•²R0"
  flavor_UFC.1031.a:0 "÷‹N‰Ùub/•ØvŒTö”ogÿnf„v™wQ1SïSåN†Nÿ0Œ0Œ0"
  flavor_UFC.1032.title:0 "SåT&O^„vYe²wÿåeúQKNýV„vSëX"
- flavor_UFC.1032.desc:0 "bó`»SŒRb6r²N„vW?a0RRGSûN²Nè‰Lw„vSåT&O^Tc„‹NOÙuúQ†NÖN„v¹eHh0ÖNÎNS1S,T6r²N²‹ðlšïSâlW„vEe‹Nÿ±Ì‘	gpeNKS„v™™™e0ÄžÑ‘ŒT¦h‰^N,‚„vì„±ƒÙN›S0FOSVwåT&O^–O¦žöSRËzTwTœgÁTåNegÿÖN„v¦hó`1SêSýwXbØNÙu†N°eúQu„viRPR0\n\nc„‹N•[root.GetRuler]¡l	gt1uÒbÝuÖN„v÷‹BlÿNENMRSåT&O^RRÙuúQ†N¨c^Íyiv`T›œgžR„vú^®‹ÿ‹†6q[root.GetRuler]ùRXTåTeP·^v^¡l	g±HNsQèlÿFO‚‚¦uIS—ub,gùRlQøSÅV6q/föN‹Y‹N0\n\n(Wán‹†Nß˜ir0ám4lŒTªg/eTÿSåT&O^&^NwÖN„v9‚–V/T†NÖNŒTòTEe6r²N„v¦hó`KNÅe0"
+ flavor_UFC.1032.desc:0 "bó`»SŒRb6r²N„vW?a0RRGSûN²Nè‰Lw„vSåT&O^Tc„‹NOÙuúQ†NÖN„v¹eHh0ÖNÎNS1S,T6r²N²‹ðlšïSâlW„vEe‹Nÿ±Ì‘	gpeNKS„v™™™e0ÄžÑ‘ŒT¦h‰^N,‚„vì„±ƒÙN›S0FOSVwåT&O^–O¦žöSRËzTwTœgÁTåNegÿÖN„v¦hó`1SêSýwXbØNÙu†N°eúQu„viRPR0\n\nc„‹N•¡l	gt1uÒbÝuÖN„v÷‹BlÿNENMRSåT&O^RRÙuúQ†N¨c^Íyiv`T›œgžR„vú^®‹ÿ‹†6q°sûNc„‹N•ùRXTåTeP·^v^¡l	g±HNsQèlÿFO‚‚¦uIS—ub,gùRlQøSÅV6q/föN‹Y‹N0\n\n(Wán‹†Nß˜ir0ám4lŒTªg/eTÿSåT&O^&^NwÖN„v9‚–V/T†NÖNŒTòTEe6r²N„v¦hó`KNÅe0"
  flavor_UFC.1032.a:0 "lb^ÿw*‚ÿ"
  UFC_tooltip_find_east_route:0 "ÎN°s(WVËYÿ‚YœgbìNýw(WASt^…QŒb0RŽV±ƒÞT0KfÞTŒTO¿R„vwmïÿ±HNSVSåT&O^†˜üRbìN„vON?eœ^öeÿS·ƒ—V.OGYVgw0.OGYwm×vyr(ÿÖN„v„˜gÿR‹TmNO—V0Rö^•0"
  flavor_UFC.1033.title:0 "VÓb°e*‚ïÿ"
@@ -351,6 +412,31 @@
  flavor_UFC.1035.desc:0 "SåT&O^ÞVeg†NÿÖN/fTwTœgÁT„vñ‚Ä–0\n\n(WûRŒb-NýVŒTåe,g„vÜ*‚TÿSåT&O^ÈSÏu†S†N¸‹Y0ÖNãNhˆTwTœgÁT(WNšNV¾‹†NY*N8fÙz¹pÿ:N^:W%„•Sb.†NZWžR„vúWNx¾‹ËeÿÖNY/kb—ùRSV0WºNbWW„„vLeaIeûQÿÎN¹RNë·QY—”^ùRÿSfk›RZÁwFd(W”^	g„vMOnNÿÖNsQÃVÏk*Ns^áQ„v9‚XTu¡‹ÿÏu8^:N4lKbìN„vª…DTYâlÿþf²Nê8TúQNMO4lKb„v®u0\n\nSåT&O^•'Y†NÿºNìN8^ô‹ÖN„v«ŽN	g6r²N„vqVPR0ÖN„vÌSKb•Nw—|šS„vw'ƒÿÂŽ«ˆwmN„vÈpåeRfb†NäSÜ”r‚ÿ8^t^(WTwTœgÁTFU9‚N*‚Lˆèx¼púQ†NÖN0NÌR„vwmNÏuŒš0\n\nSVSåT&O^Ø/f*NiRPR„vöePÿ1S8^8^,TÖN6r²N:NÖN²‹ðlšïSâlW„vEe‹Nÿ±MOpMNLu„vÅeLˆw(Wíp±šNrŽÇÑvñrÿAm.OúQNS.OGY0t^‰„vSåT&O^8n†S0R†NeÜ„vN¹e»Sÿ»SÁ‰Á‹†N±*N“˜Ÿ^wRƒÞ‹„výV¦^ÿºNlÇNwàegwðVæ‚„våePRÿÖNó`9eØSÙ*NNLu0\n\nFOÎb—peg„vØyfNØ/fŠbÖNÉbÞV†N°sžR-Nc„‹N•„vµ^MONÿ(WðXTJžw„vSåT&O^<wÌ‘ÿ±›NÇŽVÞVÆVÑ(W«T:S0"
  flavor_UFC.1035.a:0 "ÍsÜ`'TÿÙ/ftó`ININwgT„vÝu1U0"
  UFC_tooltip_columbus_fil_education:0 "9hncSåT&O^„vYe²w‹NöN„vÇŽV	y˜nxšRvQýw›R<P0"
+
+ #Mustafa and Isabel
+ flavor_UFC.1040.title:0 "ïS1rêS/fhˆaŒ"
+ flavor_UFC.1040.desc:0 "SVbìNïS1r„v5Ïe'YSÐYOŽƒSpÛfR/gè„v'Yè•öeÿhTôV•beg†N™ür,‚„vîvIQÿFONENÙ²TQKTPRìN1S—Våw†NN*NÔkÑSM‘ÉbnfÉbTXôf²`è`„vˆmo`ÿOŽƒSòTÏuT±‚	gIN†N0\n\nTwTœgÁT„vt^‰sYiRøvùRƒSÿÙ(WO¦žöS±*NöeãN2S:Nf>fÿÝu'YYpe„vsY'`ý/f–¶R­^MReg„vûyl0FO–NwN2NãNºN„vÇ»SÿTwTœgÁT„v7usYÔk‹OnÞVŒÿºNãSê6qžX•‡smN¾0R†NN*NïSÂ‰„v4ls^0FOSVÙ7hN*NZiZi¨RºNwÈSMbNS*j¢n„v'YSÐYÙz(WºNìNb—MRöeÿyY„výBlwI`/fÜuÎuNÝu0\n\n	cgqfR’V6R„vÄ‰RÿOŽƒSÜb(W†NNMONASYS„vÍ‚ïšwwè•NINIeiirfR0œQfRŒT0W(fRÿÙ/fÙMOwºN(WTwTœgÁTVR„v°etQfRÑy0þfÏu(W¨X‰åTÓbRƒöeÿwºNbŸRÇ	²wùWiúQ†NO(„vu‰ss|ŒT±iÿÖNøváOirÍyOàV:NºN:N„v	ébwØSSÿFOÖN„vtº‹—VN0RûNUOºN„vsQèl0SVOŽƒSUS:y†NyY–«Ž&^Nw„v'YfNöevQ-Nánáný/fZSëXîh—gÌ‘„vfk†N±‚Iƒ„vh,gŒcácNãSAm)Rñ‚‡e„vwºNËzsSÍbHhÇ–cO†NOŽƒS0\n\nÖNO:NÙ*N³QšRT”`YOu0"
+ flavor_UFC.1040.a:0 ")YJUÿÙ*NØmlÈSÛS„vÑYZÿ"
+ flavor_UFC.1041.title:0 "kp0W›S0W(ØR¢c"
+ flavor_UFC.1041.desc:0 "kp0W›SÿWSŽ2m'YF–„vgWSïzÿ/fÉbnfÉbTX³låNY„v,rŒN¯rºNAm>e0WÿFOêS	gÅ`‚‚gv`±R„vj¯rMbO«ˆ&^0RÙ*NRƒàeºNßp„v0WLu0\n\nOŽƒSó`N:NÀNHNt^Ç±‚2u„vw^OgbaegÙ*N0W¹eÛLˆwßRÿFOSVÖNìNÎN/nn„v2ugNNegöeÿ<wMR„vofr‚Ø/fäNOŽƒS—f—fT†NNÊ`0ÙÌ‘„v)YˆVNOÿBS‘N‚YTõušS„vŠÒu't't‹S(W4YN0BSæSàS‚T„vê–ðSQX.†NZWÍVwË–„vîXŽÿáQK„åeKNöeÿY3–0wmb—N²ðSøvàSÿ(Wwms^b—N0Ws^b—„v²N•Y.fSúQám+tr‚„vIQ‰0\n\nkp0W›S„vŽof¡l	gäN2NºNjPYu*YENÿwºNTSV0W„vTwTœgÁTÓbRƒ–•|Qñr•Sb†NÛb|TÿùRb—mNˆV<yŒŒ0W1K^ôaÿ:NŒNºN‰R’c†NOO¿R0/kåeÿkp0W›S„vØRßRckVVËY†N0wºN(WåTjO„vöePÿŒ®v„vOŽƒSI`/fÃVN(W	q0W0RYIm¨R0yY(uSötPRdÆ–†NˆVYfk†ŒT|œ‰|ÿuóÑS°s†NNêS%tÀs0yY(Wwm¹w0R†NÍTèS„v°QÝTÿØ	g‰wVV„vNOÞ˜„vž‰|ÿ	gNwÝžÑž„vÌwèŒTm‹v„všw®vÿOŽƒSðyƒRìN:NN²‹Æ‹„vEž0OŽƒSëVPNg†NÿÙÌ‘Žrôv/fyY„v)YX0\n\n2NhTTÿÐcMRTwû|„v'9‚SÖNìN&^†NÞV»S0SV2NºNÎNê–qSNNegöeÿw^(WýÑ—VÞ˜ëV„vOŽƒSöeàràr0WÌ†NNä0"
+ flavor_UFC.1041.a:0 "2N*NImRŒRb†Nkp0W›SlQ9Åe8ny˜îv0"
+ flavor_UFC.1042.title:0 " RÉb^b¯e²›S"
+ flavor_UFC.1042.desc:0 "SVôTÿblšÐ³lîOú^ŒRÕkTÿSVR„vN›N¢ci––XTëNÊS…V0WTYT†NôTÿblšWS¸SùRb—„vÙµ^dR›SN0ºNìN(WÙÌ‘ÑS°s†NøvSVY„vGYbV*`¶r„v¨RiirÿTwTœgÁTmNz¸‹P–6R†NÙWW›SS„vVÑS0OŽƒSŒTyY„vw^ÆQY»S RÉb^b¯e²›SÛLˆwßRÿy˜îv3u÷‹¬wô•ybYŒRÕkÿ2NºNÎNôTÿblšWS/núQ*‚ÿN)Y1S0R¾†Nîv„v0W0\n\n RÉb^b¯e²›Sÿ‰ísYrí‹-N„vèTŸŸKN›Sÿ1uN*N'Y›SSŒTpeNKS„vS›SÄub0ncw^ô‹ÿÙÌ‘ïSýw/fˆVENˆVENåNMR1ukpqS·UÑSbVb„v›SS0OŽƒSÎN5ÏefR/hÌ‘fR0R„v±›NEm„…„våwÆ‹>f6qàeÕl/ecyYwÂaw^„vº‹‡eÿÙ*N4YÑS±‚‹v„vw4YPRvzßz(Wó`ÀNHNbTÿNNO?QÿSOŽƒSÈSÑNÁ‰†N*ŽqV0\n\nÙÌ‘mN*YŽ™Y†Nÿ‹†6qw^îS1VyYN‰ÑúQÓbRƒ–ZwK„„vƒôVÿFOÙÌ‘àepeŽ™Y„vÍsGYV‹QžR(WäNºNAmÞØVÔ0ž^‚YèTów„vwmŸŸ0•å‚)RQR„v%‡4‡0p(Wwm¸SN„v,žZžÿØ	gOŽƒSgœU0k„vNOÞ˜„vÖwEžÿOŽƒSI`œU0kŠbfk†b/f‡irÅˆÛSötPRÌ‘ÿÙ/kyYïS/f	gYwegÿÎNôTÿblš&^eg†N¸‹Y%N%NžRžR„vS<rPR0\n\neQYÿOŽƒStQôÃRÃR0WŠbyY„v6e·ƒUS:yÙuw^w0SVàV:NNåeàeœgw‚W4Y'Nl„vw7rPR¥w0ROŽƒÉb“beg„vàQêSžÀ–öeÿ4YN„v±v¹u¬wô•ˆmce‚Yt^‰öeN,‚0(WÙGrNN”–Ýu„vdR›SNÿwºN„vó`Õlck(WNekek«ˆÁ‹žR0"
+ UFC_modifier_galapagos_conservation:0 " RÉb^b¯e²›Sê6qÝO²b:S"
+ UFC_modifier_galapagos_conservation_desc:0 "‚YœgÅe8nmNýwb:NNÍyFUÁT&&"
+ flavor_UFC.1042.a:0 "‹†6q™UŒRhQNTÿFOøv<O¦^Á‹fÿƒRìNó`ÅVåb	gTN*NVyHQ0"
+ flavor_UFC.1043.title:0 "áOöN"
+ flavor_UFC.1043.desc:0 "OŽƒÉbˆVSleyY„vw^ÿÙMOdžÑSÍ‚ïš„vw‹˜åz<ONN	gNwàewzàeKS„v¨R›RÿmNÏu8^OdúQÑnKz„vPNPRäNOŽƒÉbgcyNbk0FOOŽƒÉbgurc„vØ/fÜ¹e„v*gZZ+YÿyY(WôTÿblšI`è„v×e^MRN±*Nr^Ãu„vz<S¯eSOPRËzN†NZZ¦uÿFOÖNìN(WNw„vöeô•¡l	g…ÇN*Ngÿ«ŽàeR‡e„vŒNºNgÈugÎN†NlQøS„vŒ>mÎNdk2N”–0\n\nfR/gè„v®öNÊN)Y0R†NÿSV—Våw/ffR/gè„vŒcNfàsOŽƒS'YSÐY„váOöNöeÿte*NfR/gèÈS¸pV†N•ÿt^‰ºNìN„Yó`vzßz/fêT*N)YNg„vÅ`LeÙu'YSÐYÄReg„vÅ`fN0wegÖNìNs„vØ:cÆQÿfNáO(uzéZ„vñ‚‡efN™Q0\n\nOŽƒ(Œ/Tÿ\n\nb(WËu¬‚pQÄuÇuÓbRƒÿ¶rµQˆV‹Y0\nbÑS°s†NWùÿäNºNÊ`¶‹0W0\n\nwÚ‹„v\nFz¯eTXÕl\n\nß|w4YPROW—VˆVÿßz6q(WwPwÿOŽƒSSáOBc(WøwãSÿÞV4Yw0R†Nƒzr„vw^ÿdköeÖN„v<w-Nê•ÁpNwàewz„vIQ’‚0pÿbìN»SNŸÿ"
+ flavor_UFC.1043.a:0 "Nïz˜Î˜0"
+ flavor_UFC.1044.title:0 "B›­e‡epQ"
+ flavor_UFC.1044.desc:0 "ÙÌ‘ó`ÅV1S/f‡epQWNW†Nÿîh—g-N`—Ñwm¸S„vNµOÿ2N’c(g(•KSPWK„(WÙÌ‘0•KSÌ‘éeòT4x%N*XÿÛVYNÁ‰ºN„v*ŽùÿKSPR-N.Y„v(gLhòTÏuce¶gÿvQN„vppS<ONNïSåNSKbcÍSYÓgÑž”N/k01uŽNîh—g„v²QÿwmNÎ˜´fÏkÏkâlÊSdkYýNOSÙÌ‘te*NŽcû0\n\nFz¯eTXÕlòTÏuTc„‹NOŒTÓbRƒè3u÷‹†NWNWÝO²bŒTc˜cåTjOÿÙÍyy˜îv<ONNKNMRÎN*g	gÇÿegêôTÿblš„vÞVYØ¡l	gOŽƒSŒTyY„vw^eg„vôfëV0N›NRgåTjOòTÏuVËYÿFz¯eTXÕl„v–OShTôV0WNdÆ–0R„vŠpwQ0|œÉSŒTö–ö–cece„vÑ‘^S6RÁThQèn>e(W†N‰RhQ:S…Q0\n\nSVÙùRK`ºNåb±b(WNwöeÿte*NËu¬‚pQ0W:S,rŒNŒT,r	NtQKY„vºN(WY3–NSte*NËu¬‚pQ„vîh—gÓgb†Njm+o„v¢ur‚ÿwgtQKY„vºNOŽƒS„vw^ÿckÏP*NiRPRN7hôVNw•KSó‚ÿ´(W0WNdûRÙÌ‘„vÏkN*NÛ†Nlšù0\n\n,rkQ)Yÿ„˜šR¥cÖNìNÞV»S„v9‚êSENEN*g0Rÿck(WOŽƒSÃVN(W	q0W‘uÑ`KNöeÿÓ˜Î˜„`6q­ˆûQ†NÙÌ‘0ºNìNVËYÎN‡epQWNWTVÓb:S„vÚhKS…QTYÑÿOŽƒSÑ(Wg-Nô•ÿNKburNwyY„vK`ºNÿNKbýbNwyYt^ÑkQìe„vw^0M`Ú`ô•ÿ±êS•Nww'ƒ„vKb„væ‰a­eÝu†NÿwºNQmNÑN¨R†NÿÂrÎ˜wSNwÖN»yV†NÙÌ‘ÿSÖN&^»S†NNuýTŽVNw„v*gåwKN0W0\n\nOŽƒS«ˆæb†NNegÿÓbRƒ–NAQ¸‹yY»SKSYûRŒb0N1Y„vw^ÿ´fÎ˜(WËu¬‚pQ„vîh—g-N†wP†0OŽƒS+vPW(W†N0WNÿFz¯eTXÕl:NyYædNw<wêl0\n\nSV´fÎ˜s^Y—NegöeÿwºN„vWSO(Wwm¹«ˆŒb0R0OŽƒS(W•KS¹:Nw^IRN†N“X‘xÿNb—IRNww^„vTWRÿ\n\neY)RV·ÃWÌ‘KQŒg0gT„vôu¬NºN0"
+ flavor_UFC.1044.a:0 "ñ‚up¿kNÿø‹^yÀT2O0"
+ UFC_modifier_erikson_monuments:0 "ÃWÌ‘KQŒg&r‡eów"
+ UFC_modifier_erikson_monuments_desc:0 "‡epQWNWËWl„Nw0gT„vôu¬NºN0ÃWÌ‘KQŒgÿÏkSV²‹wÙMOP	—„v9N¦žz˜R„v.OGYNuÿýOÃqwºNìN„v¢ci–2k0"
+ flavor_UFC.1045.title:0 "irÍywn"
+ flavor_UFC.1045.desc:0 "ÊN)YÿZSëX„v5Ïe'YSÐYOŽƒSåNyY„vº‹W„0irÍywn0—Ê`†Nte*NTwTœgÁTfR/gè0\n\njO:NNLuN„v,rNMOwckaINN„vZSirfR¶RÿOŽƒSàQNNpM†Nte*N°e'YF–ÿ&^ÞV†NpeåNCS¡‹„v¨RiirImSObh,g0yYçub†NüR^„vÂ‰¹pÿ²‹:Nuir(WpeåNNt^„v†SòS-NON­eØSSÿTN*NVyHQOMˆuúQNT„v²SOÿÙÍyØSS/f1uŽNÞz‰NŒTØmplwbVb„v‹kw‘„voS0\n\nOŽƒS„vÂ‰¹p‰V•^ ˜†‰†NúWcwYe0O¯epQYeIr—RYeðXðy„v^yRº‹ÿvQI‘„v%NÆR'`³åNŒRb%N(Œ„vêKm0àQNNte*Nçe'YF–ùRÙNÂ‰¹pýhˆ:y—Ê`ŒT(‘uÿwå‹GPô‹(WN×OININ„vTwTœgÁTlQøS·ƒ—V†NNSåb¸0\n\n(WTwTœgÁTÿ/UN„v(‘uegêŽNfR/gè,g«Žÿ	gºN²‹:NÙÍyoSÇŽN‹kw‘ÿàQNNOØmpl‰cNb	gNT¯sƒX„vte*N²SOÿ>e(WºN‰|„vuIm-NŽrôvNïS¥c×S0uó	gºN²‹:Nÿ‚YœgÙÍyGPô‹ïSåNWY(WÏuNmfRNÿ±HNTwTœgÁTlQøSck(WŠpŠÜ&&"
+ flavor_UFC.1045.a:0 "Ù/fN×OININ(WNLuN„vÈSN/kÜw)Rÿ"
+ flavor_UFC.1045.b:0 "bó`ÿÙùRçe'YF–„vÂ‰õVO/fôf'Y„v²QûQ0"
 
  flavor_UFC.105.title:0 "x^ÐNNx^"#Erikson
  flavor_UFC.105.desc:0 "SVeY)RV·ÃWÌ‘KQŒgÖbÉbNw«ŽSO1YB›K„D›0WpÛôTÿblš,gèöeÿÖNaÉ‰te*NNLuýß|†N0\n\nÃWÌ‘KQŒg/f‰pQ›S„vNTz˜Rÿ#TÇ„SÒRwmáS„v9‚êS6eÇï90Ù*N¥wîT/fÖNZPFUºN„v6r²N.^ÖNpNN„vÿFOÖN9h,gNœU0kŒTxY>sFUºNSb²NS„v%„uÿÖNÛuh`?B0¨‹ŒS—r¡‹02aNÉZ×ONP	—v˜0\n\nÃWÌ‘KQŒgÇ†NJSˆPR„vP	—uImÿSöeP„vÖNó`SVNT‘šëXÿtS—Våw¶R-NVy.OASãN0WMOQS®VwjObÿR—t^öe¦hó`b:N¢ci–¶Rÿ»SeÜ„výV¦^egN:WætpQ	T’Qi–ÿFOØ¡l0RSwm1Sû†N9‚ÿSVÖNŒRbúWNx„vFUNYe²wÿÆQYb1SNju‹NN„vöePÿÏk)Y:N9N¦ž‹s²R*jV´fie„vàeJwuIm©‹ÖN„vu‹T1Y»S†NIQiV0\n\nuIm1SÏPcˆNwNSKN„vYe—Rÿ(W—f0WÌ‘ËnuNwP%ÿwÃWÌ‘KQŒg/fgT„vôu¬NºNÿÖNÎN4Y0Rý/fr^ÀQ„v0SVTwTœgÁT„vFU9‚ÛeQåe·VpQJS›Söeÿ4ngê1u„vÃWÌ‘KQŒg:N6r²NYu†NJT+R„váO:rÿ–T¿OóN†NÞVz„vFU9‚0\n\nSV6q‹YÐ8lÜNÖNàeÿSV9‚–ÔÞV0RôTÿblš/nãSöeÿSVÖNckÆQYóN2ugÎ¥c°euIm„v±NIRÿz‚YvQeg„v:VÈpwmÎ˜ŠbÃWÌ‘KQŒg.RÛ†NwmÌ‘0\n\nNO	gÔkÊN)Yôfß|Õ|„våePR†NÿÃWÌ‘KQŒgVÝTNw0SVÖNŠbn„vcˆgû|(Wpô•dŠMR»S¥bSöeÿºN‹Nè„v•˜RrúQ†NðX0"
@@ -568,7 +654,7 @@
  UFC_mission_the_moais_desc:0 "Î‘ÃVÃRÃR„vWS¹e¢ci––<ONNv^¡l	gËYÈu¿lNwwm¸S*‚Lˆÿw/fgNw‰WS¹eTLˆÛ0AS)YTÿÖNìNÑS°s†NN*NäNºNÊ`GY„vS›SÿNb—ßz6q	gpe*NçT:Y)YåT„vºNb—ówÏPÿ‰vF–„v±)Yp`0N²egê^Ébísyr„v9‚XT†^kyÀNHNYIm‚‚„våePRÿùR—RYe.oNsQÃV„vc„‹NOybÆQ†NYIm‚‚›SÙ*N‹TT0"
  UFC_mission_brazilian_wood_title:0 "¢u(gKNaN"
  UFC_mission_brazilian_wood_desc:0 "ôT‰ÿÙ/fNGr«ˆíp&^è–—gŒRhQ†‰Öv„vW0W0Nbx^TwTœgÁTlQøS„vVRƒy˜îvòTÏu«ˆû|ßuSÿbìNýwY(WÙGrW0WN¾‹ËzôfY„v8f/n0	gÜÁ‰SSÆ‹„vN›N4lKbŒTFUºNwÍ‘†NÙÌ‘„v(gPg„v÷N<PÿTc„‹NO3u÷‹N‰(u^Jkpôv¥cÁk—gVRƒ0Ïuc„‹NO…QèO®‹¨‹º‹ÿÙy˜3u÷‹«ˆybÆQÿN1uµNÁTxÑSèhQCg#íp&^(gPgµNNþ”„v„gú^0"
- UFC_tooltip_tropical_wood_plantation:0 "/T(u§Yûyi¢u(g§!„vøvsQ³Q®‹0\nSÐc:yÿ(WŸSHragöNNÿ§Yíp&^(gPg§!„vgØš÷N<h:N3.00¤"
+ UFC_tooltip_tropical_wood_plantation:0 "/T(u§Yûyi¢u(g§!„vøvsQ³Q®‹0\nSÐc:yÿ(WŸSHragöNNÿ§Yíp&^(gPg§!„vgØš÷N<h:N3.00¤\n\nåNN‹NöNSnxšRTwTœgÁTlQøSùR‰R,r¯eø‹¦„vµc6R¹eVÿ"
  UFC_mission_buenos_aires_title:0 "z˜Î˜KNÎW"
  UFC_mission_buenos_aires_desc:0 "^œRú‹¯eŒ‚)R¯eÿ(W‰åTyr¹eŠ-Na:Nz˜Î˜KNÎWÿPWK„(WÉbnfÉbTX³l„veQwmãSY0ÙÌ‘0W¿Rs^teÿ)YØš‘NámÿtS»yíp&^ÇŽNeÜÿNTòTåw„vÏuNmjOirÍyiÿSV0WXTåTIN‰ÎN‹NÏuNmHeÊvNON„vœQN0àVdkÿÝÍSlQøSÄ‰šR„vXTåTN,‚1S«ˆ‰R’c0RÙÌ‘åTjOÿÙÌ‘„vXTåT„vŒ—S÷‹Bl8^«ˆsšÞV0"
  UFC_modifier_buenos_aires:0 "z˜Î˜KNÎWÿ2OÃVKN0W"
@@ -592,7 +678,7 @@
  UFC_mission_honolulu_desc:0 "N—VNô‹ÿYIm‚‚›Swm›QúW0W¡‹R:NlQøSÐc›O†Ng	g÷N<P„vN‰ÿMR¿l0NhTôV„vÛk)RºNSb²NS„vÇz-NÿbìN—Våw†NSV0WgAucƒ„v8f-NÃVÿYZ7Y²›S0ˆV¾–ô‹/fN/fïSåNðyKN:NVüreQ²RÿbìN„vwm›QïSåNùRYZ7Y²›SÛLˆN/kGY­ˆ0"#That's like putting the cat near the goldfish bowl
  coast_of_freedom:0 "ê1uKNèn"
  coast_of_freedom_desc:0 "Nwm¸SN„vXTåT>y:SÄuú^†NêñT„vúWBSê»lÄuÇuÿÖNìNuó6RšR†NêñT„vÕl‹VÌQŒšŽNlQøS„vÄ‰àzKNN0"
- get_potosi_by_choice:0 "§Y9hnc	ébnxšRâlXb‰„v:YÖS¹eVÿ§!"
+ UFC_tooltip_potosi_new_ver:0 "SVôf°e0R1.37Hr,gTÿSûyi§Yg®N„vêl4l§!ûN¡R"
  sugar_price_ahead_of_time:0 "bìNSÐcMRæ‰ÑS§TÖ|‰|§!÷N<hØS¨R‹NöN\nbìNSã‰•ûyiu…„v³Q®‹"
  tobacco_price_ahead_of_time:0 "bìNSÐcMRæ‰ÑS§TßpIƒ§!÷N<hØS¨R‹NöN"
  cotton_and_fur_price_ahead_of_time:0 "bìNSÐcMRæ‰ÑS§TÉh±‚ŒTÛk®v§!÷N<hØS¨R‹NöN"
@@ -637,11 +723,16 @@
  UFC_mission_monopoly_and_dumping_desc:0 ">P•ÿN*Nc„‹NOÎNeg¡l	gwQ†Ç„vÍ‹GlÿgÑÛeQ†N¡rtBSÏk*NºN„vÆ‰Î‘0fR/gèè•„vÏuNmfR¶RÙubìNÐcúQ†N°e„v‚iõVÿsSÇƒNO„v÷N<hTýVE–^:WN'YÏ‘.UúQFUÁTÿ(WÅ`S†˜^:W„vTöe‹S®WûNUOïSýwúQ°s„vÞz‰Nw0ÙùRŽNÍ‘FUININN:V„výV¶RSO/fÁkmp'`„vSbûQ0"
  UFC_tooltip_won_war_against_cas:0 "(Wbú‹›Q‹Nôc©RTÿ(WÝOkS<hÉb³u¾„vb‰N-NbÜw†NOÔk)RšN„vúWcw’Vÿ"
  UFC_rereconquest:0 "0QQVgÐ¨R0"
- UFC_tooltip_business_associate:0 "9hncbìN	éb„vFUNTjOO4OÙuˆNVY±R0\n§Rbwÿ„W­eNRÿ§!"
+ UFC_tooltip_business_associate:0 "9hncbìN	éb„vFUNTjOO4OÙuˆNVY±R0\n§Rbwÿ„W­eNRÿ§!\n\n‚YœgbìNåNˆmmpNb	gFUNqQŒTýV„v¹eVŒRbûN¡RÿbìNS·ƒ—V§G100§!Í‘FUININ0\n\n‚YœgbìNåNÓußvûNNFUNqQŒTýVŒRbûN¡RÿbìNS·ƒ—V§G1§!t^„v8f6eeQÿFOOÏQS§R5§!¹pÍ‘FUININÿNÌS¹eýO·ƒ—VåNNîOckÿ"
  UFC_rereconquest_trade_modifier:0 "OÔk)RšN8f„W­e"
  UFC_modifier_american_hegemony:0 "Ž2mKNIN"
  UFC_tooltip_cocoa_prices:0 "bìNSàeagöNæ‰ÑS§TïSïS§!„v÷N<hØS¨R‹NöN\nbìNS·ƒ—Vte*NŽ2m„v±Rðyÿ\n§GbìNSÈT°e„v*geg§!\n§Y‹NöNMR»wÿ§!·ƒ—V°eûN¡R0"
- UFC_tooltip_dumping:0 "bìNSTÏk*NR:V>P•FUÁTÿÖNìNOžX RIrTŽN8f6eeQ`SÔkd–åNÍ‘FUININ„v'¨Àwÿ\nÿîvMR‚YdkÿÆ‰KmÕ‹v`ÃVºNz¦^³QšRZPbhTg'`³Q®‹	ÿ"
+ UFC_tooltip_dumping:0 "bìNSTÏk*NR:V>P•FUÁTÿÖNìNOžX RNšRÏ‘„v'¨Àwÿpe˜IrTŽNvQ8f6eeQ`SÔkd–åNÍ‘FUININ„vÛVP0\nã‰•§Y>P•FUÁT§!Y²NLˆ¨R"
+ ufc_diplomatic_actions_dumping: ">P•FUÁT"
+ ufc_diplomatic_actions_dumping_title: ">P•FUÁT"
+ ufc_diplomatic_actions_dumping_desc: "bìNSùRå‹ýV>P•FUÁTÿÖNìNSžX RNšR„v'¨Àwÿpe˜IrTŽNå‹ýV§Y8f6eeQ`SÔk§!d–åN§YÍ‘FUININ§!„vÛVP0"
+ ufc_diplomatic_actions_dumping_tooltip: "bìNSùRå‹ýV>P•FUÁTÿÖNìNSžX RNšR„v'¨Àwÿpe˜IrTŽNå‹ýV§Y8f6eeQ`SÔk§!d–åN§YÍ‘FUININ§!„vÛVP0"
+ UFC_tooltip_dumping_cooldown:0 "bìNÏk”Nt^êSýwÛLˆN/kFUÁT>P•0"
  UFC_mission_global_business_empire_title:0 "hQtFUN^ýV"
  UFC_mission_global_business_empire_desc:0 "°e„vc„‹NO•ÛSYewÉbeS·lšSKQ¯eÿ:YÖS†Nte*NTwTœgÁTlQøS„vµc6RCg0ÖNlšNÍ‘Äuc„‹NOÿb/fNO÷N6epN·ƒ—VTwTœgÁT„v¡wýNÿb/fåN Q•QX‡v„vt1uôv¥ceR:Yçec„‹N„v¡wCg0lšSKQ¯eö^íu†N,rNãNc„‹NO„v‡eSŒT—RYe?eVrÿFOùRŸSOOl0XTåTbYegûyl„vsQèlz¦^tS'YN‚YMR†N0\nlšSKQ¯e‰Sb.„vÿ/fN*N·Qw‘wØšHe„vhQtFUN^ýV0"
  UFC_tooltip_newgameplus:0 ",rŒNãNc„‹NOòTÏu:YÖS†NCg›R"
@@ -725,11 +816,11 @@
  UFC_mission_workers_and_board_title:0 "åTONc„‹NO"
  UFC_mission_workers_and_board_desc:0 "c„‹NO-N	gÙ7hN*NV‰|ÿegêíp±šN„v4lKbwåT&O^I`/fŒT9‚XTìNSbbNGr0¡l	gºN¨‹ŒSwåT&O^ÿÖN/f4lKbãS-Nle1r„vw9‚•ÿmN/f–O¦žöSVRTwTœgÁT„vŸRËRSSW„„vºN04lKbìN(WwåT&O^„v&^†˜NRú^†NN*NëSZPåTO„vÄuÇuÿNVËYêS/f9‚+YìNÿTegàQNNÏk*NKYb(WÓbRƒ,rN¿u„vXTåTý ReQ†NåTO0c„‹NOÅV‰˜NaÍ‘YtŒTåTOKNô•„vsQû|ÿN‰ó`NwÖSƒRÿ±/fN¡wýwY9e)Ybc0W„v›RÏ‘0"
  UFC_parliament_name:0 "åTO"
- UFC_staff_estate:0 "XTåT"
- UFC_staff_estate_desc:0 "TwTœgÁTlQøS„vXTåT/fcNºN‹NèŒr¢‹†N³R¨RTT„vckVÇ–XT0ÖNìNïSýw/fegêçe'YF–„v9‚XT0FUºN0s^lb1Y»SW0W„vçe5ÏeÿgÈu(WN¸uOS¦ub—MRb:N†N0WMOs^Ir„vºN0ÖNìNNT:NTwTœgÁT„vIQf*gegTYâlÿmNOPŸÃVOS›RNc„‹NOþRÃV—eÒ‰0‚Yº‹‚YUOÿêS‰³R¨R›R÷N<P„vs^aˆN«ˆSb4xÿÖNìN8lÜý/flQøSgàVÚ‹„vÇ–XT0"
+ estate_ufc_staff:0 "XTåT"
+ estate_ufc_staff_desc:0 "TwTœgÁTlQøS„vXTåT/fcNºN‹NèŒr¢‹†N³R¨RTT„vckVÇ–XT0ÖNìNïSýw/fegêçe'YF–„v9‚XT0FUºN0s^lb1Y»SW0W„vçe5ÏeÿgÈu(WN¸uOS¦ub—MRb:N†N0WMOs^Ir„vºN0ÖNìNNT:NTwTœgÁT„vIQf*gegTYâlÿmNOPŸÃVOS›RNc„‹NOþRÃV—eÒ‰0‚Yº‹‚YUOÿêS‰³R¨R›R÷N<P„vs^aˆN«ˆSb4xÿÖNìN8lÜý/flQøSgàVÚ‹„vÇ–XT0"
  land_ownership_modifier:0 "XTåT0µN"
  UFC_tooltip_staff_enable:0 "/T(u§YXTåT§!6–BS0"
- UFC_staff_estate_ownership:0 "XTåTW0WNb	gCg"
+ estate_ufc_staff_ownership:0 "XTåTW0WNb	gCg"
  UFC_the_labor_union:0 "åTO6R¦^"
  UFC_the_labor_union_desc:0 "–NwTwTœgÁT„vqVÍT›Rnib'Yÿ'YÏ‘„vûylŒTåTºN ReQ†NÙ*N°eu„vONqQŒTýV0:N†N(WåTD0XTåTy)RIrî•˜˜Nåb	gEQ³„vÝ‹í‹Cgÿ4lKbìN(WwåT&O^„v&^†˜NbËz†NåTOÿv^N­e8TVNwôfYXTåT ReQ0–™ûNc„‹N•O¦žöS¡l	gùRÙNÄuÇuÇYr^‰mÿNÅNÅN/fw(WNwåT&O^„vËSŒNÿôf/fàV:NÖN‰ú^¾‹tó`-NŒRŽ„vONqQŒTýV0"
  UFC_mission_wage_adjudication_title:0 "åTDÁˆšR"
@@ -829,35 +920,35 @@
  flavor_UFC.8902.title:0 "财权分立"
  #estate
  estate_secularism:0 "Ye²wNXT"
- UFC_staff_estate_loyalty_modifier:0 "XTåT6–BSàVÚ‹¦^"
- UFC_staff_estate_influence_modifier:0 "XTåT6–BSqVÍT›R"
- UFC_staff_estate_land_rights:0 "XTåT†˜0WCg"
- UFC_staff_estate_land_rights_desc:0 "TwTœgÁT„vÓbRƒèI`/fÇNwp‚æ‚„vuImÿjO:NVY±RÿN›NW0WN„vµNirt”^«ˆˆcˆNVS›R„vXTåTìN0"
- UFC_staff_estate_more_colonists:0 "TÓbRƒèRM‘XTåT"
- UFC_staff_estate_more_colonists_desc:0 "êS‰NLuNØ	gNWWRƒ0W¡l	g«ˆVÑSÿ±HN•bDÓbRƒè8lÜNïSýw/fN,gpNVS0"
- UFC_staff_estate_more_merchants:0 "T²NèRM‘XTåT"
- UFC_staff_estate_more_merchants_desc:0 "TwTœgÁT²NèŒc¡rNw8f‹N¡Rÿ‚YœgbìNó`·ƒ—Víwg)RÊvÿ1S”^å‹©‹ôfYXTåT•b«ŽŽN8fSV-N0"
- UFC_staff_estate_more_academics:0 "TfR/gèRM‘XTåT"
- UFC_staff_estate_more_academics_desc:0 "Ïk/kfR/gè„vlQVÛbXwÿýO:NlQøS&^egN²Nr^ImTzzw™„vºN0"
- UFC_staff_estate_more_techniques:0 "TµNÁTVÑSèRM‘XTåT"
- UFC_staff_estate_more_techniques_desc:0 "ncô‹Žb/gxÑSèÌ‘„vÏk*NºNýéeée‰cIQ†N4YÑS0ÙÌ‘/fÍST„vôVÎWÿYb—„vºNNó`Û»SÿÌ‘b—„vºNNó`úQeg0"
- UFC_staff_estate_more_force:0 "T›Q–RM‘XTåT"
- UFC_staff_estate_more_force_desc:0 "VVÃVÃVr^wm›QÿÑQÑQTTZPF–›QÿíTíT|U|U»SÐ'ÿSb‰kmNNSVlš¦m0"
- UFC_staff_estate_more_buildings:0 "TåTzèRM‘XTåT"
- UFC_staff_estate_more_buildings_desc:0 "åTzèÇRŽN¥cNNRIm/tImêS‰N©‹ÖNìNîO,rŒNagôTÿblšÐ³lÿNRý‹Yô‹0"
- UFC_staff_estate_black_staffs:0 "Ñžr‚XTåT"
- UFC_staff_estate_black_staffs_desc:0 "SO<hePUx0åTD‰BlNO0×SYe²wz¦^NO0ùRê1u„v4ngN³ÿÙ/fc„‹NOùRÑžr‚XTåTìN„vÄ‹÷N0\n§RÖNìN8lÜý/fTwTœgÁTlQøS„vàVžRXTåT0§!"
+ estate_ufc_staff_loyalty_modifier:0 "XTåT6–BSàVÚ‹¦^"
+ estate_ufc_staff_influence_modifier:0 "XTåT6–BSqVÍT›R"
+ estate_ufc_staff_land_rights:0 "XTåT†˜0WCg"
+ estate_ufc_staff_land_rights_desc:0 "TwTœgÁT„vÓbRƒèI`/fÇNwp‚æ‚„vuImÿjO:NVY±RÿN›NW0WN„vµNirt”^«ˆˆcˆNVS›R„vXTåTìN0"
+ estate_ufc_staff_more_colonists:0 "TÓbRƒèRM‘XTåT"
+ estate_ufc_staff_more_colonists_desc:0 "êS‰NLuNØ	gNWWRƒ0W¡l	g«ˆVÑSÿ±HN•bDÓbRƒè8lÜNïSýw/fN,gpNVS0"
+ estate_ufc_staff_more_merchants:0 "T²NèRM‘XTåT"
+ estate_ufc_staff_more_merchants_desc:0 "TwTœgÁT²NèŒc¡rNw8f‹N¡Rÿ‚YœgbìNó`·ƒ—Víwg)RÊvÿ1S”^å‹©‹ôfYXTåT•b«ŽŽN8fSV-N0"
+ estate_ufc_staff_more_academics:0 "TfR/gèRM‘XTåT"
+ estate_ufc_staff_more_academics_desc:0 "Ïk/kfR/gè„vlQVÛbXwÿýO:NlQøS&^egN²Nr^ImTzzw™„vºN0"
+ estate_ufc_staff_more_techniques:0 "TµNÁTVÑSèRM‘XTåT"
+ estate_ufc_staff_more_techniques_desc:0 "ncô‹Žb/gxÑSèÌ‘„vÏk*NºNýéeée‰cIQ†N4YÑS0ÙÌ‘/fÍST„vôVÎWÿYb—„vºNNó`Û»SÿÌ‘b—„vºNNó`úQeg0"
+ estate_ufc_staff_more_force:0 "T›Q–RM‘XTåT"
+ estate_ufc_staff_more_force_desc:0 "VVÃVÃVr^wm›QÿÑQÑQTTZPF–›QÿíTíT|U|U»SÐ'ÿSb‰kmNNSVlš¦m0"
+ estate_ufc_staff_more_buildings:0 "TåTzèRM‘XTåT"
+ estate_ufc_staff_more_buildings_desc:0 "åTzèÇRŽN¥cNNRIm/tImêS‰N©‹ÖNìNîO,rŒNagôTÿblšÐ³lÿNRý‹Yô‹0"
+ estate_ufc_staff_black_staffs:0 "Ñžr‚XTåT"
+ estate_ufc_staff_black_staffs_desc:0 "SO<hePUx0åTD‰BlNO0×SYe²wz¦^NO0ùRê1u„v4ngN³ÿÙ/fc„‹NOùRÑžr‚XTåTìN„vÄ‹÷N0\n§RÖNìN8lÜý/fTwTœgÁTlQøS„vàVžRXTåT0§!"
  UFC_tooltip_black_staffs:0 "d–^—ÖNìNÉ‰’‘ÿ&TR8lNÍS—bÿd–^—ÖNìNÍS—bÿ&TR8lNÉ‰’‘0"
- UFC_staff_estate_tropical_nation:0 "íp&^ÎW^ú^¾‹Ä‰R"
- UFC_staff_estate_tropical_nation_desc:0 "KS¡ríp&^lP&^eg†N¸‹YN¿OÿFOôTÿblš„vú^¾‹:NbìN(Wíp&^0W:SVRƒú^¾‹Ðc›O†NR5„vÏuŒš0"
- UFC_staff_estate_indebted_to_burghers:0 "7>kNís"
- UFC_staff_estate_indebted_to_burghers_desc:0 "lQøS„v&¡RîvMRúQ°s†NN¹pSî•˜˜ÿDÑ‘þ”ïSýwòTÏu­eÂˆ0àVdkÿbìNïSýw—‰©‹XTåTåN*NºNTIN7>kÙuêñT«WØNåTDÿIr0RlQøSDÑ‘ÞV<rTQˆNåNeˆØ0÷‹TMOXTåTøváOTwTœgÁTÿbìNNO	g4xµN„vN)Y0"
+ estate_ufc_staff_tropical_nation:0 "íp&^ÎW^ú^¾‹Ä‰R"
+ estate_ufc_staff_tropical_nation_desc:0 "KS¡ríp&^lP&^eg†N¸‹YN¿OÿFOôTÿblš„vú^¾‹:NbìN(Wíp&^0W:SVRƒú^¾‹Ðc›O†NR5„vÏuŒš0"
+ estate_ufc_staff_indebted_to_burghers:0 "7>kNís"
+ estate_ufc_staff_indebted_to_burghers_desc:0 "lQøS„v&¡RîvMRúQ°s†NN¹pSî•˜˜ÿDÑ‘þ”ïSýwòTÏu­eÂˆ0àVdkÿbìNïSýw—‰©‹XTåTåN*NºNTIN7>kÙuêñT«WØNåTDÿIr0RlQøSDÑ‘ÞV<rTQˆNåNeˆØ0÷‹TMOXTåTøváOTwTœgÁTÿbìNNO	g4xµN„vN)Y0"
  UFC_tooltip_staff_estate_privilege_change:0 "å‹yrCg²d•öeÅNmc1Y5%£estate_loyalty£àVÚ‹¦^0"
- UFC_staff_estate_salary:0 "ÑS>eåTª…"
- UFC_staff_estate_salary_desc:0 "Ïkt^ÑSåTD„vöePý/fTwTœgÁTXTåTìNgØštQ„vöePÿuó	gºNÐc®‹²‹ÑSª…åejO:NÕlšR‚‚GPåeÿÙ*NÐc®‹«ˆc„‹NO(WNSöe…Q¨‹º‹sšÞV0"
+ estate_ufc_staff_salary:0 "ÑS>eåTª…"
+ estate_ufc_staff_salary_desc:0 "Ïkt^ÑSåTD„vöePý/fTwTœgÁTXTåTìNgØštQ„vöePÿuó	gºNÐc®‹²‹ÑSª…åejO:NÕlšR‚‚GPåeÿÙ*NÐc®‹«ˆc„‹NO(WNSöe…Q¨‹º‹sšÞV0"
  UFC_stuff_estate_ownership_desc:0 "XTåT†˜0Wåb	gCg"
- UFC_staff_estate_culture_pluralism:0 "‡eSYCQ"
- UFC_staff_estate_culture_pluralism_desc:0 "SVTwTœgÁTlQøS(WŽ2mÙz3zßöeÿT*N‡eS„vûylýb:N†NTwTœgÁT„vckVXTåT0êS‰ÏuÇN×OININYe²wÿeg†N1S/fTwTœgÁTºN0"
+ estate_ufc_staff_culture_pluralism:0 "‡eSYCQ"
+ estate_ufc_staff_culture_pluralism_desc:0 "SVTwTœgÁTlQøS(WŽ2mÙz3zßöeÿT*N‡eS„vûylýb:N†NTwTœgÁT„vckVXTåT0êS‰ÏuÇN×OININYe²wÿeg†N1S/fTwTœgÁTºN0"
 
 #religion
  secular_humanism_group:0 "N×OºN‡eININÄu"

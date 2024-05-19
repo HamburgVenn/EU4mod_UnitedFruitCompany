@@ -1,16 +1,16 @@
-UFC_staff_estate = {
+estate_ufc_staff = {
 	modifier_definition = {
 		type = loyalty
-		key = UFC_staff_estate_loyalty_modifier
+		key = estate_ufc_staff_loyalty_modifier
 		trigger = {
-			has_estate = UFC_staff_estate
+			has_estate = estate_ufc_staff
 		}
 	}
 	modifier_definition = {
 		type = influence
-		key = UFC_staff_estate_influence_modifier
+		key = estate_ufc_staff_influence_modifier
 		trigger = {
-			has_estate = UFC_staff_estate
+			has_estate = estate_ufc_staff
 		}
 	}
 }

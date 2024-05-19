@@ -1,6 +1,6 @@
 # For Government Reforms to identify properly influence and loyalty modifiers, remember to put disqualifying triggers before the has_reform
 
-UFC_staff_estate = {
+estate_ufc_staff = {
 	icon = 4
 
 	trigger = {
@@ -28,7 +28,7 @@ UFC_staff_estate = {
 	}
 	land_ownership_modifier = {
 		global_unrest = -1
-		UFC_staff_estate_loyalty_modifier = 0.20
+		estate_ufc_staff_loyalty_modifier = 0.20
 		monthly_mechanical_clock_dip_power = -0.1
 	}
 	
@@ -44,17 +44,17 @@ UFC_staff_estate = {
 	#}
 
 	privileges = {
-		UFC_staff_estate_land_rights
-		UFC_staff_estate_more_colonists
-		UFC_staff_estate_more_merchants
-		UFC_staff_estate_more_academics
-		UFC_staff_estate_more_techniques
-		UFC_staff_estate_more_force
-		UFC_staff_estate_more_buildings
-		UFC_staff_estate_tropical_nation
-		UFC_staff_estate_indebted_to_burghers
-		UFC_staff_estate_salary
-		UFC_staff_estate_culture_pluralism
+		estate_ufc_staff_land_rights
+		estate_ufc_staff_more_colonists
+		estate_ufc_staff_more_merchants
+		estate_ufc_staff_more_academics
+		estate_ufc_staff_more_techniques
+		estate_ufc_staff_more_force
+		estate_ufc_staff_more_buildings
+		estate_ufc_staff_tropical_nation
+		estate_ufc_staff_indebted_to_burghers
+		estate_ufc_staff_salary
+		estate_ufc_staff_culture_pluralism
 	}
 
 	agendas = {

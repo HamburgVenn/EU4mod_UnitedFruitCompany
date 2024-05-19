@@ -1,0 +1,52 @@
+ufc_diplomatic_actions_dumping = {
+	category = great_powers
+	require_acceptance = no
+	is_visible = {
+		tag = UFC
+		mission_completed = UFC_mission_monopoly_and_dumping
+		from = {
+			is_great_power = yes
+		}
+	}
+	is_allowed = {
+		tag = UFC
+		mission_completed = UFC_mission_monopoly_and_dumping
+		custom_trigger_tooltip = {
+			not = {
+				has_country_modifier = UFC_modifier_dumping_cooldown
+			}
+			tooltip = UFC_tooltip_dumping_cooldown
+		}
+	}
+	on_accept = {
+		from = {
+			export_to_variable = {
+				which = ufc_mission_trade_income_variable
+				value = trigger_value:trade_income_percentage
+			}
+			multiply_variable = {
+				which = ufc_mission_trade_income_variable
+				value = 400
+			}
+			export_to_variable = {
+				which = ufc_mission_mercantilism
+				value = trigger_value:mercantilism
+			}
+			change_variable = {
+				which = ufc_mission_mercantilism
+				value = 1
+			}
+			divide_variable = {
+				which = ufc_mission_trade_income_variable
+				which = ufc_mission_mercantilism
+			}
+			for_variable_amount = {
+				variable = ufc_mission_trade_income_variable
+				effect = "
+						add_inflation = 1"
+			}
+			save_global_event_target_as = ufc_target_dumping_country
+		}
+		country_event = { id = flavor_UFC.62 }
+	}
+}

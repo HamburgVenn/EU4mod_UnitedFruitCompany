@@ -69,9 +69,53 @@ on_war_won = {
 		}
 		ROOT = { country_event = { id = flavor_UFC.15 } }
 	}
+	if = {
+		limit = {
+			from = {
+				tag = CSU
+			}
+			root = {
+				tag = UFC
+				has_country_flag = UFC_flag_andes_chain_north_infiltrate_2
+			}
+		}
+		ROOT = { country_event = { id = flavor_UFC.65 } }
+	}
+	if = {
+		limit = {
+			from = {
+				tag = CSU
+			}
+			root = {
+				tag = UFC
+				has_country_flag = UFC_flag_andes_chain_south_ally_2
+			}
+		}
+		ROOT = { country_event = { id = flavor_UFC.66 } }
+	}
+	if = {
+		limit = {
+			from = {
+				tag = CSU
+			}
+			root = {
+				tag = UFC
+				has_country_flag = UFC_flag_andes_chain_middle_rush_2
+			}
+		}
+		ROOT = { country_event = { id = flavor_UFC.67 } }
+	}
 }
-
-
+# country
+# root = winning country, from = location
+on_siege_won_country = {
+	if = {
+		limit = {
+			has_country_modifier = UFC_modifier_blitzkrieg
+		}
+		remove_country_modifier = UFC_modifier_blitzkrieg
+	}
+}
 # province
 # root = location, from = loser country
 on_battle_won_province = {
@@ -167,9 +211,9 @@ on_loan_repaid = {
 	if = {
 		limit = {
 			has_estate_loan = no
-			has_estate_privilege = UFC_staff_estate_indebted_to_burghers
+			has_estate_privilege = estate_ufc_staff_indebted_to_burghers
 		}
-		remove_estate_privilege = UFC_staff_estate_indebted_to_burghers
+		remove_estate_privilege = estate_ufc_staff_indebted_to_burghers
 	}
 }
 
@@ -236,6 +280,18 @@ on_dip_development = {
 				value = -0.02
 			}
 		}
+	}
+	if = {
+		limit = {
+			owner = {
+				has_country_flag = UFC_tooltip_nazca_lines_dessert_dev
+			}
+			OR = {
+				has_terrain = desert
+				has_terrain = coastal_desert
+			}
+		}
+		add_base_production = 1
 	}
 }
 
@@ -311,5 +367,36 @@ on_mercenary_recruited = {
 			}
 		}
 		FROM = { add_army_professionalism = 0.05 }
+	}
+}
+
+#ROOT - Original alliance creator, FROM - Alliance accepter
+on_alliance_broken = {
+	if = {
+		limit = {
+			has_country_modifier = UFC_modifier_ally_with_gen
+			from = {
+				tag = GEN
+			}
+		}
+		remove_country_modifier = UFC_modifier_ally_with_gen
+	}
+	if = {
+		limit = {
+			has_country_modifier = UFC_modifier_ally_with_ven
+			from = {
+				tag = VEN
+			}
+		}
+		remove_country_modifier = UFC_modifier_ally_with_ven
+	}
+	if = {
+		limit = {
+			has_country_modifier = UFC_modifier_ally_with_hsa
+			from = {
+				tag = HSA
+			}
+		}
+		remove_country_modifier = UFC_modifier_ally_with_hsa
 	}
 }

@@ -541,7 +541,7 @@ UFC_mission_slot_1_NGP = {
 			has_idea = ufc_black_slaves
 		}
 		effect = {
-			set_estate_privilege = UFC_staff_estate_black_staffs
+			set_estate_privilege = estate_ufc_staff_black_staffs
 			custom_tooltip = UFC_tooltip_black_staffs
 		}
 	}
@@ -1933,18 +1933,8 @@ UFC_mission_slot_4 = {
 			increase_trade_goods_discovery = {
 				trade_goods = tropical_wood
 			}
-			peru_region = {
-				discover_country = UFC
-			}
-			upper_peru_region = {
-				discover_country = UFC
-			}
 			custom_tooltip = UFC_tooltip_tropical_wood_plantation
-			hidden_effect = {
-				835 = {
-					discover_country = CRA
-				}
-			}
+			country_event = { id = flavor_UFC.63 }
 		}
 	}
 
@@ -1958,88 +1948,18 @@ UFC_mission_slot_4 = {
 			}
 		}
 		trigger = {
-			OR = {
-				795 = {
-					owner = {
-						OR = {
-							has_opinion_modifier = {
-								who = ROOT
-								modifier = scornfully_insulted
-							}
-							has_opinion_modifier = {
-								who = ROOT
-								modifier = insulted
-							}
-						}
-					}
+			num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+				or = {
+					region = peru_region
+					region = upper_peru_region
 				}
-				795 = {
-					owner = {
-						alliance_with = ROOT
-						has_opinion = {
-							who = ROOT
-							value = 180
-						}
-					}
-				}
-				795 = {
-					or = {
-						owned_by = root
-						owned_by_subject_of = root
-					}
-				}
+				value = 38
 			}
 		}
 		effect = {
-			custom_tooltip = get_potosi_by_choice
-			if = {
-				limit = {
-					795 = {
-						owner = {
-							alliance_with = ROOT
-							has_opinion = {
-								who = ROOT
-								value = 180
-							}
-						}
-					}
-				}
-				add_treasury = -500
-				795 = {
-					owner = {
-						add_treasury = 500
-					}
-				}
-				795 = {
-					add_core = root
-					cede_province = root
-				}
-			}
-			else_if = {
-				limit = {
-					795 = {
-						owner = {
-							OR = {
-								has_opinion_modifier = {
-									who = ROOT
-									modifier = scornfully_insulted
-								}
-								has_opinion_modifier = {
-									who = ROOT
-									modifier = insulted
-								}
-							}
-						}
-					}
-				}
-				potosi_area = {
-					add_permanent_claim = ROOT
-				}
-			}
-			else = {
-				795 = {
-					add_base_production = 2
-				}
+			custom_tooltip = UFC_tooltip_potosi_new_ver
+			795 = {
+				add_base_production = 5
 			}
 		}
 	}
@@ -2644,6 +2564,12 @@ UFC_mission_slot_5 = {
 		}
 		effect = {
 			custom_tooltip = UFC_tooltip_business_associate
+			tooltip = {
+				add_country_modifier = {
+					name = protected_markets_modifier
+					duration = 9125
+				}
+			}
 			if = {
 				limit = {
 					GEN = {
@@ -2658,8 +2584,10 @@ UFC_mission_slot_5 = {
 					name = protected_markets_modifier
 					duration = 9125
 				}
-				add_mercantilism = 10
-				add_years_of_income = 1
+				add_mercantilism = -5
+				add_years_of_trade_income = {
+					years = 1
+				}
 				GEN = {
 					add_country_modifier = {
 						name = protected_markets_modifier
@@ -2681,8 +2609,10 @@ UFC_mission_slot_5 = {
 					name = protected_markets_modifier
 					duration = 9125
 				}
-				add_mercantilism = 10
-				add_years_of_income = 1
+				add_mercantilism = -5
+				add_years_of_trade_income = {
+					years = 1
+				}
 				VEN = {
 					add_country_modifier = {
 						name = protected_markets_modifier
@@ -2704,8 +2634,10 @@ UFC_mission_slot_5 = {
 					name = protected_markets_modifier
 					duration = 9125
 				}
-				add_mercantilism = 10
-				add_years_of_income = 1
+				add_mercantilism = -5
+				add_years_of_trade_income = {
+					years = 1
+				}
 				HSA = {
 					add_country_modifier = {
 						name = protected_markets_modifier
@@ -2736,35 +2668,42 @@ UFC_mission_slot_5 = {
 		}
 		effect = {
 			custom_tooltip = UFC_tooltip_dumping
+			add_country_modifier = {
+				name = UFC_modifier_dumping_cooldown
+				duration = 1825
+			}
 			hidden_effect = {
 				every_known_country = {
 					if = {
 						limit = {
 							and = {
-								#not = { mercantilism = 75 }
 								is_great_power = yes
 							}
 						}
 						export_to_variable = {
-							which = UFC_mission_trade_income_variable
+							which = ufc_mission_trade_income_variable
 							value = trigger_value:trade_income_percentage
-							who = this
 						}
-						UFC_mission_trade_income_variable *= 100
+						multiply_variable = {
+							which = ufc_mission_trade_income_variable
+							value = 400
+						}
 						export_to_variable = {
-							which = UFC_mission_mercantilism
+							which = ufc_mission_mercantilism
 							value = trigger_value:mercantilism
-							who = this
 						}
-						UFC_mission_mercantilism *= 100
+						change_variable = {
+							which = ufc_mission_mercantilism
+							value = 1
+						}
 						divide_variable = {
-							which = UFC_mission_trade_income_variable
-							which = UFC_mission_mercantilism
+							which = ufc_mission_trade_income_variable
+							which = ufc_mission_mercantilism
 						}
 						for_variable_amount = {
-							variable = UFC_mission_trade_income_variable
+							variable = ufc_mission_trade_income_variable
 							effect = "
-							add_inflation = 1"
+						add_inflation = 1"
 						}
 					}
 				}

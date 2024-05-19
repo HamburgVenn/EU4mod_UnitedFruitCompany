@@ -259,5 +259,329 @@ country_decisions = {
         }
         ai_importance = 400
     }
+
+    UFC_decision_andes_chain_north_infiltrate = {
+        color = { 255 175 0 }
+        potential = {
+            tag = UFC
+            has_country_flag = UFC_flag_andes_chain_north_infiltrate
+        }
+        provinces_to_highlight = {
+            or = {
+                province_id = 823
+                province_id = 820
+                province_id = 812
+            }
+        }
+        allow = {
+            823 = {
+                owned_by = root
+                is_city = yes
+            }
+            has_spy_network_in = {
+                who = QTO
+                value = 40
+            }
+            has_spy_network_in = {
+                who = CHM
+                value = 40
+            }
+            mil_tech = 7
+        }
+        effect = {
+            peru_region = {
+                add_permanent_claim = root
+            }
+            vassalize = QTO
+            vassalize = CHM
+            custom_tooltip = UFC_tooltip_andes_chain_north_infiltrate_first
+            hidden_effect = {
+                CSU = {
+                    break_alliance = CLA
+                    break_alliance = PCJ
+                    break_alliance = CRA
+                    break_alliance = CCQ
+                }
+                WKA = {
+                    break_alliance = CLA
+                    break_alliance = PCJ
+                    break_alliance = CRA
+                    break_alliance = CCQ
+                }
+                declare_war_with_cb = {
+                    who = CSU
+                    casus_belli = cb_conquest
+                    war_goal_province = 808
+                }
+                declare_war_with_cb = {
+                    who = HJA
+                    casus_belli = cb_conquest
+                    war_goal_province = 814
+                }
+                declare_war_with_cb = {
+                    who = WKA
+                    casus_belli = cb_conquest
+                    war_goal_province = 810
+                }
+            }
+            clr_country_flag = UFC_flag_andes_chain_north_infiltrate
+            set_country_flag = UFC_flag_andes_chain_north_infiltrate_2
+        }
+        ai_will_do = {
+            factor = 1
+        }
+        ai_importance = 400
+    }
+
+    UFC_decision_andes_chain_south_ally = {
+        color = { 255 175 0 }
+        potential = {
+            tag = UFC
+            has_country_flag = UFC_flag_andes_chain_south_ally
+        }
+        provinces_to_highlight = {
+            province_id = 795
+        }
+        allow = {
+            795 = {
+                owned_by = root
+                is_city = yes
+                units_in_province = 24
+            }
+            mil_tech = 7
+        }
+        effect = {
+            upper_peru_region = {
+                add_permanent_claim = UFC
+            }
+            antisuyu_area = {
+                add_permanent_claim = UFC
+            }
+            kuntisuyu_area = {
+                add_permanent_claim = UFC
+            }
+            vassalize = CRA
+            custom_tooltip = UFC_tooltip_andes_chain_south_ally_first
+            hidden_effect = {
+                CSU = {
+                    break_alliance = HJA
+                    break_alliance = CJA
+                    break_alliance = QTO
+                    break_alliance = CHM
+                    break_alliance = CYA
+                    break_alliance = ICM
+                    break_alliance = WKA
+                }
+                declare_war_with_cb = {
+                    who = CSU
+                    casus_belli = cb_conquest
+                    war_goal_province = 808
+                }
+                declare_war_with_cb = {
+                    who = CCQ
+                    casus_belli = cb_conquest
+                    war_goal_province = 794
+                }
+                declare_war_with_cb = {
+                    who = PCJ
+                    casus_belli = cb_conquest
+                    war_goal_province = 2831
+                }
+                declare_war_with_cb = {
+                    who = CLA
+                    casus_belli = cb_conquest
+                    war_goal_province = 802
+                }
+            }
+            clr_country_flag = UFC_flag_andes_chain_south_ally
+            set_country_flag = UFC_flag_andes_chain_south_ally_2
+        }
+        ai_will_do = {
+            factor = 1
+        }
+        ai_importance = 400
+    }
+
+    UFC_decision_andes_chain_middle_rush = {
+        color = { 255 175 0 }
+        potential = {
+            tag = UFC
+            has_country_flag = UFC_flag_andes_chain_middle_rush
+        }
+        provinces_to_highlight = {
+            or = {
+                province_id = 806
+                province_id = 2828
+            }
+        }
+        allow = {
+            806 = {
+                owned_by = root
+                is_city = yes
+                artillery_in_province = 10
+            }
+            2828 = {
+                owned_by = root
+                is_city = yes
+            }
+            mil_tech = 7
+        }
+        effect = {
+            kuntisuyu_area = {
+                add_permanent_claim = UFC
+            }
+            custom_tooltip = UFC_tooltip_andes_chain_south_middle_rush
+            hidden_effect = {
+                CSU = {
+                    break_alliance = HJA
+                    break_alliance = CJA
+                    break_alliance = QTO
+                    break_alliance = CHM
+                    break_alliance = CYA
+                    break_alliance = ICM
+                    break_alliance = WKA
+                    break_alliance = CLA
+                    break_alliance = CRA
+                    break_alliance = CCQ
+                }
+            }
+            declare_war_with_cb = {
+                who = CSU
+                casus_belli = cb_conquest
+                war_goal_province = 808
+            }
+            clr_country_flag = UFC_flag_andes_chain_middle_rush
+            set_country_flag = UFC_flag_andes_chain_middle_rush_2
+            add_country_modifier = {
+                name = UFC_modifier_blitzkrieg
+                duration = -1
+                desc = UNTIL_THE_END_OF_SIEGE
+            }
+        }
+        ai_will_do = {
+            factor = 1
+        }
+        ai_importance = 400
+    }
+
+    UFC_decision_andes_chain_huge_crowd = {
+        color = { 255 175 0 }
+        potential = {
+            tag = UFC
+            has_country_flag = UFC_flag_andes_chain_huge_crowd
+        }
+        provinces_to_highlight = {
+
+        }
+        allow = {
+            mil_tech = 7
+        }
+        effect = {
+            peru_region = {
+                add_permanent_claim = UFC
+            }
+            upper_peru_region = {
+                add_permanent_claim = UFC
+            }
+            custom_tooltip = UFC_tooltip_andes_chain_south_huge_crowd
+            hidden_effect = {
+            }
+            CSU = {
+                declare_war_with_cb = {
+                    who = UFC
+                    casus_belli = cb_vassalize_mission
+                }
+            }
+            QTO = {
+                declare_war_with_cb = {
+                    who = UFC
+                    casus_belli = cb_vassalize_mission
+                }
+            }
+            CJA = {
+                declare_war_with_cb = {
+                    who = UFC
+                    casus_belli = cb_vassalize_mission
+                }
+            }
+            CHM = {
+                declare_war_with_cb = {
+                    who = UFC
+                    casus_belli = cb_vassalize_mission
+                }
+            }
+            HJA = {
+                declare_war_with_cb = {
+                    who = UFC
+                    casus_belli = cb_vassalize_mission
+                }
+            }
+            CYA = {
+                declare_war_with_cb = {
+                    who = UFC
+                    casus_belli = cb_vassalize_mission
+                }
+            }
+            ICM = {
+                declare_war_with_cb = {
+                    who = UFC
+                    casus_belli = cb_vassalize_mission
+                }
+            }
+            WKA = {
+                declare_war_with_cb = {
+                    who = UFC
+                    casus_belli = cb_vassalize_mission
+                }
+            }
+            CLA = {
+                declare_war_with_cb = {
+                    who = UFC
+                    casus_belli = cb_vassalize_mission
+                }
+            }
+            PCJ = {
+                declare_war_with_cb = {
+                    who = UFC
+                    casus_belli = cb_vassalize_mission
+                }
+            }
+            CRA = {
+                declare_war_with_cb = {
+                    who = UFC
+                    casus_belli = cb_vassalize_mission
+                }
+            }
+            CCQ = {
+                declare_war_with_cb = {
+                    who = UFC
+                    casus_belli = cb_vassalize_mission
+                }
+            }
+            clr_country_flag = UFC_flag_andes_chain_huge_crowd
+            set_country_flag = UFC_flag_andes_chain_huge_crowd_2
+        }
+        ai_will_do = {
+            factor = 1
+        }
+        ai_importance = 400
+    }
+    UFC_decision_andes_chain_wait = {
+        color = { 255 175 0 }
+        potential = {
+            tag = UFC
+            has_country_flag = UFC_flag_andes_chain_wait
+        }
+        provinces_to_highlight = {
+
+        }
+        allow = {
+
+        }
+        effect = {
+            country_event = { id = flavor_UFC.64 }
+            clr_country_flag = UFC_flag_andes_chain_wait
+        }
+    }
 }
 

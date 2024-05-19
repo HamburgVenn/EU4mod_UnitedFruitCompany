@@ -1,5 +1,5 @@
 #员工自治领地
-UFC_staff_estate_land_rights = {
+estate_ufc_staff_land_rights = {
 	icon = privilege_grant_autonomy
 	land_share = 5
 	max_absolutism = -5
@@ -21,17 +21,17 @@ UFC_staff_estate_land_rights = {
 }
 
 #向拓荒部分配员工
-UFC_staff_estate_more_colonists = {
+estate_ufc_staff_more_colonists = {
 	icon = privilege_grant_new_world_charter
 	max_absolutism = -5
 	conditional_modifier = { trigger = { has_absolutism_reduction_for_estate_privileges = yes } modifier = { max_absolutism = 1 } }
 	influence = 0.1
 	can_select = {
-		NOT = { has_estate_privilege = UFC_staff_estate_more_merchants }
-		NOT = { has_estate_privilege = UFC_staff_estate_more_academics}
-		NOT = { has_estate_privilege = UFC_staff_estate_more_techniques}
-		NOT = { has_estate_privilege = UFC_staff_estate_more_force}
-		NOT = { has_estate_privilege = UFC_staff_estate_more_buildings }
+		NOT = { has_estate_privilege = estate_ufc_staff_more_merchants }
+		NOT = { has_estate_privilege = estate_ufc_staff_more_academics}
+		NOT = { has_estate_privilege = estate_ufc_staff_more_techniques}
+		NOT = { has_estate_privilege = estate_ufc_staff_more_force}
+		NOT = { has_estate_privilege = estate_ufc_staff_more_buildings }
 	}
 	on_granted = {
 	}
@@ -45,7 +45,7 @@ UFC_staff_estate_more_colonists = {
 	on_revoked = {
 		custom_tooltip = UFC_tooltip_staff_estate_privilege_change
 		add_estate_loyalty = {
-			estate = UFC_staff_estate
+			estate = estate_ufc_staff
 			loyalty = 15
 		}
 	}
@@ -56,17 +56,17 @@ UFC_staff_estate_more_colonists = {
 }
 
 #向交通部分配员工
-UFC_staff_estate_more_merchants = {
+estate_ufc_staff_more_merchants = {
 	icon = privilege_monopoly
 	max_absolutism = -5
 	conditional_modifier = { trigger = { has_absolutism_reduction_for_estate_privileges = yes } modifier = { max_absolutism = 1 } }
 	influence = 0.05
 	can_select = {
-		NOT = { has_estate_privilege = UFC_staff_estate_more_colonists }
-		NOT = { has_estate_privilege = UFC_staff_estate_more_academics}
-		NOT = { has_estate_privilege = UFC_staff_estate_more_techniques}
-		NOT = { has_estate_privilege = UFC_staff_estate_more_force}
-		NOT = { has_estate_privilege = UFC_staff_estate_more_buildings }
+		NOT = { has_estate_privilege = estate_ufc_staff_more_colonists }
+		NOT = { has_estate_privilege = estate_ufc_staff_more_academics}
+		NOT = { has_estate_privilege = estate_ufc_staff_more_techniques}
+		NOT = { has_estate_privilege = estate_ufc_staff_more_force}
+		NOT = { has_estate_privilege = estate_ufc_staff_more_buildings }
 	}
 	on_granted = {
 		add_mercantilism = 1
@@ -81,7 +81,7 @@ UFC_staff_estate_more_merchants = {
 	on_revoked = {
 		custom_tooltip = UFC_tooltip_staff_estate_privilege_change
 		add_estate_loyalty = {
-			estate = UFC_staff_estate
+			estate = estate_ufc_staff
 			loyalty = 15
 		}
 	}
@@ -92,18 +92,18 @@ UFC_staff_estate_more_merchants = {
 }
 
 #向学术部分配员工
-UFC_staff_estate_more_academics = {
+estate_ufc_staff_more_academics = {
 	icon = privilege_build_jain_temple
 	max_absolutism = -5
 	conditional_modifier = { trigger = { has_absolutism_reduction_for_estate_privileges = yes } modifier = { max_absolutism = 1 } }
 	loyalty = 0.05
 	influence = 0.05
 	can_select = {
-		NOT = { has_estate_privilege = UFC_staff_estate_more_merchants }
-		NOT = { has_estate_privilege = UFC_staff_estate_more_colonists}
-		NOT = { has_estate_privilege = UFC_staff_estate_more_techniques}
-		NOT = { has_estate_privilege = UFC_staff_estate_more_force}
-		NOT = { has_estate_privilege = UFC_staff_estate_more_buildings }
+		NOT = { has_estate_privilege = estate_ufc_staff_more_merchants }
+		NOT = { has_estate_privilege = estate_ufc_staff_more_colonists}
+		NOT = { has_estate_privilege = estate_ufc_staff_more_techniques}
+		NOT = { has_estate_privilege = estate_ufc_staff_more_force}
+		NOT = { has_estate_privilege = estate_ufc_staff_more_buildings }
 	}
 	on_granted = {
 		add_prestige = 10
@@ -120,7 +120,7 @@ UFC_staff_estate_more_academics = {
 	on_revoked = {
 		custom_tooltip = UFC_tooltip_staff_estate_privilege_change
 		add_estate_loyalty = {
-			estate = UFC_staff_estate
+			estate = estate_ufc_staff
 			loyalty = 15
 		}
 	}
@@ -131,18 +131,18 @@ UFC_staff_estate_more_academics = {
 }
 
 #向产品开发部分配员工
-UFC_staff_estate_more_techniques = {
+estate_ufc_staff_more_techniques = {
 	icon = privilege_diplo_power
 	max_absolutism = -10
 	conditional_modifier = { trigger = { has_absolutism_reduction_for_estate_privileges = yes } modifier = { max_absolutism = 2 } }
 	loyalty = -0.05
 	influence = 0.1
 	can_select = {
-		NOT = { has_estate_privilege = UFC_staff_estate_more_merchants }
-		NOT = { has_estate_privilege = UFC_staff_estate_more_academics}
-		NOT = { has_estate_privilege = UFC_staff_estate_more_colonists}
-		NOT = { has_estate_privilege = UFC_staff_estate_more_force}
-		NOT = { has_estate_privilege = UFC_staff_estate_more_buildings }
+		NOT = { has_estate_privilege = estate_ufc_staff_more_merchants }
+		NOT = { has_estate_privilege = estate_ufc_staff_more_academics}
+		NOT = { has_estate_privilege = estate_ufc_staff_more_colonists}
+		NOT = { has_estate_privilege = estate_ufc_staff_more_force}
+		NOT = { has_estate_privilege = estate_ufc_staff_more_buildings }
 	}
 	on_granted = {
 	}
@@ -156,7 +156,7 @@ UFC_staff_estate_more_techniques = {
 	on_revoked = {
 		custom_tooltip = UFC_tooltip_staff_estate_privilege_change
 		add_estate_loyalty = {
-			estate = UFC_staff_estate
+			estate = estate_ufc_staff
 			loyalty = 20
 		}
 	}
@@ -167,17 +167,17 @@ UFC_staff_estate_more_techniques = {
 }
 
 #向军事部分配员工
-UFC_staff_estate_more_force = {
+estate_ufc_staff_more_force = {
 	icon = privilege_land_force_limit
 	max_absolutism = -5
 	conditional_modifier = { trigger = { has_absolutism_reduction_for_estate_privileges = yes } modifier = { max_absolutism = 1 } }
 	influence = 0.05
 	can_select = {
-		NOT = { has_estate_privilege = UFC_staff_estate_more_merchants }
-		NOT = { has_estate_privilege = UFC_staff_estate_more_academics}
-		NOT = { has_estate_privilege = UFC_staff_estate_more_techniques}
-		NOT = { has_estate_privilege = UFC_staff_estate_more_colonists}
-		NOT = { has_estate_privilege = UFC_staff_estate_more_buildings }
+		NOT = { has_estate_privilege = estate_ufc_staff_more_merchants }
+		NOT = { has_estate_privilege = estate_ufc_staff_more_academics}
+		NOT = { has_estate_privilege = estate_ufc_staff_more_techniques}
+		NOT = { has_estate_privilege = estate_ufc_staff_more_colonists}
+		NOT = { has_estate_privilege = estate_ufc_staff_more_buildings }
 	}
 	on_granted = {
 		add_army_tradition = 5
@@ -192,7 +192,7 @@ UFC_staff_estate_more_force = {
 	on_revoked = {
 		custom_tooltip = UFC_tooltip_staff_estate_privilege_change
 		add_estate_loyalty = {
-			estate = UFC_staff_estate
+			estate = estate_ufc_staff
 			loyalty = 15
 		}
 		add_army_tradition = -5
@@ -204,17 +204,17 @@ UFC_staff_estate_more_force = {
 }
 
 #向工程部分配员工
-UFC_staff_estate_more_buildings = {
+estate_ufc_staff_more_buildings = {
 	icon = privilege_technology
 	max_absolutism = -5
 	conditional_modifier = { trigger = { has_absolutism_reduction_for_estate_privileges = yes } modifier = { max_absolutism = 1 } }
 	influence = 0.05
 	can_select = {
-		NOT = { has_estate_privilege = UFC_staff_estate_more_merchants }
-		NOT = { has_estate_privilege = UFC_staff_estate_more_academics}
-		NOT = { has_estate_privilege = UFC_staff_estate_more_techniques}
-		NOT = { has_estate_privilege = UFC_staff_estate_more_force}
-		NOT = { has_estate_privilege = UFC_staff_estate_more_colonists }
+		NOT = { has_estate_privilege = estate_ufc_staff_more_merchants }
+		NOT = { has_estate_privilege = estate_ufc_staff_more_academics}
+		NOT = { has_estate_privilege = estate_ufc_staff_more_techniques}
+		NOT = { has_estate_privilege = estate_ufc_staff_more_force}
+		NOT = { has_estate_privilege = estate_ufc_staff_more_colonists }
 	}
 	on_granted = {
 	}
@@ -228,7 +228,7 @@ UFC_staff_estate_more_buildings = {
 	on_revoked = {
 		custom_tooltip = UFC_tooltip_staff_estate_privilege_change
 		add_estate_loyalty = {
-			estate = UFC_staff_estate
+			estate = estate_ufc_staff
 			loyalty = 15
 		}
 	}
@@ -238,7 +238,7 @@ UFC_staff_estate_more_buildings = {
 	}
 }
 
-UFC_staff_estate_black_staffs = {
+estate_ufc_staff_black_staffs = {
 	icon = privilege_technology
 	max_absolutism = 5
 	influence = -0.1
@@ -246,7 +246,7 @@ UFC_staff_estate_black_staffs = {
 	is_valid = {
 		OR = {
 			tag = UFC
-			has_estate_privilege = UFC_staff_estate_black_staffs
+			has_estate_privilege = estate_ufc_staff_black_staffs
 		}
 		NOT = { has_country_flag = UFC_revolution }
 	}
@@ -272,7 +272,7 @@ UFC_staff_estate_black_staffs = {
 	}
 }
 
-UFC_staff_estate_salary = {
+estate_ufc_staff_salary = {
 	icon = privilege_give_money
 	max_absolutism = -5
 	influence = 0
@@ -280,7 +280,7 @@ UFC_staff_estate_salary = {
 	is_valid = {
 		OR = {
 			tag = UFC
-			has_estate_privilege = UFC_staff_estate_salary
+			has_estate_privilege = estate_ufc_staff_salary
 		}
 	}
 	can_revoke = {
@@ -295,7 +295,7 @@ UFC_staff_estate_salary = {
 				has_country_flag = UFC_flag_medium_salary
 			}
 			add_estate_loyalty_modifier = {
-				estate = UFC_staff_estate
+				estate = estate_ufc_staff
 				loyalty = 0.05
 				duration = -1
 				desc = UFC_tooltip_medium_salary
@@ -306,7 +306,7 @@ UFC_staff_estate_salary = {
 				has_country_flag = UFC_flag_high_salary
 			}
 			add_estate_loyalty_modifier = {
-				estate = UFC_staff_estate
+				estate = estate_ufc_staff
 				loyalty = 0.10
 				duration = -1
 				desc = UFC_tooltip_high_salary
@@ -324,14 +324,14 @@ UFC_staff_estate_salary = {
 	}
 }
 #移植商人阶级特权 热带开发
-UFC_staff_estate_tropical_nation = {
+estate_ufc_staff_tropical_nation = {
 	icon = privilege_grant_new_world_charter
 	loyalty = 0.05
 	influence = 0.05
 	is_valid = {
 		OR = {
 			tag = UFC
-			has_estate_privilege = UFC_staff_estate_tropical_nation
+			has_estate_privilege = estate_ufc_staff_tropical_nation
 		}
 	}
 	can_select = {
@@ -386,7 +386,7 @@ UFC_staff_estate_tropical_nation = {
 	}
 }
 
-UFC_staff_estate_indebted_to_burghers = {
+estate_ufc_staff_indebted_to_burghers = {
 	icon = privilege_give_money
 	max_absolutism = -5
 	conditional_modifier = { trigger = { has_absolutism_reduction_for_estate_privileges = yes } modifier = { max_absolutism = 1 } }
@@ -440,7 +440,7 @@ UFC_staff_estate_indebted_to_burghers = {
 	can_select = {
 		if = {
 			limit = {
-				has_estate_privilege = UFC_staff_estate_indebted_to_burghers
+				has_estate_privilege = estate_ufc_staff_indebted_to_burghers
 			}
 			has_estate_loan = yes
 		}
@@ -454,7 +454,7 @@ UFC_staff_estate_indebted_to_burghers = {
 }
 
 
-UFC_staff_estate_culture_pluralism = {
+estate_ufc_staff_culture_pluralism = {
 	icon = privilege_one_faith_one_culture
 	max_absolutism = -5
 	conditional_modifier = { trigger = { has_absolutism_reduction_for_estate_privileges = yes } modifier = { max_absolutism = 1 } }

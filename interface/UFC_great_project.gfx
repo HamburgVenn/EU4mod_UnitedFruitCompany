@@ -15,4 +15,8 @@ spriteTypes = {
         name = "GFX_great_project_new_alhambra"
         texturefile = "gfx//interface//great_projects//great_project_new_alhambra.dds"
     }
+    spriteType = {
+        name = "GFX_great_project_nazca_lines"
+        texturefile = "gfx//interface//great_projects//great_project_nazca_lines.dds"
+    }
 }
