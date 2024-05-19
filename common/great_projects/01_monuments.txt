@@ -58,6 +58,9 @@ hagia_sophia = {
 						has_owner_religion = yes
 					}
 				}
+				owner = {
+					mission_completed = UFC_mission_rising_pragmatism
+				}
 			}
 		}
 	}
@@ -114,6 +117,9 @@ hagia_sophia = {
 						has_owner_religion = yes
 					}
 				}
+				owner = {
+					mission_completed = UFC_mission_rising_pragmatism
+				}
 			}
 		}
 	}
@@ -150,6 +156,9 @@ hagia_sophia = {
 						religion_group = muslim
 						has_owner_religion = yes
 					}
+				}
+				owner = {
+					mission_completed = UFC_mission_rising_pragmatism
 				}
 			}
 		}
@@ -2450,8 +2459,15 @@ chichen_itza = {
 
 	#can we build it?
 	build_trigger = {
-		culture_group = maya
-		province_is_or_accepts_culture = yes
+		OR = {
+			AND = {
+				culture_group = maya
+				province_is_or_accepts_culture = yes
+			}
+			owner = {
+				mission_completed = UFC_mission_rising_pragmatism
+			}
+		}
 	}
 
 	#what to do when it's built
@@ -2466,14 +2482,28 @@ chichen_itza = {
 
 	#can our country use it?
 	can_use_modifiers_trigger = {
-		culture_group = maya
-		province_is_or_accepts_culture = yes
+		OR = {
+			AND = {
+				culture_group = maya
+				province_is_or_accepts_culture = yes
+			}
+			owner = {
+				mission_completed = UFC_mission_rising_pragmatism
+			}
+		}
 	}
 
 	#can our country upgrade it?
 	can_upgrade_trigger = {
-		culture_group = maya
-		province_is_or_accepts_culture = yes
+		OR = {
+			AND = {
+				culture_group = maya
+				province_is_or_accepts_culture = yes
+			}
+			owner = {
+				mission_completed = UFC_mission_rising_pragmatism
+			}
+		}
 	}
 
 	#can our country keep it or is it destroyed when we get hold of it?
@@ -3015,8 +3045,13 @@ stpeters_cathedral = {
 
 	#can we build it?
 	build_trigger = {
-		province_is_or_accepts_religion = {
-			religion = catholic
+		or = {
+			province_is_or_accepts_religion = {
+				religion = catholic
+			}
+			owner = {
+				mission_completed = UFC_mission_rising_pragmatism
+			}
 		}
 	}
 
@@ -3032,15 +3067,25 @@ stpeters_cathedral = {
 
 	#can our country use it?
 	can_use_modifiers_trigger = {
-		province_is_or_accepts_religion = {
-			religion = catholic
+		or = {
+			province_is_or_accepts_religion = {
+				religion = catholic
+			}
+			owner = {
+				mission_completed = UFC_mission_rising_pragmatism
+			}
 		}
 	}
 
 	#can our country upgrade it?
 	can_upgrade_trigger = {
-		province_is_or_accepts_religion = {
-			religion = catholic
+		or = {
+			province_is_or_accepts_religion = {
+				religion = catholic
+			}
+			owner = {
+				mission_completed = UFC_mission_rising_pragmatism
+			}
 		}
 	}
 
@@ -4915,6 +4960,12 @@ alhambra = {
 
 	#can we build it?
 	build_trigger = {
+		custom_trigger_tooltip = {
+			UFC = {
+				not = { has_country_flag = UFC_flag_removal_alhambra }
+			}
+			tooltip = UFC_tooltip_removal_alhambra
+		}
 	}
 
 	#what to do when it's built
@@ -5826,8 +5877,13 @@ golden_temple = {
 
 	#can we build it?
 	build_trigger = {
-		province_is_or_accepts_religion_group = {
-			religion_group = dharmic
+		or = {
+			province_is_or_accepts_religion_group = {
+				religion_group = dharmic
+			}
+			owner = {
+				mission_completed = UFC_mission_rising_pragmatism
+			}
 		}
 	}
 
@@ -5843,15 +5899,25 @@ golden_temple = {
 
 	#can our country use it?
 	can_use_modifiers_trigger = {
-		province_is_or_accepts_religion_group = {
-			religion_group = dharmic
+		or = {
+			province_is_or_accepts_religion_group = {
+				religion_group = dharmic
+			}
+			owner = {
+				mission_completed = UFC_mission_rising_pragmatism
+			}
 		}
 	}
 
 	#can our country upgrade it?
 	can_upgrade_trigger = {
-		province_is_or_accepts_religion_group = {
-			religion_group = dharmic
+		or = {
+			province_is_or_accepts_religion_group = {
+				religion_group = dharmic
+			}
+			owner = {
+				mission_completed = UFC_mission_rising_pragmatism
+			}
 		}
 	}
 
@@ -6011,7 +6077,12 @@ jokhang_temple = {
 
 	#can we build it?
 	build_trigger = {
-		province_is_buddhist_or_accepts_buddhism = yes
+		or = {
+			province_is_buddhist_or_accepts_buddhism = yes
+			owner = {
+				mission_completed = UFC_mission_rising_pragmatism
+			}
+		}
 	}
 
 	#what to do when it's built
@@ -6026,12 +6097,22 @@ jokhang_temple = {
 
 	#can our country use it?
 	can_use_modifiers_trigger = {
-		province_is_buddhist_or_accepts_buddhism = yes 
+		or = {
+			province_is_buddhist_or_accepts_buddhism = yes
+			owner = {
+				mission_completed = UFC_mission_rising_pragmatism
+			}
+		}
 	}
 
 	#can our country upgrade it?
 	can_upgrade_trigger = {
-		province_is_buddhist_or_accepts_buddhism = yes 
+		or = {
+			province_is_buddhist_or_accepts_buddhism = yes
+			owner = {
+				mission_completed = UFC_mission_rising_pragmatism
+			}
+		}
 	}
 
 	#can our country keep it or is it destroyed when we get hold of it?
@@ -6394,6 +6475,9 @@ temple_of_confucius = {
 				religion = confucianism
 			}	
 			has_owner_harmonized_religion = yes
+			owner = {
+				mission_completed = UFC_mission_rising_pragmatism
+			}
 		}
 	}
 
@@ -6414,6 +6498,9 @@ temple_of_confucius = {
 				religion = confucianism
 			}	
 			has_owner_harmonized_religion = yes
+			owner = {
+				mission_completed = UFC_mission_rising_pragmatism
+			}
 		}
 	}
 
@@ -6424,6 +6511,9 @@ temple_of_confucius = {
 				religion = confucianism
 			}	
 			has_owner_harmonized_religion = yes
+			owner = {
+				mission_completed = UFC_mission_rising_pragmatism
+			}
 		}
 	}
 
@@ -9898,8 +9988,13 @@ kaaba = {
 
 	#can we build it?
 	build_trigger = {
-		province_is_or_accepts_religion_group = {
-			religion_group = muslim
+		or = {
+			province_is_or_accepts_religion_group = {
+				religion_group = muslim
+			}
+			owner = {
+				mission_completed = UFC_mission_rising_pragmatism
+			}
 		}
 	}
 
@@ -9925,6 +10020,9 @@ kaaba = {
 					has_country_flag = BYZ_may_use_kaaba
 				}
 			}
+			owner = {
+				mission_completed = UFC_mission_rising_pragmatism
+			}
 		}
 	}
 
@@ -9939,6 +10037,9 @@ kaaba = {
 					tooltip = BYZ_may_use_kaaba 
 					has_country_flag = BYZ_may_use_kaaba
 				}
+			}
+			owner = {
+				mission_completed = UFC_mission_rising_pragmatism
 			}
 		}
 	}
@@ -10232,6 +10333,9 @@ holy_city_jerusalem = {
 			province_is_or_accepts_religion = {
 				religion = jewish
 			}
+			owner = {
+				mission_completed = UFC_mission_rising_pragmatism
+			}
 		}
 	}
 
@@ -10257,6 +10361,9 @@ holy_city_jerusalem = {
 			province_is_or_accepts_religion = {
 				religion = jewish
 			}
+			owner = {
+				mission_completed = UFC_mission_rising_pragmatism
+			}
 		}
 	}
 
@@ -10271,6 +10378,9 @@ holy_city_jerusalem = {
 			}
 			province_is_or_accepts_religion = {
 				religion = jewish
+			}
+			owner = {
+				mission_completed = UFC_mission_rising_pragmatism
 			}
 		}
 	}
@@ -13569,8 +13679,13 @@ imam_hussein_al-abbas = {
 	type = monument
 
 	build_trigger = {
-		province_is_or_accepts_religion = {
-			religion = shiite
+		or = {
+			province_is_or_accepts_religion = {
+				religion = shiite
+			}
+			owner = {
+				mission_completed = UFC_mission_rising_pragmatism
+			}
 		}
 	}
 
@@ -13581,14 +13696,24 @@ imam_hussein_al-abbas = {
 	}
 
 	can_use_modifiers_trigger = {
-		province_is_or_accepts_religion = {
-			religion = shiite
+		or = {
+			province_is_or_accepts_religion = {
+				religion = shiite
+			}
+			owner = {
+				mission_completed = UFC_mission_rising_pragmatism
+			}
 		}
 	}
 
 	can_upgrade_trigger = {
-		province_is_or_accepts_religion = {
-			religion = shiite
+		or = {
+			province_is_or_accepts_religion = {
+				religion = shiite
+			}
+			owner = {
+				mission_completed = UFC_mission_rising_pragmatism
+			}
 		}
 	}
 
@@ -13687,6 +13812,9 @@ kashi_vishwanath = {
 		province_is_or_accepts_religion_group = {
 			religion_group = dharmic
 		}
+		owner = {
+			mission_completed = UFC_mission_rising_pragmatism
+		}
 	}
 
 	on_built = {
@@ -13704,6 +13832,9 @@ kashi_vishwanath = {
 				is_or_was_tag = { tag = MUG }
 			}
 		}
+		owner = {
+			mission_completed = UFC_mission_rising_pragmatism
+		}
 	}
 
 	can_upgrade_trigger = {
@@ -13714,6 +13845,9 @@ kashi_vishwanath = {
 			NOT = { 
 				is_or_was_tag = { tag = MUG } 
 			}
+		}
+		owner = {
+			mission_completed = UFC_mission_rising_pragmatism
 		}
 	}
 
@@ -15751,8 +15885,13 @@ sultan_ahmed_mosque = {
 	type = monument
 
 	build_trigger = {
-		province_is_or_accepts_religion_group = {
-			religion_group = muslim
+		or = {
+			province_is_or_accepts_religion_group = {
+				religion_group = muslim
+			}
+			owner = {
+				mission_completed = UFC_mission_rising_pragmatism
+			}
 		}
 	}
 
@@ -15763,14 +15902,24 @@ sultan_ahmed_mosque = {
 	}
 
 	can_use_modifiers_trigger = {
-		province_is_or_accepts_religion_group = {
-			religion_group = muslim
+		or = {
+			province_is_or_accepts_religion_group = {
+				religion_group = muslim
+			}
+			owner = {
+				mission_completed = UFC_mission_rising_pragmatism
+			}
 		}
 	}
 
 	can_upgrade_trigger = {
-		province_is_or_accepts_religion_group = {
-			religion_group = muslim
+		or = {
+			province_is_or_accepts_religion_group = {
+				religion_group = muslim
+			}
+			owner = {
+				mission_completed = UFC_mission_rising_pragmatism
+			}
 		}
 	}
 

@@ -780,7 +780,15 @@ nazca_lines = {
 
 	#can we build it?
 	build_trigger = {
-		always = yes
+		OR = {
+			province_is_or_accepts_religion_group = {
+				religion_group = inti
+			}
+			owner = {
+				religion = secularism
+				has_harmonized_with = pagan
+			}
+		}
 	}
 
 	#what to do when it's built
@@ -793,26 +801,26 @@ nazca_lines = {
 
 	#can our country use it?
 	can_use_modifiers_trigger = {
-		owner = {
-			or = {
-				religion = inti
-				and = {
-					religion = secularism
-					has_harmonized_with = pagan
-				}
+		OR = {
+			province_is_or_accepts_religion_group = {
+				religion_group = inti
+			}
+			owner = {
+				religion = secularism
+				has_harmonized_with = pagan
 			}
 		}
 	}
 
 	#can our country upgrade it?
 	can_upgrade_trigger = {
-		owner = {
-			or = {
-				religion = inti
-				and = {
-					religion = secularism
-					has_harmonized_with = pagan
-				}
+		OR = {
+			province_is_or_accepts_religion_group = {
+				religion_group = inti
+			}
+			owner = {
+				religion = secularism
+				has_harmonized_with = pagan
 			}
 		}
 	}
