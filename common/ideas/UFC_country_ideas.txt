@@ -45,13 +45,13 @@ UFC_ideas = {
 		global_trade_power = 0.15
 	}
 	ufc_black_slaves = {
-		global_trade_goods_size = 0.5
+		global_trade_goods_size = 0.3
 		harsh_treatment_cost = -0.25
 	}
 }
 
 
-UFC_ideas_3 = {
+UFC_ideas_revolution = {
 	start = {
 		artillery_fire = 1.5
 		drill_decay_modifier = -0.5
@@ -75,11 +75,15 @@ UFC_ideas_3 = {
 	}
 	ufc_workers_management = {
 		min_autonomy_in_territories = -0.1
-		governing_cost = -0.1
+		max_revolutionary_zeal = 30
 	}
 	ufc_liberate_the_world = {
 		ignore_coring_distance = yes
 		core_creation = -0.25
+	}
+	ufc_secularism = {
+		tolerance_of_heathens = 3
+		tolerance_of_heathens_capacity = 3
 	}
 	ufc_trading_empire = {
 		merchants = 1
@@ -88,9 +92,5 @@ UFC_ideas_3 = {
 	ufc_liberate_slaves = {
 		global_trade_goods_size = 0.5
 		harsh_treatment_cost = 0.25
-	}
-	ufc_secularism = {
-		tolerance_of_heathens = 3
-		tolerance_of_heathens_capacity = 3
 	}
 }

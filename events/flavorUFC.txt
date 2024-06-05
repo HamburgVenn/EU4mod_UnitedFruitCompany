@@ -1,6 +1,20 @@
 namespace = flavor_UFC
 
 country_event = {
+	id = flavor_UFC.0
+	title = flavor_UFC.0.title
+	desc = flavor_UFC.0.desc
+	picture = INVASION_ALLIES_eventPicture
+	is_triggered_only = yes
+	trigger = {
+		tag = GRA
+	}
+	option = {
+		name = flavor_UFC.0.a
+		custom_tooltip = UFC_tooltip_start
+	}
+}
+country_event = {
 	id = flavor_UFC.1
 	title = flavor_UFC.1.title
 	desc = flavor_UFC.1.desc
@@ -16,6 +30,7 @@ country_event = {
 		ai_chance = {
 			factor = 0
 		}
+		highlight = yes
 		hidden_effect = {
 			add_truce_with = CAS
 			add_ruler_modifier = {
@@ -92,6 +107,11 @@ country_event = {
 		}
 		name = "flavor_UFC.1.b"
 		add_years_of_income = -0.5
+		223 = {
+			set_great_project_tier_2 = {
+				type = alhambra
+			}
+		}
 	}
 }
 
@@ -175,6 +195,7 @@ country_event = {
 			country_event = { id = flavor_UFC.5 days = 50 }
 			country_event = { id = flavor_UFC.6 days = 365 }
 			country_event = { id = flavor_UFC.102 days = 1095 random = 60 }
+			country_event = { id = flavor_UFC.28 days = 365 random = 180}
 		}
 	}
 }
@@ -655,6 +676,7 @@ country_event = {
 	picture = EXPLORERS_eventPicture
 	fire_only_once = yes
 	is_triggered_only = yes
+	goto = 829
 	option = {
 		name = flavor_UFC.1065.a
 		add_adm_power = 10
@@ -718,7 +740,7 @@ country_event = {
 	option = {
 		name = flavor_UFC.1068.a
 		add_government_reform = UFC_consolidation_of_president_power_reform
-		#custom_tooltip = UFC_tooltip_start_the_mechanical_clock
+		custom_tooltip = UFC_tooltip_start_the_mechanical_clock
 	}
 	after = {
 		country_event = { id = flavor_UFC.56 days = 5 random = 5} #the end of ummayad zakat
@@ -822,11 +844,15 @@ country_event = {
 		add_adm_power = 100
 		add_dip_power = 100
 		add_mil_power = 100
-		change_innovativeness = 5
+		add_innovativeness_or_monarch_power = {
+			amount = 5
+		}
 	}
 	option = {
 		name = flavor_UFC.17.b
-		change_innovativeness = 10
+		add_innovativeness_or_monarch_power = {
+			amount = 10
+		}
 		add_country_modifier = {
 			name = innovation_wave
 			duration = 7300
@@ -846,16 +872,29 @@ country_event = {
 		name = flavor_UFC.18.a
 		change_religion = secularism
 		add_harmonized_religion = sunni
+	}
+	after = {
+		country_event = { id = flavor_UFC.55 days = 10 random = 5 }
+		country_event = { id = flavor_UFC.180 days = 60 random = 60 }
+	}
+}
+
+country_event = {
+	id = flavor_UFC.180
+	title = flavor_UFC.180.title
+	desc = flavor_UFC.180.desc
+	picture = muslimgfx_WESTERNISATION_eventPicture
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = flavor_UFC.180.a
 		add_country_modifier = {
 			name = UFC_modifier_secularism_effect
 			duration = -1
 		}
-	}
-	after = {
-		country_event = { id = flavor_UFC.55 days = 10 random = 5 }
+		add_harmony = 5
 	}
 }
-
 #mission new type weapon
 country_event = {
 	id = flavor_UFC.19
@@ -1217,33 +1256,47 @@ country_event = {
 	}
 }
 
-#granada refugee
+#new culture?
 country_event = {
 	id = flavor_UFC.28
-	hidden = yes
-	trigger = {
-		tag = UFC
-		mission_completed = UFC_mission_the_return
+	title = flavor_UFC.28.title
+	desc = flavor_UFC.28.desc
+	picture = muslimgfx_CULTURE_eventPicture
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = flavor_UFC.28.a
+		clr_country_flag = rejected_new_colonial_culture
+		custom_tooltip =  UFC_tooltip_may_change_culture
 	}
-	mean_time_to_happen = { months = 3 }
-	immediate = {
-		if = {
-			limit = {
-				GRA = {
-					exists = no
-				}
-			}
-			country_event = { id = flavor_UFC.29 }
-		}
+	option = {
+		name = flavor_UFC.28.b
+		set_country_flag = rejected_new_colonial_culture
+		custom_tooltip =  UFC_tooltip_not_change_culture
 	}
 }
 country_event = {
 	id = flavor_UFC.29
 	title = flavor_UFC.29.title
 	desc = flavor_UFC.29.desc
-	is_triggered_only = yes
 	picture = REFUGEES_ESCAPING_eventPicture
 	fire_only_once = yes
+	trigger = {
+		tag = UFC
+		mission_completed = UFC_mission_the_return
+		GRA = {
+			exists = no
+		}
+		ADU = {
+			exists = no
+		}
+		not = {
+			is_year = 1500
+		}
+	}
+	mean_time_to_happen = {
+		months = 6
+	}
 	option = {
 		name = flavor_UFC.29.a
 		835 = {
@@ -1258,7 +1311,6 @@ country_event = {
 		}
 	}
 }
-
 
 #portugal migrants
 country_event = {
@@ -1841,9 +1893,11 @@ country_event = {
 	fire_only_once = yes
 	is_triggered_only = yes
 	immediate = {
-		ADU = {
-			capital_scope = {
-				save_event_target_as = ufc_target_adu_capital
+		hidden_effect = {
+			ADU = {
+				capital_scope = {
+					save_event_target_as = ufc_target_adu_capital
+				}
 			}
 		}
 	}
@@ -2127,11 +2181,14 @@ country_event = {
 #testing declare war cas to gra
 country_event = {
 	id = flavor_UFC.51
-	hidden = yes
+	title = flavor_UFC.51.title
+	desc = flavor_UFC.51.desc
 	fire_only_once = yes
 	trigger = {
-		tag = UFC
-		has_country_flag = UFC_support_granada
+		tag = GRA
+		UFC = {
+			has_country_flag = UFC_support_granada
+		}
 		ADU = {
 			exists = no
 		}
@@ -2152,15 +2209,20 @@ country_event = {
 		}
 	}
 	mean_time_to_happen = {
-		months = 6
+		months = 3
 	}
 	immediate = {
-		CAS = {
-			declare_war_with_cb = {
-				who = GRA
-				casus_belli = cb_crusade
+		hidden_effect = {
+			CAS = {
+				declare_war_with_cb = {
+					who = GRA
+					casus_belli = cb_crusade
+				}
 			}
 		}
+	}
+	option = {
+		name = flavor_UFC.51.a
 	}
 }
 
@@ -2306,7 +2368,7 @@ country_event = {
 			for_variable_amount = {
 				variable = ummayad_zakat_fundation
 				effect = "
-						 add_years_of_income = 0.025
+						 add_years_of_income = 0.02
 					"
 			}
 		}
@@ -2393,6 +2455,7 @@ country_event = {
 	}
 }
 
+#sus valid?
 country_event = {
 	id = flavor_UFC.59
 	hidden = yes
@@ -2440,6 +2503,9 @@ country_event = {
 		central_america_region = {
 			limit = {
 				is_city = no
+				not = {
+					owned_by = root
+				}
 			}
 			add_province_modifier = {
 				name = UFC_modifier_jungle_line
@@ -2801,6 +2867,2176 @@ country_event = {
 		}
 	}
 }
+
+country_event = {
+	id = flavor_UFC.70
+	title = flavor_UFC.70.title
+	desc = flavor_UFC.70.desc
+	fire_only_once = yes
+	picture = TRADEGOODS_eventPicture
+	trigger = {
+		tag = UFC
+		num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+			or = {
+				region = peru_region
+				region = upper_peru_region
+			}
+			value = 38
+		}
+	}
+	mean_time_to_happen = {
+		months = 6
+	}
+	option = {
+		name = flavor_UFC.70.a
+		set_country_flag = UFC_flag_potato
+		custom_tooltip = UFC_tooltip_potato
+		add_mil_power = 25
+	}
+}
+
+country_event = {
+	id = flavor_UFC.71
+	title = flavor_UFC.71.title
+	desc = flavor_UFC.71.desc
+	picture = southamericagfx_LAND_MILITARY_eventPicture
+	trigger = {
+		tag = UFC
+		mission_completed = UFC_mission_doomsayer
+		853 = {
+			OR = {
+				owned_by = UFC
+				owned_by_subject_of = UFC
+			}
+		}
+		4573 = {
+			OR = {
+				owned_by = UFC
+				owned_by_subject_of = UFC
+			}
+		}
+		2621 = {
+			OR = {
+				owned_by = UFC
+				owned_by_subject_of = UFC
+			}
+		}
+		4583 = {
+			OR = {
+				owned_by = UFC
+				owned_by_subject_of = UFC
+			}
+		}
+		841 = {
+			OR = {
+				owned_by = UFC
+				owned_by_subject_of = UFC
+			}
+		}
+		2653 = {
+			OR = {
+				owned_by = UFC
+				owned_by_subject_of = UFC
+			}
+		}
+		2637 = {
+			OR = {
+				owned_by = UFC
+				owned_by_subject_of = UFC
+			}
+		}
+	}
+	mean_time_to_happen = {
+		months = 6
+	}
+	fire_only_once = yes
+	option = {
+		name = flavor_UFC.71.a
+		set_country_flag = UFC_flag_enable_obsidian
+		custom_tooltip = UFC_tooltip_enable_obsidian
+	}
+}
+
+country_event = {
+	id = flavor_UFC.72
+	title = flavor_UFC.72.title
+	desc = flavor_UFC.72.desc
+	picture = southamericagfx_LAND_MILITARY_eventPicture
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = flavor_UFC.72.a
+		add_country_modifier = {
+			name = UFC_modifier_into_the_rainforest
+			duration = 7300
+		}
+	}
+}
+
+country_event = {
+	id = flavor_UFC.73
+	title = flavor_UFC.73.title
+	desc = flavor_UFC.73.desc
+	picture = northamericagfx_DEBATE_REPUBLICAN_eventPicture
+	trigger = {
+		tag = UFC
+		war_with = IRO
+	}
+	mean_time_to_happen = {
+		months = 2
+	}
+	fire_only_once = yes
+	option = {
+		name = flavor_UFC.73.a
+		add_dip_power = -10
+		add_country_modifier = {
+			name = UFC_modifier_iroquois_war
+			duration = 1825
+		}
+	}
+}
+
+country_event = {
+	id = flavor_UFC.74
+	title = flavor_UFC.74.title
+	desc = flavor_UFC.74.desc
+	picture = muslimgfx_CONQUEST_eventPicture
+	trigger = {
+		tag = UFC
+		or = {
+			is_in_war = {
+				attacker_leader = UFC
+				defender_leader = CAS
+			}
+			is_in_war = {
+				attacker_leader = UFC
+				defender_leader = ARA
+			}
+			is_in_war = {
+				attacker_leader = UFC
+				defender_leader = POR
+			}
+		}
+		ADU = {
+			exists = yes
+			is_subject_of = UFC
+		}
+	}
+	mean_time_to_happen = {
+		months = 1
+	}
+	fire_only_once = yes
+	option = {
+		name = flavor_UFC.74.a
+		add_country_modifier = {
+			name = UFC_modifier_rereconquest_ae
+			duration = 1095
+		}
+		custom_tooltip = UFC_tooltip_rereconquest_ae
+	}
+}
+
+#expo start
+country_event = {
+	id = flavor_UFC.75
+	title = flavor_UFC.75.title
+	desc = flavor_UFC.75.desc
+	picture = iberian_GREAT_BUILDING_eventPicture
+	trigger = {
+		tag = UFC
+		or = {
+			has_country_flag = circumnavigation_first
+			has_country_flag = circumnavigation_done
+		}
+		innovativeness = 80
+		mission_completed = UFC_mission_global_business_empire
+	}
+	mean_time_to_happen = {
+		months = 12
+	}
+	fire_only_once = yes
+	option = {
+		name = flavor_UFC.75.a
+		custom_tooltip = UFC_tooltip_start_exposition
+		country_event = { id = flavor_UFC.7501 days = 7 }
+		hidden_effect = {
+			set_variable = {
+				which = ufc_variable_expo_budget
+				value = 0
+			}
+		}
+	}
+	option = {
+		name = flavor_UFC.75.b
+		add_stability_or_adm_power = yes
+		custom_tooltip = UFC_tooltip_disable_exposition
+	}
+}
+
+country_event = {
+	id = flavor_UFC.7501
+	title = flavor_UFC.7501.title
+	desc = flavor_UFC.7501.desc
+	picture = CITY_VIEW_eventPicture
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = flavor_UFC.7501.a
+		goto = 835
+		custom_tooltip = UFC_tooltip_exposition_5k
+		hidden_effect = {
+			change_variable = {
+				which = ufc_variable_expo_budget
+				value = 5
+			}
+			835 = {
+				save_global_event_target_as = ufc_target_expo_city
+			}
+		}
+	}
+	option = {
+		name = flavor_UFC.7501.b
+		goto = 852
+		custom_tooltip = UFC_tooltip_exposition_10k
+		hidden_effect = {
+			change_variable = {
+				which = ufc_variable_expo_budget
+				value = 10
+			}
+			852 = {
+				save_global_event_target_as = ufc_target_expo_city
+			}
+		}
+	}
+	option = {
+		name = flavor_UFC.7501.c
+		goto = 825
+		custom_tooltip = UFC_tooltip_exposition_10k
+		hidden_effect = {
+			change_variable = {
+				which = ufc_variable_expo_budget
+				value = 10
+			}
+			825 = {
+				save_global_event_target_as = ufc_target_expo_city
+			}
+		}
+	}
+	option = {
+		name = flavor_UFC.7501.d
+		goto = 4637
+		custom_tooltip = UFC_tooltip_exposition_5k
+		hidden_effect = {
+			change_variable = {
+				which = ufc_variable_expo_budget
+				value = 5
+			}
+			4637 = {
+				save_global_event_target_as = ufc_target_expo_city
+			}
+		}
+	}
+	after = {
+		country_event = { id = flavor_UFC.7502 days = 7}
+	}
+}
+
+country_event = {
+	id = flavor_UFC.7502
+	title = flavor_UFC.7502.title
+	desc = flavor_UFC.7502.desc
+	picture = OVEREXTENSION_eventPicture
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = flavor_UFC.7502.a
+		custom_tooltip = UFC_tooltip_exposition_10k
+		hidden_effect = {
+			change_variable = {
+				which = ufc_variable_expo_budget
+				value = 10
+			}
+		}
+		set_country_flag = UFC_flag_expo_invite_all_country
+	}
+	option = {
+		name = flavor_UFC.7502.b
+		custom_tooltip = UFC_tooltip_exposition_5k
+		custom_tooltip = UFC_tooltip_100_dev_invitation
+		hidden_effect = {
+			change_variable = {
+				which = ufc_variable_expo_budget
+				value = 10
+			}
+		}
+		set_country_flag = UFC_flag_expo_invite_huge_country
+	}
+	option = {
+		name = flavor_UFC.7502.c
+		set_country_flag = UFC_flag_expo_invite_great_power
+		custom_tooltip = UFC_tooltip_great_power_invitation
+	}
+	after = {
+		country_event = { id = flavor_UFC.7503 days = 7}
+	}
+}
+
+country_event = {
+	id = flavor_UFC.7503
+	title = flavor_UFC.7503.title
+	desc = flavor_UFC.7503.desc
+	picture = muslimgfx_GREAT_BUILDING_eventPicture
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = flavor_UFC.7503.a
+		custom_tooltip = UFC_tooltip_exposition_10k
+		hidden_effect = {
+			change_variable = {
+				which = ufc_variable_expo_budget
+				value = 10
+			}
+		}
+		set_country_flag = UFC_flag_expo_great_pavilions
+	}
+	option = {
+		name = flavor_UFC.7503.b
+		custom_tooltip = UFC_tooltip_exposition_5k
+		custom_tooltip = UFC_tooltip_100_dev_invitation
+		hidden_effect = {
+			change_variable = {
+				which = ufc_variable_expo_budget
+				value = 5
+			}
+		}
+		set_country_flag = UFC_flag_expo_appropriate_pavilions
+	}
+	option = {
+		name = flavor_UFC.7503.c
+		set_country_flag = UFC_flag_expo_poor_pavilions
+	}
+	after = {
+		country_event = { id = flavor_UFC.7504 days = 7}
+	}
+}
+
+country_event = {
+	id = flavor_UFC.7504
+	title = flavor_UFC.7504.title
+	desc = flavor_UFC.7504.desc
+	picture = HARBOUR_eventPicture
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = flavor_UFC.7504.a
+		custom_tooltip = UFC_tooltip_enable_exposition
+		set_country_flag = UFC_flag_enable_exposition
+	}
+}
+
+country_event = {
+	id = flavor_UFC.7505
+	title = flavor_UFC.7505.title
+	desc = flavor_UFC.7505.desc
+	picture = indiangfx_CORRUPTION_eventPicture
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = flavor_UFC.7505.a
+		add_prestige = -10
+		add_adm_power = 50
+		add_government_power = {
+			mechanic_type = ufc_mechanic_mechanical_clock
+			power_type = mechanical_clock_adm_power
+			value = 2
+		}
+	}
+	option = {
+		name = flavor_UFC.7505.b
+		add_manpower = -0.002
+		add_government_power = {
+			mechanic_type = ufc_mechanic_mechanical_clock
+			power_type = mechanical_clock_adm_power
+			value = -2
+		}
+	}
+	option = {
+		name = flavor_UFC.7505.c
+		add_adm_power = -50
+		add_manpower = -0.2
+		add_government_power = {
+			mechanic_type = ufc_mechanic_mechanical_clock
+			power_type = mechanical_clock_adm_power
+			value = -5
+		}
+	}
+	after = {
+		country_event = { id = flavor_UFC.7506 days = 90 random = 90 }
+	}
+}
+
+country_event = {
+	id = flavor_UFC.7506
+	title = flavor_UFC.7506.title
+	desc = flavor_UFC.7506.desc
+	picture = muslimgfx_COUNTRY_COLLAPSE_eventPicture
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = flavor_UFC.7506.a
+		add_prestige_or_monarch_power = {
+			amount = 25
+		}
+		add_years_of_income = -0.1
+		add_government_power = {
+			mechanic_type = ufc_mechanic_mechanical_clock
+			power_type = mechanical_clock_adm_power
+			value = 2
+		}
+		add_government_power = {
+			mechanic_type = ufc_mechanic_mechanical_clock
+			power_type = mechanical_clock_dip_power
+			value = -2
+		}
+	}
+	option = {
+		name = flavor_UFC.7506.b
+		add_manpower = -0.001
+		add_adm_power = 25
+	}
+	option = {
+		name = flavor_UFC.7506.c
+		add_adm_power = -25
+		add_manpower = -0.2
+		add_government_power = {
+			mechanic_type = ufc_mechanic_mechanical_clock
+			power_type = mechanical_clock_adm_power
+			value = -3
+		}
+	}
+	after = {
+		country_event = { id = flavor_UFC.7507 days = 90 random = 90 }
+	}
+}
+
+country_event = {
+	id = flavor_UFC.7507
+	title = flavor_UFC.7507.title
+	desc = flavor_UFC.7507.desc
+	picture = muslimgfx_COUNTRY_COLLAPSE_eventPicture
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = flavor_UFC.7507.a
+		custom_tooltip = UFC_tooltip_fake_delay
+		hidden_effect = {
+			country_event = { id = flavor_UFC.7508 days = 30 random = 30}
+		}
+	}
+	option = {
+		name = flavor_UFC.7507.b
+		add_years_of_income = -0.2
+		add_government_power = {
+			mechanic_type = ufc_mechanic_mechanical_clock
+			power_type = mechanical_clock_dip_power
+			value = -3
+		}
+		country_event = { id = flavor_UFC.7509 days = 120 random = 120 }
+	}
+	option = {
+		name = flavor_UFC.7507.c
+		add_mil_power = -50
+		add_manpower = -0.1
+		country_event = { id = flavor_UFC.7509 days = 120 random = 120 }
+	}
+}
+
+country_event = {
+	id = flavor_UFC.7508
+	title = flavor_UFC.7508.title
+	desc = flavor_UFC.7508.desc
+	picture = SCIENTISTS_eventPicture
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = flavor_UFC.7508.a
+		add_innovativeness_or_monarch_power = {
+			amount = 3
+		}
+		add_country_modifier = {
+			name = UFC_modifier_effeciency_building
+			duration = 7300
+		}
+		custom_tooltip = UFC_tooltip_real_delay
+	}
+	after = {
+		country_event = { id = flavor_UFC.7509 days = 90 random = 90 }
+	}
+}
+
+country_event = {
+	id = flavor_UFC.7509
+	title = flavor_UFC.7509.title
+	desc = flavor_UFC.7509.desc
+	picture = ARTWORK_eventPicture
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = flavor_UFC.7509.a
+		add_prestige_or_monarch_power = {
+			amount = 20
+		}
+	}
+	after = {
+		country_event = { id = flavor_UFC.7510 days = 90 random = 90 }
+	}
+}
+
+country_event = {
+	id = flavor_UFC.7510
+	title = flavor_UFC.7510.title
+	desc = flavor_UFC.7510.desc
+	picture = DECLARATION_INDEPENDENCE_eventPicture
+	fire_only_once = yes
+	is_triggered_only = yes
+	immediate = {
+		hidden_effect = {
+			1242 = {
+				owner = {
+					save_event_target_as = ufc_target_fiji
+				}
+			}
+		}
+	}
+	goto = 1242
+	option = {
+		name = flavor_UFC.7510.a
+		add_dip_power = -20
+		add_opinion = {
+			who = event_target:ufc_target_fiji
+			modifier = ufc_diplomatic_misunderstanding
+			years = 50
+		}
+		event_target:ufc_target_fiji = {
+			add_opinion = {
+				who = root
+				modifier = ufc_diplomatic_misunderstanding
+				years = 50
+			}
+		}
+	}
+	option = {
+		name = flavor_UFC.7510.b
+		add_dip_power = -10
+		add_casus_belli = {
+			type = cb_insult
+			months = 12
+		}
+	}
+	option = {
+		name = flavor_UFC.7510.c
+		add_prestige_or_monarch_power = {
+			amount = 50
+		}
+		event_target:ufc_target_fiji = {
+			declare_war_with_cb = {
+				who = root
+				casus_belli = cb_insult
+			}
+		}
+	}
+	after = {
+		country_event = { id = flavor_UFC.7511 days = 90 random = 90 }
+	}
+}
+
+country_event = {
+	id = flavor_UFC.7511
+	title = flavor_UFC.7511.title
+	desc = flavor_UFC.7511.desc
+	picture = maghrebi_SHIP_SAILING_eventPicture
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = flavor_UFC.7511.a
+		FRA = {
+			add_sailors = -500
+		}
+		add_sailors = -100
+		add_prestige_or_monarch_power = {
+			amount = 20
+		}
+	}
+	option = {
+		name = flavor_UFC.7511.b
+		FRA = {
+			add_sailors = -1000
+			add_prestige = -10
+		}
+		add_dip_power = 25
+	}
+	option = {
+		name = flavor_UFC.7511.c
+		trigger = {
+			is_enemy = FRA
+		}
+		highlight = yes
+		add_power_projection = {
+			type = UFC_diplomacy_influence
+			amount = 15
+		}
+		add_prestige_or_monarch_power = {
+			amount = 20
+		}
+	}
+	after = {
+		country_event = { id = flavor_UFC.7512 days = 90 random = 90 }
+	}
+}
+
+country_event = {
+	id = flavor_UFC.7512
+	title = flavor_UFC.7512.title
+	desc = flavor_UFC.7512.desc
+	picture = muslimgfx_CULTURE_eventPicture
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = flavor_UFC.7512.a
+		custom_tooltip = UFC_tooltip_we_are_the_world
+		add_adm_power = 10
+		add_country_modifier = {
+			name = UFC_modifier_we_are_the_world
+			duration = 7300
+		}
+	}
+	option = {
+		name = flavor_UFC.7512.b
+		custom_tooltip = UFC_tooltip_pokarekare_ana
+		add_mil_power = 10
+		add_country_modifier = {
+			name = UFC_modifier_pokarekare_ana
+			duration = 7300
+		}
+	}
+	option = {
+		name = flavor_UFC.7512.c
+		custom_tooltip = UFC_tooltip_when_money_comes_marching_home
+		add_dip_power = 10
+		add_country_modifier = {
+			name = UFC_modifier_when_money_comes_marching_home
+			duration = 7300
+		}
+	}
+	after = {
+		country_event = { id = flavor_UFC.7513 days = 90 random = 90 }
+	}
+}
+
+country_event = {
+	id = flavor_UFC.7513
+	title = flavor_UFC.7513.title
+	desc = flavor_UFC.7513.desc
+	picture = GREAT_BUILDING_eventPicture
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = flavor_UFC.7513.a
+		custom_tooltip = UFC_tooltip_enable_exposition_start
+		set_country_flag = UFC_flag_enable_exposition_start
+	}
+}
+
+country_event = {
+	id = flavor_UFC.7514
+	title = flavor_UFC.7514.title
+	desc = flavor_UFC.7514.desc
+	picture = ELECTION_REPUBLICAN_eventPicture
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = flavor_UFC.7514.a
+		add_years_of_income = 0.05
+	}
+	after = {
+		country_event = { id = flavor_UFC.7515 days = 15 random = 15 }
+	}
+}
+
+country_event = {
+	id = flavor_UFC.7515
+	title = flavor_UFC.7515.title
+	desc = flavor_UFC.7515.desc
+	picture = THEATRE_eventPicture
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = flavor_UFC.7515.a
+		goto = 134
+		134 = {
+			owner = {
+				add_opinion = {
+					who = root
+					modifier = ufc_award_grand_prize
+				}
+				add_prestige_or_monarch_power = {
+					amount = 20
+				}
+			}
+		}
+		add_adm_power = 25
+	}
+	option = {
+		name = flavor_UFC.7515.b
+		goto = 165
+		165 = {
+			owner = {
+				add_opinion = {
+					who = root
+					modifier = ufc_award_grand_prize
+				}
+				add_prestige_or_monarch_power = {
+					amount = 20
+				}
+			}
+		}
+		add_mil_power = 25
+	}
+	option = {
+		name = flavor_UFC.7515.c
+		goto = 1138
+		1138 = {
+			owner = {
+				add_opinion = {
+					who = root
+					modifier = ufc_award_grand_prize
+				}
+				add_prestige_or_monarch_power = {
+					amount = 20
+				}
+			}
+		}
+		add_dip_power = 25
+	}
+	option = {
+		name = flavor_UFC.7515.d
+		goto = 223
+		223 = {
+			owner = {
+				add_opinion = {
+					who = root
+					modifier = ufc_award_grand_prize
+				}
+				add_prestige_or_monarch_power = {
+					amount = 20
+				}
+			}
+		}
+		223 = {
+			add_permanent_province_modifier = {
+				name = UFC_modifier_origin_of_guitar
+				duration = -1
+			}
+		}
+		add_prestige_or_monarch_power = {
+			amount = 10
+		}
+	}
+	after = {
+		country_event = { id = flavor_UFC.7516 days = 15 random = 15 }
+	}
+}
+
+country_event = {
+	id = flavor_UFC.7516
+	title = flavor_UFC.7516.title
+	desc = flavor_UFC.7516.desc
+	picture = ARTWORK_eventPicture
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = flavor_UFC.7516.a
+		goto = 116
+		116 = {
+			owner = {
+				add_opinion = {
+					who = root
+					modifier = ufc_award_grand_prize
+				}
+				add_prestige_or_monarch_power = {
+					amount = 20
+				}
+			}
+		}
+		add_prestige_or_monarch_power = {
+			amount = 10
+		}
+	}
+	after = {
+		country_event = { id = flavor_UFC.7517 days = 15 random = 15 }
+	}
+}
+
+country_event = {
+	id = flavor_UFC.7517
+	title = flavor_UFC.7517.title
+	desc = flavor_UFC.7517.desc
+	picture = UNIVERSITY_eventPicture
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = flavor_UFC.7517.a
+		add_innovativeness_or_monarch_power = {
+			amount = 3
+		}
+		custom_tooltip = UFC_tooltip_if_innovation_above_ninety
+		if = {
+			limit = {
+				innovativeness = 90
+			}
+			add_country_modifier = {
+				name = UFC_modidier_the_victory_of_rationalism
+				duration = 7300
+			}
+		}
+	}
+	after = {
+		country_event = { id = flavor_UFC.7518 days = 15 random = 15 }
+	}
+}
+
+country_event = {
+	id = flavor_UFC.7518
+	title = flavor_UFC.7518.title
+	desc = flavor_UFC.7518.desc
+	picture = BIG_BOOK_eventPicture
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = flavor_UFC.7518.a
+		goto = 236
+		236 = {
+			owner = {
+				add_opinion = {
+					who = root
+					modifier = ufc_award_grand_prize
+				}
+				add_prestige_or_monarch_power = {
+					amount = 20
+				}
+			}
+		}
+		add_prestige_or_monarch_power = {
+			amount = 10
+		}
+	}
+	option = {
+		name = flavor_UFC.7518.b
+		goto = 116
+		116 = {
+			owner = {
+				add_opinion = {
+					who = root
+					modifier = ufc_award_grand_prize
+				}
+				add_prestige_or_monarch_power = {
+					amount = 20
+				}
+			}
+		}
+		add_prestige_or_monarch_power = {
+			amount = 10
+		}
+	}
+	option = {
+		name = flavor_UFC.7518.c
+		goto = 2142
+		2142 = {
+			owner = {
+				add_opinion = {
+					who = root
+					modifier = ufc_award_grand_prize
+				}
+				add_prestige_or_monarch_power = {
+					amount = 20
+				}
+			}
+		}
+		add_prestige_or_monarch_power = {
+			amount = 10
+		}
+	}
+	option = {
+		name = flavor_UFC.7518.d
+		goto = 410
+		410 = {
+			owner = {
+				add_opinion = {
+					who = root
+					modifier = ufc_award_grand_prize
+				}
+				add_prestige_or_monarch_power = {
+					amount = 20
+				}
+			}
+		}
+		add_prestige_or_monarch_power = {
+			amount = 10
+		}
+	}
+	option = {
+		name = flavor_UFC.7518.e
+		add_government_power = {
+			mechanic_type = ufc_mechanic_mechanical_clock
+			power_type = mechanical_clock_adm_power
+			value = 0.5
+		}
+		217 = {
+			change_trade_goods = paper
+		}
+		add_prestige_or_monarch_power = {
+			amount = 20
+		}
+		add_country_modifier = {
+			name = UFC_modifier_quixote_adventure
+			duration = 7300
+		}
+	}
+	after = {
+		country_event = { id = flavor_UFC.7519 days = 15 random = 15 }
+	}
+}
+
+country_event = {
+	id = flavor_UFC.7519
+	title = flavor_UFC.7519.title
+	desc = flavor_UFC.7519.desc
+	picture = KING_SICK_IN_BED_eventPicture
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = flavor_UFC.7519.a
+		add_prestige_or_monarch_power = {
+			amount = 10
+		}
+		custom_tooltip = UFC_tooltip_obsidian_export
+		set_country_flag = UFC_flag_obsidian_export
+	}
+	after = {
+		country_event = { id = flavor_UFC.7520 days = 15 random = 15 }
+	}
+}
+country_event = {
+	id = flavor_UFC.7520
+	title = flavor_UFC.7520.title
+	desc = flavor_UFC.7520.desc
+	picture = DEBATE_REPUBLICAN_eventPicture
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = flavor_UFC.7520.a
+		add_innovativeness_or_monarch_power = {
+			amount = 3
+		}
+		add_prestige_or_monarch_power = {
+			amount = 20
+		}
+		115 = {
+			owner = {
+				add_innovativeness_or_monarch_power = {
+					amount = 3
+				}
+				add_prestige = -10
+			}
+		}
+		70 = {
+			owner = {
+				add_innovativeness_or_monarch_power = {
+					amount = 3
+				}
+				add_prestige = -10
+			}
+		}
+		12 = {
+			owner = {
+				add_innovativeness_or_monarch_power = {
+					amount = 3
+				}
+				add_prestige = -10
+			}
+		}
+		custom_tooltip = UFC_tooltip_astronomer_recruitment
+		hidden_effect = {
+			70 = {
+				add_permanent_claim = root
+			}
+		}
+		set_country_flag = UFC_flag_sky_lawgiver_timer
+	}
+	after = {
+		country_event = { id = flavor_UFC.7521 days = 15 random = 15 }
+	}
+}
+
+country_event = {
+	id = flavor_UFC.7521
+	title = flavor_UFC.7521.title
+	desc = flavor_UFC.7521.desc
+	picture = muslimgfx_UNIVERSITY_eventPicture
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = flavor_UFC.7521.a
+		add_prestige_or_monarch_power = {
+			amount = 10
+		}
+		custom_tooltip = UFC_tooltip_the_great_bibliotheque
+		set_country_flag = UFC_flag_the_great_bibliotheque
+	}
+	after = {
+		country_event = { id = flavor_UFC.7522 days = 15 random = 15 }
+	}
+}
+
+country_event = {
+	id = flavor_UFC.7522
+	title = flavor_UFC.7522.title
+	desc = flavor_UFC.7522.desc
+	picture = muslimgfx_FEAST_eventPicture
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = flavor_UFC.7522.a
+		goto = 174
+		174 = {
+			owner = {
+				add_opinion = {
+					who = root
+					modifier = ufc_award_grand_prize
+				}
+				add_prestige_or_monarch_power = {
+					amount = 20
+				}
+			}
+		}
+		add_prestige_or_monarch_power = {
+			amount = 10
+		}
+		change_price = {
+			trade_goods = wine
+			key = VIN_DE_BORDEAUX
+			value = 0.2
+			duration = 18250
+		}
+	}
+	option = {
+		name = flavor_UFC.7522.b
+		goto = 693
+		693 = {
+			owner = {
+				add_opinion = {
+					who = root
+					modifier = ufc_award_grand_prize
+				}
+				add_prestige_or_monarch_power = {
+					amount = 20
+				}
+			}
+		}
+		add_prestige_or_monarch_power = {
+			amount = 10
+		}
+		change_price = {
+			trade_goods = grain
+			key = FENJIU
+			value = 0.25
+			duration = 18250
+		}
+	}
+	option = {
+		name = flavor_UFC.7522.c
+		goto = 661
+		661 = {
+			owner = {
+				add_opinion = {
+					who = root
+					modifier = ufc_award_grand_prize
+				}
+				add_prestige_or_monarch_power = {
+					amount = 20
+				}
+			}
+		}
+		add_prestige_or_monarch_power = {
+			amount = 10
+		}
+		change_price = {
+			trade_goods = tea
+			key = TEA_CULTURE
+			value = 0.25
+			duration = 18250
+		}
+	}
+	option = {
+		name = flavor_UFC.7522.d
+		goto = 387
+		387 = {
+			owner = {
+				add_opinion = {
+					who = root
+					modifier = ufc_award_grand_prize
+				}
+				add_prestige_or_monarch_power = {
+					amount = 20
+				}
+			}
+		}
+		add_prestige_or_monarch_power = {
+			amount = 10
+		}
+		change_price = {
+			trade_goods = coffee
+			key = COFFEE_CULTURE
+			value = 0.15
+			duration = 18250
+		}
+	}
+	option = {
+		name = flavor_UFC.7522.e
+		goto = 835
+		835 = {
+			owner = {
+				add_prestige_or_monarch_power = {
+					amount = 20
+				}
+			}
+		}
+		change_price = {
+			trade_goods = cocoa
+			key = COCOA_CULTURE
+			value = 0.15
+			duration = 18250
+		}
+	}
+	after = {
+		country_event = { id = flavor_UFC.7523 days = 15 random = 15 }
+	}
+}
+
+country_event = {
+	id = flavor_UFC.7523
+	title = flavor_UFC.7523.title
+	desc = flavor_UFC.7523.desc
+	picture = AFRICAN_EUROPEAN_TRADE_eventPicture
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = flavor_UFC.7523.a
+		add_years_of_owned_provinces_production_income = {
+			years = 2
+			trigger = {
+				OR = {
+					trade_goods = grain
+					trade_goods = livestock
+					trade_goods = fish
+					trade_goods = wine
+				}
+			}
+		}
+		hidden_effect = {
+			every_known_country = {
+				limit = {
+					capital_scope = {
+						OR = {
+							region = niger_region
+							region = sahel_region
+						}
+					}
+				}
+				add_country_modifier = {
+					name = UFC_modifier_africa_grain
+					duration = 7300
+				}
+			}
+		}
+		custom_tooltip = UFC_tooltip_africa_grain
+		tooltip = {
+			random_known_country = {
+				limit = {
+					capital_scope = {
+						OR = {
+							region = niger_region
+							region = sahel_region
+						}
+					}
+				}
+				add_country_modifier = {
+					name = UFC_modifier_africa_grain
+					duration = 7300
+				}
+			}
+		}
+	}
+	after = {
+		country_event = { id = flavor_UFC.7524 days = 15 random = 15 }
+	}
+}
+
+country_event = {
+	id = flavor_UFC.7524
+	title = flavor_UFC.7524.title
+	desc = flavor_UFC.7524.desc
+	picture = EXPLORERS_eventPicture
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = flavor_UFC.7524.a
+		goto = 116
+		116 = {
+			owner = {
+				add_opinion = {
+					who = root
+					modifier = ufc_award_grand_prize
+				}
+				add_prestige_or_monarch_power = {
+					amount = 20
+				}
+			}
+			add_permanent_province_modifier = {
+				name = UFC_modifier_awarded_garden_art
+				duration = -1
+			}
+		}
+		add_prestige_or_monarch_power = {
+			amount = 10
+		}
+	}
+	option = {
+		name = flavor_UFC.7524.b
+		goto = 428
+		428 = {
+			owner = {
+				add_opinion = {
+					who = root
+					modifier = ufc_award_grand_prize
+				}
+				add_prestige_or_monarch_power = {
+					amount = 20
+				}
+			}
+			add_permanent_province_modifier = {
+				name = UFC_modifier_awarded_garden_art
+				duration = -1
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = UFC_flag_removal_alhambra
+			}
+			965 = {
+				add_permanent_province_modifier = {
+					name = UFC_modifier_awarded_garden_art
+					duration = -1
+				}
+			}
+		}
+		else = {
+			223 = {
+				add_permanent_province_modifier = {
+					name = UFC_modifier_awarded_garden_art
+					duration = -1
+				}
+			}
+		}
+		add_prestige_or_monarch_power = {
+			amount = 10
+		}
+	}
+	option = {
+		name = flavor_UFC.7524.c
+		goto = 1822
+		1822 = {
+			owner = {
+				add_opinion = {
+					who = root
+					modifier = ufc_award_grand_prize
+				}
+				add_prestige_or_monarch_power = {
+					amount = 20
+				}
+			}
+			add_permanent_province_modifier = {
+				name = UFC_modifier_awarded_garden_art
+				duration = -1
+			}
+		}
+		1816 = {
+			add_permanent_province_modifier = {
+				name = UFC_modifier_awarded_garden_art
+				duration = -1
+			}
+		}
+		add_prestige_or_monarch_power = {
+			amount = 10
+		}
+	}
+	after = {
+		country_event = { id = flavor_UFC.7525 days = 15 random = 15 }
+	}
+}
+
+country_event = {
+	id = flavor_UFC.7525
+	title = flavor_UFC.7525.title
+	desc = flavor_UFC.7525.desc
+	picture = BYZ_BAD_WITH_MONARCH_eventPicture
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = flavor_UFC.7525.a
+		add_innovativeness_or_monarch_power = {
+			amount = 3
+		}
+		add_government_power = {
+			mechanic_type = ufc_mechanic_mechanical_clock
+			power_type = mechanical_clock_dip_power
+			value = -2
+		}
+		add_years_of_income = -0.05
+	}
+	after = {
+		country_event = { id = flavor_UFC.7526 days = 15 random = 15 }
+	}
+}
+
+country_event = {
+	id = flavor_UFC.7526
+	title = flavor_UFC.7526.title
+	desc = flavor_UFC.7526.desc
+	picture = DIPLOMACY_SIGNING_eventPicture
+	fire_only_once = yes
+	is_triggered_only = yes
+	immediate = {
+		hidden_effect = {
+			random_known_country = {
+				limit = {
+					is_great_power = no
+					total_development = 80
+				}
+				save_event_target_as = ufc_target_diplomacy_mediation
+			}
+		}
+	}
+	option = {
+		name = flavor_UFC.7526.a
+		random_list = {
+			75 = {
+				event_target:ufc_target_diplomacy_mediation = {
+					random_rival_country = {
+						remove_rival = prev
+					}
+				}
+				add_prestige_or_monarch_power = {
+					amount = 25
+				}
+				add_power_projection = {
+					type = UFC_diplomacy_influence
+					amount = 5
+				}
+			}
+			25 = {
+				add_dip_power = -5
+				add_power_projection = {
+					type = UFC_diplomacy_influence
+					amount = 5
+				}
+			}
+		}
+	}
+	option = {
+		name = flavor_UFC.7526.b
+		add_dip_power = 10
+	}
+	after = {
+		country_event = { id = flavor_UFC.7527 days = 15 random = 15 }
+	}
+}
+
+country_event = {
+	id = flavor_UFC.7527
+	title = flavor_UFC.7527.title
+	desc = flavor_UFC.7527.desc
+	picture = BIG_ARABIAN_CITY_eventPicture
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = flavor_UFC.7527.a
+		add_dip_power = 10
+		add_country_modifier = {
+			name = UFC_modifier_grand_buildings
+			duration = 7300
+		}
+	}
+	after = {
+		country_event = { id = flavor_UFC.7528 days = 15 random = 15 }
+	}
+}
+
+country_event = {
+	id = flavor_UFC.7528
+	title = flavor_UFC.7528.title
+	desc = flavor_UFC.7528.desc
+	picture = muslimgfx_DEBATE_REPUBLICAN_eventPicture
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = flavor_UFC.7528.a
+		add_years_of_income = -0.5
+		add_government_power = {
+			mechanic_type = ufc_mechanic_mechanical_clock
+			power_type = mechanical_clock_dip_power
+			value = -2
+		}
+	}
+	option = {
+		name = flavor_UFC.7528.b
+		add_years_of_income = -0.05
+		add_government_power = {
+			mechanic_type = ufc_mechanic_mechanical_clock
+			power_type = mechanical_clock_dip_power
+			value = 5
+		}
+	}
+	after = {
+		country_event = { id = flavor_UFC.7529 days = 15 random = 15 }
+	}
+}
+
+country_event = {
+	id = flavor_UFC.7529
+	title = flavor_UFC.7529.title
+	desc = flavor_UFC.7529.desc
+	picture = INVENTION_eventPicture
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = flavor_UFC.7529.a
+		67 = {
+			owner = {
+				add_opinion = {
+					who = root
+					modifier = ufc_award_grand_prize
+				}
+				add_innovativeness_or_monarch_power = {
+					amount = 3
+				}
+			}
+		}
+		116 = {
+			owner = {
+				add_innovativeness_or_monarch_power = {
+					amount = 3
+				}
+			}
+		}
+		add_innovativeness_or_monarch_power = {
+			amount = 2
+		}
+	}
+	after = {
+		country_event = { id = flavor_UFC.7530 days = 15 random = 15 }
+	}
+}
+
+country_event = {
+	id = flavor_UFC.7530
+	title = flavor_UFC.7530.title
+	desc = flavor_UFC.7530.desc
+	picture = TEXTILE_INDUSTRY_eventPicture
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = flavor_UFC.7530.a
+		goto = 4368
+		4368 = {
+			owner = {
+				add_opinion = {
+					who = root
+					modifier = ufc_award_grand_prize
+				}
+				add_prestige_or_monarch_power = {
+					amount = 20
+				}
+			}
+			add_permanent_province_modifier = {
+				name = UFC_modifier_awarded_textile_industry
+				duration = -1
+			}
+		}
+		change_price = {
+			trade_goods = wool
+			key = ENGLAND_WOOL
+			value = 0.25
+			duration = 18250
+		}
+		add_prestige_or_monarch_power = {
+			amount = 10
+		}
+	}
+	option = {
+		name = flavor_UFC.7530.b
+		goto = 97
+		97 = {
+			owner = {
+				add_opinion = {
+					who = root
+					modifier = ufc_award_grand_prize
+				}
+				add_prestige_or_monarch_power = {
+					amount = 20
+				}
+			}
+			add_permanent_province_modifier = {
+				name = UFC_modifier_awarded_textile_industry
+				duration = -1
+			}
+		}
+		change_price = {
+			trade_goods = cloth
+			key = NEW_CLOTH
+			value = 0.2
+			duration = 18250
+		}
+		add_prestige_or_monarch_power = {
+			amount = 10
+		}
+	}
+	option = {
+		name = flavor_UFC.7530.c
+		goto = 416
+		416 = {
+			owner = {
+				add_opinion = {
+					who = root
+					modifier = ufc_award_grand_prize
+				}
+				add_prestige_or_monarch_power = {
+					amount = 20
+				}
+			}
+			add_permanent_province_modifier = {
+				name = UFC_modifier_awarded_textile_industry
+				duration = -1
+			}
+		}
+		684 = {
+			owner = {
+				add_opinion = {
+					who = root
+					modifier = ufc_award_grand_prize
+				}
+				add_prestige_or_monarch_power = {
+					amount = 20
+				}
+			}
+			add_permanent_province_modifier = {
+				name = UFC_modifier_awarded_textile_industry
+				duration = -1
+			}
+		}
+		change_price = {
+			trade_goods = silk
+			key = SILK_REVIVE
+			value = 0.25
+			duration = 18250
+		}
+		add_prestige_or_monarch_power = {
+			amount = 10
+		}
+	}
+	option = {
+		name = flavor_UFC.7530.d
+		goto = 2499
+		2499 = {
+			add_permanent_province_modifier = {
+				name = UFC_modifier_awarded_textile_industry
+				duration = -1
+			}
+		}
+		893 = {
+			add_permanent_province_modifier = {
+				name = UFC_modifier_awarded_textile_industry
+				duration = -1
+			}
+		}
+		change_price = {
+			trade_goods = cotton
+			key = COTTON_FABRIC
+			value = 0.25
+			duration = 18250
+		}
+		change_price = {
+			trade_goods = dyes
+			key = COTTON_FABRIC_DYES
+			value = 0.2
+			duration = 18250
+		}
+		add_prestige_or_monarch_power = {
+			amount = 20
+		}
+	}
+	option = {
+		name = flavor_UFC.7530.e
+		goto = 2980
+		2980 = {
+			owner = {
+				add_opinion = {
+					who = root
+					modifier = ufc_award_grand_prize
+				}
+				add_prestige_or_monarch_power = {
+					amount = 20
+				}
+			}
+			add_permanent_province_modifier = {
+				name = UFC_modifier_awarded_textile_industry
+				duration = -1
+			}
+		}
+		4719 = {
+			add_permanent_province_modifier = {
+				name = UFC_modifier_awarded_textile_industry
+				duration = -1
+			}
+		}
+		change_price = {
+			trade_goods = cloth
+			key = JEANS
+			value = 0.1
+			duration = -1
+		}
+		add_prestige_or_monarch_power = {
+			amount = 30
+		}
+		add_government_power = {
+			mechanic_type = ufc_mechanic_mechanical_clock
+			power_type = mechanical_clock_dip_power
+			value = -5
+		}
+	}
+	after = {
+		country_event = { id = flavor_UFC.7531 days = 15 random = 15 }
+	}
+}
+
+country_event = {
+	id = flavor_UFC.7531
+	title = flavor_UFC.7531.title
+	desc = flavor_UFC.7531.desc
+	picture = ARTILLERY_eventPicture
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = flavor_UFC.7531.a
+		add_mil_power = 25 #to be expand here
+	}
+	after = {
+		country_event = { id = flavor_UFC.7532 days = 15 random = 15 }
+	}
+}
+
+country_event = {
+	id = flavor_UFC.7532
+	title = flavor_UFC.7532.title
+	desc = flavor_UFC.7532.desc
+	picture = LARGE_SHIPYARD_eventPicture
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = flavor_UFC.7532.a
+		goto = 236
+		236 = {
+			owner = {
+				add_opinion = {
+					who = root
+					modifier = ufc_award_grand_prize
+				}
+				add_prestige_or_monarch_power = {
+					amount = 20
+				}
+				add_country_modifier = {
+					name = UFC_modifier_big_guns
+					duration = 7300
+				}
+			}
+		}
+		add_country_modifier = {
+			name = UFC_modifier_big_guns
+			duration = 7300
+		}
+		add_prestige_or_monarch_power = {
+			amount = 10
+		}
+	}
+	option = {
+		name = flavor_UFC.7532.b
+		goto = 97
+		97 = {
+			owner = {
+				add_opinion = {
+					who = root
+					modifier = ufc_award_grand_prize
+				}
+				add_prestige_or_monarch_power = {
+					amount = 20
+				}
+				add_country_modifier = {
+					name = UFC_modifier_import_indiaman
+					duration = 7300
+				}
+			}
+		}
+		add_country_modifier = {
+			name = UFC_modifier_import_indiaman
+			duration = 7300
+		}
+		add_prestige_or_monarch_power = {
+			amount = 10
+		}
+	}
+	option = {
+		name = flavor_UFC.7532.c
+		goto = 112
+		112 = {
+			owner = {
+				add_opinion = {
+					who = root
+					modifier = ufc_award_grand_prize
+				}
+				add_prestige_or_monarch_power = {
+					amount = 20
+				}
+				add_country_modifier = {
+					name = UFC_modifier_import_galleass
+					duration = 7300
+				}
+			}
+		}
+		add_country_modifier = {
+			name = UFC_modifier_import_galleass
+			duration = 7300
+		}
+		add_prestige_or_monarch_power = {
+			amount = 10
+		}
+	}
+	option = {
+		name = flavor_UFC.7532.d
+		goto = 820
+		trigger = {
+			820 = {
+				owned_by = root
+			}
+		}
+		add_country_modifier = {
+			name = UFC_modifier_road_improvement
+			duration = 7300
+		}
+		add_prestige_or_monarch_power = {
+			amount = 20
+		}
+	}
+	option = {
+		name = flavor_UFC.7532.e
+		goto = 116
+		116 = {
+			owner = {
+				add_opinion = {
+					who = root
+					modifier = ufc_award_grand_prize
+				}
+				add_prestige_or_monarch_power = {
+					amount = 20
+				}
+				add_innovativeness_or_monarch_power = {
+					amount = 3
+				}
+			}
+		}
+		add_innovativeness_or_monarch_power = {
+			amount = 1
+		}
+		add_prestige_or_monarch_power = {
+			amount = 10
+		}
+	}
+	after = {
+		country_event = { id = flavor_UFC.7533 days = 15 random = 15 }
+	}
+}
+
+country_event = {
+	id = flavor_UFC.7533
+	title = flavor_UFC.7533.title
+	desc = flavor_UFC.7533.desc
+	picture = AN_EMPIRE_FOR_A_GIRAFFE_eventPicture
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = flavor_UFC.7533.a
+		add_dip_power = 25
+		add_prestige_or_monarch_power = {
+			amount = 20
+		}
+		1816 = {
+			owner = {
+				add_prestige = -10
+			}
+		}
+	}
+	after = {
+		country_event = { id = flavor_UFC.7534 days = 15 random = 15 }
+	}
+}
+
+country_event = {
+	id = flavor_UFC.7534
+	title = flavor_UFC.7534.title
+	desc = flavor_UFC.7534.desc
+	picture = northamericagfx_COMET_SIGHTED_eventPicture
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = flavor_UFC.7534.a
+		custom_tooltip = UFC_tooltip_end_of_expo
+		add_country_modifier = {
+			name = UFC_modifier_the_end_of_expo
+			duration = -1
+		}
+		remove_country_modifier = UFC_modifier_cannot_declare_war
+	}
+	after = {
+		country_event = { id = flavor_UFC.7535 days = 15 random = 15 }
+	}
+}
+
+country_event = {
+	id = flavor_UFC.7535
+	title = flavor_UFC.7535.title
+	desc = flavor_UFC.7535.desc
+	picture = indiangfx_COUNTRY_COLLAPSE_eventPicture
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = flavor_UFC.7535.a
+		custom_tooltip = UFC_tooltip_settlement_of_accounts
+		hidden_effect = {
+			for_variable_amount = {
+				variable = ufc_variable_expo_budget
+				effect = '
+				add_treasury - -1000
+				'
+			}
+			add_treasury = 50000
+			add_treasury = -35000
+		}
+		if = {
+			limit = {
+				has_country_flag = UFC_flag_expo_invite_all_country
+			}
+			custom_tooltip = UFC_tooltip_expo_invite_all_country_result
+			add_dip_power = 500
+		}
+		if = {
+			limit = {
+				has_country_flag = UFC_flag_expo_invite_huge_country
+			}
+			custom_tooltip = UFC_tooltip_expo_invite_huge_country_result
+			add_dip_power = 250
+		}
+		if = {
+			limit = {
+				has_country_flag = UFC_flag_expo_great_pavilions
+			}
+			custom_tooltip = UFC_tooltip_expo_great_pavilions_result
+			add_government_power = {
+				mechanic_type = ufc_mechanic_mechanical_clock
+				power_type = mechanical_clock_adm_power
+				value = -8
+			}
+			add_government_power = {
+				mechanic_type = ufc_mechanic_mechanical_clock
+				power_type = mechanical_clock_dip_power
+				value = -8
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = UFC_flag_expo_appropriate_pavilions
+			}
+			custom_tooltip = UFC_tooltip_expo_appropriate_pavilions_result
+			add_government_power = {
+				mechanic_type = ufc_mechanic_mechanical_clock
+				power_type = mechanical_clock_adm_power
+				value = -4
+			}
+			add_government_power = {
+				mechanic_type = ufc_mechanic_mechanical_clock
+				power_type = mechanical_clock_dip_power
+				value = -4
+			}
+		}
+		country_event = { id = flavor_UFC.7536 }
+	}
+	after = {
+		clr_country_flag = UFC_flag_expo_invite_all_country
+		clr_country_flag = UFC_flag_expo_invite_huge_country
+		clr_country_flag = UFC_flag_expo_invite_great_power
+		clr_country_flag = UFC_flag_expo_great_pavilions
+		clr_country_flag = UFC_flag_expo_appropriate_pavilions
+		clr_country_flag = UFC_flag_expo_poor_pavilions
+	}
+}
+
+country_event = {
+	id = flavor_UFC.7536
+	title = flavor_UFC.7536.title
+	desc = flavor_UFC.7536.desc
+	picture = BIG_ARABIAN_CITY_eventPicture
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = flavor_UFC.7536.a
+		custom_tooltip = UFC_tooltip_past_is_past
+	}
+}
+#Galileo
+country_event = {
+	id = flavor_UFC.7537
+	title = flavor_UFC.7537.title
+	desc = flavor_UFC.7537.desc
+	picture = RELIGION_eventPicture
+	fire_only_once = yes
+	goto = 115
+	trigger = {
+		tag = UFC
+		had_country_flag = {
+			flag = UFC_flag_sky_lawgiver_timer
+			days = 730
+		}
+		not = {
+			had_country_flag = {
+				flag = UFC_flag_sky_lawgiver_timer
+				days = 21900
+			}
+		}
+		115 = {
+			owned_by = root
+		}
+	}
+	mean_time_to_happen = {
+		months = 3
+	}
+	option = {
+		name = flavor_UFC.7537.a
+		define_advisor = {
+			type = natural_scientist
+			name = "Galileo Galilei"
+			skill = 3
+			culture = tuscan
+			religion = catholic
+			cost_multiplier = 0.25
+			age = 40
+			location = 115
+		}
+		add_innovativeness_or_monarch_power = {
+			amount = 3
+		}
+		set_country_flag = UFC_flag_sky_lawgiver_galilei
+	}
+}
+#Kepler
+country_event = {
+	id = flavor_UFC.7538
+	title = flavor_UFC.7538.title
+	desc = flavor_UFC.7538.desc
+	picture = ASTRONOMER_eventPicture
+	fire_only_once = yes
+	goto = 70
+	trigger = {
+		tag = UFC
+		had_country_flag = {
+			flag = UFC_flag_sky_lawgiver_timer
+			days = 730
+		}
+		not = {
+			had_country_flag = {
+				flag = UFC_flag_sky_lawgiver_timer
+				days = 21900
+			}
+		}
+		70 = {
+			owned_by = root
+		}
+	}
+	mean_time_to_happen = {
+		months = 3
+	}
+	option = {
+		name = flavor_UFC.7538.a
+		define_advisor = {
+			type = natural_scientist
+			name = "Johannes Kepler"
+			skill = 3
+			culture = bavarian
+			religion = protestant
+			cost_multiplier = 0.25
+			age = 35
+			location = 70
+		}
+		add_innovativeness_or_monarch_power = {
+			amount = 3
+		}
+		set_country_flag = UFC_flag_sky_lawgiver_kepler
+	}
+}
+#Tycho Brahe
+country_event = {
+	id = flavor_UFC.7539
+	title = flavor_UFC.7539.title
+	desc = flavor_UFC.7539.desc
+	picture = muslimgfx_ADVISOR_eventPicture
+	fire_only_once = yes
+	goto = 12
+	trigger = {
+		tag = UFC
+		had_country_flag = {
+			flag = UFC_flag_sky_lawgiver_timer
+			days = 730
+		}
+		not = {
+			had_country_flag = {
+				flag = UFC_flag_sky_lawgiver_timer
+				days = 21900
+			}
+		}
+		12 = {
+			owned_by = root
+		}
+	}
+	mean_time_to_happen = {
+		months = 3
+	}
+	option = {
+		name = flavor_UFC.7539.a
+		add_innovativeness_or_monarch_power = {
+			amount = 3
+		}
+		set_country_flag = UFC_flag_sky_lawgiver_brahe
+	}
+}
+
+#sky lawgiver
+country_event = {
+	id = flavor_UFC.7540
+	title = flavor_UFC.7540.title
+	desc = flavor_UFC.7540.desc
+	picture = ASTRONOMER_eventPicture
+	fire_only_once = yes
+	trigger = {
+		tag = UFC
+		has_country_flag = UFC_flag_sky_lawgiver_galilei
+		has_country_flag = UFC_flag_sky_lawgiver_kepler
+		has_country_flag = UFC_flag_sky_lawgiver_brahe
+	}
+	mean_time_to_happen = {
+		months = 12
+	}
+	option = {
+		name = flavor_UFC.7540.a
+		add_country_modifier = {
+			name = UFC_modifier_sky_lawgiver
+			duration = -1
+		}
+		custom_tooltip = UFC_tooltip_better_for_spacetrip_lawgiver
+	}
+}
+#embargo
+country_event = {
+	id = flavor_UFC.76
+	title = flavor_UFC.76.title
+	desc = flavor_UFC.76.desc
+	picture = GLOBAL_TRADE_eventPicture
+	trigger = {
+		tag = UFC
+		OR = {
+			ENG = {
+				any_active_trade_node = {
+					OR = {
+						has_merchant = PREV
+					}
+					most_province_trade_power = {
+						tag = UFC
+						exists = yes
+					}
+				}
+			}
+			GBR = {
+				any_active_trade_node = {
+					OR = {
+						has_merchant = PREV
+					}
+					most_province_trade_power = {
+						tag = UFC
+						exists = yes
+					}
+				}
+			}
+			FRA = {
+				any_active_trade_node = {
+					OR = {
+						has_merchant = PREV
+					}
+					most_province_trade_power = {
+						tag = UFC
+						exists = yes
+					}
+				}
+			}
+		}
+	}
+	mean_time_to_happen = {
+		months = 3
+	}
+	fire_only_once = yes
+	option = {
+		name = flavor_UFC.76.a
+		set_country_flag = UFC_flag_enable_embargo_effecient
+		custom_tooltip = UFC_tooltip_enable_embargo_effecient
+	}
+}
+
+#establish_subsidiary_corporation
+country_event = {
+	id = flavor_UFC.77
+	title = flavor_UFC.77.title
+	desc = flavor_UFC.77.desc
+	goto = ufc_target_subsidiary_corporation_event_trade_node_temporary
+	picture = GLOBAL_TRADE_eventPicture
+	is_triggered_only = yes
+	immediate = {
+		event_target:ufc_target_subsidiary_corporation_event_trade_node = {
+			save_event_target_as = ufc_target_subsidiary_corporation_event_trade_node_temporary
+		}
+	}
+	option = {
+		name = flavor_UFC.77.a
+		event_target:ufc_target_subsidiary_corporation_event_trade_node_temporary = {
+
+		}
+	}
+}
+
 #Timur
 country_event = {
 	id = flavor_UFC.133
@@ -2818,7 +5054,9 @@ country_event = {
 	option = {
 		name = flavor_UFC.133.a
 		add_dip_power = 50
-		change_innovativeness = 1
+		add_innovativeness_or_monarch_power = {
+			amount = 1
+		}
 		hidden_effect = {
 			set_country_flag = UFC_flag_timur_happended
 		}
@@ -2840,7 +5078,9 @@ country_event = {
 	}
 	option = {
 		name = flavor_UFC.1331.a
-		change_innovativeness = 3
+		add_innovativeness_or_monarch_power = {
+			amount = 3
+		}
 		remove_comet_sighted_events = yes
 	}
 }
@@ -2886,10 +5126,13 @@ country_event = {
 	picture = EP_ISLAND_eventPicture
 	fire_only_once = yes
 	is_triggered_only = yes
+	goto = 2002
 	option = {
 		name = flavor_UFC.1042.a
 		add_adm_power = 10
-		change_innovativeness = 3
+		add_innovativeness_or_monarch_power = {
+			amount = 3
+		}
 		2002 = {
 			add_province_modifier = {
 				name = UFC_modifier_galapagos_conservation
@@ -2919,6 +5162,7 @@ country_event = {
 	picture = RUNESTONE_eventPicture
 	fire_only_once = yes
 	is_triggered_only = yes
+	goto = 980
 	option = {
 		name = flavor_UFC.1044.a
 		980 = {
@@ -3042,7 +5286,7 @@ country_event = {
 		}
 		add_country_modifier = {
 			name = UFC_modifier_erikson
-			duration = 18250
+			duration = 36500
 		}
 		hidden_effect = {
 			country_event = { id = flavor_UFC.25 days = 3650 random = 1825 }
@@ -3712,11 +5956,11 @@ country_event = {
 	desc = flavor_UFC.2001.desc
 	picture = ECONOMY_eventPicture
 	fire_only_once = yes
-	mean_time_to_happen = {
-		months = 240
-	}
 	trigger = {
 		has_government_mechanic = ufc_mechanic_mechanical_clock
+	}
+	mean_time_to_happen = {
+		months = 120
 	}
 	option = {
 		name = flavor_UFC.2001.a
@@ -4250,12 +6494,12 @@ country_event = {
 		add_government_power = {
 			mechanic_type = ufc_mechanic_mechanical_clock
 			power_type = mechanical_clock_adm_power
-			value = 2
+			value = -3
 		}
 		add_government_power = {
 			mechanic_type = ufc_mechanic_mechanical_clock
 			power_type = mechanical_clock_mil_power
-			value = -3
+			value = 1
 		}
 		add_yearly_sailors = -0.25
 	}
@@ -4325,21 +6569,105 @@ country_event = {
 	}
 }
 
-#REVOLUTION!
 country_event = {
-	id = flavor_UFC.8900
-	title = flavor_UFC.8900.title
-	desc = flavor_UFC.8900.desc
-	picture = muslimgfx_REVOLUTION_eventPicture
-	is_triggered_only = yes
+	id = flavor_UFC.2013
+	title = flavor_UFC.2013.title
+	desc = flavor_UFC.2013.desc
+	picture = indiangfx_ECONOMY_eventPicture
 	trigger = {
-
+		tag = UFC
+		has_government_mechanic = ufc_mechanic_mechanical_clock
+		not = {
+			has_government_power = {
+				mechanic_type = ufc_mechanic_mechanical_clock
+				power_type = mechanical_clock_adm_power
+				value = 10
+			}
+		}
+		not = {
+			has_government_power = {
+				mechanic_type = ufc_mechanic_mechanical_clock
+				power_type = mechanical_clock_dip_power
+				value = 10
+			}
+		}
+		not = {
+			has_government_power = {
+				mechanic_type = ufc_mechanic_mechanical_clock
+				power_type = mechanical_clock_mil_power
+				value = 10
+			}
+		}
+		not = {
+			has_country_modifier = UFC_modifier_anarcho_capitalism
+		}
+	}
+	fire_only_once = yes
+	mean_time_to_happen = {
+		months = 1
+	}
+	immediate = {
+		hidden_effect = {
+			add_country_modifier = {
+				name = UFC_modifier_fake_secret_report
+				duration = -1
+				desc = UNTIL_THE_COLLAPSE
+			}
+		}
 	}
 	option = {
-		name = flavor_UFC.8900.a
+		name = flavor_UFC.2013.a
+		tooltip = {
+			add_country_modifier = {
+				name = UFC_modifier_fake_secret_report
+				duration = -1
+				desc = UNTIL_THE_COLLAPSE
+			}
+		}
+		custom_tooltip = UFC_tooltip_you_can_still_use_the_interactions
 	}
 }
 
+country_event = {
+	id = flavor_UFC.2014
+	title = flavor_UFC.2014.title
+	desc = flavor_UFC.2014.desc
+	picture = indiangfx_ECONOMY_eventPicture
+	trigger = {
+		tag = UFC
+		has_government_mechanic = ufc_mechanic_mechanical_clock
+		has_government_power = {
+			mechanic_type = ufc_mechanic_mechanical_clock
+			power_type = mechanical_clock_adm_power
+			value = 90
+		}
+		has_government_power = {
+			mechanic_type = ufc_mechanic_mechanical_clock
+			power_type = mechanical_clock_dip_power
+			value = 90
+		}
+		has_government_power = {
+			mechanic_type = ufc_mechanic_mechanical_clock
+			power_type = mechanical_clock_mil_power
+			value = 90
+		}
+		not = {
+			has_country_modifier = UFC_modifier_fake_secret_report
+		}
+	}
+	fire_only_once = yes
+	mean_time_to_happen = {
+		months = 1
+	}
+	option = {
+		name = flavor_UFC.2014.a
+		add_country_modifier = {
+			name = UFC_modifier_anarcho_capitalism
+			duration = -1
+			desc = UNTIL_THE_COLLAPSE
+		}
+	}
+}
 #mechanics-- reform UFC_the_financial_system
 country_event = {
 	id = flavor_UFC.9001
@@ -4548,7 +6876,6 @@ country_event = {
 					not = {
 						trade_goods = sugar
 					}
-					is_eligible_for_trade_good = { trade_goods = sugar }
 				}
 				set_province_flag = UFC_flag_plantation_1
 				save_event_target_as = ufc_target_plantation_first_province
@@ -4564,7 +6891,6 @@ country_event = {
 					not = {
 						has_province_flag = UFC_flag_plantation_1
 					}
-					is_eligible_for_trade_good = { trade_goods = sugar }
 				}
 				set_province_flag = UFC_flag_plantation_2
 				save_event_target_as = ufc_target_plantation_second_province
@@ -4583,7 +6909,6 @@ country_event = {
 							has_province_flag = UFC_flag_plantation_2
 						}
 					}
-					is_eligible_for_trade_good = { trade_goods = sugar }
 				}
 				save_event_target_as = ufc_target_plantation_third_province
 			}
@@ -5105,30 +7430,8 @@ country_event = {
 	}
 	option = {
 		name = flavor_UFC.10086.a
-		export_to_variable = {
-			which = ufc_mission_trade_income_variable
-			value = trigger_value:trade_income_percentage
-		}
-		multiply_variable = {
-			which = ufc_mission_trade_income_variable
-			value = 400
-		}
-		export_to_variable = {
-			which = ufc_mission_mercantilism
-			value = trigger_value:mercantilism
-		}
-		change_variable = {
-			which = ufc_mission_mercantilism
-			value = 1
-		}
-		divide_variable = {
-			which = ufc_mission_trade_income_variable
-			which = ufc_mission_mercantilism
-		}
-		for_variable_amount = {
-			variable = ufc_mission_trade_income_variable
-			effect = "
-						add_inflation = 1"
+		event_target:ufc_target_expo_city = {
+			change_province_name = "Ciudad Francesco"
 		}
 	}
 }

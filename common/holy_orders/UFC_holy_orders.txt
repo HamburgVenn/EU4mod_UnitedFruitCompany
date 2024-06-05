@@ -1,0 +1,32 @@
+colopionion = {
+    icon = GFX_holy_order_colopionion
+    trigger = {
+        mission_completed = UFC_mission_rainforest_development
+        mission_completed = UFC_mission_religions_idea
+        mission_completed = UFC_mission_workers_and_board
+    }
+    color = { 255 200 40 }
+    cost = 50
+    cost_type = adm_power
+    per_province_effect = {
+        add_base_production = 1
+    }
+    per_province_abandon_effect = {
+        add_base_production = -1
+        hidden_effect = {
+            if = {
+                limit = { NOT = { base_production = 1 } }
+                set_base_production = 1
+            }
+        }
+    }
+    modifier = {
+        local_development_cost = -0.1
+        trade_goods_size_modifier = 0.1
+        local_manpower_modifier = -0.1
+    }
+    ai_priority = {
+        factor = 1
+    }
+    localization = holy_order
+}

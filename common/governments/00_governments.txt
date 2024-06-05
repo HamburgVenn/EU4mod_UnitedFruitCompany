@@ -704,6 +704,8 @@ republic = {
 				#1.36
 				legacy_of_the_safavid_reform
 				state_madrasas_reform
+				#UFC
+				UFC_the_secularism_reform
 			}
 		}
 		military_doctrines = {

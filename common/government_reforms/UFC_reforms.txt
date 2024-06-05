@@ -13,10 +13,7 @@ UFC_government_republic = {
 		}
 	}
 	valid_for_nation_designer = no
-	#can_form_trade_league = yes
 	can_use_trade_post = yes
-	#trade_city_reform = trading_city
-	#is_elective = yes
 	duration = 4
 	modifiers = {
 		allow_free_estate_privilege_revocation = yes
@@ -100,6 +97,7 @@ UFC_the_stock_system = {
 	modifiers = {
 		candidate_random_bonus = 1
 		administrative_efficiency = 0.025
+		all_estate_possible_privileges = 1
 	}
 	custom_attributes = {
 		enables_natives_idea_group = yes
@@ -184,7 +182,7 @@ UFC_consolidation_of_president_power_reform = {
 	valid_for_nation_designer = no
 	modifiers = {
 		max_absolutism = 15
-		election_cycle = 2
+		election_cycle = 1
 		max_terms = 10
 		candidate_random_bonus = 3
 	}

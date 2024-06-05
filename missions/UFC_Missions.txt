@@ -15,8 +15,8 @@ UFC_mission_slot_1 = {
 		position = 1
 		required_missions = { }
 		trigger = {
-			num_of_light_ship = 6
-			navy_size_percentage = 0.90
+			num_of_light_ship = 5
+			navy_size_percentage = 0.60
 		}
 		effect = {
 			if = {
@@ -542,7 +542,8 @@ UFC_mission_slot_1_NGP = {
 		}
 		effect = {
 			set_estate_privilege = estate_ufc_staff_black_staffs
-			custom_tooltip = UFC_tooltip_black_staffs
+			custom_tooltip = UFC_tooltip_black_staffs_price_change
+			country_event = { id = flavor_UFC.7014 }
 		}
 	}
 
@@ -551,7 +552,6 @@ UFC_mission_slot_1_NGP = {
 		position = 15
 		required_missions = { UFC_mission_global_business_empire }
 		provinces_to_highlight = {
-			owned_by = root
 			is_city = yes
 			trade_goods = tea
 			not = { base_production = 10 }
@@ -722,9 +722,14 @@ UFC_mission_slot_2 = {
 				type = all
 				has_discovered = root
 			}
-			has_spy_network_in = {
-				who = AZT
-				value = 40
+			OR = {
+				has_spy_network_in = {
+					who = AZT
+					value = 40
+				}
+				AZT = {
+					exists = NO
+				}
 			}
 		}
 		effect = {
@@ -736,6 +741,7 @@ UFC_mission_slot_2 = {
 				type = cb_vassalize_mission
 				months = 600
 			}
+			country_event = {id = flavor_UFC.72}
 		}
 	}
 	UFC_mission_doomsayer = {
@@ -1027,6 +1033,8 @@ UFC_mission_slot_2_NGP = {
 				duration = -1
 			}
 			country_event = { id = flavor_UFC.19 days = 3650 }
+			custom_tooltip = UFC_tooltip_weapon_test_team_upgrade
+			set_country_flag = UFC_flag_upgrade_obsidian_privilege
 		}
 	}
 
@@ -1061,11 +1069,10 @@ UFC_mission_slot_2_NGP = {
 		position = 15
 		required_missions = { UFC_mission_global_business_empire }
 		provinces_to_highlight = {
-			owned_by = root
 			is_city = yes
 			trade_goods = spices
 			not = { base_production = 10 }
-			superregion = china_superregion
+			superregion = india_superregion
 		}
 		trigger = {
 			num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
@@ -1088,6 +1095,7 @@ UFC_mission_slot_2_NGP = {
 			trade_company_coromandel = {
 				add_permanent_claim = root
 			}
+
 		}
 	}
 
@@ -1305,6 +1313,7 @@ UFC_mission_slot_3 = {
 				}
 				add_base_tax = 1
 				add_base_manpower = 1
+				change_province_name = "Ciudad Francesco"
 			}
 			change_government_reform_progress = 50
 		}
@@ -1599,12 +1608,23 @@ UFC_mission_slot_3_NGP = {
 		icon = fra_napoleonic_navy
 		position = 13
 		required_missions = { UFC_mission_not_think_but_work UFC_mission_plantation_and_industry}
+		provinces_to_highlight = {
+			owned_by = ROOT
+			OR = {
+				unrest = 0
+				local_autonomy_above_min = 5
+			}
+		}
 		trigger = {
 			all_owned_province = {
 				not = { unrest = 0 }
 				NOT = { local_autonomy_above_min = 5 }
 			}
-			absolutism = 100
+			OR = {
+				has_country_modifier = UFC_modifier_fake_secret_report
+				has_country_modifier = UFC_modifier_anarcho_capitalism
+				absolutism = 100
+			}
 			490 = {
 				owned_by = ROOT
 				is_core = ROOT
@@ -1653,6 +1673,9 @@ UFC_mission_slot_3_NGP = {
 				hausa_area = {
 					add_permanent_claim = root
 				}
+				2257 = {
+					add_permanent_claim = root
+				}
 			}
 		}
 	}
@@ -1670,7 +1693,7 @@ UFC_mission_slot_3_NGP = {
 			num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
 				value = 2
 				area = spice_islands_area
-				base_production = 20
+				base_production = 12
 				trade_goods = cloves
 			}
 			trading_bonus = {
@@ -1889,18 +1912,29 @@ UFC_mission_slot_4 = {
 			has_idea = ufc_rainforest_exploitation
 		}
 		effect = {
-			every_province = {
-				limit = {
-					country_or_non_sovereign_subject_holds = ROOT
-					OR = {
-						has_terrain = jungle
+			hidden_effect = {
+				every_province = {
+					limit = {
+						country_or_non_sovereign_subject_holds = ROOT
+						OR = {
+							has_terrain = jungle
+						}
+					}
+					add_province_modifier = {
+						name = UFC_adopt_jungle
+						duration = -1
 					}
 				}
-				add_province_modifier = {
-					name = UFC_adopt_jungle
-					duration = -1
+			}
+			tooltip = {
+				835 = {
+					add_province_modifier = {
+						name = UFC_adopt_jungle
+						duration = -1
+					}
 				}
 			}
+			custom_tooltip = UFC_tooltip_rainforest_development
 			set_country_flag = UFC_adopt_jungle_for_future
 			every_province = {
 				limit = {
@@ -1930,9 +1964,6 @@ UFC_mission_slot_4 = {
 			}
 		}
 		effect = {
-			increase_trade_goods_discovery = {
-				trade_goods = tropical_wood
-			}
 			custom_tooltip = UFC_tooltip_tropical_wood_plantation
 			country_event = { id = flavor_UFC.63 }
 		}
@@ -1959,7 +1990,7 @@ UFC_mission_slot_4 = {
 		effect = {
 			custom_tooltip = UFC_tooltip_potosi_new_ver
 			795 = {
-				add_base_production = 5
+				add_base_production = 2
 			}
 		}
 	}
@@ -1967,7 +1998,7 @@ UFC_mission_slot_4 = {
 	UFC_mission_wood_and_coffee = {
 		icon = yem_coffee
 		position = 5
-		required_missions = { UFC_mission_cerro_de_potosi UFC_mission_mapuche}
+		required_missions = { UFC_mission_cerro_de_potosi }
 		provinces_to_highlight = {
 			OR = {
 				trade_goods = tropical_wood
@@ -2109,6 +2140,18 @@ UFC_mission_slot_4_NGP = {
 		icon = plague_doctor_training
 		position = 11
 		required_missions = { UFC_mission_marines UFC_mission_cradle_of_colonialism }
+		provinces_to_highlight = {
+			OR = {
+				province_id = 116
+				province_id = 112
+				province_id = 104
+				province_id = 285
+				province_id = 852
+				province_id = 808
+				province_id = 1988
+
+			}
+		}
 		trigger = {
 			trading_bonus = {
 				trade_goods = glass
@@ -2163,12 +2206,17 @@ UFC_mission_slot_4_NGP = {
 		required_missions = { UFC_mission_army_no_business UFC_mission_rising_pragmatism }
 		trigger = {
 			stability = 3
-			absolutism = 50
+			OR = {
+				has_country_modifier = UFC_modifier_fake_secret_report
+				has_country_modifier = UFC_modifier_anarcho_capitalism
+				absolutism = 50
+			}
 		}
 		effect = {
 			add_country_modifier = {
 				name = UFC_modifier_brave_new_world
 				duration = -1
+				desc = UNTIL_THE_COLLAPSE
 			}
 			custom_tooltip = UFC_tooltip_brave_new_world
 		}
@@ -2178,6 +2226,12 @@ UFC_mission_slot_4_NGP = {
 		icon = yem_coffee
 		position = 15
 		required_missions = { UFC_mission_global_business_empire }
+		provinces_to_highlight = {
+			OR = {
+				area = tihama_al_yemen_area
+				area = ifat_area
+			}
+		}
 		trigger = {
 			tihama_al_yemen_area = {
 				type = all
@@ -2210,6 +2264,9 @@ UFC_mission_slot_4_NGP = {
 					duration = -1
 				}
 			}
+			increase_trade_goods_discovery = {
+				trade_goods = coffee
+			}
 		}
 	}
 
@@ -2217,16 +2274,32 @@ UFC_mission_slot_4_NGP = {
 		icon = yem_coffee
 		position = 16
 		required_missions = { UFC_mission_yemen_coffee }
+		provinces_to_highlight = {
+			is_capital = yes
+			owner = {
+				coffee = 2
+				has_discovered = 387
+				any_owned_province = {
+					has_building = plantations
+					trade_goods = coffee
+					NOT = { continent = africa }
+					NOT = { region = arabia_region }
+				}
+			}
+		}
 		trigger = {
-			not = {
-				any_country = {
-					coffee = 2
-					has_discovered = 387
-					any_owned_province = {
-						has_building = plantations
-						trade_goods = coffee
-						NOT = { continent = africa }
-						NOT = { region = arabia_region }
+			custom_trigger_tooltip = {
+				tooltip = UFC_tooltip_keep_the_secret_trigger
+				not = {
+					any_country = {
+						coffee = 2
+						has_discovered = 387
+						any_owned_province = {
+							has_building = plantations
+							trade_goods = coffee
+							NOT = { continent = africa }
+							NOT = { region = arabia_region }
+						}
 					}
 				}
 			}
@@ -2481,7 +2554,7 @@ UFC_mission_slot_5 = {
 	UFC_mission_livestock_and_grain = {
 		icon = mission_rice_field
 		position = 5
-		required_missions = { UFC_mission_mapuche }
+		required_missions = { UFC_mission_mapuche UFC_mission_cerro_de_potosi}
 		provinces_to_highlight = {
 			OR = {
 				trade_goods = livestock
@@ -2538,21 +2611,21 @@ UFC_mission_slot_5 = {
 					alliance_with = ROOT
 					has_opinion = {
 						who = ROOT
-						value = 180
+						value = 150
 					}
 				}
 				VEN = {
 					alliance_with = ROOT
 					has_opinion = {
 						who = ROOT
-						value = 180
+						value = 150
 					}
 				}
 				HSA = {
 					alliance_with = ROOT
 					has_opinion = {
 						who = ROOT
-						value = 180
+						value = 150
 					}
 				}
 				and = {
@@ -2576,7 +2649,7 @@ UFC_mission_slot_5 = {
 						alliance_with = ROOT
 						has_opinion = {
 							who = ROOT
-							value = 180
+							value = 150
 						}
 					}
 				}
@@ -2601,7 +2674,7 @@ UFC_mission_slot_5 = {
 						alliance_with = ROOT
 						has_opinion = {
 							who = ROOT
-							value = 180
+							value = 150
 						}
 					}
 				}
@@ -2626,7 +2699,7 @@ UFC_mission_slot_5 = {
 						alliance_with = ROOT
 						has_opinion = {
 							who = ROOT
-							value = 180
+							value = 150
 						}
 					}
 				}
@@ -2723,6 +2796,7 @@ UFC_mission_slot_5 = {
 		}
 		effect = {
 			country_event = { id = flavor_UFC.18 }
+			custom_tooltip = UFC_tooltip_become_secularism
 		}
 	}
 
@@ -2769,6 +2843,27 @@ UFC_mission_slot_5 = {
 				duration = -1
 			}
 			add_government_reform = UFC_the_secularism_reform
+			hidden_effect = {
+				385 = {
+					add_permanent_claim = root
+				}
+				409 = {
+					add_permanent_claim = root
+				}
+				2075 = {
+					add_permanent_claim = root
+				}
+				2095 = {
+					add_permanent_claim = root
+				}
+				2140 = {
+					add_permanent_claim = root
+				}
+				379 = {
+					add_permanent_claim = root
+				}
+			}
+			custom_tooltip = UFC_tooltip_enable_university_early
 		}
 	}
 }
@@ -2788,6 +2883,21 @@ UFC_mission_slot_5_NGP = {
 		icon = mission_rb_control_state_religion
 		position = 11
 		required_missions = { UFC_mission_secularism_flourished }
+		provinces_to_highlight = {
+			is_city = yes
+			or = {
+				province_id = 118
+				province_id = 151
+				province_id = 385
+				province_id = 409
+				province_id = 677
+				province_id = 2075
+				province_id = 2095
+				province_id = 2140
+				province_id = 846
+				province_id = 379
+			}
+		}
 		trigger = {
 			118 = {
 				owned_by = ROOT
@@ -2856,7 +2966,6 @@ UFC_mission_slot_5_NGP = {
 				area = hausa_area
 				area = west_africa_coast_area
 			}
-
 		}
 		trigger = {
 			hausa_area = {
@@ -2871,6 +2980,9 @@ UFC_mission_slot_5_NGP = {
 		effect = {
 			west_africa_coast_area = {
 				change_trade_goods = dyes
+			}
+			increase_trade_goods_discovery = {
+				trade_goods = dyes
 			}
 			custom_tooltip = UFC_tooltip_bengali_dye_not_allowed
 			set_global_flag = UFC_flag_bengali_dye_not_allowed

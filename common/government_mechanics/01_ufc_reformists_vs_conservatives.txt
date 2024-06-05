@@ -10,14 +10,14 @@ ufc_calibrate_the_clock = {
 			gui = egyptian_westernization_gov_mech
 			max = 100	#conservatives
 			min = 0	#Parliament direction
-			base_monthly_growth = 0.15
+			base_monthly_growth = 0.3
 			development_scaled_monthly_growth = -0.02
 			is_good = yes
 			show_before_interactions = yes
 			default = 50
 			scaled_modifier = {
 				modifier = {
-					estate_ufc_staff_loyalty_modifier = 0.3
+					estate_ufc_staff_loyalty_modifier = 0.15
 					monthly_mechanical_clock_adm_power = -0.3
 					monthly_mechanical_clock_dip_power = -0.3
 					monthly_mechanical_clock_mil_power = -0.3
@@ -28,7 +28,7 @@ ufc_calibrate_the_clock = {
 			reverse_scaled_modifier = {
 				modifier = {
 					stability_cost_modifier = -0.3
-					global_trade_goods_size = 0.3
+					global_trade_goods_size = 0.2
 					global_unrest = -3
 				}
 				start_value = 0
@@ -37,7 +37,7 @@ ufc_calibrate_the_clock = {
 			scaled_modifier = {
 				modifier = {
 					stability_cost_modifier = 0.3
-					global_trade_goods_size = -0.3
+					global_trade_goods_size = -0.2
 					global_unrest = 3
 					monthly_mechanical_clock_adm_power = -0.15
 					monthly_mechanical_clock_dip_power = -0.15
@@ -77,18 +77,6 @@ ufc_calibrate_the_clock = {
 						size = 8
 					}
 				}
-				random_owned_province = {
-					spawn_rebels = {
-						type = particularist_rebels
-						size = 4
-					}
-				}
-				random_owned_province = {
-					spawn_rebels = {
-						type = particularist_rebels
-						size = 4
-					}
-				}
 			}
 			cooldown_years = 5
 		}
@@ -101,7 +89,7 @@ ufc_calibrate_the_clock = {
 				dip_power_cost = 100
 			}
 			effect = {
-				dip_power_cost = -100
+				dip_power_cost = 100
 				add_years_of_income = -0.3
 				add_inflation = 2
 				if = {
@@ -127,7 +115,7 @@ ufc_calibrate_the_clock = {
 				mil_power_cost = 100
 			}
 			effect = {
-				mil_power_cost = -100
+				mil_power_cost = 100
 				add_yearly_manpower = -0.5
 				add_yearly_sailors = -0.5
 				kill_leader = {

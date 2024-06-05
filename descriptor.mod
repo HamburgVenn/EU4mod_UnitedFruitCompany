@@ -8,5 +8,5 @@ tags={
 }
 name="UFC"
 picture="thumbnail.png"
-supported_version="1.36.*"
+supported_version="1.37.*"
 remote_file_id="3233254830"

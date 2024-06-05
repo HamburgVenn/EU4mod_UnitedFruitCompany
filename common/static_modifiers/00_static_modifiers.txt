@@ -459,7 +459,6 @@ devastation = {
 	local_sailors_modifier = -2.0
 	local_hostile_movement_speed = -0.25
 	local_friendly_movement_speed = -0.25
-	monthly_mechanical_clock_mil_power = 0.1
 }
 
 prosperity = {
@@ -1125,7 +1124,7 @@ over_extension = {
 	mr_guilds_influence = 0.5
 	yearly_corruption = 0.5
 	ottoman_decadence_gain_modifier = 0.25
-	monthly_mechanical_clock_mil_power = -0.2
+	monthly_mechanical_clock_mil_power = -0.3
 }
 
 prestige = {
@@ -1365,7 +1364,7 @@ high_army_professionalism = {
 	siege_ability = 0.2
 	drill_decay_modifier = -0.5
 	allowed_samurai_fraction = 0.1
-	monthly_mechanical_clock_mil_power = -0.15
+	monthly_mechanical_clock_mil_power = -0.2
 }
 
 streltsy_modifier = {

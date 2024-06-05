@@ -1,0 +1,10 @@
+bookmark =
+{
+	name = "UFC_BOOKMARKS_NAME"
+	desc = "UFC_BOOKMARKS_DESC"
+	date = 1444.11.11
+	
+	country = GRA
+	easy_country = GRA
+	default = yes
+}

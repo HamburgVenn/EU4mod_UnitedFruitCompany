@@ -13,3 +13,43 @@ UFC_province_triggered_modifier_reconstruction = {
 	local_development_cost = -0.05
 	local_monthly_devastation = -1
 }
+
+MAY_obsidian_source = {
+	potential = {
+		owner = {
+			OR = {
+				technology_group = high_american
+				technology_group = mesoamerican
+				has_country_flag = UFC_flag_enable_obsidian
+			}
+		}
+	}
+
+	trigger = {
+		owner = {
+			OR = {
+				technology_group = high_american
+				technology_group = mesoamerican
+				custom_trigger_tooltip = {
+					tooltip = UFC_tooltip_new_application_of_obsidian
+					has_country_flag = UFC_flag_enable_obsidian
+				}
+
+			}
+		}
+	}
+
+	land_forcelimit = 1
+
+	#Province scope
+	on_activation = {
+		add_permanent_province_modifier = {
+			name = MAY_active_obsidian_source
+			duration = -1
+		}
+	}
+
+	on_deactivation = {
+		remove_province_modifier = MAY_active_obsidian_source
+	}
+}

@@ -49,4 +49,118 @@ ufc_diplomatic_actions_dumping = {
 		}
 		country_event = { id = flavor_UFC.62 }
 	}
+	ai_will_do = {
+		treasury = 10000
+	}
+}
+
+ufc_diplomatic_actions_establish_subsidiary_corporation = {
+	category = economy
+	require_acceptance = yes
+	is_visible = {
+		tag = UFC
+		mission_completed = UFC_mission_global_business_empire
+	}
+	is_allowed = {
+		custom_trigger_tooltip = {
+			tooltip = UFC_tooltip_most_province_trade_power
+			From = {
+				any_active_trade_node = {
+					has_most_province_trade_power = From
+				}
+			}
+		}
+	}
+
+	on_accept = {
+		From = {
+			save_global_event_target_as = ufc_target_subsidiary_corporation_event_country
+			random_active_trade_node = {
+				limit = {
+					has_most_province_trade_power = From
+				}
+				save_global_event_target_as = ufc_target_subsidiary_corporation_event_trade_node
+			}
+		}
+		country_event = { id = flavor_UFC.77 }
+	}
+
+	ai_acceptance = {
+		add_entry = {
+			name = UFC_FROM_ATTITUDE_TOWARDS_ROOT
+			limit = {
+				FROM = {
+					OR = {
+						ai_attitude = { who = ROOT attitude = attitude_allied }
+						ai_attitude = { who = ROOT attitude = attitude_friendly }
+					}
+				}
+			}
+			export_to_variable = {
+				which = ai_value
+				value = 50
+			}
+		}
+		add_entry = {
+			name = UFC_FROM_ATTITUDE_TOWARDS_ROOT
+			limit = {
+				FROM = {
+					ai_attitude = { who = ROOT attitude = attitude_threatened }
+				}
+			}
+			export_to_variable = {
+				which = ai_value
+				value = 80
+			}
+		}
+		add_entry = {
+			name = UFC_FROM_ATTITUDE_TOWARDS_ROOT
+			limit = {
+				FROM = {
+					OR = {
+						ai_attitude = { who = ROOT attitude = attitude_hostile }
+						ai_attitude = { who = ROOT attitude = attitude_rivalry }
+						ai_attitude = { who = ROOT attitude = attitude_outraged }
+					}
+				}
+			}
+			export_to_variable = {
+				which = ai_value
+				value = 50
+			}
+			multiply_variable = { which = ai_value value = -1 }
+		}
+		add_entry = {
+			name = UFC_ROOT_FROM_SAME_RELIGION
+			limit = {
+				has_matching_religion = From
+			}
+			export_to_variable = {
+				which = ai_value
+				value = 20
+			}
+		}
+		add_entry = {
+			name = OPINION
+			export_to_variable = {
+				which = ai_value
+				value = opinion
+				who = FROM
+				with = ROOT
+			}
+		}
+		add_entry = {
+			name = UFC_HAS_ENOUGH_MONEY
+			limit = {
+				treasury = 100000
+			}
+			export_to_variable = {
+				which = ai_value
+				value = 50
+			}
+		}
+	}
+	ai_will_do = {
+		treasury = 10000
+	}
 }

@@ -239,7 +239,7 @@ estate_ufc_staff_more_buildings = {
 }
 
 estate_ufc_staff_black_staffs = {
-	icon = privilege_technology
+	icon = privilege_discipline
 	max_absolutism = 5
 	influence = -0.1
 	loyalty = -0.1
@@ -326,7 +326,7 @@ estate_ufc_staff_salary = {
 #移植商人阶级特权 热带开发
 estate_ufc_staff_tropical_nation = {
 	icon = privilege_grant_new_world_charter
-	loyalty = 0.05
+	loyalty = 0
 	influence = 0.05
 	is_valid = {
 		OR = {
@@ -541,6 +541,64 @@ estate_ufc_staff_culture_pluralism = {
 		}
 		modifier = {
 			factor = 0.1
+			is_absolutism_active = yes
+		}
+	}
+}
+
+estate_ufc_staff_arm_surgeon_with_obsidian_scalpel = {
+	icon = privilege_macuahuitl
+	max_absolutism = 0
+	conditional_modifier = {
+		trigger = {
+			has_absolutism_reduction_for_estate_privileges = yes
+		}
+		modifier = { max_absolutism = 1 }
+	}
+	is_valid = {
+		tag = UFC
+		has_country_flag = UFC_flag_enable_obsidian
+	}
+	influence = 0.05
+	loyalty = 0.05
+	benefits = {
+	}
+	on_granted = {
+
+	}
+	conditional_modifier = {
+		trigger = {
+			has_country_flag = UFC_flag_enable_obsidian
+			not = { has_country_flag = UFC_flag_upgrade_obsidian_privilege }
+		}
+		modifier = {
+			infantry_cost = 0.05
+			infantry_power = 0.1
+			manpower_recovery_speed = 0.1
+		}
+	}
+	conditional_modifier = {
+		trigger = {
+			has_country_flag = UFC_flag_upgrade_obsidian_privilege
+		}
+		modifier = {
+			infantry_cost = 0.1
+			infantry_power = 0.2
+			manpower_recovery_speed = 0.2
+		}
+	}
+	conditional_modifier = {
+		trigger = {
+			has_country_flag = UFC_flag_obsidian_export
+		}
+		modifier = {
+			trade_steering = 0.05
+		}
+	}
+	ai_will_do = {
+		factor = 100
+		modifier = {
+			factor = 0
 			is_absolutism_active = yes
 		}
 	}

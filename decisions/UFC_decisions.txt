@@ -278,13 +278,27 @@ country_decisions = {
                 owned_by = root
                 is_city = yes
             }
-            has_spy_network_in = {
-                who = QTO
-                value = 40
+            if = {
+                limit = {
+                    QTO = {
+                        exists = yes
+                    }
+                }
+                has_spy_network_in = {
+                    who = QTO
+                    value = 40
+                }
             }
-            has_spy_network_in = {
-                who = CHM
-                value = 40
+            if = {
+                limit = {
+                        CHM = {
+                        exists = yes
+                    }
+                }
+                has_spy_network_in = {
+                    who = CHM
+                    value = 40
+                }
             }
             mil_tech = 7
         }
@@ -581,6 +595,100 @@ country_decisions = {
         effect = {
             country_event = { id = flavor_UFC.64 }
             clr_country_flag = UFC_flag_andes_chain_wait
+        }
+    }
+
+    UFC_decision_academic_department_expansion = {
+        potential = {
+            tag = UFC
+            mission_completed = UFC_mission_secularism_flourished
+            not = {
+                has_country_flag = UFC_flag_enable_early_university
+            }
+            not = {
+                adm_tech = 17
+            }
+        }
+        provinces_to_highlight = {
+
+        }
+        allow = {
+            not = {
+                adm_tech = 17
+            }
+        }
+        effect = {
+            custom_tooltip = UFC_tooltip_enable_early_university
+            set_country_flag = UFC_flag_enable_early_university
+        }
+    }
+    UFC_decision_stop_academic_department_expansion = {
+        potential = {
+            tag = UFC
+            mission_completed = UFC_mission_secularism_flourished
+            has_country_flag = UFC_flag_enable_early_university
+            not = {
+                adm_tech = 17
+            }
+        }
+        provinces_to_highlight = {
+
+        }
+        allow = {
+            not = {
+                adm_tech = 17
+            }
+        }
+        effect = {
+            custom_tooltip = UFC_tooltip_stop_early_university
+            clr_country_flag = UFC_flag_enable_early_university
+        }
+    }
+
+    UFC_decision_start_the_expo_preparation = {
+        potential = {
+            tag = UFC
+            has_country_flag = UFC_flag_enable_exposition
+            not = {
+                has_country_flag = UFC_flag_start_the_preparation_of_exposition
+            }
+        }
+        provinces_to_highlight = {
+        }
+        allow = {
+            treasury = 50000
+            manpower = 50
+        }
+        effect = {
+            custom_tooltip = UFC_tooltip_decision_start_the_expo_preparation
+            set_country_flag = UFC_flag_start_the_preparation_of_exposition
+            hidden_effect = {
+                country_event = { id = flavor_UFC.7505 days = 90 random = 90}
+            }
+            add_treasury = -50000
+            add_manpower = -50
+        }
+    }
+
+    UFC_decision_start_the_expo = {
+        potential = {
+            tag = UFC
+            has_country_flag = UFC_flag_enable_exposition_start
+        }
+        provinces_to_highlight = {
+        }
+        allow = {
+            is_at_war = no
+        }
+        effect = {
+            custom_tooltip = UFC_tooltip_decision_start_the_expo
+            clr_country_flag = UFC_flag_enable_exposition_start
+            add_country_modifier = {
+                name = UFC_modifier_cannot_declare_war
+                duration = -1
+                desc = UNTIL_THE_END_OF_EXPO
+            }
+            country_event = { id = flavor_UFC.7514 }
         }
     }
 }

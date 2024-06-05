@@ -1,0 +1,7 @@
+spriteTypes = {
+	spriteType = {
+		name = "GFX_holy_order_colopionion"
+		texturefile = "gfx/interface/holy_orders/colopionion.dds"
+		noOfFrames = 4
+	}
+}

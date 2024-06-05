@@ -55,6 +55,8 @@ estate_ufc_staff = {
 		estate_ufc_staff_indebted_to_burghers
 		estate_ufc_staff_salary
 		estate_ufc_staff_culture_pluralism
+		estate_ufc_staff_arm_surgeon_with_obsidian_scalpel
+		estate_ufc_staff_black_staffs
 	}
 
 	agendas = {

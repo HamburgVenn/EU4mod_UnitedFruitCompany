@@ -68,7 +68,7 @@ UFC_modifier_cultural_tolerance = {
 
 UFC_modifier_american_hegemony = {
 	core_creation = -0.05
-	administrative_efficiency = 0.05
+	years_of_nationalism = -5
 	global_trade_goods_size_modifier = 0.1
 	trade_efficiency = 0.1
 	global_manpower_modifier = 0.1
@@ -239,7 +239,7 @@ UFC_modifier_hegemon_mil = {
 }
 
 UFC_modifier_erikson = {
-	colonist_placement_chance = 0.1
+	colonist_placement_chance = 0.05
 	auto_explore_adjacent_to_colony = yes
 	colony_development_boost = 1
 }
@@ -287,6 +287,7 @@ UFC_modifier_staff_hierarchy_egalitarianism = {
 	years_of_nationalism = -5
 	administrative_efficiency = 0.025
 	estate_ufc_staff_loyalty_modifier = 0.1
+	monthly_mechanical_clock_dip_power = -0.1
 }
 
 UFC_modifier_staff_hierarchy_competion = {
@@ -301,10 +302,11 @@ UFC_modifier_staff_hierarchy_competion = {
 UFC_modifier_staff_hierarchy_hierarchical = {
 	global_unrest = 2
 	years_of_nationalism = 5
-	land_morale = 0.1
-	recover_army_morale_speed = 0.15
+	land_morale = 0.2
+	recover_army_morale_speed = 0.3
 	infantry_power = 0.1
 	estate_ufc_staff_loyalty_modifier = -0.1
+	monthly_mechanical_clock_dip_power = 0.1
 }
 
 UFC_modifier_staff_hierarchy_cooldown = {
@@ -362,7 +364,7 @@ UFC_modifier_staff_culture_pluralism = {
 UFC_modifier_rereconquest_drill_reform = {
 	global_supply_limit_modifier = 0.15
 	military_tactics = 0.1
-	drill_decay_modifier = -0.2
+	drill_decay_modifier = -0.5
 }
 
 UFC_modifier_rereconquest_artillery_reform = {
@@ -372,7 +374,7 @@ UFC_modifier_rereconquest_artillery_reform = {
 }
 
 UFC_modifier_rereconquest_marine_reform = {
-	discipline = 0.05
+	drill_gain_modifier = 1
 	fire_damage_received = -0.1
 	shock_damage_received = -0.1
 	is_marine_modifier = yes
@@ -385,9 +387,8 @@ UFC_modifier_rereconquest_mercenary_reform = {
 }
 
 UFC_modifier_rereconquest_tercio_reform = {
-	discipline = 0.05
+	drill_gain_modifier = 1
 	fire_damage_received = -0.15
-	allowed_tercio_fraction = 0.25
 	is_tercio_modifier = yes
 }
 
@@ -516,4 +517,141 @@ UFC_modifier_blitzkrieg = {
 
 UFC_modifier_blitzkrieg_aftermath = {
 	ignore_coring_distance = yes
+}
+
+UFC_modifier_potato = {
+	local_manpower = 0.75
+}
+
+UFC_modifier_into_the_rainforest = {
+	land_attrition = -0.3
+	war_exhaustion = -0.05
+}
+
+UFC_revolution_buff = {
+	land_forcelimit = 50
+	global_tax_income = 600
+}
+
+UFC_modifier_iroquois_war = {
+	siege_ability = 0.2
+	diplomatic_reputation = -1
+}
+
+UFC_modifier_rereconquest_ae = {
+	assault_fort_ability = 0.6
+	morale_damage = 0.15
+	ae_impact = -0.3
+	province_warscore_cost = -0.3
+}
+
+UFC_modifier_fake_secret_report = {
+	monthly_mechanical_clock_adm_power = -1
+	monthly_mechanical_clock_dip_power = -1
+	monthly_mechanical_clock_mil_power = -1
+	global_trade_goods_size = 0.2
+	global_unrest = -3
+}
+
+UFC_modifier_anarcho_capitalism = {
+	monthly_mechanical_reform_power = -10
+	global_unrest = -3
+}
+
+UFC_modifier_effeciency_building = {
+	build_time = -0.25
+	build_cost = -0.1
+}
+
+UFC_modifier_we_are_the_world = {
+	ae_impact = -0.1
+	years_of_nationalism = -5
+}
+
+UFC_modifier_pokarekare_ana = {
+	land_morale = 0.1
+	naval_morale = 0.1
+}
+
+UFC_modifier_when_money_comes_marching_home = {
+	trade_steering = 0.1
+	trade_efficiency = 0.1
+}
+
+UFC_modifier_cannot_declare_war = {
+	can_not_declare_war = yes
+	diplomatic_reputation = 2
+}
+
+UFC_modifier_origin_of_guitar = {
+	prestige = 0.5
+	land_morale = 0.025
+}
+
+UFC_modidier_the_victory_of_rationalism = {
+	innovativeness_gain = 0.2
+	idea_cost = -0.1
+	technology_cost = -0.1
+}
+
+UFC_modifier_quixote_adventure = {
+	army_tradition_decay = -0.01
+	leader_land_shock = 1
+}
+
+UFC_modifier_africa_grain = {
+	development_cost = -0.15
+	global_manpower_modifier = 0.15
+}
+
+UFC_modifier_awarded_garden_art = {
+	monthly_splendor = 1
+	diplomatic_reputation = 0.5
+	local_development_cost = -0.05
+}
+
+UFC_modifier_grand_buildings = {
+	great_project_upgrade_time = -0.1
+	great_project_upgrade_time = -0.05
+}
+
+UFC_modifier_awarded_textile_industry = {
+	trade_value_modifier = 0.1
+	local_development_cost = -0.05
+}
+
+UFC_modifier_big_guns = {
+	heavy_ship_number_of_cannons_modifier = 0.1
+	heavy_ship_hull_size_modifier = 0.1
+}
+
+UFC_modifier_import_indiaman = {
+	has_voc_indiamen = yes
+	allowed_voc_indiamen_fraction = 0.3
+	global_ship_trade_power = 0.33
+}
+
+UFC_modifier_import_galleass = {
+	has_galleass = yes
+	allowed_galleass_fraction = 0.3
+	global_naval_engagement_modifier = 0.1
+}
+
+UFC_modifier_road_improvement = {
+	siege_ability = 0.1
+	artillery_levels_available_vs_fort = 1
+	artillery_level_modifier = 1
+}
+
+UFC_modifier_the_end_of_expo = {
+	idea_cost = -0.05
+	technology_cost = -0.05
+	ae_impact = -0.05
+	province_warscore_cost = -0.05
+}
+
+UFC_modifier_sky_lawgiver = {
+	advisor_cost = -0.25
+	advisor_pool = 2
+	free_policy = 1
 }

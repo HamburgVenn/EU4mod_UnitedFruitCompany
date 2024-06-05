@@ -3,3 +3,9 @@ UFC_rereconquest = {
 	power = 1
 	decay = no 
 }
+
+UFC_diplomacy_influence = {
+	max = 50
+	power = 15
+	yearly_decay = 1
+}

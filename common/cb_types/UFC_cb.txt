@@ -19,6 +19,11 @@ cb_UFC_open_to_trade = {
 				}
 				is_permanent_claim = root
 			}
+			NOT = {
+				capital_scope = {
+					region = australia_region
+				}
+			}
 		}
 	}
 

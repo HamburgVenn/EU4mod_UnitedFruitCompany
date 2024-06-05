@@ -1,0 +1,537 @@
+namespace = flavor_UFC
+#REVOLUTION!
+country_event = {
+	id = flavor_UFC.8900
+	title = flavor_UFC.8900.title
+	desc = flavor_UFC.8900.desc
+	picture = muslimgfx_REVOLUTION_eventPicture
+	is_triggered_only = yes
+	trigger = {
+
+	}
+	option = {
+		name = flavor_UFC.8900.a
+		custom_tooltip = UFC_tooltip_cien_anos_de_soledad
+	}
+	after = {
+		country_event = { id = flavor_UFC.8901 days = 90 random = 90 }
+		country_event = { id = flavor_UFC.8903 days = 30 random = 30 }
+	}
+}
+
+country_event = {
+	id = flavor_UFC.8901
+	title = flavor_UFC.8901.title
+	desc = flavor_UFC.8901.desc
+	picture = muslimgfx_REVOLUTION_eventPicture
+	is_triggered_only = yes
+	goto = 778
+	trigger = {
+
+	}
+	option = {
+		name = flavor_UFC.8901.a
+		country_event = { id = flavor_UFC.8902 days = 1 }
+	}
+}
+
+country_event = {
+	id = flavor_UFC.8902
+	title = flavor_UFC.8902.title
+	desc = flavor_UFC.8902.desc
+	picture = indiangfx_REVOLUTION_eventPicture
+	is_triggered_only = yes
+	goto = 778
+	option = {
+		name = flavor_UFC.8902.a
+		custom_tooltip = UFC_tooltip_revolution_begin
+		buenos_aires_area = {
+			add_core = CUA
+		}
+		release = CUA
+		CUA = {
+			override_country_name = UFC_string_CUA
+			define_ruler = {
+				name = "Juan Posadas"
+				adm = 4
+				dip = 5
+				mil = 3
+				age = 29
+			}
+			hidden_effect = {
+				set_capital = 778
+				change_government = republic
+				change_religion = ROOT
+				add_country_modifier = {
+					name = UFC_revolution_buff
+					duration = 7300
+					hidden = yes
+				}
+				capital_scope = {
+					build_to_forcelimit = {
+						infantry = 0.5
+						cavalry = 0.1
+						artillery = 0.5
+					}
+				}
+			}
+		}
+	}
+	after = {
+		country_event = { id = flavor_UFC.8910 days = 30 random = 30 }
+	}
+}
+
+country_event = {
+	id = flavor_UFC.8903
+	title = flavor_UFC.8903.title
+	desc = flavor_UFC.8903.desc
+	picture = indiangfx_PLAGUE_eventPicture
+	is_triggered_only = yes
+	goto = 829
+	option = {
+		name = flavor_UFC.8903.a
+		coquivacoa_area = {
+			add_core = MCA
+		}
+		bogota_area = {
+			add_core = MCA
+		}
+		release = MCA
+		MCA = {
+			override_country_name = UFC_string_MCA
+			define_ruler = {
+				name = "Jose Arcadil II"
+				adm = 3
+				dip = 1
+				mil = 4
+				age = 37
+			}
+			hidden_effect = {
+				set_capital = 829
+				change_government = republic
+				change_religion = ROOT
+				add_country_modifier = {
+					name = UFC_revolution_buff
+					duration = 7300
+					hidden = yes
+				}
+				capital_scope = {
+					build_to_forcelimit = {
+						infantry = 0.5
+						cavalry = 0.1
+						artillery = 0.5
+					}
+				}
+			}
+		}
+	}
+}
+
+country_event = {
+	id = flavor_UFC.8904
+	title = flavor_UFC.8904.title
+	desc = flavor_UFC.8904.desc
+	picture = CARIBBEAN_PIRATE_FORT_eventPicture
+	is_triggered_only = yes
+	goto = 490
+	fire_only_once = yes
+	option = {
+		name = flavor_UFC.8904.a
+		hidden_effect = {
+			2805 = {
+				remove_core = CAB
+			}
+			741 = {
+				remove_core = CAB
+			}
+			2803 = {
+				remove_core = CAB
+			}
+		}
+		490 = {
+			change_province_name = "Ciudad Trujillo"
+		}
+		hispaniola_area = {
+			add_core = CAB
+		}
+		dominica_area = {
+			add_core = CAB
+		}
+		release = CAB
+		CAB = {
+			override_country_name = UFC_string_CAB
+			define_ruler = {
+				name = "Rafael Trujillo"
+				adm = 3
+				dip = 0
+				mil = 5
+				age = 42
+			}
+			add_ruler_personality = legendary_pirate_personality
+			hidden_effect = {
+				set_capital = 490
+				change_government = republic
+				add_government_reform = pirate_republic_reform
+				change_religion = ROOT
+				add_country_modifier = {
+					name = UFC_revolution_buff
+					duration = 7300
+					hidden = yes
+				}
+				capital_scope = {
+					build_to_forcelimit = {
+						infantry = 0.5
+						cavalry = 0.1
+						artillery = 0.5
+					}
+				}
+			}
+		}
+	}
+	after = {
+		country_event = { id = flavor_UFC.8905 days = 30 random = 30 }
+	}
+}
+
+country_event = {
+	id = flavor_UFC.8905
+	title = flavor_UFC.8905.title
+	desc = flavor_UFC.8905.desc
+	picture = muslimgfx_REFORM_eventPicture
+	is_triggered_only = yes
+	goto = 965
+	fire_only_once = yes
+	option = {
+		name = flavor_UFC.8905.a
+		hidden_effect = {
+			upper_acadia_area = {
+				remove_core = GRA
+			}
+		}
+		new_york_area = {
+			add_core = GRA
+		}
+		release = GRA
+		GRA = {
+			define_ruler = {
+				name = "Yusuf"
+				dynasty = "Nasrid"
+				adm = 6
+				dip = 5
+				mil = 2
+				age = 28
+			}
+			add_ruler_personality = great_engineer_personality
+			add_ruler_personality = scholar_personality
+			add_ruler_personality = reformist_personality
+			hidden_effect = {
+				set_capital = 965
+				change_government = monarchy
+				change_religion = ROOT
+				add_country_modifier = {
+					name = UFC_revolution_buff
+					duration = 7300
+					hidden = yes
+				}
+				capital_scope = {
+					build_to_forcelimit = {
+						infantry = 0.5
+						cavalry = 0.1
+						artillery = 0.5
+					}
+				}
+			}
+		}
+	}
+	after = {
+		country_event = { id = flavor_UFC.8906 days = 10 random = 10 }
+	}
+}
+
+country_event = {
+	id = flavor_UFC.8906
+	title = flavor_UFC.8906.title
+	desc = flavor_UFC.8906.desc
+	picture = END_OF_TIME_eventPicture
+	is_triggered_only = yes
+	goto = 846
+	fire_only_once = yes
+	option = {
+		name = flavor_UFC.8906.a
+		yucatan_area = {
+			add_core = XIU
+		}
+		east_yucatan_area = {
+			add_core = XIU
+		}
+		release = XIU
+		XIU = {
+			override_country_name = UFC_string_XIU
+			hidden_effect = {
+				set_capital = 846
+				change_government = theocracy
+				change_religion = mesoamerican_religion
+				add_country_modifier = {
+					name = UFC_revolution_buff
+					duration = 7300
+					hidden = yes
+				}
+				capital_scope = {
+					build_to_forcelimit = {
+						infantry = 0.5
+						cavalry = 0.1
+						artillery = 0.5
+					}
+				}
+			}
+		}
+	}
+	after = {
+		country_event = { id = flavor_UFC.8907 days = 30 random = 30 }
+	}
+}
+
+country_event = {
+	id = flavor_UFC.8907
+	title = flavor_UFC.8907.title
+	desc = flavor_UFC.8907.desc
+	picture = muslimgfx_DEBATE_REPUBLICAN_eventPicture
+	is_triggered_only = yes
+	goto = 935
+	fire_only_once = yes
+	option = {
+		name = flavor_UFC.8907.a
+		define_ruler = {
+			name = "The Interregnum"
+			adm = 0
+			dip = 0
+			mil = 0
+		}
+		custom_tooltip = UFC_tooltip_the_interregnum
+	}
+	after = {
+		country_event = { id = flavor_UFC.8908 days = 10 random = 10 }
+	}
+}
+
+country_event = {
+	id = flavor_UFC.8908
+	title = flavor_UFC.8908.title
+	desc = flavor_UFC.8908.desc
+	picture = iberian_ECONOMY_eventPicture
+	is_triggered_only = yes
+	goto = 223
+	fire_only_once = yes
+	option = {
+		name = flavor_UFC.8908.a
+		free_vassal = ADU
+		hidden_effect = {
+			iberia_region = {
+				remove_core = CAS
+				remove_core = ARA
+			}
+			galicia_area = {
+				add_core = CAS
+			}
+			leon_area = {
+				add_core = CAS
+			}
+			asturias_area = {
+				add_core = CAS
+			}
+			basque_country = {
+				add_core = CAS
+			}
+			castille_area = {
+				add_core = CAS
+			}
+			aragon_area = {
+				add_core = ARA
+			}
+			catalonia_area = {
+				add_core = ARA
+			}
+			valencia_area = {
+				add_core = ARA
+			}
+			baleares_area = {
+				add_core = ARA
+			}
+		}
+		ADU = {
+			release = CAS
+			release = ARA
+			release = POR
+		}
+		CAS = {
+			override_country_name = UFC_string_CAS
+			hidden_effect = {
+				set_capital = 217
+				change_government = monarchy
+				change_religion = catholic
+				capital_scope = {
+					build_to_forcelimit = {
+						infantry = 0.5
+						cavalry = 0.1
+						artillery = 0.5
+					}
+				}
+			}
+		}
+		POR = {
+			override_country_name = UFC_string_POR
+			hidden_effect = {
+				set_capital = 227
+				change_government = republic
+				change_religion = catholic
+				capital_scope = {
+					build_to_forcelimit = {
+						infantry = 0.5
+						cavalry = 0.1
+						artillery = 0.5
+					}
+				}
+			}
+		}
+		ARA = {
+			override_country_name = UFC_string_ARA
+			hidden_effect = {
+				set_capital = 213
+				change_government = republic
+				change_religion = root
+				capital_scope = {
+					build_to_forcelimit = {
+						infantry = 0.5
+						cavalry = 0.1
+						artillery = 0.5
+					}
+				}
+				define_ruler = {
+					name = "People's Committee"
+					adm = 3
+					dip = 3
+					mil = 3
+				}
+				add_ruler_personality = immortal_personality
+			}
+		}
+		custom_tooltip = UFC_tooltip_free_andalucia
+	}
+	after = {
+		country_event = { id = flavor_UFC.8909 days = 30 random = 30 }
+	}
+}
+
+country_event = {
+	id = flavor_UFC.8909
+	title = flavor_UFC.8909.title
+	desc = flavor_UFC.8909.desc
+	picture = indiangfx_ECONOMY_eventPicture
+	is_triggered_only = yes
+	goto = 852
+	fire_only_once = yes
+	option = {
+		name = flavor_UFC.8909.a
+		hidden_effect = {
+			mexico_region = {
+				remove_core = AZT
+			}
+			central_america_region = {
+				remove_core = AZT
+			}
+			rio_grande_region = {
+				remove_core = AZT
+			}
+		}
+		mexico_area = {
+			add_core = AZT
+		}
+		2645 = {
+			add_core = AZT
+		}
+		release = AZT
+		AZT = {
+			override_country_name = UFC_string_AZT
+			hidden_effect = {
+				set_capital = 852
+				change_government = republic
+				add_government_reform = UFC_government_republic
+				change_religion = root
+				add_country_modifier = {
+					name = UFC_revolution_buff
+					duration = 7300
+					hidden = yes
+				}
+				capital_scope = {
+					build_to_forcelimit = {
+						infantry = 0.5
+						cavalry = 0.1
+						artillery = 0.5
+					}
+				}
+			}
+			define_ruler = {
+				name = "The Interregnum"
+				adm = 0
+				dip = 0
+				mil = 0
+			}
+		}
+	}
+}
+
+country_event = {
+	id = flavor_UFC.8910
+	title = flavor_UFC.8910.title
+	desc = flavor_UFC.8910.desc
+	picture = REVOLT_eventPicture
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = flavor_UFC.8910.a
+		hidden_effect = {
+			every_owned_province = {
+				add_local_autonomy = 25
+				add_devastation = 10
+			}
+		}
+		custom_tooltip = UFC_tooltip_lose_control
+	}
+	after = {
+		country_event = { id = flavor_UFC.8904 days = 30 random = 30 }
+	}
+}
+
+country_event = {
+	id = flavor_UFC.8911
+	title = flavor_UFC.8911.title
+	desc = flavor_UFC.8911.desc
+	picture = ADVISOR_eventPicture
+	is_triggered_only = yes
+	fire_only_once = yes
+	goto = 1247
+	immediate = {
+		hidden_effect = {
+			1247 = {
+				owner = {
+					save_event_target_as = ufc_target_corsica_owner
+				}
+			}
+		}
+	}
+	option = {
+		name = flavor_UFC.8911.a
+		CUA = {
+			define_advisor = {
+				type = army_reformer
+				name = "Francesco Buonaparte"
+				skill = 3
+				culture = sardinian
+				religion = catholic
+				cost_multiplier = 0.2
+				age = 30
+			}
+		}
+	}
+}

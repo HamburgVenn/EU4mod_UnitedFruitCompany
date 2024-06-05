@@ -399,4 +399,30 @@ country_event = {
 	}
 }
 
+# Triangle Trade prices.1
+country_event = {
+	id = flavor_UFC.7014
+	title = prices.1.t
+	desc = prices.1.d
+	picture = TRADE_GOODS_PLANTATION_GOODS_IN_WAREHOUSE_eventPicture
+	fire_only_once = yes
+	major = yes
+	is_triggered_only = yes
+	trigger = {
+		NOT = { has_global_flag = triangle_happened }
+	}
+
+	option = {
+		name = prices.1.a
+		change_price = {
+			trade_goods = slaves
+			key = TRIANGLE_TRADE
+			value = 0.5
+			duration = -1
+		}
+		add_years_of_income  = 0.25
+		add_prestige = 20
+		set_global_flag = triangle_happened
+	}
+}
 
