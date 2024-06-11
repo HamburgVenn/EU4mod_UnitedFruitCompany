@@ -2205,6 +2205,18 @@ country_event = {
 				name = diamond_district
 				duration = -1
 			}
+			if = {
+				limit = {
+					province_id = 825
+					UFC = {
+						has_country_flag = UFC_flag_bogota_gem_sus
+					}
+				}
+				set_global_flag = brazilian_gems_happened
+				UFC = {
+					clr_country_flag = UFC_flag_bogota_gem_sus
+				}
+			}
 		}
 		change_price = {
 			trade_goods = gems

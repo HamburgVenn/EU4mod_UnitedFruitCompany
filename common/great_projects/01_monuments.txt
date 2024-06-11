@@ -1291,8 +1291,16 @@ forbidden_city = {
 
 	#can we build it?
 	build_trigger = {
-		owner = {
-			has_reform = celestial_empire
+		OR = {
+			owner = {
+				has_reform = celestial_empire
+			}
+			custom_trigger_tooltip = {
+				tooltip = UFC_tooltip_enable_palace_display
+				owner = {
+					has_country_flag = UFC_flag_enable_palace
+				}
+			}
 		}
 	}
 
@@ -1308,15 +1316,31 @@ forbidden_city = {
 
 	#can our country use it?
 	can_use_modifiers_trigger = {
-		owner = {
-			has_reform = celestial_empire
+		OR = {
+			owner = {
+				has_reform = celestial_empire
+			}
+			custom_trigger_tooltip = {
+				tooltip = UFC_tooltip_enable_palace_display
+				owner = {
+					has_country_flag = UFC_flag_enable_palace
+				}
+			}
 		}
 	}
 
 	#can our country upgrade it?
 	can_upgrade_trigger = {
-		owner = {
-			has_reform = celestial_empire
+		OR = {
+			owner = {
+				has_reform = celestial_empire
+			}
+			custom_trigger_tooltip = {
+				tooltip = UFC_tooltip_enable_palace_display
+				owner = {
+					has_country_flag = UFC_flag_enable_palace
+				}
+			}
 		}
 	}
 
@@ -10276,7 +10300,10 @@ kaaba = {
 		}
 		conditional_modifier = {
 			trigger = {
-				owner = { mission_completed = YEM_islamic_ambitions }
+				OR = {
+					owner = { mission_completed = YEM_islamic_ambitions }
+					owner = { mission_completed = UFC_mission_market_penetration }
+				}
 			}
 			modifier = {
 				global_prov_trade_power_modifier = 0.1
@@ -10748,7 +10775,17 @@ imperial_city_hue = {
 
 	#can we build it?
 	build_trigger = {
-		province_is_buddhist_or_accepts_buddhism = yes
+		OR = {
+			province_is_buddhist_or_accepts_buddhism = yes
+			owner = {
+				custom_trigger_tooltip = {
+					tooltip =  UFC_tooltip_enable_palace_display
+					or = {
+						has_country_flag = UFC_flag_enable_palace
+					}
+				}
+			}
+		}
 	}
 
 	#what to do when it's built
@@ -10763,12 +10800,32 @@ imperial_city_hue = {
 
 	#can our country use it?
 	can_use_modifiers_trigger = {
-		province_is_buddhist_or_accepts_buddhism = yes
+		OR = {
+			province_is_buddhist_or_accepts_buddhism = yes
+			owner = {
+				custom_trigger_tooltip = {
+					tooltip =  UFC_tooltip_enable_palace_display
+					or = {
+						has_country_flag = UFC_flag_enable_palace
+					}
+				}
+			}
+		}
 	}
 
 	#can our country upgrade it?
 	can_upgrade_trigger = {
-		province_is_buddhist_or_accepts_buddhism = yes
+		OR = {
+			province_is_buddhist_or_accepts_buddhism = yes
+			owner = {
+				custom_trigger_tooltip = {
+					tooltip =  UFC_tooltip_enable_palace_display
+					or = {
+						has_country_flag = UFC_flag_enable_palace
+					}
+				}
+			}
+		}
 	}
 
 	#can our country keep it or is it destroyed when we get hold of it?
@@ -12865,10 +12922,17 @@ gomateshwara_statue = {
 			}
 		}
 		else = {
-			province_is_or_accepts_religion_group = {
-				religion_group = dharmic
+			or = {
+				province_is_or_accepts_religion_group = {
+					religion_group = dharmic
+				}
+				owner = {
+					religion = secularism
+					has_harmonized_with = dharmic
+				}
 			}
 		}
+
 	}
 
 	on_built = {
@@ -12894,8 +12958,14 @@ gomateshwara_statue = {
 			}
 		}
 		else = {
-			province_is_or_accepts_religion_group = {
-				religion_group = dharmic
+			or = {
+				province_is_or_accepts_religion_group = {
+					religion_group = dharmic
+				}
+				owner = {
+					religion = secularism
+					has_harmonized_with = dharmic
+				}
 			}
 		}
 	}
@@ -12917,8 +12987,14 @@ gomateshwara_statue = {
 			}
 		}
 		else = {
-			province_is_or_accepts_religion_group = {
-				religion_group = dharmic
+			or = {
+				province_is_or_accepts_religion_group = {
+					religion_group = dharmic
+				}
+				owner = {
+					religion = secularism
+					has_harmonized_with = dharmic
+				}
 			}
 		}
 	}
@@ -13158,7 +13234,10 @@ gyeongbok_palace = {
 			owner = {
 				custom_trigger_tooltip = {
 					tooltip = enable_korean_palace_tt
-					has_country_flag = enable_korean_palace_flag
+					or = {
+						has_country_flag = UFC_flag_enable_palace
+						has_country_flag = enable_korean_palace_flag
+					}
 				}
 			}
 		}
@@ -13188,7 +13267,10 @@ gyeongbok_palace = {
 			owner = {
 				custom_trigger_tooltip = {
 					tooltip = enable_korean_palace_tt
-					has_country_flag = enable_korean_palace_flag
+					or = {
+						has_country_flag = UFC_flag_enable_palace
+						has_country_flag = enable_korean_palace_flag
+					}
 				}
 			}
 		}	
@@ -13212,7 +13294,10 @@ gyeongbok_palace = {
 			owner = {
 				custom_trigger_tooltip = {
 					tooltip = enable_korean_palace_tt
-					has_country_flag = enable_korean_palace_flag
+					or = {
+						has_country_flag = UFC_flag_enable_palace
+						has_country_flag = enable_korean_palace_flag
+					}
 				}
 			}
 		}	
@@ -13274,6 +13359,7 @@ gyeongbok_palace = {
 		country_modifiers = {
 			advisor_cost = -0.1
 			monarch_admin_power = 1
+			candidate_random_bonus = 1
 			global_autonomy = -0.05
 		}
 		on_upgraded = {
@@ -13296,6 +13382,7 @@ gyeongbok_palace = {
 		country_modifiers = {
 			advisor_cost = -0.2
 			monarch_admin_power = 2
+			candidate_random_bonus = 2
 			global_autonomy = -0.1	
 		}
 		on_upgraded = {
@@ -14084,8 +14171,13 @@ kilwa_city = {
 	type = monument
 
 	build_trigger = {
-		province_is_or_accepts_religion_group = {
-			religion_group = muslim
+		OR = {
+			province_is_or_accepts_religion_group = {
+				religion_group = muslim
+			}
+			owner = {
+				mission_completed = UFC_mission_pearl_of_kilwa
+			}
 		}
 	}
 
@@ -14096,14 +14188,24 @@ kilwa_city = {
 	}
 
 	can_use_modifiers_trigger = {
-		province_is_or_accepts_religion_group = {
-			religion_group = muslim
+		OR = {
+			province_is_or_accepts_religion_group = {
+				religion_group = muslim
+			}
+			owner = {
+				mission_completed = UFC_mission_pearl_of_kilwa
+			}
 		}
 	}
 
 	can_upgrade_trigger = {
-		province_is_or_accepts_religion_group = {
-			religion_group = muslim
+		OR = {
+			province_is_or_accepts_religion_group = {
+				religion_group = muslim
+			}
+			owner = {
+				mission_completed = UFC_mission_pearl_of_kilwa
+			}
 		}
 	}
 
@@ -15104,7 +15206,7 @@ qhapaq_nam = {
 				owner = {
 					OR = {
 						mission_completed = INC_qhapaq_nam
-						mission_completed = UFC_mission_cerro_de_potosi
+						mission_completed = UFC_mission_market_penetration
 					}
 				}
 			}
@@ -20237,12 +20339,17 @@ nizwa_fort = {
 		}
 		conditional_modifier = {
 			trigger = {
-				owner = { 
-					OR = {
-						tag = HSN
-						was_tag = HSN
+				OR = {
+					owner = {
+						OR = {
+							tag = HSN
+							was_tag = HSN
+						}
+						mission_completed = hsn_monopolize_gulf_trade
 					}
-					mission_completed = hsn_monopolize_gulf_trade
+					owner = {
+						mission_completed = UFC_mission_market_penetration
+					}
 				}
 			}
 			modifier = { 

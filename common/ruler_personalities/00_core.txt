@@ -3572,7 +3572,7 @@ reformist_personality = {
 				ADM = 6
 			}
 			modifier = {
-				factor = 10
+				factor = 100
 				has_reform = UFC_consolidation_of_president_power_reform
 			}
 		}
@@ -3608,7 +3608,7 @@ reformist_personality = {
 	
 	chance = {
 		modifier = {
-			factor = 10
+			factor = 100
 			has_reform = UFC_consolidation_of_president_power_reform
 		}
 	}

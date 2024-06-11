@@ -1,0 +1,130 @@
+UFC_scripted_weapon_test_team_province_effect = {
+    if = {
+        limit = {
+            has_terrain = woods
+        }
+        UFC = {
+            set_country_flag = UFC_weapon_test_team_woods
+        }
+    }
+    if = {
+        limit = {
+            has_terrain = steppe
+        }
+        UFC = {
+            set_country_flag = UFC_weapon_test_team_steppe
+        }
+    }
+    if = {
+        limit = {
+            has_terrain = savannah
+        }
+        UFC = {
+            set_country_flag = UFC_weapon_test_team_savannah
+        }
+    }
+    if = {
+        limit = {
+            has_terrain = mountain
+        }
+        UFC = {
+            set_country_flag = UFC_weapon_test_team_mountain
+        }
+    }
+    if = {
+        limit = {
+            has_terrain = marsh
+        }
+        UFC = {
+            set_country_flag = UFC_weapon_test_team_marsh
+        }
+    }
+    if = {
+        limit = {
+            has_terrain = jungle
+        }
+        UFC = {
+            set_country_flag = UFC_weapon_test_team_jungle
+        }
+    }
+    if = {
+        limit = {
+            has_terrain = highlands
+        }
+        UFC = {
+            set_country_flag = UFC_weapon_test_team_highlands
+        }
+    }
+    if = {
+        limit = {
+            has_terrain = hills
+        }
+        UFC = {
+            set_country_flag = UFC_weapon_test_team_hills
+        }
+    }
+    if = {
+        limit = {
+            has_terrain = grasslands
+        }
+        UFC = {
+            set_country_flag = UFC_weapon_test_team_grasslands
+        }
+    }
+    if = {
+        limit = {
+            has_terrain = glacier
+        }
+        UFC = {
+            set_country_flag = UFC_weapon_test_team_glacier
+        }
+    }
+    if = {
+        limit = {
+            has_terrain = forest
+        }
+        UFC = {
+            set_country_flag = UFC_weapon_test_team_forest
+        }
+    }
+    if = {
+        limit = {
+            has_terrain = farmlands
+        }
+        UFC = {
+            set_country_flag = UFC_weapon_test_team_farmlands
+        }
+    }
+    if = {
+        limit = {
+            has_terrain = drylands
+        }
+        UFC = {
+            set_country_flag = UFC_weapon_test_team_drylands
+        }
+    }
+    if = {
+        limit = {
+            has_terrain = desert
+        }
+        UFC = {
+            set_country_flag = UFC_weapon_test_team_desert
+        }
+    }
+    if = {
+        limit = {
+            has_terrain = coastline
+        }
+        UFC = {
+            set_country_flag = UFC_weapon_test_team_coastline
+        }
+    }
+    if = {
+        limit = {
+            has_terrain = coastal_desert
+        }
+        UFC = {
+            set_country_flag = UFC_weapon_test_team_coastal_desert
+        }
+    }
+}

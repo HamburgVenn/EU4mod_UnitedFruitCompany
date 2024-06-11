@@ -260,6 +260,76 @@ country_decisions = {
         ai_importance = 400
     }
 
+    UFC_decision_cloves_plantation = {
+        potential = {
+            tag = UFC
+            mission_completed = UFC_mission_cultivate_cloves
+        }
+        provinces_to_highlight = {
+            not = {
+                trade_goods = cotton
+            }
+            or = {
+                province_id = 225
+                province_id = 668
+                province_id = 4316
+            }
+        }
+        allow = {
+            or = {
+                225 = {
+                    or = {
+                        owned_by = root
+                        owned_by_subject_of = root
+                    }
+                    not = {
+                        trade_goods = cloves
+                    }
+                }
+                668 = {
+                    or = {
+                        owned_by = root
+                        owned_by_subject_of = root
+                    }
+                    not = {
+                        trade_goods = cloves
+                    }
+                }
+                4316 = {
+                    or = {
+                        owned_by = root
+                        owned_by_subject_of = root
+                    }
+                    not = {
+                        trade_goods = cloves
+                    }
+                }
+            }
+            not = {
+                or = {
+                    225 = {
+                        has_province_modifier = UFC_modifier_cloves_plantation
+                    }
+                    668 = {
+                        has_province_modifier = UFC_modifier_cloves_plantation
+                    }
+                    4316 = {
+                        has_province_modifier = UFC_modifier_cloves_plantation
+                    }
+                }
+            }
+        }
+        effect = {
+            country_event = {
+                id = flavor_UFC.9008
+            }
+        }
+        ai_will_do = {
+            factor = 1
+        }
+        ai_importance = 400
+    }
+
     UFC_decision_andes_chain_north_infiltrate = {
         color = { 255 175 0 }
         potential = {
@@ -689,6 +759,28 @@ country_decisions = {
                 desc = UNTIL_THE_END_OF_EXPO
             }
             country_event = { id = flavor_UFC.7514 }
+        }
+    }
+
+    UFC_decision_early_plantation_and_tradecompany = {
+        potential = {
+            tag = UFC
+            has_country_flag = UFC_flag_early_plantation_and_tradecompany
+            adm_tech = 13
+            dip_tech = 13
+        }
+        provinces_to_highlight = {
+        }
+        allow = {
+            treasury = 100000
+            adm_tech = 13
+            dip_tech = 13
+        }
+        effect = {
+            add_treasury = -100000
+            add_adm_tech = 1
+            add_dip_tech = 1
+            clr_country_flag = UFC_flag_early_plantation_and_tradecompany
         }
     }
 }

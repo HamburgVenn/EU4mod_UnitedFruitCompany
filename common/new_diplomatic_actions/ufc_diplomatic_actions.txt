@@ -70,6 +70,40 @@ ufc_diplomatic_actions_establish_subsidiary_corporation = {
 				}
 			}
 		}
+		custom_trigger_tooltip = {
+			tooltip = UFC_tooltip_no_valid_province
+			From = {
+				any_active_trade_node = {
+					has_most_province_trade_power = From
+					any_trade_node_member_province = {
+						is_city = yes
+						province_has_center_of_trade_of_level = 1
+						owned_by = From
+						is_capital = no
+					}
+				}
+			}
+		}
+		custom_trigger_tooltip = {
+			tooltip = UFC_tooltip_already_has_treaty_port
+			From = {
+				any_active_trade_node = {
+					has_most_province_trade_power = From
+					not = {
+						any_trade_node_member_country = {
+							tag = UFT
+						}
+					}
+				}
+			}
+		}
+		From = {
+			is_subject = no
+		}
+		From = {
+			is_at_war = no
+		}
+		is_at_war = no
 	}
 
 	on_accept = {
@@ -78,6 +112,11 @@ ufc_diplomatic_actions_establish_subsidiary_corporation = {
 			random_active_trade_node = {
 				limit = {
 					has_most_province_trade_power = From
+					not = {
+						any_trade_node_member_province = {
+							owned_by = UFT
+						}
+					}
 				}
 				save_global_event_target_as = ufc_target_subsidiary_corporation_event_trade_node
 			}
@@ -110,8 +149,21 @@ ufc_diplomatic_actions_establish_subsidiary_corporation = {
 			}
 			export_to_variable = {
 				which = ai_value
-				value = 80
+				value = 10
 			}
+		}
+		add_entry = {
+			name = UFC_FROM_ATTITUDE_TOWARDS_ROOT
+			limit = {
+				FROM = {
+					ai_attitude = { who = ROOT attitude = attitude_neutral }
+				}
+			}
+			export_to_variable = {
+				which = ai_value
+				value = 10
+			}
+			multiply_variable = { which = ai_value value = -1 }
 		}
 		add_entry = {
 			name = UFC_FROM_ATTITUDE_TOWARDS_ROOT
@@ -137,16 +189,20 @@ ufc_diplomatic_actions_establish_subsidiary_corporation = {
 			}
 			export_to_variable = {
 				which = ai_value
-				value = 20
+				value = 10
 			}
 		}
 		add_entry = {
-			name = OPINION
+			name = DIPLO_OPPINION
 			export_to_variable = {
 				which = ai_value
 				value = opinion
 				who = FROM
 				with = ROOT
+			}
+			multiply_variable = {
+				which = ai_value
+				value = 0.75
 			}
 		}
 		add_entry = {
@@ -156,9 +212,63 @@ ufc_diplomatic_actions_establish_subsidiary_corporation = {
 			}
 			export_to_variable = {
 				which = ai_value
-				value = 50
+				value = 20
 			}
 		}
+		add_entry = {
+			name = diplomatic_reputation
+			limit = { }
+			export_to_variable = {
+				variable_name = ai_value
+				value = trigger_value:diplomatic_reputation
+			}
+			multiply_variable = {
+				which = ai_value
+				value = 3
+			}
+		}
+		add_entry = {
+			name = HEGEMON_DETERENCE
+			limit = {
+				is_hegemon = yes
+			}
+			export_to_variable = {
+				variable_name = ai_value
+				value = 20
+			}
+		}
+		add_entry = {
+			name = UFC_ALREADY_HAS_TREATY_PORT
+			limit = {
+				From = {
+					has_country_modifier = UFC_modifier_treaty_port_bonus
+				}
+			}
+			export_to_variable = {
+				variable_name = ai_value
+				value = 25
+			}
+			multiply_variable = { which = ai_value value = -1 }
+		}
+		add_entry = {
+			name = AI_TRUST_TOWARDS_ROOT
+			export_to_variable = {
+				variable_name = ai_value
+				value = trust
+				who = FROM
+				with = ROOT
+			}
+			subtract_variable = {
+				which = ai_value
+				value = 50
+			}
+			#1 trust = +4 ai points
+			multiply_variable = {
+				which = ai_value
+				value = 2
+			}
+		}
+
 	}
 	ai_will_do = {
 		treasury = 10000

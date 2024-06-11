@@ -559,8 +559,11 @@ UFC_mission_slot_1_NGP = {
 		}
 		trigger = {
 			num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
-				value = 6
-				superregion = china_superregion
+				value = 3
+				or = {
+					superregion = far_east_superregion
+					superregion = china_superregion
+				}
 				base_production = 10
 				trade_goods = tea
 			}
@@ -596,6 +599,10 @@ UFC_mission_slot_1_NGP = {
 					owned_by = ROOT
 					is_core = ROOT
 				}
+				1821 = {
+					owned_by = ROOT
+					is_core = ROOT
+				}
 			}
 			684 = {
 				has_great_project = {
@@ -615,6 +622,12 @@ UFC_mission_slot_1_NGP = {
 					tier = 3
 				}
 			}
+			1821 = {
+				has_great_project = {
+					type = grand_canal_4
+					tier = 3
+				}
+			}
 		}
 		effect = {
 			684 = {
@@ -630,6 +643,13 @@ UFC_mission_slot_1_NGP = {
 				}
 			}
 			2145 = {
+				change_trade_goods = silk
+				add_province_modifier = {
+					name = UFC_modifier_grand_canal_experience
+					duration = -1
+				}
+			}
+			1821 = {
 				change_trade_goods = silk
 				add_province_modifier = {
 					name = UFC_modifier_grand_canal_experience
@@ -673,9 +693,9 @@ UFC_mission_slot_1_NGP = {
 				is_strongest_trade_power = UFC
 			}
 			num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
-				value = 6
+				value = 5
 				is_city = yes
-				trade_company_region = trade_company_indochina
+				trade_company_region = trade_company_indonesia
 				province_has_center_of_trade_of_level = 2
 			}
 		}
@@ -983,6 +1003,10 @@ UFC_mission_slot_2_NGP = {
 				has_country_flag = UFC_weapon_test_team_jungle
 			}
 			custom_trigger_tooltip = {
+				tooltip = UFC_tooltip_weapon_test_team_hills
+				has_country_flag = UFC_weapon_test_team_hills
+			}
+			custom_trigger_tooltip = {
 				tooltip = UFC_tooltip_weapon_test_team_highlands
 				has_country_flag = UFC_weapon_test_team_highlands
 			}
@@ -1060,6 +1084,7 @@ UFC_mission_slot_2_NGP = {
 			}
 		}
 		effect = {
+			custom_tooltip = UFC_tooltip_plantation_and_industry
 			country_event = { id = flavor_UFC.22 }
 		}
 	}
@@ -1109,12 +1134,13 @@ UFC_mission_slot_2_NGP = {
 		}
 		trigger = {
 			num_of_owned_provinces_with = {
-				value = 45
+				value = 40
 				trade_company_region = trade_company_coromandel
 			}
 		}
 		effect = {
 			country_event = { id = flavor_UFC.23 }
+			custom_tooltip = UFC_tooltip_south_india_company
 		}
 	}
 
@@ -1139,7 +1165,7 @@ UFC_mission_slot_2_NGP = {
 				has_port = yes
 			}
 			num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
-				value = 20
+				value = 10
 				region = australia_region
 				has_port = yes
 			}
@@ -1375,6 +1401,9 @@ UFC_mission_slot_3 = {
 				province_id = 1095
 				area = newfoundland_area
 			}
+			not = {
+				owned_by = root
+			}
 		}
 		trigger = {
 			newfoundland_area = {
@@ -1590,9 +1619,9 @@ UFC_mission_slot_3_NGP = {
 			else = {
 				army_tradition = 99
 			}
-			num_of_generals_with_traits = 10
+			num_of_generals_with_traits = 4
 			not = { num_of_mercenaries = 1 }
-			not = { light_ship_fraction = 0.3 }
+			num_of_regiments_at_full_drill = 150
 		}
 		effect = {
 			add_country_modifier = {
@@ -1617,8 +1646,13 @@ UFC_mission_slot_3_NGP = {
 		}
 		trigger = {
 			all_owned_province = {
-				not = { unrest = 0 }
-				NOT = { local_autonomy_above_min = 5 }
+				OR = {
+					is_city = no
+					AND = {
+						not = { unrest = 0 }
+						NOT = { local_autonomy_above_min = 5 }
+					}
+				}
 			}
 			OR = {
 				has_country_modifier = UFC_modifier_fake_secret_report
@@ -1636,6 +1670,21 @@ UFC_mission_slot_3_NGP = {
 			484 = {
 				owned_by = ROOT
 				is_core = ROOT
+			}
+			iberia_region = {
+				or = {
+					owned_by = root
+					owned_by_subject_of = root
+				}
+			}
+			CAS = {
+				exists = no
+			}
+			ARA = {
+				exists = no
+			}
+			POR = {
+				exists = no
 			}
 		}
 		effect = {
@@ -1674,6 +1723,9 @@ UFC_mission_slot_3_NGP = {
 					add_permanent_claim = root
 				}
 				2257 = {
+					add_permanent_claim = root
+				}
+				1821 = {
 					add_permanent_claim = root
 				}
 			}
@@ -1729,26 +1781,34 @@ UFC_mission_slot_3_NGP = {
 		required_missions = { UFC_mission_legendary_cloves }
 		trigger = {
 			224 = {
-				owned_by = ROOT
-				is_core = ROOT
+				OR = {
+					owned_by = ROOT
+					owned_by_subject_of = ROOT
+				}
 				base_production = 15
 				province_has_center_of_trade_of_level = 2
 			}
 			361 = {
-				owned_by = ROOT
-				is_core = ROOT
+				OR = {
+					owned_by = ROOT
+					owned_by_subject_of = ROOT
+				}
 				base_production = 15
 				province_has_center_of_trade_of_level = 2
 			}
 			1201 = {
-				owned_by = ROOT
-				is_core = ROOT
+				OR = {
+					owned_by = ROOT
+					owned_by_subject_of = ROOT
+				}
 				base_production = 15
 				province_has_center_of_trade_of_level = 2
 			}
 			667 = {
-				owned_by = ROOT
-				is_core = ROOT
+				OR = {
+					owned_by = ROOT
+					owned_by_subject_of = ROOT
+				}
 				base_production = 15
 				province_has_center_of_trade_of_level = 2
 			}
@@ -1757,19 +1817,36 @@ UFC_mission_slot_3_NGP = {
 			224 = {
 				change_trade_goods = cloves
 				add_base_production = 2
+				add_permanent_province_modifier = {
+					name = UFC_modifier_cloves
+					duration = -1
+				}
 			}
 			361 = {
 				change_trade_goods = cloves
 				add_base_production = 2
+				add_permanent_province_modifier = {
+					name = UFC_modifier_cloves
+					duration = -1
+				}
 			}
 			1201 = {
 				change_trade_goods = cloves
 				add_base_production = 2
+				add_permanent_province_modifier = {
+					name = UFC_modifier_cloves
+					duration = -1
+				}
 			}
 			667 = {
 				change_trade_goods = cloves
 				add_base_production = 2
+				add_permanent_province_modifier = {
+					name = UFC_modifier_cloves
+					duration = -1
+				}
 			}
+			custom_tooltip = UFC_tooltip_cultivate_cloves
 		}
 	}
 
@@ -1796,7 +1873,7 @@ UFC_mission_slot_3_NGP = {
 			customtooltip = UFC_tooltip_spices_prices_down
 			set_global_flag = decline_of_spices_happened
 			add_country_modifier = {
-				name = negara_agung
+				name = UFC_modifier_negara_agung
 				duration = -1
 			}
 		}
@@ -2203,7 +2280,7 @@ UFC_mission_slot_4_NGP = {
 	UFC_mission_not_think_but_work = {
 		icon = mission_industria_sedera
 		position = 12
-		required_missions = { UFC_mission_army_no_business UFC_mission_rising_pragmatism }
+		required_missions = { UFC_mission_army_no_business UFC_mission_market_penetration }
 		trigger = {
 			stability = 3
 			OR = {
@@ -2351,7 +2428,10 @@ UFC_mission_slot_4_NGP = {
 			custom_tooltip = UFC_tooltip_kongo_crusade_based_on_choice
 			custom_tooltip = UFC_tooltip_kongo_crusade
 			tooltip = {
-				vassalize = KON
+				create_subject = {
+					subject_type = ufc_subsidiary
+					who = KON
+				}
 				KON = {
 					change_religion = secularism
 					kongo_region = {
@@ -2386,7 +2466,10 @@ UFC_mission_slot_4_NGP = {
 							value = 90
 						}
 					}
-					vassalize = KON
+					create_subject = {
+						subject_type = ufc_subsidiary
+						who = KON
+					}
 					KON = {
 						change_religion = secularism
 						kongo_region = {
@@ -2590,6 +2673,11 @@ UFC_mission_slot_5 = {
 			add_country_modifier = {
 				name = UFC_modifier_grain_supply
 				duration = 18250
+			}
+			hidden_effect = {
+				1095 = {
+					add_permanent_claim = root
+				}
 			}
 		}
 	}
@@ -2879,10 +2967,93 @@ UFC_mission_slot_5_NGP = {
 		has_country_flag = UFC_new_game_plus
 	}
 	has_country_shield = yes
-	UFC_mission_rising_pragmatism = {
-		icon = mission_rb_control_state_religion
+	UFC_mission_market_penetration = {
+		icon = the_ostend_company
 		position = 11
 		required_missions = { UFC_mission_secularism_flourished }
+		provinces_to_highlight = {
+			any_active_trade_node = {
+				highest_value_trade_node = yes
+			}
+		}
+		trigger = {
+			OR = {
+				num_of_merchants = 40
+				AND = {
+					num_of_strong_trade_companies = 15
+					UFT = {
+						num_of_owned_provinces_with = {
+							any_core_country = {
+								tag = UFT
+							}
+							value = 15
+						}
+					}
+				}
+			}
+			any_active_trade_node = {
+				is_strongest_trade_power = PREV
+				trade_node_value = 500
+			}
+		}
+		effect = {
+			custom_tooltip = UFC_tooltip_market_penetration
+			hidden_effect = {
+				4568 = {
+					add_permanent_claim = root
+				}
+				97 = {
+					add_permanent_claim = root
+				}
+				12 = {
+					add_permanent_claim = root
+				}
+				25 = {
+					add_permanent_claim = root
+				}
+				262 = {
+					add_permanent_claim = root
+				}
+				227 = {
+					add_permanent_claim = root
+				}
+				2327 = {
+					add_permanent_claim = root
+				}
+				390 = {
+					add_permanent_claim = root
+				}
+				441 = {
+					add_permanent_claim = root
+				}
+				2220 = {
+					add_permanent_claim = root
+				}
+				403 = {
+					add_permanent_claim = root
+				}
+				564 = {
+					add_permanent_claim = root
+				}
+				1196 = {
+					add_permanent_claim = root
+				}
+				820 = {
+					add_permanent_claim = root
+				}
+			}
+			set_country_flag = ned_bourse_conditional_modifier_flag
+			set_country_flag = ned_buff_dutch_polders_great_project_flag
+			set_country_flag = YEM_upgrade_city_of_sanaa_flag
+			set_country_flag = YEM_upgrade_city_of_sanaa_non_ras_flag
+			set_country_flag = oma_kilwa_buff_flag
+		}
+	}
+
+	UFC_mission_rising_pragmatism = {
+		icon = mission_rb_control_state_religion
+		position = 13
+		required_missions = { UFC_mission_market_penetration }
 		provinces_to_highlight = {
 			is_city = yes
 			or = {

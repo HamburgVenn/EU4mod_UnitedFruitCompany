@@ -249,6 +249,11 @@ estate_ufc_staff_black_staffs = {
 			has_estate_privilege = estate_ufc_staff_black_staffs
 		}
 		NOT = { has_country_flag = UFC_revolution }
+		mission_completed = UFC_mission_black_stuff
+	}
+	can_select = {
+		tag = UFC
+		mission_completed = UFC_mission_black_stuff
 	}
 	can_revoke = {
 		custom_trigger_tooltip = {

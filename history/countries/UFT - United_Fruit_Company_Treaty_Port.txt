@@ -1,0 +1,7 @@
+government = republic
+mercantilism = 50
+technology_group = muslim
+primary_culture = andalucian
+religion = secularism
+government_rank = 1
+capital = 43

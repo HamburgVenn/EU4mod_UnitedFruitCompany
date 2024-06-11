@@ -106,42 +106,6 @@ on_war_won = {
 		}
 		ROOT = { country_event = { id = flavor_UFC.67 } }
 	}
-	if = {
-		limit = {
-			from = {
-				tag = ARA
-			}
-			root = {
-				tag = UFC
-				has_country_modifier = UFC_modifier_rereconquest_ae
-			}
-		}
-		remove_country_modifier = UFC_modifier_rereconquest_ae
-	}
-	if = {
-		limit = {
-			from = {
-				tag = CAS
-			}
-			root = {
-				tag = UFC
-				has_country_modifier = UFC_modifier_rereconquest_ae
-			}
-		}
-		remove_country_modifier = UFC_modifier_rereconquest_ae
-	}
-	if = {
-		limit = {
-			from = {
-				tag = POR
-			}
-			root = {
-				tag = UFC
-				has_country_modifier = UFC_modifier_rereconquest_ae
-			}
-		}
-		remove_country_modifier = UFC_modifier_rereconquest_ae
-	}
 }
 # country
 # root = winning country, from = location
@@ -367,6 +331,19 @@ on_dip_development = {
 			cost = 1
 		}
 	}
+	if = {
+		limit = {
+			owner = {
+				has_country_flag = UFC_flag_bogota_gem_sus
+			}
+			province_id = 825
+			base_production = 20
+		}
+		set_global_flag = brazilian_gems_happened
+		owner = {
+			clr_country_flag = UFC_flag_bogota_gem_sus
+		}
+	}
 }
 
 on_mil_development = {
@@ -425,7 +402,42 @@ on_main_war_won = {
 			value = 2.5
 		}
 	}
-
+	if = {
+		limit = {
+			from = {
+				tag = ARA
+			}
+			root = {
+				tag = UFC
+				has_country_modifier = UFC_modifier_rereconquest_ae
+			}
+		}
+		remove_country_modifier = UFC_modifier_rereconquest_ae
+	}
+	if = {
+		limit = {
+			from = {
+				tag = CAS
+			}
+			root = {
+				tag = UFC
+				has_country_modifier = UFC_modifier_rereconquest_ae
+			}
+		}
+		remove_country_modifier = UFC_modifier_rereconquest_ae
+	}
+	if = {
+		limit = {
+			from = {
+				tag = POR
+			}
+			root = {
+				tag = UFC
+				has_country_modifier = UFC_modifier_rereconquest_ae
+			}
+		}
+		remove_country_modifier = UFC_modifier_rereconquest_ae
+	}
 }
 
 # country

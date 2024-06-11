@@ -142,16 +142,16 @@ UFC_modifier_new_type_weapons_second = {
 
 UFC_modifier_army_no_business = {
 	global_supply_limit_modifier = -0.15
-	naval_maintenance_modifier  = 0.1
-	global_ship_trade_power = -0.2
-	yearly_corruption = -0.10
+	naval_maintenance_modifier  = 0.15
+	global_ship_trade_power = -0.15
+	yearly_corruption = -0.15
 	drill_gain_modifier = 0.50
 	general_cost = -0.25
 	reserves_organisation = 0.25
 }
 
 UFC_modifier_germ_war = {
-	morale_damage = 0.15
+	morale_damage = 0.25
 	diplomatic_reputation = -10
 }
 
@@ -175,6 +175,9 @@ UFC_modifier_brave_new_world = {
 	reelection_cost = -0.7
 	max_absolutism = 30
 	max_absolutism_effect = 0.2
+	monthly_mechanical_clock_adm_power = 0.33
+	monthly_mechanical_clock_dip_power = 0.33
+	monthly_mechanical_clock_mil_power = 0.33
 }
 
 UFC_modifier_small_brave_new_world = {
@@ -203,7 +206,9 @@ UFC_modifier_grand_canal_experience = {
 UFC_modifier_south_india_company = {
 	administrative_efficiency = 0.05
 }
+UFC_modifier_south_india_company_trade_good = {
 
+}
 UFC_modifier_golden_age = {
 	all_power_cost = -0.05
 	candidate_random_bonus = 2
@@ -211,10 +216,7 @@ UFC_modifier_golden_age = {
 
 UFC_modifier_kilwa_archaeology = {
 	prestige = 1
-	global_ship_trade_power = 0.3
-	placed_merchant_power = 4
-	local_development_cost = -0.15
-	local_gold_depletion_chance_modifier = -0.5
+	local_development_cost_modifier = -0.1
 }
 
 UFC_modifier_mare_nostrum = {
@@ -398,8 +400,7 @@ UFC_modifier_rereconquest_more_tercio_reform = {
 }
 
 UFC_modifier_andalucian_reunification = {
-	liberty_desire = -100
-	global_trade_goods_size_modifier = 0.1
+
 }
 
 UFC_modifier_safety_regulations = {
@@ -529,8 +530,8 @@ UFC_modifier_into_the_rainforest = {
 }
 
 UFC_revolution_buff = {
-	land_forcelimit = 50
-	global_tax_income = 600
+	land_forcelimit = 100
+	global_tax_income = 1200
 }
 
 UFC_modifier_iroquois_war = {
@@ -654,4 +655,229 @@ UFC_modifier_sky_lawgiver = {
 	advisor_cost = -0.25
 	advisor_pool = 2
 	free_policy = 1
+}
+
+UFC_modifier_the_cocession_city = {
+	global_trade_power = 0.25
+	core_creation = 10
+	can_not_build_colonies = yes
+	liberty_desire = -50
+}
+
+UFC_modifier_treaty_port_bonus = {
+	global_trade_power = 0.15
+	merchants = 1
+	mercantilism_cost = 0.25
+}
+
+UFC_modifier_treaty_port_province_bonus = {
+	province_trade_power_modifier = 0.5
+	province_trade_power_value = 25
+	trade_value_modifier = 0.15
+}
+
+UFC_modifier_treaty_port_core_num_1 = {
+	merchants = 1
+}
+UFC_modifier_treaty_port_core_num_2 = {
+	merchants = 2
+}
+UFC_modifier_treaty_port_core_num_3 = {
+	merchants = 3
+}
+UFC_modifier_treaty_port_core_num_4 = {
+	merchants = 4
+}
+UFC_modifier_treaty_port_core_num_5 = {
+	merchants = 5
+}
+UFC_modifier_treaty_port_core_num_6 = {
+	merchants = 6
+}
+UFC_modifier_treaty_port_core_num_7 = {
+	merchants = 7
+}
+UFC_modifier_treaty_port_core_num_8 = {
+	merchants = 8
+}
+UFC_modifier_treaty_port_core_num_9 = {
+	merchants = 9
+}
+UFC_modifier_treaty_port_core_num_10 = {
+	merchants = 10
+}
+UFC_modifier_treaty_port_core_num_11 = {
+	merchants = 11
+}
+UFC_modifier_treaty_port_core_num_12 = {
+	merchants = 12
+}
+UFC_modifier_treaty_port_core_num_13 = {
+	merchants = 13
+}
+UFC_modifier_treaty_port_core_num_14 = {
+	merchants = 14
+}
+UFC_modifier_treaty_port_core_num_15 = {
+	merchants = 15
+}
+UFC_modifier_treaty_port_core_num_16 = {
+	merchants = 16
+}
+UFC_modifier_treaty_port_core_num_17 = {
+	merchants = 17
+}
+UFC_modifier_treaty_port_core_num_18 = {
+	merchants = 18
+}
+UFC_modifier_treaty_port_core_num_19 = {
+	merchants = 19
+}
+UFC_modifier_treaty_port_core_num_20 = {
+	merchants = 20
+}
+UFC_modifier_treaty_port_core_num_21 = {
+	merchants = 21
+}
+UFC_modifier_treaty_port_core_num_22 = {
+	merchants = 22
+}
+UFC_modifier_treaty_port_core_num_23 = {
+	merchants = 23
+}
+UFC_modifier_treaty_port_core_num_24 = {
+	merchants = 24
+}
+UFC_modifier_treaty_port_core_num_25 = {
+	merchants = 25
+}
+UFC_modifier_treaty_port_core_num_26 = {
+	merchants = 26
+}
+UFC_modifier_treaty_port_core_num_27 = {
+	merchants = 27
+}
+UFC_modifier_treaty_port_core_num_28 = {
+	merchants = 28
+}
+UFC_modifier_treaty_port_core_num_29 = {
+	merchants = 29
+}
+UFC_modifier_treaty_port_core_num_30 = {
+	merchants = 30
+}
+
+UFC_modifier_cloves = {
+	trade_value_modifier = 0.1
+	local_development_cost = -0.1
+}
+
+UFC_modifier_cloves_plantation = {
+	local_development_cost = -0.1
+	trade_goods_size_modifier = -0.2
+	local_unrest = 5
+}
+
+UFC_modifier_negara_agung = {
+	free_concentrate_development = yes
+	development_cost = -0.1
+}
+
+UFC_modifier_subsidiary_basic_modifier = {
+	development_cost_modifier = -0.05
+	global_sailors_modifier = 1
+	allowed_marine_fraction = 0.5
+	infantry_power = 0.1
+}
+
+UFC_modifier_subsidiary_more_production = {
+	development_cost_modifier = -0.05
+	global_sailors_modifier = 1
+	allowed_marine_fraction = 0.5
+	infantry_power = 0.1
+}
+
+UFC_modifier_subsidiary_overlord_basic_modifier = {
+	trade_efficiency = 0.025
+	global_trade_goods_size_modifier = 0.025
+	global_foreign_trade_power = 0.1
+	merchants = 1
+}
+
+UFC_modifier_subsidiary_overlord_basic_modifier_2 = {
+	trade_efficiency = 0.025
+	global_trade_goods_size_modifier = 0.025
+	global_foreign_trade_power = 0.1
+	merchants = 1
+}
+UFC_modifier_subsidiary_synchronization_trade_good_product_1 = {
+	global_trade_goods_size_modifier = 0.1
+}
+UFC_modifier_subsidiary_synchronization_trade_good_product_2 = {
+	global_trade_goods_size_modifier = 0.2
+}
+UFC_modifier_subsidiary_synchronization_trade_good_product_3 = {
+	global_trade_goods_size_modifier = 0.3
+}
+UFC_modifier_subsidiary_synchronization_trade_good_product_4 = {
+	global_trade_goods_size_modifier = 0.4
+}
+UFC_modifier_subsidiary_synchronization_trade_good_product_5 = {
+	global_trade_goods_size_modifier = 0.5
+}
+UFC_modifier_subsidiary_synchronization_trade_good_product_6 = {
+	global_trade_goods_size_modifier = 0.6
+}
+UFC_modifier_subsidiary_synchronization_trade_good_product_7 = {
+	global_trade_goods_size_modifier = 0.7
+}
+UFC_modifier_subsidiary_synchronization_trade_good_product_8 = {
+	global_trade_goods_size_modifier = 0.8
+}
+UFC_modifier_subsidiary_synchronization_trade_good_product_9 = {
+	global_trade_goods_size_modifier = 0.9
+}
+UFC_modifier_subsidiary_synchronization_trade_good_product_10 = {
+	global_trade_goods_size_modifier = 1.0
+}
+UFC_modifier_subsidiary_synchronization_trade_good_product_11 = {
+	global_trade_goods_size_modifier = 1.1
+}
+UFC_modifier_subsidiary_synchronization_trade_good_product_12 = {
+	global_trade_goods_size_modifier = 1.2
+}
+UFC_modifier_subsidiary_synchronization_trade_good_product_13 = {
+	global_trade_goods_size_modifier = 1.3
+}
+UFC_modifier_subsidiary_synchronization_trade_good_product_14 = {
+	global_trade_goods_size_modifier = 1.4
+}
+UFC_modifier_subsidiary_synchronization_trade_good_product_15 = {
+	global_trade_goods_size_modifier = 1.5
+}
+UFC_modifier_subsidiary_synchronization_trade_good_product_16 = {
+	global_trade_goods_size_modifier = 1.6
+}
+UFC_modifier_subsidiary_synchronization_trade_good_product_17 = {
+	global_trade_goods_size_modifier = 1.7
+}
+UFC_modifier_subsidiary_synchronization_trade_good_product_18 = {
+	global_trade_goods_size_modifier = 1.8
+}
+UFC_modifier_subsidiary_synchronization_trade_good_product_19 = {
+	global_trade_goods_size_modifier = 1.9
+}
+UFC_modifier_subsidiary_synchronization_trade_good_product_20 = {
+	global_trade_goods_size_modifier = 2.0
+}
+
+UFC_modifier_overcapacity = {
+	global_own_trade_power = -5
+	global_trade_goods_size_modifier = -1
+	candidate_random_bonus = -100
+}
+
+UFC_modifier_military_mutiny = {
+	can_not_declare_war = yes
+	land_morale = -1
 }

@@ -1,25 +1,25 @@
-UFC_triggered_modifier_adu_company = {
-	potential = {
-		tag = UFC
-		any_subject_country = {
-			tag = ADU
-		}
-	}
-
-	trigger = {
-		tag = UFC
-		any_subject_country = {
-			tag = ADU
-			has_reform = trade_company_government
-		}
-	}
-
-	trade_efficiency = 0.05
-	global_trade_goods_size_modifier = 0.05
-	global_foreign_trade_power = 0.2
-	merchants = 1
-	diplomatic_upkeep = 1
-}
+#UFC_triggered_modifier_adu_company = {
+#	potential = {
+#		tag = UFC
+#		any_subject_country = {
+#			tag = ADU
+#		}
+#	}
+#
+#	trigger = {
+#		tag = UFC
+#		any_subject_country = {
+#			tag = ADU
+#			has_reform = trade_company_government
+#		}
+#	}
+#
+#	trade_efficiency = 0.05
+#	global_trade_goods_size_modifier = 0.05
+#	global_foreign_trade_power = 0.2
+#	merchants = 1
+#	diplomatic_upkeep = 1
+#}
 
 UFC_triggered_modifier_the_great_bibliotheque = {
 	potential = {
@@ -46,7 +46,6 @@ UFC_triggered_modifier_the_trade_embargo = {
 		num_of_trade_embargos = 2
 		mercantilism = 50
 	}
-
 	trade_efficiency = 0.1
 	embargo_efficiency = 0.5
 }
