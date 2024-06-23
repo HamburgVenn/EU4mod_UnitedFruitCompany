@@ -708,6 +708,421 @@ UFC_mission_slot_1_NGP = {
 	}
 }
 
+UFC_mission_slot_1_revolution = {
+	slot = 1
+	generic = no
+	ai = yes
+	potential = {
+		tag = UFC
+		has_country_flag = UFC_new_game_plus
+		is_revolutionary = yes
+	}
+	has_country_shield = yes
+	UFC_mission_gun_of_newgranada = {
+		icon = mission_develop_alhambra
+		position = 21
+		required_missions = {
+			UFC_mission_spark_from_laplata
+		}
+		provinces_to_highlight = {
+			owned_by = GRA
+		}
+		trigger = {
+			OR = {
+				AND = {
+					GRA = {
+						has_opinion = {
+							who = ROOT
+							value = 150
+						}
+						is_subject = no
+					}
+					custom_trigger_tooltip = {
+						tooltip = UFC_tooltip_yusuf_agree
+						has_country_flag = UFC_flag_yusuf_agree
+					}
+				}
+				GRA = {
+					is_subject_of = root
+				}
+				GRA = {
+					exists = no
+				}
+			}
+		}
+		effect = {
+			custom_tooltip = UFC_tooltip_gun_of_newgranada
+			if = {
+				limit = {
+					OR = {
+						GRA = {
+							has_opinion = {
+								who = ROOT
+								value = 150
+							}
+							is_subject = no
+						}
+						GRA = {
+							is_subject_of = root
+						}
+					}
+				}
+				GRA = {
+					disband_all_units = yes
+				}
+				inherit = GRA
+			}
+			add_country_modifier = {
+				name = UFC_modifier_scientization_of_politics
+				duration = -1
+				desc = UNTIL_THE_DISASTER
+			}
+		}
+	}
+
+	UFC_mission_destroy_the_feudal_system = {
+		icon = spread_the_von_wettins
+		position = 25
+		required_missions = {
+			UFC_mission_global_counterrevolutionary
+		}
+		provinces_to_highlight = {
+			OR = {
+				is_capital_of = ENG
+				is_capital_of = GBR
+				is_capital_of = FRA
+				is_capital_of = emperor
+				is_capital_of = PAP
+			}
+		}
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = UFC_tooltip_in_global_coalition_war
+				has_global_flag = UFC_flag_global_coalition_war
+			}
+			OR = {
+				emperor = {
+					capital_scope = {
+						controlled_by = root
+					}
+				}
+				not = {
+					hre_size = 1
+				}
+				emperor = {
+					not = {
+						war_with = UFC
+					}
+				}
+			}
+			not = {
+				OR = {
+					war_with = GBR
+					war_with = ENG
+					war_with = FRA
+					war_with = PAP
+					war_with = TUR
+				}
+			}
+			not = {
+				any_country = {
+					capital_scope = {
+						continent = europe
+					}
+					is_emperor = no
+					total_development = 300
+					war_with = UFC
+				}
+			}
+		}
+		effect = {
+			custom_tooltip = UFC_tooltip_destroy_the_feudal_system
+			every_country = {
+				limit = {
+					capital_scope = {
+						continent = europe
+					}
+					war_with = UFC
+					is_emperor = no
+				}
+				white_peace = UFC
+			}
+			dismantle_hre = yes
+			add_ruler_modifier = {
+				name = UFC_modifier_crowns_into_plowshares
+				duration = -1
+			}
+		}
+	}
+
+	UFC_mission_sweeping_the_class = {
+		icon = mission_european_politics
+		position = 27
+		required_missions = {
+			UFC_mission_export_revolution
+		}
+		provinces_to_highlight = {
+			OR = {
+				superregion = europe_superregion
+				superregion = eastern_europe_superregion
+			}
+			OR = {
+				owned_by = root
+				owned_by_subject_of = root
+			}
+			NOT = {
+				has_revolution_in_province = yes
+				has_manufactory_trigger = yes
+			}
+		}
+		trigger = {
+			num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+				OR = {
+					superregion = europe_superregion
+					superregion = eastern_europe_superregion
+				}
+				has_revolution_in_province = yes
+				has_manufactory_trigger = yes
+				value = 300
+			}
+		}
+		effect = {
+			custom_tooltip = UFC_tooltip_sweeping_the_class
+			tooltip = {
+				add_country_modifier = {
+					name = UFC_modifier_sweep_the_class
+					duration = -1
+				}
+			}
+			hidden_effect = {
+				if = {
+					limit = {
+						has_country_modifier = UFC_modifier_future_for_egality
+					}
+					add_country_modifier = {
+						name = UFC_modifier_sweep_the_class
+						duration = -1
+					}
+				}
+			}
+		}
+	}
+
+	UFC_mission_giant_from_corsica = {
+		icon = fra_napoleonic_navy
+		position = 29
+		required_missions = {}
+		trigger = {
+			OR = {
+				custom_trigger_tooltip = {
+					tooltip = UFC_tooltip_the_trial_of_buonaparte
+					has_country_flag = UFC_flag_buonaparte_start
+					check_variable = {
+						which = BuonaparteWinVariable
+						value = 5
+					}
+				}
+				custom_trigger_tooltip = {
+					tooltip = UFC_tooltip_buonaparte_dies
+					has_country_flag = UFC_flag_buonaparte_start
+					not = {
+						general_with_name = "FrancescoBuonaparte"
+					}
+				}
+			}
+		}
+		effect = {
+			custom_tooltip = UFC_tooltip_if_buonaparte_alive
+			tooltip = {
+				add_mil_power = 100
+				add_country_modifier = {
+					name = UFC_modifier_the_buonaparte_reform
+					duration = 7300
+				}
+			}
+			hidden_effect = {
+				if = {
+					limit = {
+						general_with_name = "FrancescoBuonaparte"
+					}
+					add_mil_power = 100
+					add_country_modifier = {
+						name = UFC_modifier_the_buonaparte_reform
+						duration = 7300
+					}
+				}
+			}
+			clr_country_flag = UFC_flag_buonaparte_start
+		}
+	}
+
+	UFC_mission_intellectual_army = {
+		icon = ven_standing_army_mission_2
+		position = 32
+		required_missions = { UFC_mission_the_future_of_ufc }
+		provinces_to_highlight = {
+			OR = {
+				owned_by = root
+				owned_by_subject_of = root
+			}
+			NOT = {
+				has_forcelimit_building_trigger = yes
+				has_building = university
+			}
+		}
+		trigger = {
+			faction_in_power = ufc_corsica
+			faction_influence = {
+				faction = ufc_manhattan
+				influence = 40
+			}
+			num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+				has_forcelimit_building_trigger = yes
+				has_building = university
+				value = 300
+			}
+		}
+		effect = {
+			custom_tooltip = UFC_tooltip_enable_intellectual_army_policy
+		}
+	}
+
+	UFC_mission_military_reform = {
+		icon = fra_military_reform
+		required_missions = { UFC_mission_intellectual_army }
+		position = 33
+		trigger = {
+			num_of_revolutionary_guard = 100
+			if = {
+				limit = { has_dlc = "Emperor" }
+				OR = {
+					has_country_modifier = elite_revolutionary_guard_modifier
+					has_country_modifier = mass_revolutionary_guard_modifier
+					has_country_modifier = vanguard_revolutionary_guard_modifier
+					has_country_modifier = professional_revolutionary_guard_modifier
+				}
+			}
+			else_if = {
+				limit = { has_dlc = "Cradle of Civilization" }
+				army_professionalism = 0.85
+			}
+			else = { army_tradition = 85 }
+			monthly_mil = 14
+		}
+		effect = {
+			if = {
+				limit = { has_dlc = "Emperor" }
+				custom_tooltip = fra_elite_guard_tt
+				tooltip = {
+					add_country_modifier = {
+						name = fra_elite_guard_modifier
+						duration = -1
+					}
+				}
+
+				custom_tooltip = fra_mass_guard_tt
+				tooltip = {
+					add_country_modifier = {
+						name = fra_mass_guard_modifier
+						duration = -1
+					}
+				}
+
+				custom_tooltip = fra_vanguard_guard_tt
+				tooltip = {
+					add_country_modifier = {
+						name = fra_vanguard_guard_modifier
+						duration = -1
+					}
+				}
+
+				custom_tooltip = fra_professional_guard_tt
+				tooltip = {
+					add_country_modifier = {
+						name = fra_professional_guard_modifier
+						duration = -1
+					}
+				}
+			}
+			else_if = {
+				limit = { has_dlc = "Cradle of Civilization" }
+				add_country_modifier = {
+					name = fra_trained_revolutionary_guard1_modifier
+					duration = -1
+				}
+			}
+			else = {
+				add_country_modifier = {
+					name = fra_trained_revolutionary_guard2_modifier
+					duration = -1
+				}
+			}
+			hidden_effect = {
+				if = {
+					limit = { has_country_modifier = elite_revolutionary_guard_modifier }
+					add_country_modifier = {
+						name = fra_elite_guard_modifier
+						duration = -1
+					}
+				}
+				if = {
+					limit = { has_country_modifier = mass_revolutionary_guard_modifier }
+					add_country_modifier = {
+						name = fra_mass_guard_modifier
+						duration = -1
+					}
+				}
+				if = {
+					limit = { has_country_modifier = vanguard_revolutionary_guard_modifier }
+					add_country_modifier = {
+						name = fra_vanguard_guard_modifier
+						duration = -1
+					}
+				}
+				if = {
+					limit = { has_country_modifier = professional_revolutionary_guard_modifier }
+					add_country_modifier = {
+						name = fra_professional_guard_modifier
+						duration = -1
+					}
+				}
+			}
+		}
+	}
+
+	UFC_mission_the_doom_weapon = {
+		icon = bohemian_crystal
+		required_missions = { UFC_mission_balance }
+		position = 36
+		trigger = {
+			OR = {
+				trade_goods_produced_amount = {
+					trade_goods = glass
+					amount = 500
+				}
+				num_of_provinces_owned_or_owned_by_subjects_with = {
+					trade_goods = glass
+					base_production = 50
+					value = 10
+				}
+			}
+		}
+		effect = {
+			custom_tooltip = UFC_tooltip_the_doom_weapon
+			add_country_modifier = {
+				name = UFC_modifier_world_prism
+				duration = -1
+			}
+			change_price = {
+				trade_goods = glass
+				key = SOLAR_PANEL
+				value = 1
+				duration = -1
+			}
+		}
+	}
+}
+
 UFC_mission_slot_2 = {
 	slot = 2
 	generic = no
@@ -1209,6 +1624,202 @@ UFC_mission_slot_2_NGP = {
 	}
 }
 
+UFC_mission_slot_2_revolution = {
+	slot = 2
+	generic = no
+	ai = yes
+	potential = {
+		tag = UFC
+		has_country_flag = UFC_new_game_plus
+		is_revolutionary = yes
+	}
+	has_country_shield = yes
+	UFC_mission_the_second_doomsayer = {
+		icon = mission_tikal
+		position = 21
+		required_missions = {
+			UFC_mission_spark_from_laplata
+		}
+		provinces_to_highlight = {
+			owned_by = XIU
+		}
+		trigger = {
+			XIU = {
+				or = {
+					exists = no
+					is_subject_of = root
+				}
+			}
+		}
+		effect = {
+			custom_tooltip = UFC_tooltip_the_second_doomsayer
+			if = {
+				limit = {
+					XIU = {
+						is_subject_of = root
+					}
+				}
+				inherit = XIU
+			}
+			yucatan_area = {
+				change_religion = secularism
+			}
+			east_yucatan_area = {
+				change_religion = secularism
+			}
+			add_country_modifier = {
+				name = UFC_modifier_the_end_of_doom
+				duration = -1
+				desc = UNTIL_THE_DISASTER
+			}
+		}
+	}
+
+	UFC_mission_cut_down_the_snake = {
+		icon = mission_mesoamerica
+		position = 22
+		required_missions = {
+			UFC_mission_the_second_doomsayer UFC_mission_gun_of_newgranada UFC_mission_provisional_consitution
+		}
+		provinces_to_highlight = {
+			owned_by = AZT
+		}
+		trigger = {
+			AZT = {
+				or = {
+					exists = no
+					is_subject_of = root
+					has_spy_network_from = {
+						who = UFC
+						value = 90
+					}
+				}
+			}
+		}
+		effect = {
+			custom_tooltip = UFC_tooltip_cut_down_the_snake
+			if = {
+				limit = {
+					AZT = {
+						is_subject_of = root
+					}
+				}
+				inherit = AZT
+			}
+			add_country_modifier = {
+				name = UFC_modifier_cut_down_the_snake
+				duration = -1
+				desc = UNTIL_THE_DISASTER
+			}
+		}
+	}
+
+	UFC_mission_the_origin = {
+		icon = mission_african_trade_post
+		position = 27
+		required_missions = {
+			UFC_mission_export_revolution
+		}
+		provinces_to_highlight = {
+			OR = {
+				superregion = europe_superregion
+				superregion = eastern_europe_superregion
+			}
+			OR = {
+				owned_by = root
+				owned_by_subject_of = root
+			}
+			NOT = {
+				has_revolution_in_province = yes
+				has_manufactory_trigger = yes
+			}
+		}
+		trigger = {
+			num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+				OR = {
+					continent = africa
+				}
+				has_revolution_in_province = yes
+				has_manufactory_trigger = yes
+				value = 300
+			}
+		}
+		effect = {
+			custom_tooltip = UFC_tooltip_the_origin
+		}
+	}
+
+	UFC_mission_military_first_politics = {
+		icon = mission_swedish_military_advise
+		position = 30
+		required_missions = {
+			UFC_mission_shoemaker_in_laplata UFC_mission_giant_from_corsica
+		}
+		trigger = {
+			reform_level = 9
+			government_reform_progress = 50
+			num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+				OR = {
+					has_building = regimental_camp
+					has_building = conscription_center
+				}
+				value = 300
+			}
+		}
+		effect = {
+			add_government_reform = UFC_military_political_monopoly
+			add_government_reform = -50
+		}
+	}
+
+	UFC_mission_internationalist_revolution = {
+		icon = mission_russian_revolution
+		required_missions = { UFC_mission_intellectual_army UFC_mission_agrarian_reform }
+		position = 33
+		trigger = {
+			num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+				has_revolution_in_province = yes
+				OR = {
+					continent = europe
+					continent = asia
+					continent = africa
+				}
+				value = 500
+			}
+		}
+		effect = {
+			custom_tooltip = UFC_tooltip_enable_revolution_idea_spread_mechanic
+			set_country_flag = UFC_flag_arm_for_justice
+			add_country_modifier = {
+				name = UFC_modifier_not_against_people
+				duration = -1
+			}
+		}
+	}
+	UFC_mission_gender_equality = {
+		icon = mission_interfaith_relations
+		required_missions = { UFC_mission_internationalist_revolution UFC_mission_military_reform}
+		position = 34
+		trigger = {
+			faction_in_power = ufc_corsica
+			faction_influence = {
+				faction = ufc_laplata
+				influence = 30
+			}
+			faction_influence = {
+				faction = ufc_manhattan
+				influence = 30
+			}
+			reform_level = 11
+			government_reform_progress = 50
+		}
+		effect = {
+			custom_tooltip = UFC_tooltip_gender_equality
+			add_government_reform = -50
+		}
+	}
+}
+
 UFC_mission_slot_3 = {
 	slot = 3
 	generic = no
@@ -1659,17 +2270,35 @@ UFC_mission_slot_3_NGP = {
 				has_country_modifier = UFC_modifier_anarcho_capitalism
 				absolutism = 100
 			}
-			490 = {
-				owned_by = ROOT
-				is_core = ROOT
+			la_plata_region = {
+				or = {
+					owned_by = root
+					owned_by_subject_of = root
+				}
 			}
-			778 = {
-				owned_by = ROOT
-				is_core = ROOT
+			brazil_region = {
+				or = {
+					owned_by = root
+					owned_by_subject_of = root
+				}
 			}
-			484 = {
-				owned_by = ROOT
-				is_core = ROOT
+			colombia_region = {
+				or = {
+					owned_by = root
+					owned_by_subject_of = root
+				}
+			}
+			carribeans_region = {
+				or = {
+					owned_by = root
+					owned_by_subject_of = root
+				}
+			}
+			northeast_america_region = {
+				or = {
+					owned_by = root
+					owned_by_subject_of = root
+				}
 			}
 			iberia_region = {
 				or = {
@@ -1949,6 +2578,624 @@ UFC_mission_slot_locked_NGP = {
 		}
 		effect = {
 			custom_tooltip = UFC_tooltip_locked_newgameplus_revolution_effect_2
+		}
+	}
+}
+
+UFC_mission_slot_3_revolution = {
+	slot = 3
+	generic = no
+	ai = yes
+	potential = {
+		tag = UFC
+		has_country_flag = UFC_new_game_plus
+		is_revolutionary = yes
+	}
+	has_country_shield = yes
+	UFC_mission_spark_from_laplata = {
+		icon = mission_dismantle_hre
+		required_missions = { }
+		position = 20
+		trigger = {
+			is_revolutionary = yes
+			has_disaster = ufc_revolution_government
+		}
+		effect = {
+			remove_country_modifier = UFC_modifier_overcapacity
+			remove_country_modifier = UFC_modifier_military_mutiny
+			add_country_modifier = {
+				name = UFC_modifier_untrustable_government
+				duration = -1
+				desc = UNTIL_THE_DISASTER
+			}
+			custom_tooltip = UFC_tooltip_the_fire_from_laplata
+		}
+	}
+
+	UFC_mission_provisional_consitution = {
+		icon = mission_plc_governance_act
+		required_missions = { UFC_mission_spark_from_laplata }
+		position = 21
+		provinces_to_highlight = {
+			has_revolution_in_province = yes
+			not = {
+				OR = {
+					has_building = courthouse
+					has_building = town_hall
+				}
+			}
+		}
+		trigger = {
+			#all_owned_province = {
+			#	OR = {
+			#		is_city = no
+			#		is_in_capital_area = no
+			#		NOT = { local_autonomy_above_min = 10 }
+			#	}
+			#}
+			num_of_owned_provinces_with = {
+				OR = {
+					has_building = courthouse
+					has_building = town_hall
+				}
+				has_revolution_in_province = yes
+				value = 20
+			}
+		}
+		effect = {
+			add_rebel_progress = {
+				value = -50
+			}
+			country_event = { id = flavor_UFC.8922 }
+		}
+	}
+
+	UFC_mission_the_first_congress = {
+		icon = charter_the_wic
+		required_missions = { UFC_mission_cut_down_the_snake UFC_mission_iberia_civil_war }
+		position = 23
+		provinces_to_highlight = {
+			owned_by = root
+			is_in_capital_area = yes
+			is_city = yes
+			local_autonomy_above_min = 5
+		}
+		trigger = {
+			all_owned_province = {
+				OR = {
+					is_in_capital_area = no
+					is_city = no
+					NOT = { local_autonomy_above_min = 5 }
+				}
+			}
+			stability = 2
+		}
+		effect = {
+			set_country_flag = UFC_flag_end_revolution_disaster
+			custom_tooltip = UFC_tooltip_the_first_congress
+			remove_country_modifier = UFC_modifier_untrustable_government
+			remove_country_modifier = UFC_modifier_the_end_of_doom
+			remove_country_modifier = UFC_modifier_the_trial_of_massacre
+			remove_country_modifier = UFC_modifier_scientization_of_politics
+			remove_country_modifier = UFC_modifier_the_hell_for_dictator
+			remove_country_modifier = UFC_modifier_cut_down_the_snake
+			remove_country_modifier = UFC_modifier_rerereconquest
+			custom_tooltip = UFC_tooltip_the_first_congress_2
+			tooltip = {
+				add_country_modifier = {
+					name = UFC_modifier_the_lesson_of_revolution
+					duration = -1
+				}
+			}
+			hidden_effect = {
+				if = {
+					limit = {
+						not = {
+							had_country_flag = {
+								flag = UFC_flag_start_the_revolution_crisis
+								days = 1825
+							}
+						}
+					}
+					add_country_modifier = {
+						name = UFC_modifier_the_lesson_of_revolution
+						duration = -1
+					}
+				}
+				clr_country_flag = UFC_flag_start_the_revolution_crisis
+			}
+		}
+	}
+
+	UFC_mission_global_counterrevolutionary = {
+		icon = crush_the_revolution
+		required_missions = { UFC_mission_the_first_congress }
+		position = 24
+		trigger = {
+			OR = {
+				custom_trigger_tooltip = {
+					has_country_flag = UFC_flag_start_coalition
+					tooltip = UFC_tooltip_start_coalition
+				}
+				custom_trigger_tooltip = {
+					has_country_flag = UFC_flag_end_congress
+					tooltip = UFC_tooltip_end_congress
+				}
+			}
+		}
+		effect = {
+			custom_tooltip = UFC_tooltip_global_counterrevolutionary
+			tooltip = {
+				add_country_modifier = {
+					name = UFC_modifier_get_the_drop_on
+					duration = -1
+					desc = UNTIL_THE_COALITION
+				}
+			}
+			every_country = {
+				limit = {
+					OR = {
+						is_great_power = yes
+						government_rank = 2
+						government_rank = 3
+					}
+					OR = {
+						government = monarchy
+						government = theocracy
+					}
+					is_free_or_tributary_trigger = yes
+				}
+				form_coalition_against = UFC
+			}
+			declare_war_with_cb = {
+				who = emperor
+				casus_belli = cb_spread_the_revolution
+			}
+			hidden_effect = {
+				if = {
+					limit = {
+						not = { has_country_flag = UFC_flag_start_coalition }
+					}
+					add_country_modifier = {
+						name = UFC_modifier_get_the_drop_on
+						duration = -1
+						desc = UNTIL_THE_COALITION
+					}
+				}
+			}
+			custom_tooltip = UFC_tooltip_global_coalition_mechanics
+			set_global_flag = UFC_flag_global_coalition_war
+		}
+	}
+
+	UFC_mission_stabilize_africa = {
+		icon = mission_west_african_ports
+		required_missions = { UFC_mission_global_counterrevolutionary }
+		position = 25
+		provinces_to_highlight = {
+			OR = {
+				is_capital_of = SON
+				is_capital_of = KON
+				is_capital_of = ETH
+				is_capital_of = MAM
+			}
+		}
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = UFC_tooltip_in_global_coalition_war
+				has_global_flag = UFC_flag_global_coalition_war
+			}
+			not = {
+				OR = {
+					war_with = KON
+					war_with = ETH
+				}
+			}
+			not = {
+				any_country = {
+					capital_scope = {
+						continent = africa
+					}
+					total_development = 200
+					war_with = UFC
+				}
+			}
+		}
+		effect = {
+			every_country = {
+				limit = {
+					capital_scope = {
+						continent = africa
+					}
+					war_with = UFC
+				}
+				white_peace = UFC
+			}
+			custom_tooltip = UFC_tooltip_stabilize_africa
+			hidden_effect = {
+				every_owned_province = {
+					limit = {
+						continent = africa
+					}
+					add_local_autonomy = -50
+				}
+			}
+			add_ruler_modifier = {
+				name = UFC_modifier_feed_the_people
+				duration = -1
+			}
+		}
+	}
+
+	UFC_mission_export_revolution = {
+		icon = french_revolution
+		required_missions = { UFC_mission_stabilize_africa UFC_mission_destroy_the_feudal_system UFC_mission_dethrone_the_chinese_empire}
+		position = 26
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = UFC_tooltip_out_global_coalition_war
+				not = {
+					has_global_flag = UFC_flag_global_coalition_war
+				}
+			}
+			num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+				has_revolution_in_province = yes
+				value = 200
+			}
+			army_size = 500
+			navy_size = 250
+		}
+		effect = {
+			country_event = { id = flavor_UFC.8925 }
+			custom_tooltip = UFC_tooltip_export_revolution
+		}
+	}
+
+	UFC_mission_rebuild_the_lighthouse = {
+		icon = mission_conquer_alexandria
+		position = 27
+		required_missions = {
+			UFC_mission_export_revolution
+		}
+		provinces_to_highlight = {
+			AND = {
+				continent = asia
+				OR = {
+					superregion = near_east_superregion
+					superregion = persia_superregion
+					superregion = tartary_superregion
+				}
+			}
+			OR = {
+				owned_by = root
+				owned_by_subject_of = root
+			}
+			NOT = {
+				has_revolution_in_province = yes
+				has_building = university
+			}
+		}
+		trigger = {
+			num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+				AND = {
+					continent = asia
+					OR = {
+						superregion = near_east_superregion
+						superregion = persia_superregion
+						superregion = tartary_superregion
+					}
+				}
+				has_revolution_in_province = yes
+				has_building = university
+				value = 300
+			}
+		}
+		effect = {
+			custom_tooltip = UFC_tooltip_rebuild_the_lighthouse
+		}
+	}
+
+	UFC_mission_we_are_the_world = {
+		icon = mission_explore_the_world
+		position = 28
+		required_missions = {
+			UFC_mission_sweeping_the_class UFC_mission_the_origin UFC_mission_rebuild_the_lighthouse UFC_mission_no_more_caste UFC_mission_never_fallen_empire
+		}
+		provinces_to_highlight = {
+			owner = {
+				total_development = 50
+				NOT = {
+					OR = {
+						tag = UFC
+						is_subject_of = UFC
+					}
+				}
+			}
+		}
+		trigger = {
+			OR = {
+				AND = {
+					custom_trigger_tooltip = {
+						has_country_flag = UFC_flag_we_are_the_world
+						tooltip = UFC_tooltip_choose_we_are_the_world
+					}
+					all_country = {
+						OR = {
+							not = {
+								total_development = 100
+							}
+							tag = UFC
+							is_subject_of = UFC
+						}
+					}
+				}
+				all_country = {
+					OR = {
+						not = {
+							total_development = 50
+						}
+						tag = UFC
+						is_subject_of = UFC
+					}
+				}
+			}
+		}
+		effect = {
+			custom_tooltip = UFC_tooltip_we_are_the_world_effect
+			set_country_flag = UFC_flag_can_update_rapanui_spaceport
+		}
+	}
+
+	UFC_mission_shoemaker_in_laplata = {
+		icon = mission_rb_weather_the_reformation
+		position = 29
+		required_missions = { }
+		trigger = {
+			OR = {
+				AND = {
+					custom_trigger_tooltip = {
+						tooltip = UFC_tooltip_posadas_inpower
+						has_ruler_flag = UFC_flag_posadas
+					}
+					adm = 6
+					dip = 6
+					mil = 5
+				}
+				custom_trigger_tooltip = {
+					tooltip = UFC_tooltip_posadas_not_inpower
+					not = {
+						has_ruler_flag = UFC_flag_posadas
+					}
+				}
+			}
+		}
+		effect = {
+			custom_tooltip = UFC_tooltip_if_posadas_alive
+			tooltip = {
+				add_adm_power = 100
+				add_country_modifier = {
+					name = UFC_modifier_the_posadas_reform
+					duration = 7300
+				}
+			}
+			hidden_effect = {
+				if = {
+					limit = {
+						has_ruler_flag = UFC_flag_posadas
+					}
+					add_adm_power = 100
+					add_country_modifier = {
+						name = UFC_modifier_the_posadas_reform
+						duration = 7300
+					}
+				}
+			}
+		}
+	}
+
+	UFC_mission_posadasilism = {
+		icon = mission_venus
+		position = 30
+		required_missions = {
+			UFC_mission_shoemaker_in_laplata
+		}
+		provinces_to_highlight = {
+			OR = {
+				province_id = 1988
+			}
+		}
+		trigger = {
+			innovativeness = 100
+			1988 = {
+				owned_by = ROOT
+				has_revolution_in_province = yes
+				has_building = university
+				has_any_ongoing_construction = no
+			}
+		}
+		effect = {
+			country_event = { id = flavor_UFC.8926 }
+			custom_tooltip = UFC_tooltip_posadasilism_effect
+		}
+	}
+
+	UFC_mission_the_future_of_ufc = {
+		icon = mission_strengthen_the_vegvar
+		position = 31
+		required_missions = {
+			UFC_mission_posadasilism
+			UFC_mission_military_first_politics
+			UFC_mission_early_technocracy
+		}
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = UFC_tooltip_decide_the_future
+				has_country_flag = UFC_flag_has_decide_the_future
+			}
+			reform_level = 6
+			government_reform_progress = 50
+		}
+		effect = {
+			add_government_reform = UFC_laborunion_representives_congress
+			add_government_reform = -50
+		}
+	}
+
+	UFC_mission_agrarian_reform = {
+		icon = mission_ne_agriculture
+		position = 32
+		required_missions = { UFC_mission_the_future_of_ufc }
+		provinces_to_highlight = {
+			OR = {
+				owned_by = root
+				owned_by_subject_of = root
+			}
+			NOT = {
+				has_farm_trade_goods = yes
+				has_building = university
+			}
+		}
+		trigger = {
+			faction_in_power = ufc_laplata
+			faction_influence = {
+				faction = ufc_corsica
+				influence = 40
+			}
+			num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+				OR = {
+					has_farm_trade_goods = yes
+					has_plantation_trade_goods = yes
+				}
+				has_building = university
+				value = 300
+			}
+		}
+		effect = {
+			custom_tooltip = UFC_tooltip_enable_agrarian_reform_policy
+		}
+	}
+
+	UFC_mission_cocoa_for_everyone = {
+		icon = mission_cocoa
+		position = 33
+		required_missions = { UFC_mission_agrarian_reform }
+		trigger = {
+			trade_goods_produced_amount = {
+				trade_goods = cocoa
+				amount = 200
+			}
+			trade_goods_produced_amount = {
+				trade_goods = coffee
+				amount = 200
+			}
+			trade_goods_produced_amount = {
+				trade_goods = sugar
+				amount = 200
+			}
+			trade_goods_produced_amount = {
+				trade_goods = tea
+				amount = 100
+			}
+		}
+		effect = {
+			custom_tooltip = UFC_tooltip_cocoa_for_everyone
+		}
+	}
+
+	UFC_mission_self_limitation_of_power = {
+		icon = the_balance_of_power
+		required_missions = { UFC_mission_cocoa_for_everyone UFC_mission_internationalist_revolution UFC_mission_rising_pragmatism}
+		position = 34
+		trigger = {
+			faction_in_power = ufc_laplata
+			faction_influence = {
+				faction = ufc_corsica
+				influence = 30
+			}
+			faction_influence = {
+				faction = ufc_manhattan
+				influence = 30
+			}
+			reform_level = 11
+			government_reform_progress = 50
+		}
+		effect = {
+			custom_tooltip = UFC_tooltip_self_limitation_of_power
+			add_government_reform = -50
+		}
+	}
+
+	UFC_mission_balance = {
+		icon = mission_high_income
+		required_missions = { UFC_mission_eight_hours_day UFC_mission_gender_equality UFC_mission_self_limitation_of_power }
+		position = 35
+		trigger = {
+			faction_influence = {
+				faction = ufc_manhattan
+				influence = 32
+			}
+			faction_influence = {
+				faction = ufc_corsica
+				influence = 32
+			}
+			faction_influence = {
+				faction = ufc_laplata
+				influence = 32
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = UFC_modifier_balance
+				duration = 73000
+			}
+			custom_tooltip = UFC_tooltip_balance
+		}
+	}
+
+	UFC_mission_the_call_of_the_newworld = {
+		icon = mission_city_of_the_world's_desire
+		required_missions = { UFC_mission_balance }
+		position = 36
+		trigger = {
+			OR = {
+				trade_goods_produced_amount = {
+					trade_goods = iron
+					amount = 500
+				}
+				num_of_provinces_owned_or_owned_by_subjects_with = {
+					trade_goods = iron
+					base_production = 50
+					value = 10
+				}
+			}
+		}
+		effect = {
+			custom_tooltip = UFC_tooltip_the_call_of_the_newworld
+			add_country_modifier = {
+				name = UFC_modifier_new_world_desire
+				duration = -1
+			}
+			change_price = {
+				trade_goods = iron
+				key = STELL_NEED
+				value = 1
+				duration = -1
+			}
+		}
+	}
+
+	UFC_mission_beyond_the_earth = {
+		icon = mission_venus
+		required_missions = { UFC_mission_energy_coin UFC_mission_the_doom_weapon UFC_mission_the_call_of_the_newworld}
+		position = 37
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = UFC_tooltip_ready_to_go
+				has_country_flag = UFC_flag_ready_for_space_exploration
+			}
+		}
+		effect = {
+			custom_tooltip = UFC_tooltip_beyond_the_earth
 		}
 	}
 }
@@ -2499,7 +3746,289 @@ UFC_mission_slot_4_NGP = {
 		}
 	}
 }
+UFC_mission_slot_4_revolution = {
+	slot = 4
+	generic = no
+	ai = yes
+	potential = {
+		tag = UFC
+		has_country_flag = UFC_new_game_plus
+		is_revolutionary = yes
+	}
+	has_country_shield = yes
+	UFC_mission_sun_in_macondo = {
+		icon = mission_jungle
+		position = 21
+		required_missions = {
+			UFC_mission_spark_from_laplata
+		}
+		provinces_to_highlight = {
+			owned_by = MCA
+		}
+		trigger = {
+			MCA = {
+				or = {
+					exists = no
+					is_subject_of = root
+				}
+			}
+		}
+		effect = {
+			custom_tooltip = UFC_tooltip_sun_in_macondo
+			if = {
+				limit = {
+					MCA = {
+						is_subject_of = root
+					}
+				}
+				inherit = MCA
+			}
+			add_country_modifier = {
+				name = UFC_modifier_the_trial_of_massacre
+				duration = -1
+				desc = UNTIL_THE_DISASTER
+			}
+			country_event = { id = flavor_UFC.8923 }
+		}
+	}
 
+	UFC_mission_iberia_civil_war = {
+		icon = mission_castillian_aggression
+		position = 22
+		required_missions = {
+			UFC_mission_sun_in_macondo UFC_mission_provisional_consitution UFC_mission_puerto_plata_landing
+		}
+		provinces_to_highlight = {
+			region = iberia_region
+			NOT = {
+				OR = {
+					owned_by = root
+					owned_by_subject_of = root
+				}
+			}
+		}
+		trigger = {
+			OR = {
+				num_of_owned_provinces_with = {
+					region = iberia_region
+					value = 50
+				}
+				ADU = {
+					num_of_owned_provinces_with = {
+						region = iberia_region
+						value = 50
+					}
+					is_subject_of_type_with_overlord = {
+						who = UFC
+						type = ufc_cooperative
+					}
+				}
+			}
+		}
+		effect = {
+			custom_tooltip = UFC_tooltip_iberia_civil_war
+			add_country_modifier = {
+				name = UFC_modifier_rerereconquest
+				duration = -1
+				desc = UNTIL_THE_DISASTER
+			}
+		}
+	}
+
+	UFC_mission_no_more_caste = {
+		icon = mission_indian_empire
+		position = 27
+		required_missions = {
+			UFC_mission_export_revolution
+		}
+		provinces_to_highlight = {
+			OR = {
+				superregion = india_superregion
+				superregion = east_indies_superregion
+			}
+			OR = {
+				owned_by = root
+				owned_by_subject_of = root
+			}
+			NOT = {
+				has_revolution_in_province = yes
+				has_manufactory_trigger = yes
+			}
+		}
+		trigger = {
+			num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+				OR = {
+					superregion = india_superregion
+					superregion = east_indies_superregion
+				}
+				has_revolution_in_province = yes
+				has_manufactory_trigger = yes
+				value = 300
+			}
+		}
+		effect = {
+			custom_tooltip = UFC_tooltip_no_more_caste
+			set_global_flag = UFC_flag_no_more_caste
+			tooltip = {
+				add_country_modifier = {
+					name = UFC_modifier_no_more_caste
+					duration = -1
+				}
+			}
+			hidden_effect = {
+				if = {
+					limit = {
+						has_country_modifier = UFC_modifier_future_for_egality
+					}
+					add_country_modifier = {
+						name = UFC_modifier_no_more_caste
+						duration = -1
+					}
+				}
+			}
+		}
+	}
+
+	UFC_mission_early_technocracy = {
+		icon = academy_of_the_bran
+		position = 30
+		required_missions = {
+			UFC_mission_shoemaker_in_laplata UFC_mission_nobility_in_newgranada
+		}
+		trigger = {
+			reform_level = 7
+			government_reform_progress = 50
+			num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+				has_building = university
+				value = 300
+			}
+		}
+		effect = {
+			add_government_reform = UFC_technocracy_autonomous_laborunion
+			add_government_reform = -50
+		}
+	}
+
+	UFC_mission_rising_pragmatism = {
+		icon = mission_rb_control_state_religion
+		position = 33
+		required_missions = { UFC_mission_agrarian_reform UFC_mission_armed_literacy }
+		provinces_to_highlight = {
+			is_city = yes
+			or = {
+				province_id = 118
+				province_id = 151
+				province_id = 385
+				province_id = 409
+				province_id = 677
+				province_id = 2075
+				province_id = 2095
+				province_id = 2140
+				province_id = 846
+				province_id = 379
+			}
+		}
+		trigger = {
+			118 = {
+				OR = {
+					owned_by = Root
+					owned_by_subject_of = Root
+				}
+				has_building = university
+			}
+			151 = {
+				OR = {
+					owned_by = Root
+					owned_by_subject_of = Root
+				}
+				has_building = university
+			}
+			385 = {
+				OR = {
+					owned_by = Root
+					owned_by_subject_of = Root
+				}
+				has_building = university
+			}
+			409 = {
+				OR = {
+					owned_by = Root
+					owned_by_subject_of = Root
+				}
+				has_building = university
+			}
+			677 = {
+				OR = {
+					owned_by = Root
+					owned_by_subject_of = Root
+				}
+				has_building = university
+			}
+			2075 = {
+				OR = {
+					owned_by = Root
+					owned_by_subject_of = Root
+				}
+				has_building = university
+			}
+			2095 = {
+				OR = {
+					owned_by = Root
+					owned_by_subject_of = Root
+				}
+				has_building = university
+			}
+			2140 = {
+				OR = {
+					owned_by = Root
+					owned_by_subject_of = Root
+				}
+				has_building = university
+			}
+			846 = {
+				OR = {
+					owned_by = Root
+					owned_by_subject_of = Root
+				}
+				has_building = university
+			}
+			379 = {
+				OR = {
+					owned_by = Root
+					owned_by_subject_of = Root
+				}
+				has_building = university
+			}
+		}
+		effect = {
+			custom_tooltip = UFC_tooltip_rising_pragmatism
+			set_country_flag = UFC_start_the_assimilation
+		}
+	}
+
+	UFC_mission_eight_hours_day = {
+		icon = prosperity_for_all
+		required_missions = { UFC_mission_rising_pragmatism UFC_mission_universal_higher_education }
+		position = 34
+		trigger = {
+			faction_in_power = ufc_manhattan
+			faction_influence = {
+				faction = ufc_corsica
+				influence = 30
+			}
+			faction_influence = {
+				faction = ufc_laplata
+				influence = 30
+			}
+			reform_level = 11
+			government_reform_progress = 50
+		}
+		effect = {
+			custom_tooltip = UFC_tooltip_eight_hours_day
+			add_government_reform = -50
+		}
+	}
+}
 
 UFC_mission_slot_5 = {
 	slot = 5
@@ -2910,6 +4439,9 @@ UFC_mission_slot_5 = {
 					value = 100
 				}
 			}
+			panama_region = {
+				change_religion = root
+			}
 			country_event = { id = flavor_UFC.1021 days = 90 }
 		}
 	}
@@ -3050,83 +4582,6 @@ UFC_mission_slot_5_NGP = {
 		}
 	}
 
-	UFC_mission_rising_pragmatism = {
-		icon = mission_rb_control_state_religion
-		position = 13
-		required_missions = { UFC_mission_market_penetration }
-		provinces_to_highlight = {
-			is_city = yes
-			or = {
-				province_id = 118
-				province_id = 151
-				province_id = 385
-				province_id = 409
-				province_id = 677
-				province_id = 2075
-				province_id = 2095
-				province_id = 2140
-				province_id = 846
-				province_id = 379
-			}
-		}
-		trigger = {
-			118 = {
-				owned_by = ROOT
-				is_core = ROOT
-				has_building = university
-			}
-			151 = {
-				owned_by = ROOT
-				is_core = ROOT
-				has_building = university
-			}
-			385 = {
-				owned_by = ROOT
-				is_core = ROOT
-				has_building = university
-			}
-			409 = {
-				owned_by = ROOT
-				is_core = ROOT
-				has_building = university
-			}
-			677 = {
-				owned_by = ROOT
-				is_core = ROOT
-				has_building = university
-			}
-			2075 = {
-				owned_by = ROOT
-				is_core = ROOT
-				has_building = university
-			}
-			2095 = {
-				owned_by = ROOT
-				is_core = ROOT
-				has_building = university
-			}
-			2140 = {
-				owned_by = ROOT
-				is_core = ROOT
-				has_building = university
-			}
-			846 = {
-				owned_by = ROOT
-				is_core = ROOT
-				has_building = university
-			}
-			379 = {
-				owned_by = ROOT
-				is_core = ROOT
-				has_building = university
-			}
-		}
-		effect = {
-			custom_tooltip = UFC_tooltip_rising_pragmatism
-			set_country_flag = UFC_start_the_assimilation
-		}
-	}
-
 	UFC_mission_westafrica_dyes = {
 		icon = mission_gujarati_textiles
 		position = 15
@@ -3217,6 +4672,470 @@ UFC_mission_slot_5_NGP = {
 					name = UFC_modifier_kilwa_archaeology
 					duration = -1
 				}
+			}
+		}
+	}
+}
+
+UFC_mission_slot_5_revolution = {
+	slot = 5
+	generic = no
+	ai = yes
+	potential = {
+		tag = UFC
+		has_country_flag = UFC_new_game_plus
+		is_revolutionary = yes
+	}
+	has_country_shield = yes
+	UFC_mission_puerto_plata_landing = {
+		icon = mission_pirate_flag
+		position = 21
+		required_missions = {
+			UFC_mission_spark_from_laplata
+		}
+		provinces_to_highlight = {
+			owned_by = CAB
+		}
+		trigger = {
+			CAB = {
+				or = {
+					exists = no
+					is_subject_of = root
+				}
+			}
+		}
+		effect = {
+			custom_tooltip = UFC_tooltip_puerto_plata_landing
+			if = {
+				limit = {
+					CAB = {
+						is_subject_of = root
+					}
+				}
+				inherit = CAB
+			}
+			add_country_modifier = {
+				name = UFC_modifier_the_hell_for_dictator
+				duration = -1
+				desc = UNTIL_THE_DISASTER
+			}
+		}
+	}
+
+	UFC_mission_dethrone_the_chinese_empire = {
+		icon = mng_heavens_will
+		position = 25
+		required_missions = {
+			UFC_mission_global_counterrevolutionary
+		}
+		provinces_to_highlight = {
+			province_id = 1020
+		}
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = UFC_tooltip_in_global_coalition_war
+				has_global_flag = UFC_flag_global_coalition_war
+			}
+			any_country = {
+				is_emperor_of_china = yes
+				not = {
+					war_with = UFC
+				}
+			}
+			any_country = {
+				tag = KOR
+				not = {
+					war_with = UFC
+				}
+			}
+			OR = {
+				any_country = {
+					has_reform = shogunate
+					not = {
+						war_with = UFC
+					}
+				}
+				any_country = {
+					tag = JAP
+					not = {
+						war_with = UFC
+					}
+				}
+			}
+			not = {
+				any_country = {
+					capital_scope = {
+						continent = asia
+					}
+					total_development = 200
+					war_with = UFC
+				}
+			}
+		}
+		effect = {
+			custom_tooltip = UFC_tooltip_dethrone_the_chinese_empire
+			every_country = {
+				limit = {
+					capital_scope = {
+						continent = asia
+					}
+					war_with = UFC
+				}
+				white_peace = UFC
+			}
+			add_ruler_modifier = {
+				name = UFC_modifier_lead_to_republic
+				duration = -1
+			}
+			hidden_effect = {
+				every_owned_province = {
+					limit = {
+						continent = asia
+					}
+					add_local_autonomy = -50
+				}
+			}
+			every_known_country = {
+				limit = {
+					or = {
+						tag = KOR
+						tag = JAP
+						has_reform = shogunate
+						is_emperor_of_china = yes
+					}
+				}
+				change_government = republic
+			}
+			dismantle_empire_of_china = yes
+		}
+	}
+
+	UFC_mission_never_fallen_empire = {
+		icon = jap_conquer_north_china
+		position = 27
+		required_missions = {
+			UFC_mission_export_revolution
+		}
+		provinces_to_highlight = {
+			OR = {
+				superregion = china_superregion
+				superregion = far_east_superregion
+			}
+			OR = {
+				owned_by = root
+				owned_by_subject_of = root
+			}
+			NOT = {
+				has_revolution_in_province = yes
+				has_manufactory_trigger = yes
+			}
+		}
+		trigger = {
+			num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+				OR = {
+					superregion = china_superregion
+					superregion = far_east_superregion
+				}
+				has_revolution_in_province = yes
+				has_manufactory_trigger = yes
+				value = 300
+			}
+		}
+		effect = {
+			custom_tooltip = UFC_tooltip_never_fallen_empire
+			tooltip = {
+				add_country_modifier = {
+					name = UFC_modifier_never_fallen_empire
+					duration = -1
+				}
+				add_stability = -6
+				add_country_modifier = {
+					name = UFC_modifier_thought_change_impact
+					duration = 365
+				}
+			}
+			hidden_effect = {
+				if = {
+					limit = {
+						has_country_modifier = UFC_modifier_future_for_egality
+					}
+					add_country_modifier = {
+						name = UFC_modifier_never_fallen_empire
+						duration = -1
+					}
+					add_stability = -6
+					add_country_modifier = {
+						name = UFC_modifier_never_fallen_empire
+						duration = -1
+					}
+				}
+			}
+		}
+	}
+
+	UFC_mission_nobility_in_newgranada = {
+		icon = enlightened_absolutism
+		position = 29
+		required_missions = { }
+		trigger = {
+			OR = {
+				custom_trigger_tooltip = {
+					tooltip = UFC_tooltip_yusuf_agree
+					has_country_flag = UFC_flag_yusuf_agree
+				}
+				custom_trigger_tooltip = {
+					tooltip = UFC_tooltip_yusuf_disagree
+					has_country_flag = UFC_flag_yusuf_disagree
+				}
+			}
+		}
+		effect = {
+			custom_tooltip = UFC_tooltip_if_yusuf_agree
+			tooltip = {
+				add_dip_power = 100
+				add_country_modifier = {
+					name = UFC_modifier_the_yusuf_reform
+					duration = 7300
+				}
+			}
+			hidden_effect = {
+				if = {
+					limit = {
+						has_country_flag = UFC_flag_yusuf_agree
+					}
+					add_dip_power = 100
+					add_country_modifier = {
+						name = UFC_modifier_the_yusuf_reform
+						duration = 7300
+					}
+				}
+			}
+		}
+	}
+
+	UFC_mission_armed_literacy = {
+		icon = mission_book_of_royal_degrees
+		position = 32
+		required_missions = { UFC_mission_the_future_of_ufc }
+		provinces_to_highlight = {
+			OR = {
+				owned_by = root
+				owned_by_subject_of = root
+			}
+			NOT = {
+				has_courthouse_building_trigger = yes
+				has_building = university
+			}
+		}
+		trigger = {
+			faction_in_power = ufc_manhattan
+			faction_influence = {
+				faction = ufc_laplata
+				influence = 40
+			}
+			num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+				has_courthouse_building_trigger = yes
+				has_building = university
+				value = 300
+			}
+		}
+		effect = {
+			custom_tooltip = UFC_tooltip_enable_armed_literacy
+		}
+	}
+
+	UFC_mission_universal_higher_education = {
+		icon = mission_early_modern_university
+		position = 33
+		required_missions = { UFC_mission_armed_literacy }
+		provinces_to_highlight = {
+			OR = {
+				province_id = 237
+				province_id = 266
+				province_id = 117
+				province_id = 1132
+				province_id = 361
+				province_id = 558
+				province_id = 735
+				province_id = 917
+				province_id = 410
+			}
+			not = {
+				grown_by_development = 20
+				has_building = university
+			}
+		}
+		trigger = {
+			237 = {
+				OR = {
+					owned_by = root
+					owned_by_subject_of = root
+				}
+				grown_by_development = 20
+				has_building = university
+			}
+			266 = {
+				OR = {
+					owned_by = root
+					owned_by_subject_of = root
+				}
+				grown_by_development = 20
+				has_building = university
+			}
+			117 = {
+				OR = {
+					owned_by = root
+					owned_by_subject_of = root
+				}
+				grown_by_development = 20
+				has_building = university
+			}
+			1132 = {
+				OR = {
+					owned_by = root
+					owned_by_subject_of = root
+				}
+				grown_by_development = 20
+				has_building = university
+			}
+			361 = {
+				OR = {
+					owned_by = root
+					owned_by_subject_of = root
+				}
+				grown_by_development = 20
+				has_building = university
+			}
+			558 = {
+				OR = {
+					owned_by = root
+					owned_by_subject_of = root
+				}
+				grown_by_development = 20
+				has_building = university
+			}
+			735 = {
+				OR = {
+					owned_by = root
+					owned_by_subject_of = root
+				}
+				grown_by_development = 20
+				has_building = university
+			}
+			917 = {
+				OR = {
+					owned_by = root
+					owned_by_subject_of = root
+				}
+				grown_by_development = 20
+				has_building = university
+			}
+			410 = {
+				OR = {
+					owned_by = root
+					owned_by_subject_of = root
+				}
+				grown_by_development = 20
+				has_building = university
+			}
+		}
+		effect = {
+			custom_tooltip = UFC_tooltip_universal_higher_education
+			tooltip = {
+				237 = {
+					add_permanent_province_modifier = {
+						name = UFC_modifier_universal_higher_education_1
+						duration = -1
+					}
+				}
+			}
+			custom_tooltip = UFC_tooltip_universal_higher_education_2
+			tooltip = {
+				237 = {
+					add_permanent_province_modifier = {
+						name = UFC_modifier_universal_higher_education_2
+						duration = -1
+					}
+				}
+			}
+			hidden_effect = {
+				if = {
+					limit = {
+						has_country_modifier = UFC_modifier_future_for_freedom
+					}
+					every_province = {
+						limit = {
+							OR = {
+								province_id = 237
+								province_id = 266
+								province_id = 117
+								province_id = 1132
+								province_id = 361
+								province_id = 558
+								province_id = 735
+								province_id = 917
+								province_id = 410
+							}
+						}
+						add_permanent_province_modifier = {
+							name = UFC_modifier_universal_higher_education_1
+							duration = -1
+						}
+					}
+				}
+				else = {
+					every_province = {
+						limit = {
+							OR = {
+								province_id = 237
+								province_id = 266
+								province_id = 117
+								province_id = 1132
+								province_id = 361
+								province_id = 558
+								province_id = 735
+								province_id = 917
+								province_id = 410
+							}
+						}
+						add_permanent_province_modifier = {
+							name = UFC_modifier_universal_higher_education_2
+							duration = -1
+						}
+					}
+				}
+			}
+		}
+	}
+
+	UFC_mission_energy_coin = {
+		icon = mission_iron_and_copper
+		required_missions = { UFC_mission_balance }
+		position = 36
+		trigger = {
+			OR = {
+				trade_goods_produced_amount = {
+					trade_goods = copper
+					amount = 500
+				}
+				num_of_provinces_owned_or_owned_by_subjects_with = {
+					trade_goods = copper
+					base_production = 50
+					value = 10
+				}
+			}
+		}
+		effect = {
+			custom_tooltip = UFC_tooltip_energy_coin
+			add_country_modifier = {
+				name = UFC_modifier_electricity_use
+				duration = -1
+			}
+			change_price = {
+				trade_goods = copper
+				key = POWER_TRANSMISSION
+				value = 1
+				duration = -1
 			}
 		}
 	}

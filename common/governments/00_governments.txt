@@ -598,6 +598,7 @@ republic = {
 				ikko_ikki_republic_reform
 				revolutionary_republic_reform
 				junior_revolutionary_republic_reform
+				UFC_labor_cooperative_reform #ufc
 				presidential_despot_reform
 				cossacks_reform
 				military_dictatorship_reform
@@ -793,6 +794,7 @@ republic = {
 				governing_senate_reform
 				enforced_autocracy_reform
 				UFC_the_stock_system#UFC mod
+				UFC_laborunion_representives_congress
 			}
 		}
 		federalism_vs_unitarism_vs_confederacy = {
@@ -805,6 +807,7 @@ republic = {
 				#1.36
 				superiority_of_the_state_reform
 				divided_aristocracy_reform
+				UFC_technocracy_autonomous_laborunion #UFC
 			}
 		}
 		economical_matters_republic = {
@@ -845,6 +848,7 @@ republic = {
 				power_to_the_captains_reform
 				absolute_president_reform
 				revolutionary_council_reform
+				UFC_military_political_monopoly
 			}
 		}
 		guiding_principle_of_administration = {

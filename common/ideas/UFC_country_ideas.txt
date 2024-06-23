@@ -45,7 +45,7 @@ UFC_ideas = {
 		global_trade_power = 0.15
 	}
 	ufc_black_slaves = {
-		global_trade_goods_size = 0.3
+		global_trade_goods_size = 0.25
 		harsh_treatment_cost = -0.25
 	}
 }
@@ -54,10 +54,10 @@ UFC_ideas = {
 UFC_ideas_revolution = {
 	start = {
 		artillery_fire = 1.5
-		drill_decay_modifier = -0.5
+		reelection_cost = -0.3
 	}
 	bonus = {
-		may_establish_frontier = yes
+		drill_decay_modifier = -0.5
 	}
 	trigger = {
 		tag = UFC
@@ -75,7 +75,7 @@ UFC_ideas_revolution = {
 	}
 	ufc_workers_management = {
 		min_autonomy_in_territories = -0.1
-		max_revolutionary_zeal = 30
+		max_revolutionary_zeal = 20
 	}
 	ufc_liberate_the_world = {
 		ignore_coring_distance = yes

@@ -132,6 +132,53 @@ on_battle_won_province = {
 	}
 }
 
+# province
+# root = location, from = losing country
+on_siege_won_province = {
+	if = {
+		limit = {
+			from = {
+				war_with = UFC
+			}
+			UFC = {
+				has_country_flag = UFC_flag_arm_for_justice
+			}
+			units_in_province = UFC
+		}
+		add_devastation = -10
+		for = {
+			amount = 100
+			effect = "
+				if = {
+					limit = {
+						base_tax = 2
+					}
+					add_base_tax = -1
+					add_base_production = 1
+				}
+			"
+		}
+	}
+}
+
+#Unit Scope OnAction for Battle Won
+on_battle_won_unit = {
+	if = {
+		limit = {
+			general_with_name = "FrancescoBuonaparte"
+			unit_owner = {
+				has_country_flag = UFC_flag_buonaparte_start
+			}
+		}
+		unit_owner = {
+			change_variable = {
+				which = BuonaparteWinVariable
+				value = 1
+			}
+		}
+	}
+}
+
 on_yearly_pulse = {
 	events = {
 		flavor_UFC.21
@@ -291,6 +338,49 @@ on_adm_development = {
 			cost = 1
 		}
 	}
+	if = {
+		limit = {
+			owner = {
+				overlord = {
+					mission_completed = UFC_mission_the_origin
+					has_country_modifier = UFC_modifier_future_for_freedom
+				}
+			}
+			not = { development = 20 }
+			continent = africa
+		}
+		random_list = {
+			50 = {}
+			50 = {
+				add_base_tax = 1
+			}
+		}
+	}
+	if = {
+		limit = {
+			owner = {
+				mission_completed = UFC_mission_the_origin
+				has_country_modifier = UFC_modifier_future_for_egality
+			}
+			not = { development = 20 }
+			continent = africa
+		}
+		random_list = {
+			25 = {}
+			75 = {
+				add_base_tax = 1
+			}
+		}
+	}
+	if = {
+		limit = {
+			owner = {
+				has_country_flag = UFC_flag_full_speed_industrialization
+			}
+		}
+		add_base_tax = -1
+		add_base_production = 1
+	}
 }
 
 on_dip_development = {
@@ -344,6 +434,40 @@ on_dip_development = {
 			clr_country_flag = UFC_flag_bogota_gem_sus
 		}
 	}
+	if = {
+		limit = {
+			owner = {
+				mission_completed = UFC_mission_the_origin
+				has_country_modifier = UFC_modifier_future_for_freedom
+			}
+			not = { development = 20 }
+			continent = africa
+		}
+		random_list = {
+			50 = {}
+			50 = {
+				add_base_production = 1
+			}
+		}
+	}
+	if = {
+		limit = {
+			owner = {
+				overlord = {
+					mission_completed = UFC_mission_the_origin
+					has_country_modifier = UFC_modifier_future_for_freedom
+				}
+			}
+			not = { development = 20 }
+			continent = africa
+		}
+		random_list = {
+			25 = {}
+			75 = {
+				add_base_production = 1
+			}
+		}
+	}
 }
 
 on_mil_development = {
@@ -371,6 +495,49 @@ on_mil_development = {
 			speed = 0.5
 			cost = 1
 		}
+	}
+	if = {
+		limit = {
+			owner = {
+				overlord = {
+					mission_completed = UFC_mission_the_origin
+					has_country_modifier = UFC_modifier_future_for_freedom
+				}
+			}
+			not = { development = 20 }
+			continent = africa
+		}
+		random_list = {
+			50 = {}
+			50 = {
+				add_base_manpower = 1
+			}
+		}
+	}
+	if = {
+		limit = {
+			owner = {
+				mission_completed = UFC_mission_the_origin
+				has_country_modifier = UFC_modifier_future_for_egality
+			}
+			not = { development = 20 }
+			continent = africa
+		}
+		random_list = {
+			25 = {}
+			75 = {
+				add_base_manpower = 1
+			}
+		}
+	}
+	if = {
+		limit = {
+			owner = {
+				has_country_flag = UFC_flag_full_speed_industrialization
+			}
+		}
+		add_base_manpower = -1
+		add_base_production = 1
 	}
 }
 
@@ -437,6 +604,19 @@ on_main_war_won = {
 			}
 		}
 		remove_country_modifier = UFC_modifier_rereconquest_ae
+	}
+	if = {
+		limit = {
+			from = {
+				tag = ADU
+			}
+			root = {
+				tag = UFC
+				is_revolutionary = yes
+				has_country_flag = UFC_flag_start_the_revolution_crisis
+			}
+		}
+		country_event = { id = flavor_UFC.8936 }
 	}
 }
 

@@ -3524,6 +3524,7 @@ country_event = {
 			name = UFC_modifier_we_are_the_world
 			duration = 7300
 		}
+		set_country_flag = UFC_flag_we_are_the_world
 	}
 	option = {
 		name = flavor_UFC.7512.b
@@ -4979,11 +4980,34 @@ country_event = {
 	}
 	option = {
 		name = flavor_UFC.7540.a
+		trigger = {
+			not = {
+				mission_completed = UFC_mission_posadasilism
+			}
+		}
 		add_country_modifier = {
 			name = UFC_modifier_sky_lawgiver
 			duration = -1
 		}
 		custom_tooltip = UFC_tooltip_better_for_spacetrip_lawgiver
+		set_country_flag = UFC_flag_sky_lawgiver_finish
+	}
+	option = {
+		name = flavor_UFC.7540.a
+		trigger = {
+			mission_completed = UFC_mission_posadasilism
+		}
+		highlight = yes
+		add_country_modifier = {
+			name = UFC_modifier_sky_lawgiver_3
+			duration = -1
+		}
+		custom_tooltip = UFC_tooltip_better_for_spacetrip_lawgiver
+	}
+	after = {
+		clr_country_flag = UFC_flag_sky_lawgiver_galilei
+		clr_country_flag = UFC_flag_sky_lawgiver_kepler
+		clr_country_flag = UFC_flag_sky_lawgiver_brahe
 	}
 }
 #embargo
@@ -5601,7 +5625,7 @@ country_event = {
 	is_triggered_only = yes
 	option = {
 		name = flavor_UFC.1021.a
-		add_dip_power = 10
+		add_adm_power = 10
 		hidden_effect = {
 			set_variable = {
 				which = columbus_fils_adm
@@ -7010,6 +7034,7 @@ country_event = {
 			not = {
 				has_country_modifier = UFC_modifier_staff_hierarchy_hierarchical
 			}
+			is_revolutionary = no
 		}
 		remove_country_modifier = UFC_modifier_staff_hierarchy_competion
 		remove_country_modifier = UFC_modifier_staff_hierarchy_egalitarianism
@@ -7780,26 +7805,292 @@ country_event = {
 		name = flavor_UFC.9008.e
 	}
 }
+
+#policies
+country_event = {
+	id = flavor_UFC.9009
+	title = flavor_UFC.9009.title
+	desc = flavor_UFC.9009.desc
+	picture = MILITARISTICALLY_TALENTED_RULER_eventPicture
+	is_triggered_only = yes
+	option = {
+		name = flavor_UFC.9009.a
+		clr_country_flag = UFC_flag_intellectual_army_policy_cooldown
+		remove_country_modifier = UFC_modifier_revolution_zeal_for_army
+		remove_country_modifier = UFC_modifier_military_tactics_for_army
+		add_country_modifier = {
+			name = UFC_modifier_common_sense_for_army
+			duration = -1
+		}
+		set_country_flag = UFC_flag_intellectual_army_policy_cooldown
+	}
+	option = {
+		name = flavor_UFC.9009.b
+		clr_country_flag = UFC_flag_intellectual_army_policy_cooldown
+		remove_country_modifier = UFC_modifier_common_sense_for_army
+		remove_country_modifier = UFC_modifier_military_tactics_for_army
+		add_country_modifier = {
+			name = UFC_modifier_revolution_zeal_for_army
+			duration = -1
+		}
+		set_country_flag = UFC_flag_intellectual_army_policy_cooldown
+	}
+	option = {
+		name = flavor_UFC.9009.c
+		clr_country_flag = UFC_flag_intellectual_army_policy_cooldown
+		remove_country_modifier = UFC_modifier_common_sense_for_army
+		remove_country_modifier = UFC_modifier_revolution_zeal_for_army
+		add_country_modifier = {
+			name = UFC_modifier_military_tactics_for_army
+			duration = -1
+		}
+		set_country_flag = UFC_flag_intellectual_army_policy_cooldown
+	}
+	option = {
+		name = NOT_CHANGE_POLICIES
+	}
+}
+
+country_event = {
+	id = flavor_UFC.9010
+	title = flavor_UFC.9010.title
+	desc = flavor_UFC.9010.desc
+	picture = INDUSTRIALIZATION_eventPicture
+	is_triggered_only = yes
+	option = {
+		name = flavor_UFC.9010.a
+		clr_country_flag = UFC_flag_agrarian_reform_policy_cooldown
+		remove_country_modifier = UFC_modifier_guiding_agriculture
+		remove_country_modifier = UFC_modifier_national_autonomous_agriculture
+		add_country_modifier = {
+			name = UFC_modifier_nationalized_agriculture
+			duration = -1
+		}
+		set_country_flag = UFC_flag_agrarian_reform_policy_cooldown
+	}
+	option = {
+		name = flavor_UFC.9010.b
+		clr_country_flag = UFC_flag_agrarian_reform_policy_cooldown
+		remove_country_modifier = UFC_modifier_nationalized_agriculture
+		remove_country_modifier = UFC_modifier_national_autonomous_agriculture
+		add_country_modifier = {
+			name = UFC_modifier_guiding_agriculture
+			duration = -1
+		}
+		set_country_flag = UFC_flag_agrarian_reform_policy_cooldown
+	}
+	option = {
+		name = flavor_UFC.9010.c
+		clr_country_flag = UFC_flag_agrarian_reform_policy_cooldown
+		remove_country_modifier = UFC_modifier_nationalized_agriculture
+		remove_country_modifier = UFC_modifier_guiding_agriculture
+		add_country_modifier = {
+			name = UFC_modifier_national_autonomous_agriculture
+			duration = -1
+		}
+		set_country_flag = UFC_flag_agrarian_reform_policy_cooldown
+	}
+	option = {
+		name = NOT_CHANGE_POLICIES
+	}
+}
+
+country_event = {
+	id = flavor_UFC.9011
+	title = flavor_UFC.9011.title
+	desc = flavor_UFC.9011.desc
+	picture = east_slavic_LAND_MILITARY_eventPicture
+	is_triggered_only = yes
+	option = {
+		name = flavor_UFC.9011.a
+		clr_country_flag = UFC_flag_armed_literacy_policy_cooldown
+		remove_country_modifier = UFC_modifier_guiding_literacy
+		remove_country_modifier = UFC_modifier_gradual_literacy
+		add_country_modifier = {
+			name = UFC_modifier_armed_literacy
+			duration = -1
+		}
+		set_country_flag = UFC_flag_armed_literacy_policy_cooldown
+	}
+	option = {
+		name = flavor_UFC.9011.b
+		clr_country_flag = UFC_flag_armed_literacy_policy_cooldown
+		remove_country_modifier = UFC_modifier_armed_literacy
+		remove_country_modifier = UFC_modifier_gradual_literacy
+		add_country_modifier = {
+			name = UFC_modifier_guiding_literacy
+			duration = -1
+		}
+		set_country_flag = UFC_flag_armed_literacy_policy_cooldown
+	}
+	option = {
+		name = flavor_UFC.9011.c
+		clr_country_flag = UFC_flag_armed_literacy_policy_cooldown
+		remove_country_modifier = UFC_modifier_guiding_literacy
+		remove_country_modifier = UFC_modifier_armed_literacy
+		add_country_modifier = {
+			name = UFC_modifier_gradual_literacy
+			duration = -1
+		}
+		set_country_flag = UFC_flag_armed_literacy_policy_cooldown
+	}
+	option = {
+		name = NOT_CHANGE_POLICIES
+	}
+}
+
+country_event = {
+	id = flavor_UFC.9012
+	title = flavor_UFC.9012.title
+	desc = flavor_UFC.9012.desc
+	picture = wihgfx_FEMALE_GENERAL_eventPicture
+	is_triggered_only = yes
+	option = {
+		name = flavor_UFC.9012.a
+		clr_country_flag = UFC_flag_gender_equality_cooldown
+		remove_country_modifier = UFC_modifier_women_in_university
+		remove_country_modifier = UFC_modifier_women_in_army
+		add_country_modifier = {
+			name = UFC_modifier_women_in_industry
+			duration = -1
+		}
+		set_country_flag = UFC_flag_gender_equality_cooldown
+	}
+	option = {
+		name = flavor_UFC.9012.b
+		clr_country_flag = UFC_flag_gender_equality_cooldown
+		remove_country_modifier = UFC_modifier_women_in_industry
+		remove_country_modifier = UFC_modifier_women_in_army
+		add_country_modifier = {
+			name = UFC_modifier_women_in_university
+			duration = -1
+		}
+		set_country_flag = UFC_flag_gender_equality_cooldown
+	}
+	option = {
+		name = flavor_UFC.9012.c
+		clr_country_flag = UFC_flag_gender_equality_cooldown
+		remove_country_modifier = UFC_modifier_women_in_university
+		remove_country_modifier = UFC_modifier_women_in_industry
+		add_country_modifier = {
+			name = UFC_modifier_women_in_army
+			duration = -1
+		}
+		set_country_flag = UFC_flag_gender_equality_cooldown
+	}
+	option = {
+		name = NOT_CHANGE_POLICIES
+	}
+}
+
+country_event = {
+	id = flavor_UFC.9013
+	title = flavor_UFC.9013.title
+	desc = flavor_UFC.9013.desc
+	picture = USA_CONSTITUTION_eventPicture
+	is_triggered_only = yes
+	option = {
+		name = flavor_UFC.9013.a
+		clr_country_flag = UFC_flag_self_limitation_of_power_cooldown
+		remove_country_modifier = UFC_modifier_honesty_from_salary
+		remove_country_modifier = UFC_modifier_salary_self_determination
+		add_country_modifier = {
+			name = UFC_modifier_separation_of_money_and_power
+			duration = -1
+		}
+		set_country_flag = UFC_flag_self_limitation_of_power_cooldown
+	}
+	option = {
+		name = flavor_UFC.9013.b
+		clr_country_flag = UFC_flag_self_limitation_of_power_cooldown
+		remove_country_modifier = UFC_modifier_separation_of_money_and_power
+		remove_country_modifier = UFC_modifier_salary_self_determination
+		add_country_modifier = {
+			name = UFC_modifier_honesty_from_salary
+			duration = -1
+		}
+		set_country_flag = UFC_flag_self_limitation_of_power_cooldown
+	}
+	option = {
+		name = flavor_UFC.9013.c
+		clr_country_flag = UFC_flag_self_limitation_of_power_cooldown
+		remove_country_modifier = UFC_modifier_separation_of_money_and_power
+		remove_country_modifier = UFC_modifier_honesty_from_salary
+		add_country_modifier = {
+			name = UFC_modifier_salary_self_determination
+			duration = -1
+		}
+		set_country_flag = UFC_flag_self_limitation_of_power_cooldown
+	}
+	option = {
+		name = NOT_CHANGE_POLICIES
+	}
+}
+
+country_event = {
+	id = flavor_UFC.9014
+	title = flavor_UFC.9014.title
+	desc = flavor_UFC.9014.desc
+	picture = RIOTING_workers_eventPicture
+	is_triggered_only = yes
+	option = {
+		name = flavor_UFC.9014.a
+		clr_country_flag = UFC_flag_eight_hours_day_cooldown
+		remove_country_modifier = UFC_modifier_ten_hours_day
+		remove_country_modifier =  UFC_modifier_six_hours_day
+		add_country_modifier = {
+			name = UFC_modifier_eight_hours_day
+			duration = -1
+		}
+		set_country_flag = UFC_flag_eight_hours_day_cooldown
+	}
+	option = {
+		name = flavor_UFC.9014.b
+		clr_country_flag = UFC_flag_eight_hours_day_cooldown
+		remove_country_modifier = UFC_modifier_eight_hours_day
+		remove_country_modifier = UFC_modifier_ten_hours_day
+		add_country_modifier = {
+			name = UFC_modifier_six_hours_day
+			duration = -1
+		}
+		set_country_flag = UFC_flag_eight_hours_day_cooldown
+	}
+	option = {
+		name = flavor_UFC.9014.c
+		clr_country_flag = UFC_flag_eight_hours_day_cooldown
+		remove_country_modifier = UFC_modifier_eight_hours_day
+		remove_country_modifier =  UFC_modifier_six_hours_day
+		add_country_modifier = {
+			name = UFC_modifier_ten_hours_day
+			duration = -1
+		}
+		set_country_flag = UFC_flag_eight_hours_day_cooldown
+	}
+	option = {
+		name = NOT_CHANGE_POLICIES
+	}
+}
+
 #test
 country_event = {
 	id = flavor_UFC.10086
 	picture = TRADEGOODS_eventPicture
 	is_triggered_only = yes
 	trigger = {
-
+		OR = {
+			trade_goods_produced_amount = {
+				trade_goods = glass
+				amount = 500
+			}
+			num_of_provinces_owned_or_owned_by_subjects_with = {
+				trade_goods = glass
+				base_production = 100
+				value = 5
+			}
+		}
 	}
 	option = {
 		name = flavor_UFC.10086.a
-		create_subject = {
-			subject_type = ufc_subsidiary
-			who = ADU
-		}
-		every_owned_province = {
-			limit = {
-				is_in_capital_area = no
-			}
-			add_local_autonomy = 50
-		}
-		custom_tooltip = UFC_tooltip_subsidiary
+
 	}
 }

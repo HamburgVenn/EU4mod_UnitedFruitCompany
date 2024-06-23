@@ -44,6 +44,9 @@ country_event = {
 	option = {
 		name = flavor_UFC.8902.a
 		custom_tooltip = UFC_tooltip_revolution_begin
+		banda_oriental_area = {
+			add_core = CUA
+		}
 		buenos_aires_area = {
 			add_core = CUA
 		}
@@ -60,6 +63,7 @@ country_event = {
 			hidden_effect = {
 				set_capital = 778
 				change_government = republic
+				add_government_reform = lottery_reform
 				change_religion = ROOT
 				add_country_modifier = {
 					name = UFC_revolution_buff
@@ -96,11 +100,14 @@ country_event = {
 		bogota_area = {
 			add_core = MCA
 		}
+		cordillera_occidental_area = {
+			add_core = MCA
+		}
 		release = MCA
 		MCA = {
 			override_country_name = UFC_string_MCA
 			define_ruler = {
-				name = "Jose Arcadil II"
+				name = "Jose Arcadil Buendia"
 				adm = 3
 				dip = 1
 				mil = 4
@@ -110,6 +117,7 @@ country_event = {
 				set_capital = 829
 				change_government = republic
 				change_religion = ROOT
+				add_government_reform = lottery_reform
 				add_country_modifier = {
 					name = UFC_revolution_buff
 					duration = 7300
@@ -121,6 +129,16 @@ country_event = {
 						cavalry = 0.1
 						artillery = 0.5
 					}
+				}
+				828 = {
+					add_or_upgrade_fort_building = yes
+					add_or_upgrade_fort_building = yes
+					add_or_upgrade_fort_building = yes
+					add_or_upgrade_fort_building = yes
+				}
+				825 = {
+					add_or_upgrade_fort_building = yes
+					add_or_upgrade_fort_building = yes
 				}
 			}
 		}
@@ -371,7 +389,7 @@ country_event = {
 			override_country_name = UFC_string_CAS
 			hidden_effect = {
 				set_capital = 217
-				change_government = monarchy
+				change_government = republic
 				change_religion = catholic
 				capital_scope = {
 					build_to_forcelimit = {
@@ -385,8 +403,8 @@ country_event = {
 		POR = {
 			override_country_name = UFC_string_POR
 			hidden_effect = {
-				set_capital = 227
-				change_government = republic
+				set_capital = 231
+				change_government = monarchy
 				change_religion = catholic
 				capital_scope = {
 					build_to_forcelimit = {
@@ -402,6 +420,7 @@ country_event = {
 			hidden_effect = {
 				set_capital = 213
 				change_government = republic
+				add_government_reform = lottery_reform
 				change_religion = root
 				capital_scope = {
 					build_to_forcelimit = {
@@ -461,6 +480,7 @@ country_event = {
 				change_government = republic
 				add_government_reform = UFC_government_republic
 				change_religion = root
+				add_government_reform = lottery_reform
 				add_country_modifier = {
 					name = UFC_revolution_buff
 					duration = 7300
@@ -481,6 +501,9 @@ country_event = {
 				mil = 0
 			}
 		}
+	}
+	after = {
+		country_event = { id = flavor_UFC.8911 days = 6 random = 1 }
 	}
 }
 
@@ -542,6 +565,9 @@ country_event = {
 				age = 30
 			}
 		}
+	}
+	after = {
+		country_event = { id = flavor_UFC.8917 days = 6 random = 2 }
 	}
 }
 
@@ -736,4 +762,676 @@ country_event = {
 	after = {
 		country_event = { id = flavor_UFC.8910 days = 6 random = 2 }
 	}
+}
+
+country_event = {
+	id = flavor_UFC.8917
+	title = flavor_UFC.8917.title
+	desc = flavor_UFC.8917.desc
+	picture = iberian_FORT_eventPicture
+	is_triggered_only = yes
+	fire_only_once = yes
+	goto = 756
+	immediate = {
+		hidden_effect = {
+			every_owned_province = {
+				limit = {
+					region = brazil_region
+					has_port = yes
+				}
+				add_core = CUA
+				cede_province = CUA
+			}
+			every_owned_province = {
+				limit = {
+					is_in_capital_area = no
+				}
+				add_base_manpower = -1
+			}
+			play_sound = battle_cannon_01
+		}
+	}
+	option = {
+		name = flavor_UFC.8917.a
+		custom_tooltip = UFC_tooltip_cede_brazil_ports
+	}
+	after = {
+		country_event = { id = flavor_UFC.8918 days = 6 random = 2 }
+	}
+}
+
+country_event = {
+	id = flavor_UFC.8918
+	title = flavor_UFC.8918.title
+	desc = flavor_UFC.8918.desc
+	picture = iberian_FORT_eventPicture
+	is_triggered_only = yes
+	fire_only_once = yes
+	goto = 828
+	immediate = {
+		hidden_effect = {
+			every_owned_province = {
+				limit = {
+					region = colombia_region
+					has_port = yes
+					not = {
+						area = panama_area
+					}
+					not = {
+						area = popayan_area
+					}
+				}
+				add_core = CUA
+				cede_province = CUA
+			}
+			828 = {
+				remove_building = fort_18th
+				add_building = fort_16th
+				add_devastation = 20
+			}
+			play_sound = battle_cannon_01
+		}
+	}
+	option = {
+		name = flavor_UFC.8918.a
+		tooltip = {
+			828 = {
+				remove_building = fort_18th
+				add_building = fort_16th
+				add_devastation = 20
+			}
+		}
+		custom_tooltip = UFC_tooltip_cede_colombia_ports
+	}
+	after = {
+		country_event = { id = flavor_UFC.8919 days = 6 random = 2 }
+	}
+}
+
+country_event = {
+	id = flavor_UFC.8919
+	title = flavor_UFC.8919.title
+	desc = flavor_UFC.8919.desc
+	picture = indiangfx_REVOLUTION_eventPicture
+	is_triggered_only = yes
+	fire_only_once = yes
+	goto = 835
+	option = {
+		name = flavor_UFC.8919.a
+		country_event = { id = flavor_UFC.8920 days = 6 random = 2 }
+	}
+}
+
+country_event = {
+	id = flavor_UFC.8920
+	title = flavor_UFC.8920.title
+	desc = flavor_UFC.8920.desc
+	picture = DECLARATION_INDEPENDENCE_eventPicture
+	is_triggered_only = yes
+	fire_only_once = yes
+	goto = 835
+	option = {
+		name = flavor_UFC.8920.a
+		set_revolution_target = ROOT
+		add_government_reform = UFC_labor_cooperative_reform
+		swap_non_generic_missions = yes
+		override_country_name = UFC_string_revolution
+		set_country_flag = revolutionary_republic_flag
+		country_event = { id = ideagroups.1 }
+		define_ruler = {
+			name = "Juan Posadas"
+			adm = 4
+			dip = 5
+			mil = 3
+			age = 29
+		}
+		set_ruler_flag = UFC_flag_posadas
+		add_ruler_personality = peasant_revolt_leader_personality
+		add_ruler_personality = just_personality
+		add_ruler_personality = free_thinker_personality
+		add_stability = -3
+		inherit = CUA
+		835 = {
+			spawn_center_of_revolution = this
+			set_province_flag = first_revolution_center
+			set_global_flag = first_revolution_center_spawned
+		}
+		778 = {
+			set_revolution_in_province = yes
+		}
+		756 = {
+			set_revolution_in_province = yes
+		}
+	}
+}
+#crisis
+country_event = {
+	id = flavor_UFC.8921
+	title = flavor_UFC.8921.title
+	desc = flavor_UFC.8921.desc
+	picture = CIVIL_WAR_eventPicture
+	is_triggered_only = yes
+	fire_only_once = yes
+	immediate = {
+		set_country_flag = UFC_flag_start_the_revolution_crisis
+	}
+	option = {
+		name = flavor_UFC.8921.a
+		custom_tooltip = UFC_tooltip_start_the_revolution_crisis
+		define_general = {
+			name = "FrancescoBuonaparte"
+			fire = 8
+			shock = 4
+			manuever = 6
+			siege = 6
+			trait = ruthless_personality
+		}
+		hidden_effect = {
+			set_variable = {
+				which = BuonaparteWinVariable
+				value = 0
+			}
+		}
+		set_country_flag = UFC_flag_buonaparte_start
+		set_country_flag = UFC_flag_yusuf_start
+	}
+}
+
+#provisional_consitution
+country_event = {
+	id = flavor_UFC.8922
+	title = flavor_UFC.8922.title
+	desc = flavor_UFC.8922.desc
+	picture = USA_CONSTITUTION_eventPicture
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = flavor_UFC.8922.a
+		hidden_effect = {
+			every_owned_province = {
+				random_list = {
+					25 = {
+						set_revolution_in_province = yes
+						add_local_autonomy = -10
+					}
+					73 = {
+						add_local_autonomy = -5
+					}
+					2 = {
+						spawn_rebels = {
+							type = noble_rebels
+							size = 1
+						}
+					}
+				}
+			}
+		}
+		custom_tooltip = UFC_tooltip_provisional_consitution_event
+	}
+}
+
+#Colonel Orijano Buendia
+country_event = {
+	id = flavor_UFC.8923
+	title = flavor_UFC.8923.title
+	desc = flavor_UFC.8923.desc
+	picture = WITCHTRIAL_eventPicture
+	is_triggered_only = yes
+	fire_only_once = yes
+	goto = 829
+	option = {
+		name = flavor_UFC.8923.a
+		add_country_modifier = {
+			name = UFC_modifier_the_trial_of_macondo
+			duration = 3650
+		}
+		add_manpower = 0.001
+	}
+}
+
+country_event = {
+	id = flavor_UFC.8924
+	title = flavor_UFC.8924.title
+	desc = flavor_UFC.8924.desc
+	picture = TRADE_GOODS_METALS_AND_MINING_EQUIPENT_eventPicture
+	is_triggered_only = yes
+	fire_only_once = yes
+	goto = 852
+	option = {
+		name = flavor_UFC.8924.a
+		add_revolutionary_zeal = 10
+	}
+}
+
+country_event = {
+	id = flavor_UFC.8925
+	title = flavor_UFC.8925.title
+	desc = flavor_UFC.8925.desc
+	picture = DECLARATION_INDEPENDENCE_eventPicture
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = flavor_UFC.8925.a
+		add_revolutionary_zeal = 100
+		custom_tooltip = UFC_tooltip_global_cooperatives
+		add_country_modifier = {
+			name = UFC_modifier_future_for_freedom
+			duration = -1
+		}
+	}
+	option = {
+		name = flavor_UFC.8925.b
+		add_revolutionary_zeal = 100
+		custom_tooltip = UFC_tooltip_global_control_directly
+		add_country_modifier = {
+			name = UFC_modifier_future_for_egality
+			duration = -1
+		}
+	}
+}
+
+country_event = {
+	id = flavor_UFC.8926
+	title = flavor_UFC.8926.title
+	desc = flavor_UFC.8926.desc
+	picture = EP_MOAIS_eventPicture
+	is_triggered_only = yes
+	fire_only_once = yes
+	goto = 1988
+	option = {
+		name = flavor_UFC.8926.a
+		trigger = {
+			not = {
+				has_country_modifier = UFC_modifier_sky_lawgiver
+			}
+		}
+		add_country_modifier = {
+			name = UFC_modifier_sky_lawgiver
+			duration = -1
+		}
+	}
+	option = {
+		name = flavor_UFC.8926.a
+		trigger = {
+			has_country_modifier = UFC_modifier_sky_lawgiver
+		}
+		highlight = yes
+		remove_country_modifier = UFC_modifier_sky_lawgiver
+		add_country_modifier = {
+			name = UFC_modifier_sky_lawgiver_3
+			duration = -1
+		}
+	}
+}
+
+#new granada letter
+country_event = {
+	id = flavor_UFC.8927
+	title = flavor_UFC.8927.title
+	desc = flavor_UFC.8927.desc
+	picture = DECLARATION_INDEPENDENCE_eventPicture
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = flavor_UFC.8927.a
+		add_mil_power = 5
+		hidden_effect = {
+			change_variable = {
+				which = YusufOpinionVariable
+				value = 1
+			}
+		}
+	}
+	option = {
+		name = flavor_UFC.8927.b
+		add_adm_power = 5
+		hidden_effect = {
+			change_variable = {
+				which = YusufOpinionVariable
+				value = 2
+			}
+		}
+	}
+	option = {
+		name = flavor_UFC.8927.c
+		add_dip_power = 5
+		hidden_effect = {
+			change_variable = {
+				which = YusufOpinionVariable
+				value = 3
+			}
+		}
+	}
+	after = {
+		country_event = { id = flavor_UFC.8928 days = 60 random = 30 }
+	}
+}
+
+country_event = {
+	id = flavor_UFC.8928
+	title = flavor_UFC.8928.title
+	desc = flavor_UFC.8928.desc
+	picture = DECLARATION_INDEPENDENCE_eventPicture
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = flavor_UFC.8928.a
+		add_adm_power = 5
+		hidden_effect = {
+			change_variable = {
+				which = YusufOpinionVariable
+				value = 2
+			}
+		}
+	}
+	option = {
+		name = flavor_UFC.8928.b
+		add_adm_power = 5
+		hidden_effect = {
+			change_variable = {
+				which = YusufOpinionVariable
+				value = 3
+			}
+		}
+	}
+	option = {
+		name = flavor_UFC.8928.c
+		add_adm_power = 5
+		hidden_effect = {
+			change_variable = {
+				which = YusufOpinionVariable
+				value = 1
+			}
+		}
+	}
+	after = {
+		country_event = { id = flavor_UFC.8929 days = 60 random = 30 }
+	}
+}
+
+country_event = {
+	id = flavor_UFC.8929
+	title = flavor_UFC.8929.title
+	desc = flavor_UFC.8929.desc
+	picture = DECLARATION_INDEPENDENCE_eventPicture
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = flavor_UFC.8929.a
+		add_dip_power = 5
+		hidden_effect = {
+			change_variable = {
+				which = YusufOpinionVariable
+				value = 2
+			}
+		}
+	}
+	option = {
+		name = flavor_UFC.8929.b
+		add_dip_power = 5
+		hidden_effect = {
+			change_variable = {
+				which = YusufOpinionVariable
+				value = 3
+			}
+		}
+	}
+	option = {
+		name = flavor_UFC.8929.c
+		add_dip_power = 5
+		hidden_effect = {
+			change_variable = {
+				which = YusufOpinionVariable
+				value = 1
+			}
+		}
+	}
+	after = {
+		country_event = { id = flavor_UFC.8930 days = 60 random = 30 }
+	}
+}
+
+country_event = {
+	id = flavor_UFC.8930
+	title = flavor_UFC.8930.title
+	desc = flavor_UFC.8930.desc
+	picture = DECLARATION_INDEPENDENCE_eventPicture
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = flavor_UFC.8930.a
+		add_mil_power = 5
+		hidden_effect = {
+			change_variable = {
+				which = YusufOpinionVariable
+				value = 2
+			}
+		}
+	}
+	option = {
+		name = flavor_UFC.8930.b
+		add_mil_power = 5
+		hidden_effect = {
+			change_variable = {
+				which = YusufOpinionVariable
+				value = 1
+			}
+		}
+	}
+	option = {
+		name = flavor_UFC.8930.c
+		add_mil_power = 5
+		hidden_effect = {
+			change_variable = {
+				which = YusufOpinionVariable
+				value = 3
+			}
+		}
+	}
+	after = {
+		country_event = { id = flavor_UFC.8931 days = 60 random = 30 }
+	}
+}
+
+country_event = {
+	id = flavor_UFC.8931
+	title = flavor_UFC.8931.title
+	desc = flavor_UFC.8931.desc
+	picture = DECLARATION_INDEPENDENCE_eventPicture
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = flavor_UFC.8931.a
+		add_adm_power = 5
+		hidden_effect = {
+			change_variable = {
+				which = YusufOpinionVariable
+				value = 1
+			}
+		}
+	}
+	option = {
+		name = flavor_UFC.8931.b
+		add_adm_power = 5
+		hidden_effect = {
+			change_variable = {
+				which = YusufOpinionVariable
+				value = 2
+			}
+		}
+	}
+	option = {
+		name = flavor_UFC.8931.c
+		add_adm_power = 5
+		hidden_effect = {
+			change_variable = {
+				which = YusufOpinionVariable
+				value = 3
+			}
+		}
+	}
+	after = {
+		country_event = { id = flavor_UFC.8932 days = 60 random = 30 }
+	}
+}
+
+country_event = {
+	id = flavor_UFC.8932
+	title = flavor_UFC.8932.title
+	desc = flavor_UFC.8932.desc
+	picture = DECLARATION_INDEPENDENCE_eventPicture
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = flavor_UFC.8932.a
+		add_dip_power = 5
+		hidden_effect = {
+			change_variable = {
+				which = YusufOpinionVariable
+				value = 3
+			}
+		}
+	}
+	option = {
+		name = flavor_UFC.8932.b
+		add_dip_power = 5
+		hidden_effect = {
+			change_variable = {
+				which = YusufOpinionVariable
+				value = 2
+			}
+		}
+	}
+	option = {
+		name = flavor_UFC.8932.c
+		add_dip_power = 5
+		hidden_effect = {
+			change_variable = {
+				which = YusufOpinionVariable
+				value = 1
+			}
+		}
+	}
+	after = {
+		if = {
+			limit = {
+				check_variable = {
+					which = YusufOpinionVariable
+					value = 9
+				}
+			}
+			country_event = { id = flavor_UFC.8933 days = 60 random = 30 }
+		}
+		else = {
+			country_event = { id = flavor_UFC.8934 days = 60 random = 30 }
+		}
+	}
+}
+
+country_event = {
+	id = flavor_UFC.8933
+	title = flavor_UFC.8933.title
+	desc = flavor_UFC.8933.desc
+	picture = DECLARATION_INDEPENDENCE_eventPicture
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = flavor_UFC.8933.a
+		add_stability = 1
+		custom_tooltip = UFC_tooltip_yusuf_agree_event
+		set_country_flag = UFC_flag_yusuf_agree
+		hidden_effect = {
+			every_owned_province = {
+				add_local_autonomy = -15
+			}
+		}
+	}
+}
+
+country_event = {
+	id = flavor_UFC.8934
+	title = flavor_UFC.8934.title
+	desc = flavor_UFC.8934.desc
+	picture = DECLARATION_INDEPENDENCE_eventPicture
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = flavor_UFC.8934.a
+		add_stability = -1
+		custom_tooltip = UFC_tooltip_yusuf_disagree_event
+		set_country_flag = UFC_flag_yusuf_disagree
+		set_country_flag = UFC_flag_yusuf_disagree_decision
+		hidden_effect = {
+			every_owned_province = {
+				add_local_autonomy = 15
+			}
+		}
+	}
+}
+
+country_event = {
+	id = flavor_UFC.8935
+	title = flavor_UFC.8935.title
+	desc = flavor_UFC.8935.desc
+	picture = BYZ_REVOLUTION_eventPicture
+	is_triggered_only = yes
+	fire_only_once = yes
+	goto = 213
+	option = {
+		name = flavor_UFC.8935.a
+		hidden_effect = {
+			ARA = {
+				every_owned_province = {
+					add_permanent_province_modifier = {
+						name = UFC_modifier_autonomy_of_catalonia
+						duration = 36500
+					}
+				}
+			}
+		}
+		ARA = {
+			custom_tooltip = ALL_OWNED_PROVINCE_STARTS
+			tooltip = {
+				213 = {
+					add_permanent_province_modifier = {
+						name = UFC_modifier_autonomy_of_catalonia
+						duration = 36500
+					}
+				}
+			}
+		}
+		ADU = {
+			inherit = ARA
+		}
+	}
+	option = {
+		name = flavor_UFC.8935.b
+		declare_war_with_cb = {
+			who = ARA
+			casus_belli = cb_spread_the_revolution
+		}
+	}
+}
+
+country_event = {
+	id = flavor_UFC.8936
+	title = flavor_UFC.8936.title
+	desc = flavor_UFC.8936.desc
+	picture = muslimgfx_REVOLUTION_eventPicture
+	is_triggered_only = yes
+	fire_only_once = yes
+	goto = 223
+	option = {
+		name = flavor_UFC.8936.a
+		create_subject = {
+			subject_type = ufc_cooperative
+			who = ADU
+		}
+		ADU = {
+			add_government_reform = revolutionary_republic_reform
+			restore_country_name_effect = yes
+			add_yearly_manpower = 5
+		}
+	}
+
 }

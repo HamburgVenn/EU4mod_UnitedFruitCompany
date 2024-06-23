@@ -1,0 +1,48 @@
+########################################
+# Revolutionary UFC Factions
+########################################
+
+ufc_laplata = {
+	allow = {
+		has_dlc = "Rights of Man"
+	}
+	monarch_power = ADM
+	always = yes
+
+	modifier = {
+		yearly_revolutionary_zeal = 2
+		monthly_reform_progress = 0.25
+		build_time = -0.25
+		trade_efficiency = -0.15
+	}
+}
+
+ufc_manhattan = {
+	allow = {
+		has_dlc = "Rights of Man"
+	}
+	monarch_power = DIP
+	always = yes
+
+	modifier = {
+		trade_steering = 0.15
+		production_efficiency = 0.25
+		establish_order_cost = -0.5
+		min_autonomy_in_territories = 0.1
+	}
+}
+
+ufc_corsica = {
+	allow = {
+		has_dlc = "Rights of Man"
+	}
+	monarch_power = MIL
+	always = yes
+
+	modifier = {
+		land_morale_constant = 0.5
+		overextension_impact_modifier = -0.2
+		discipline = 0.05
+		ae_impact = 0.3
+	}
+}

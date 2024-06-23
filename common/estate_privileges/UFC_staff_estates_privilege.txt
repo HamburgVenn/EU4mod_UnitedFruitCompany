@@ -250,10 +250,12 @@ estate_ufc_staff_black_staffs = {
 		}
 		NOT = { has_country_flag = UFC_revolution }
 		mission_completed = UFC_mission_black_stuff
+		is_revolutionary = no
 	}
 	can_select = {
 		tag = UFC
 		mission_completed = UFC_mission_black_stuff
+		is_revolutionary = no
 	}
 	can_revoke = {
 		custom_trigger_tooltip = {
@@ -469,10 +471,16 @@ estate_ufc_staff_culture_pluralism = {
 	is_valid = {
 		tag = UFC
 		mission_completed = UFC_mission_from_the_southpole_to_red_river_valley
+		not = {
+			has_reform = UFC_laborunion_representives_congress
+		}
 	}
 	can_select = {
 		tag = UFC
 		mission_completed = UFC_mission_from_the_southpole_to_red_river_valley
+		not = {
+			has_reform = UFC_laborunion_representives_congress
+		}
 	}
 	on_granted = {
 		custom_tooltip = UFC_tooltip_estate_culture_pluralism
@@ -605,6 +613,86 @@ estate_ufc_staff_arm_surgeon_with_obsidian_scalpel = {
 		modifier = {
 			factor = 0
 			is_absolutism_active = yes
+		}
+	}
+}
+
+estate_ufc_staff_cocoa_for_everyone = {
+	icon = privilege_monopoly_of_cocoa
+	max_absolutism = -5
+	conditional_modifier = {
+		trigger = {
+			has_absolutism_reduction_for_estate_privileges = yes
+		}
+		modifier = { max_absolutism = 1 }
+	}
+	is_valid = {
+		tag = UFC
+		mission_completed = UFC_mission_cocoa_for_everyone
+	}
+	influence = 0.05
+	loyalty = 0.05
+	benefits = {
+
+	}
+	on_granted = {
+		custom_tooltip = UFC_tooltip_estate_cocoa_for_everyone
+		change_price = {
+			trade_goods = cocoa
+			key = OVERPRODUCTION
+			value = -0.15
+			duration = 1825
+		}
+		change_price = {
+			trade_goods = sugar
+			key = OVERPRODUCTION
+			value = -0.15
+			duration = 1825
+		}
+		change_price = {
+			trade_goods = tea
+			key = OVERPRODUCTION
+			value = -0.15
+			duration = 1825
+		}
+		change_price = {
+			trade_goods = coffee
+			key = OVERPRODUCTION
+			value = -0.15
+			duration = 1825
+		}
+	}
+	on_granted_province = {
+		if = {
+			limit = {
+				OR = {
+					trade_goods = coffee
+					trade_goods = sugar
+					trade_goods = tea
+					trade_goods = cocoa
+				}
+			}
+			add_province_modifier = {
+				name = UFC_modifier_staff_cocoa_for_everyone
+				duration = -1
+			}
+		}
+		else_if = {
+			limit = {
+				has_province_modifier = UFC_modifier_staff_cocoa_for_everyone
+			}
+			remove_province_modifier = UFC_modifier_staff_cocoa_for_everyone
+		}
+	}
+	on_revoked = {
+		#custom_tooltip = UFC_tooltip_estate_culture_pluralism_revoke
+	}
+	on_revoked_province = {
+		if = {
+			limit = {
+				has_province_modifier = UFC_modifier_staff_cocoa_for_everyone
+			}
+			remove_province_modifier = UFC_modifier_staff_cocoa_for_everyone
 		}
 	}
 }

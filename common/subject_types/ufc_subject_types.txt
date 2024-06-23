@@ -991,3 +991,407 @@ ufc_subsidiary = {
 	customize_subject = no
 }
 
+ufc_cooperative = {
+	copy_from = colony
+	sprite = GFX_subject_colony_icon
+	diplomacy_overlord_sprite = GFX_diplomacy_leadcolony
+	diplomacy_subject_sprite = GFX_diplomacy_subjectcolony
+	can_be_annexed = yes
+	has_power_projection = yes
+	gets_help_with_rebels = yes
+	divert_trade = yes
+	seize_territory = yes
+	cities_required_for_bonuses = 8
+	can_release_and_play = yes
+	start_colonial_war = no
+	is_potential_overlord = {
+		tag = UFC
+	}
+	modifier_overlord = clear
+	eats_overlords_colonies = no
+	transfer_trade_power = yes
+	modifier_subject = clear
+	liberty_desire_development_ratio = 0.025
+	max_government_rank = 2
+	embargo_rivals = yes
+	return_land = yes
+	modifier_subject = {
+		modifier = UFC_modifier_subsidiary_basic_modifier
+		trigger = {
+			always = yes
+		}
+	}
+	modifier_subject = {
+		modifier = UFC_modifier_subsidiary_more_production
+		trigger = {
+			overlord = {
+				is_hegemon = yes
+				hegemon_strength = 100
+			}
+		}
+	}
+	modifier_subject = {
+		modifier = UFC_modifier_subsidiary_synchronization_trade_good_product_1
+		trigger = {
+			overlord = {
+				has_global_modifier_value = {
+					which = global_trade_goods_size_modifier
+					value = 0.1
+				}
+				not = {
+					has_global_modifier_value = {
+						which = global_trade_goods_size_modifier
+						value = 0.2
+					}
+				}
+			}
+		}
+	}
+	modifier_subject = {
+		modifier = UFC_modifier_subsidiary_synchronization_trade_good_product_2
+		trigger = {
+			overlord = {
+				has_global_modifier_value = {
+					which = global_trade_goods_size_modifier
+					value = 0.2
+				}
+				not = {
+					has_global_modifier_value = {
+						which = global_trade_goods_size_modifier
+						value = 0.3
+					}
+				}
+			}
+		}
+	}
+	modifier_subject = {
+		modifier = UFC_modifier_subsidiary_synchronization_trade_good_product_3
+		trigger = {
+			overlord = {
+				has_global_modifier_value = {
+					which = global_trade_goods_size_modifier
+					value = 0.3
+				}
+				not = {
+					has_global_modifier_value = {
+						which = global_trade_goods_size_modifier
+						value = 0.4
+					}
+				}
+			}
+		}
+	}
+	modifier_subject = {
+		modifier = UFC_modifier_subsidiary_synchronization_trade_good_product_4
+		trigger = {
+			overlord = {
+				has_global_modifier_value = {
+					which = global_trade_goods_size_modifier
+					value = 0.4
+				}
+				not = {
+					has_global_modifier_value = {
+						which = global_trade_goods_size_modifier
+						value = 0.5
+					}
+				}
+			}
+		}
+	}
+	modifier_subject = {
+		modifier = UFC_modifier_subsidiary_synchronization_trade_good_product_5
+		trigger = {
+			overlord = {
+				has_global_modifier_value = {
+					which = global_trade_goods_size_modifier
+					value = 0.5
+				}
+				not = {
+					has_global_modifier_value = {
+						which = global_trade_goods_size_modifier
+						value = 0.6
+					}
+				}
+			}
+		}
+	}
+	modifier_subject = {
+		modifier = UFC_modifier_subsidiary_synchronization_trade_good_product_6
+		trigger = {
+			overlord = {
+				has_global_modifier_value = {
+					which = global_trade_goods_size_modifier
+					value = 0.6
+				}
+				not = {
+					has_global_modifier_value = {
+						which = global_trade_goods_size_modifier
+						value = 0.7
+					}
+				}
+			}
+		}
+	}
+	modifier_subject = {
+		modifier = UFC_modifier_subsidiary_synchronization_trade_good_product_7
+		trigger = {
+			overlord = {
+				has_global_modifier_value = {
+					which = global_trade_goods_size_modifier
+					value = 0.7
+				}
+				not = {
+					has_global_modifier_value = {
+						which = global_trade_goods_size_modifier
+						value = 0.8
+					}
+				}
+			}
+		}
+	}
+	modifier_subject = {
+		modifier = UFC_modifier_subsidiary_synchronization_trade_good_product_8
+		trigger = {
+			overlord = {
+				has_global_modifier_value = {
+					which = global_trade_goods_size_modifier
+					value = 0.8
+				}
+				not = {
+					has_global_modifier_value = {
+						which = global_trade_goods_size_modifier
+						value = 0.9
+					}
+				}
+			}
+		}
+	}
+	modifier_subject = {
+		modifier = UFC_modifier_subsidiary_synchronization_trade_good_product_9
+		trigger = {
+			overlord = {
+				has_global_modifier_value = {
+					which = global_trade_goods_size_modifier
+					value = 0.9
+				}
+				not = {
+					has_global_modifier_value = {
+						which = global_trade_goods_size_modifier
+						value = 1.0
+					}
+				}
+			}
+		}
+	}
+	modifier_subject = {
+		modifier = UFC_modifier_subsidiary_synchronization_trade_good_product_10
+		trigger = {
+			overlord = {
+				has_global_modifier_value = {
+					which = global_trade_goods_size_modifier
+					value = 1.0
+				}
+				not = {
+					has_global_modifier_value = {
+						which = global_trade_goods_size_modifier
+						value = 1.1
+					}
+				}
+			}
+		}
+	}
+	modifier_subject = {
+		modifier = UFC_modifier_subsidiary_synchronization_trade_good_product_11
+		trigger = {
+			overlord = {
+				has_global_modifier_value = {
+					which = global_trade_goods_size_modifier
+					value = 1.1
+				}
+				not = {
+					has_global_modifier_value = {
+						which = global_trade_goods_size_modifier
+						value = 1.2
+					}
+				}
+			}
+		}
+	}
+	modifier_subject = {
+		modifier = UFC_modifier_subsidiary_synchronization_trade_good_product_12
+		trigger = {
+			overlord = {
+				has_global_modifier_value = {
+					which = global_trade_goods_size_modifier
+					value = 1.2
+				}
+				not = {
+					has_global_modifier_value = {
+						which = global_trade_goods_size_modifier
+						value = 1.3
+					}
+				}
+			}
+		}
+	}
+	modifier_subject = {
+		modifier = UFC_modifier_subsidiary_synchronization_trade_good_product_13
+		trigger = {
+			overlord = {
+				has_global_modifier_value = {
+					which = global_trade_goods_size_modifier
+					value = 1.3
+				}
+				not = {
+					has_global_modifier_value = {
+						which = global_trade_goods_size_modifier
+						value = 1.4
+					}
+				}
+			}
+		}
+	}
+	modifier_subject = {
+		modifier = UFC_modifier_subsidiary_synchronization_trade_good_product_14
+		trigger = {
+			overlord = {
+				has_global_modifier_value = {
+					which = global_trade_goods_size_modifier
+					value = 1.4
+				}
+				not = {
+					has_global_modifier_value = {
+						which = global_trade_goods_size_modifier
+						value = 1.5
+					}
+				}
+			}
+		}
+	}
+	modifier_subject = {
+		modifier = UFC_modifier_subsidiary_synchronization_trade_good_product_15
+		trigger = {
+			overlord = {
+				has_global_modifier_value = {
+					which = global_trade_goods_size_modifier
+					value = 1.5
+				}
+				not = {
+					has_global_modifier_value = {
+						which = global_trade_goods_size_modifier
+						value = 1.6
+					}
+				}
+			}
+		}
+	}
+	modifier_subject = {
+		modifier = UFC_modifier_subsidiary_synchronization_trade_good_product_16
+		trigger = {
+			overlord = {
+				has_global_modifier_value = {
+					which = global_trade_goods_size_modifier
+					value = 1.6
+				}
+				not = {
+					has_global_modifier_value = {
+						which = global_trade_goods_size_modifier
+						value = 1.7
+					}
+				}
+			}
+		}
+	}
+	modifier_subject = {
+		modifier = UFC_modifier_subsidiary_synchronization_trade_good_product_17
+		trigger = {
+			overlord = {
+				has_global_modifier_value = {
+					which = global_trade_goods_size_modifier
+					value = 1.7
+				}
+				not = {
+					has_global_modifier_value = {
+						which = global_trade_goods_size_modifier
+						value = 1.8
+					}
+				}
+			}
+		}
+	}
+	modifier_subject = {
+		modifier = UFC_modifier_subsidiary_synchronization_trade_good_product_18
+		trigger = {
+			overlord = {
+				has_global_modifier_value = {
+					which = global_trade_goods_size_modifier
+					value = 1.8
+				}
+				not = {
+					has_global_modifier_value = {
+						which = global_trade_goods_size_modifier
+						value = 1.9
+					}
+				}
+			}
+		}
+	}
+	modifier_subject = {
+		modifier = UFC_modifier_subsidiary_synchronization_trade_good_product_19
+		trigger = {
+			overlord = {
+				has_global_modifier_value = {
+					which = global_trade_goods_size_modifier
+					value = 1.9
+				}
+				not = {
+					has_global_modifier_value = {
+						which = global_trade_goods_size_modifier
+						value = 2.0
+					}
+				}
+			}
+		}
+	}
+	modifier_subject = {
+		modifier = UFC_modifier_subsidiary_synchronization_trade_good_product_20
+		trigger = {
+			overlord = {
+				has_global_modifier_value = {
+					which = global_trade_goods_size_modifier
+					value = 2.0
+				}
+			}
+		}
+	}
+	modifier_overlord = {
+		modifier = UFC_modifier_subsidiary_overlord_basic_modifier
+		trigger = {
+			always = yes
+		}
+	}
+	modifier_overlord = {
+		modifier = UFC_modifier_subsidiary_overlord_basic_modifier_2
+		trigger = {
+			OR = {
+				AND = {
+					tag = ADU
+					num_of_owned_provinces_with = {
+						value = 20
+						region = iberia_region
+					}
+				}
+				AND = {
+					tag = EIC
+					num_of_owned_provinces_with = {
+						value = 40
+						always = yes
+					}
+				}
+			}
+		}
+	}
+	start_colonial_war = no
+	customize_subject = no
+}
+

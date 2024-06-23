@@ -1,0 +1,8 @@
+spriteTypes = {
+    spriteType = {
+        name = "GFX_disaster_ufc_revolution_government"
+        texturefile = "gfx//interface//disasters//ufc_revolution_government.dds"
+        noOfFrames = 3
+        loadType = "INGAME"
+    }
+}

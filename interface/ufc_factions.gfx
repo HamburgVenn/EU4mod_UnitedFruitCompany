@@ -1,0 +1,31 @@
+spriteTypes = {
+    # Revolutionary Republics
+
+    spriteType = {
+        name = "GFX_faction_bg_ufc_laplata"
+        texturefile = "gfx//interface//factions//faction_red_frame.dds"
+        transparencecheck = yes
+    }
+    spriteType = {
+        name = "GFX_faction_ufc_laplata"
+        texturefile = "gfx//interface//factions//ufc_laplata.dds"
+    }
+    spriteType = {
+        name = "GFX_faction_bg_ufc_manhattan"
+        texturefile = "gfx//interface//factions//faction_blue_frame.dds"
+        transparencecheck = yes
+    }
+    spriteType = {
+        name = "GFX_faction_ufc_manhattan"
+        texturefile = "gfx//interface//factions//ufc_manhattan.dds"
+    }
+    spriteType = {
+        name = "GFX_faction_bg_ufc_corsica"
+        texturefile = "gfx//interface//factions//faction_purple_frame.dds"
+        transparencecheck = yes
+    }
+    spriteType = {
+        name = "GFX_faction_ufc_corsica"
+        texturefile = "gfx//interface//factions//ufc_corsica.dds"
+    }
+}

@@ -11699,8 +11699,13 @@ cahokia = {
 	type = monument
 
 	build_trigger = {
-		province_is_or_accepts_religion = {
-			religion = totemism
+		OR = {
+			owner = {
+				mission_complete = UFC_mission_universal_higher_education
+			}
+			province_is_or_accepts_religion = {
+				religion = totemism
+			}
 		}
 	}
 
@@ -11711,14 +11716,24 @@ cahokia = {
 	}
 
 	can_use_modifiers_trigger = {
-		province_is_or_accepts_religion = {
-			religion = totemism
+		OR = {
+			owner = {
+				mission_complete = UFC_mission_universal_higher_education
+			}
+			province_is_or_accepts_religion = {
+				religion = totemism
+			}
 		}
 	}
 
 	can_upgrade_trigger = {
-		province_is_or_accepts_religion = {
-			religion = totemism
+		OR = {
+			owner = {
+				mission_complete = UFC_mission_universal_higher_education
+			}
+			province_is_or_accepts_religion = {
+				religion = totemism
+			}
 		}
 	}
 

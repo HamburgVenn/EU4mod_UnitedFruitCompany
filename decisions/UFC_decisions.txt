@@ -430,7 +430,7 @@ country_decisions = {
             795 = {
                 owned_by = root
                 is_city = yes
-                units_in_province = 24
+                artillery_in_province = 10
             }
             mil_tech = 7
         }
@@ -781,6 +781,514 @@ country_decisions = {
             add_adm_tech = 1
             add_dip_tech = 1
             clr_country_flag = UFC_flag_early_plantation_and_tradecompany
+        }
+    }
+
+    UFC_decision_intellectual_army_policy = {
+        potential = {
+            tag = UFC
+            mission_completed = UFC_mission_intellectual_army
+        }
+        color = {
+            255 50 50
+        }
+        provinces_to_highlight = {
+        }
+        allow = {
+            custom_trigger_tooltip = {
+                not = {
+                    had_country_flag = {
+                        flag = UFC_flag_intellectual_army_policy_cooldown
+                        days = 1825
+                    }
+                }
+                tooltip = UFC_tooltip_policy_cooldown
+            }
+        }
+        effect = {
+            country_event = {
+                id = flavor_UFC.9009
+            }
+        }
+    }
+
+    UFC_decision_intellectual_army_policy = {
+        potential = {
+            tag = UFC
+            mission_completed = UFC_mission_intellectual_army
+        }
+        color = {
+            255 50 50
+        }
+        provinces_to_highlight = {
+        }
+        allow = {
+            custom_trigger_tooltip = {
+                not = {
+                    had_country_flag = {
+                        flag = UFC_flag_intellectual_army_policy_cooldown
+                        days = 1825
+                    }
+                }
+                tooltip = UFC_tooltip_policy_cooldown
+            }
+        }
+        effect = {
+            country_event = {
+                id = flavor_UFC.9009
+            }
+        }
+    }
+
+    UFC_decision_agrarian_reform_policy = {
+        potential = {
+            tag = UFC
+            mission_completed = UFC_mission_agrarian_reform
+        }
+        color = {
+            255 50 50
+        }
+        provinces_to_highlight = {
+        }
+        allow = {
+            custom_trigger_tooltip = {
+                not = {
+                    had_country_flag = {
+                        flag = UFC_flag_agrarian_reform_policy_cooldown
+                        days = 1825
+                    }
+                }
+                tooltip = UFC_tooltip_policy_cooldown
+            }
+        }
+        effect = {
+            country_event = {
+                id = flavor_UFC.9010
+            }
+        }
+    }
+
+    UFC_decision_armed_literacy_policy = {
+        potential = {
+            tag = UFC
+            mission_completed = UFC_mission_armed_literacy
+        }
+        color = {
+            255 50 50
+        }
+        provinces_to_highlight = {
+        }
+        allow = {
+            custom_trigger_tooltip = {
+                not = {
+                    had_country_flag = {
+                        flag = UFC_flag_armed_literacy_policy_cooldown
+                        days = 1825
+                    }
+                }
+                tooltip = UFC_tooltip_policy_cooldown
+            }
+        }
+        effect = {
+            country_event = {
+                id = flavor_UFC.9011
+            }
+        }
+    }
+
+    UFC_decision_gender_equality = {
+        potential = {
+            tag = UFC
+            mission_completed = UFC_mission_gender_equality
+        }
+        color = {
+            255 50 50
+        }
+        provinces_to_highlight = {
+        }
+        allow = {
+            custom_trigger_tooltip = {
+                not = {
+                    had_country_flag = {
+                        flag = UFC_flag_gender_equality_cooldown
+                        days = 1825
+                    }
+                }
+                tooltip = UFC_tooltip_policy_cooldown
+            }
+        }
+        effect = {
+            country_event = {
+                id = flavor_UFC.9012
+            }
+        }
+    }
+
+    UFC_decision_self_limitation_of_power = {
+        potential = {
+            tag = UFC
+            mission_completed = UFC_mission_self_limitation_of_power
+        }
+        color = {
+            255 50 50
+        }
+        provinces_to_highlight = {
+        }
+        allow = {
+            custom_trigger_tooltip = {
+                not = {
+                    had_country_flag = {
+                        flag = UFC_flag_self_limitation_of_power_cooldown
+                        days = 1825
+                    }
+                }
+                tooltip = UFC_tooltip_policy_cooldown
+            }
+        }
+        effect = {
+            country_event = {
+                id = flavor_UFC.9013
+            }
+        }
+    }
+
+    UFC_decision_eight_hours_day = {
+        potential = {
+            tag = UFC
+            mission_completed = UFC_mission_eight_hours_day
+        }
+        color = {
+            255 50 50
+        }
+        provinces_to_highlight = {
+        }
+        allow = {
+            custom_trigger_tooltip = {
+                not = {
+                    had_country_flag = {
+                        flag = UFC_flag_eight_hours_day_cooldown
+                        days = 1825
+                    }
+                }
+                tooltip = UFC_tooltip_policy_cooldown
+            }
+        }
+        effect = {
+            country_event = {
+                id = flavor_UFC.9014
+            }
+        }
+    }
+
+    UFC_decision_full_speed_industrialization = {
+        potential = {
+            tag = UFC
+            mission_completed = UFC_mission_balance
+            not = {
+                has_country_flag = UFC_flag_full_speed_industrialization
+            }
+        }
+        color = {
+            255 50 50
+        }
+        provinces_to_highlight = {
+        }
+        allow = {
+            always = yes
+        }
+        effect = {
+            set_country_flag = UFC_flag_full_speed_industrialization
+            custom_tooltip = UFC_tooltip_full_speed_industrialization
+        }
+    }
+
+    UFC_decision_cancel_full_speed_industrialization = {
+        potential = {
+            tag = UFC
+            mission_completed = UFC_mission_balance
+            has_country_flag = UFC_flag_full_speed_industrialization
+        }
+        color = {
+            255 50 50
+        }
+        provinces_to_highlight = {
+        }
+        allow = {
+            always = yes
+        }
+        effect = {
+            clr_country_flag = UFC_flag_full_speed_industrialization
+            custom_tooltip = UFC_tooltip_cancel_full_speed_industrialization
+            add_stability = -1
+        }
+    }
+
+    UFC_decision_letter_to_newgranada = {
+        potential = {
+            tag = UFC
+            has_country_flag = UFC_flag_start_the_revolution_crisis
+            has_country_flag = UFC_flag_yusuf_start
+        }
+        color = {
+            255 100 100
+        }
+        allow = {
+            reverse_has_opinion = {
+                who = GRA
+                value = 0
+            }
+        }
+        effect = {
+            hidden_effect = {
+                set_variable = {
+                    which = YusufOpinionVariable
+                    value = 0
+                }
+            }
+            custom_tooltip = UFC_tooltip_letter_to_newgranada
+            clr_country_flag = UFC_flag_yusuf_start
+            country_event = { id = flavor_UFC.8927 days = 60 random = 30}
+        }
+    }
+
+    UFC_decision_declare_war_newgranada = {
+        potential = {
+            tag = UFC
+            has_country_flag = UFC_flag_start_the_revolution_crisis
+            has_country_flag = UFC_flag_yusuf_disagree
+            has_country_flag = UFC_flag_yusuf_disagree_decision
+        }
+        color = {
+            255 100 100
+        }
+        allow = {
+            is_at_war = no
+        }
+        effect = {
+            custom_tooltip = UFC_tooltip_letter_to_newgranada
+            clr_country_flag = UFC_flag_yusuf_disagree_decision
+            declare_war_with_cb = {
+                who = GRA
+                casus_belli = cb_spread_the_revolution
+            }
+        }
+    }
+
+    UFC_decision_declare_war_xiu = {
+        potential = {
+            tag = UFC
+            has_country_flag = UFC_flag_start_the_revolution_crisis
+            XIU = {
+                exists = yes
+            }
+            not = {
+                war_with = XIU
+            }
+        }
+        color = {
+            255 100 100
+        }
+        allow = {
+            is_at_war = no
+        }
+        effect = {
+            declare_war_with_cb = {
+                who = XIU
+                casus_belli = cb_spread_the_revolution
+            }
+        }
+    }
+
+    UFC_decision_declare_war_mca = {
+        potential = {
+            tag = UFC
+            has_country_flag = UFC_flag_start_the_revolution_crisis
+            MCA = {
+                exists = yes
+            }
+            not = {
+                war_with = MCA
+            }
+        }
+        color = {
+            255 100 100
+        }
+        allow = {
+            is_at_war = no
+        }
+        effect = {
+            declare_war_with_cb = {
+                who = MCA
+                casus_belli = cb_spread_the_revolution
+            }
+        }
+    }
+
+    UFC_decision_declare_war_cab = {
+        potential = {
+            tag = UFC
+            has_country_flag = UFC_flag_start_the_revolution_crisis
+            CAB = {
+                exists = yes
+            }
+            not = {
+                war_with = CAB
+            }
+        }
+        color = {
+            255 100 100
+        }
+        allow = {
+            is_at_war = no
+        }
+        effect = {
+            declare_war_with_cb = {
+                who = CAB
+                casus_belli = cb_spread_the_revolution
+            }
+        }
+    }
+
+    UFC_decision_declare_war_adu = {
+        potential = {
+            tag = UFC
+            has_country_flag = UFC_flag_start_the_revolution_crisis
+            ADU = {
+                exists = yes
+            }
+            not = {
+                war_with = ADU
+            }
+        }
+        color = {
+            255 100 100
+        }
+        allow = {
+            is_at_war = no
+            MCA = {
+                exists = no
+            }
+            CAB = {
+                exists = no
+            }
+        }
+        effect = {
+            declare_war_with_cb = {
+                who = ADU
+                casus_belli = cb_spread_the_revolution
+            }
+        }
+    }
+
+    UFC_decision_declare_war_azt = {
+        potential = {
+            tag = UFC
+            has_country_flag = UFC_flag_start_the_revolution_crisis
+            AZT = {
+                exists = yes
+            }
+            not = {
+                war_with = AZT
+            }
+        }
+        color = {
+            255 100 100
+        }
+        allow = {
+            is_at_war = no
+            GRA = {
+                exists = no
+            }
+            XIU = {
+                exists = no
+            }
+        }
+        effect = {
+            declare_war_with_cb = {
+                who = AZT
+                casus_belli = cb_spread_the_revolution
+            }
+        }
+    }
+
+    UFC_decision_declare_war_por = {
+        potential = {
+            tag = UFC
+            has_country_flag = UFC_flag_start_the_revolution_crisis
+            POR = {
+                exists = yes
+            }
+            not = {
+                war_with = POR
+            }
+        }
+        color = {
+            255 100 100
+        }
+        allow = {
+            is_at_war = no
+            ADU = {
+                is_revolutionary = yes
+            }
+        }
+        effect = {
+            declare_war_with_cb = {
+                who = POR
+                casus_belli = cb_spread_the_revolution
+            }
+        }
+    }
+
+    UFC_decision_declare_war_cas = {
+        potential = {
+            tag = UFC
+            has_country_flag = UFC_flag_start_the_revolution_crisis
+            CAS = {
+                exists = yes
+            }
+            not = {
+                war_with = CAS
+            }
+        }
+        color = {
+            255 100 100
+        }
+        allow = {
+            is_at_war = no
+            ADU = {
+                is_revolutionary = yes
+            }
+        }
+        effect = {
+            declare_war_with_cb = {
+                who = CAS
+                casus_belli = cb_spread_the_revolution
+            }
+        }
+    }
+
+    UFC_decision_declare_war_ara = {
+        potential = {
+            tag = UFC
+            has_country_flag = UFC_flag_start_the_revolution_crisis
+            ARA = {
+                exists = yes
+            }
+            not = {
+                war_with = ARA
+            }
+        }
+        color = {
+            255 100 100
+        }
+        allow = {
+            is_at_war = no
+            ADU = {
+                is_revolutionary = yes
+            }
+        }
+        effect = {
+            country_event = { id = flavor_UFC.8935 days = 5 random = 5 }
         }
     }
 }

@@ -43,7 +43,7 @@ UFC_revolution = {
 
 	trigger = {
 		tag = UFC
-		is_revolutionary_republic_trigger = yes
+		is_revolutionary = yes
 	}
 
 }
