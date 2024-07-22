@@ -3902,6 +3902,16 @@ pick_random_estate_if_present = {
 			$estate_action$ = estate_ghulams
 			]
 		}
+		1 = {
+			trigger = {
+				has_estate = estate_ufc_staff
+				NOT = { has_country_flag = estate_ufc_staff_$flag$ }
+			}
+			set_country_flag = estate_ufc_staff_$flag$
+			[[estate_action]
+				$estate_action$ = estate_ufc_staff
+			]
+		}
 	}
 }
 

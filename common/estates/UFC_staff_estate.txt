@@ -61,6 +61,17 @@ estate_ufc_staff = {
 	}
 
 	agendas = {
+		estate_ufc_staff_hire_advisor
+		estate_ufc_staff_pay_off_loans
+		estate_ufc_staff_restore_republican_tradition
+		estate_ufc_staff_restore_currency
+		estate_ufc_staff_build_an_army
+		estate_ufc_staff_build_a_fleet
+		estate_ufc_staff_discover_X_in_america
+		estate_ufc_staff_colonise_X
+		estate_ufc_staff_reduce_corruption
+		estate_ufc_staff_reduce_wealth_gap
+		estate_ufc_staff_reduce_army_disloyalty
 	}
 
 	color = { 220 20 20 }

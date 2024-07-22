@@ -19,4 +19,12 @@ spriteTypes = {
         name = "GFX_great_project_nazca_lines"
         texturefile = "gfx//interface//great_projects//great_project_nazca_lines.dds"
     }
+    spriteType = {
+        name = "GFX_great_project_rapanui_rocket_launch_center"
+        texturefile = "gfx//interface//great_projects//great_project_rapanui_rocket_launch_center.dds"
+    }
+    spriteType = {
+        name = "GFX_great_project_houses_of_wisdom"
+        texturefile = "gfx//interface//great_projects//great_project_houses_of_wisdom.dds"
+    }
 }

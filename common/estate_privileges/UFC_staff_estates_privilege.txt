@@ -325,6 +325,7 @@ estate_ufc_staff_salary = {
 	benefits = {
 	}
 	on_revoked = {
+
 	}
 	ai_will_do = {
 		factor = 1000
@@ -471,16 +472,10 @@ estate_ufc_staff_culture_pluralism = {
 	is_valid = {
 		tag = UFC
 		mission_completed = UFC_mission_from_the_southpole_to_red_river_valley
-		not = {
-			has_reform = UFC_laborunion_representives_congress
-		}
 	}
 	can_select = {
 		tag = UFC
 		mission_completed = UFC_mission_from_the_southpole_to_red_river_valley
-		not = {
-			has_reform = UFC_laborunion_representives_congress
-		}
 	}
 	on_granted = {
 		custom_tooltip = UFC_tooltip_estate_culture_pluralism

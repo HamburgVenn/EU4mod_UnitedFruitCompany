@@ -1,0 +1,1158 @@
+estate_ufc_staff_hire_advisor = {
+	can_select = {
+		NOT = {
+			employed_advisor = {
+				category = ADM
+			}
+			employed_advisor = {
+				category = DIP
+			}
+			employed_advisor = {
+				category = MIL
+			}
+		}
+		is_revolutionary = no
+	}
+	selection_weight = {
+		factor = 1
+	}
+	task_requirements = {
+		if = {
+			limit = {
+				has_estate_agenda_auto_completion = {
+					estate = estate_ufc_staff
+				}
+			}
+			has_estate_agenda_auto_completion = {
+				estate = estate_ufc_staff
+			}
+		}
+		else = {
+			employed_advisor = {
+				category = ADM
+			}
+			employed_advisor = {
+				category = DIP
+			}
+			employed_advisor = {
+				category = MIL
+			}
+		}
+	}
+    task_completed_effect = {
+		on_completed_agenda_effect = {
+			estate = estate_ufc_staff
+		}
+		add_adm_power = 15
+		add_dip_power = 15
+		add_mil_power = 15
+		add_estate_loyalty = {
+			estate = estate_ufc_staff
+			loyalty = 10
+		}
+    }
+    failing_effect = {
+		on_failed_agenda_effect = yes
+		clr_auto_complete_flag = yes
+        add_estate_loyalty_modifier = {
+            estate = estate_ufc_staff
+			desc = EST_VAL_AGENDA_DENIED
+			loyalty = -5
+			duration = 7300
+        }
+    }
+}
+
+#Pay off loans
+estate_ufc_staff_pay_off_loans = {
+	can_select = {
+		num_of_loans = 1
+		is_bankrupt = no
+	}
+	selection_weight = {
+		factor = 2
+		modifier = {
+			factor = 0.5
+			is_at_war = yes
+		}
+		modifier = {
+			factor = 1.5
+			num_of_loans = 10
+		}
+		modifier = {
+			factor = 1.5
+			num_of_loans = 15
+		}
+		modifier = {
+			factor = 5
+			has_estate_privilege = estate_ufc_staff_indebted_to_burghers
+		}
+	}
+	fail_if = {
+		is_bankrupt = yes
+	}
+	task_requirements = {
+		if = {
+			limit = {
+				has_estate_agenda_auto_completion = {
+					estate = estate_ufc_staff
+				}
+			}
+			has_estate_agenda_auto_completion = {
+				estate = estate_ufc_staff
+			}
+		}
+		else = {
+			NOT = { num_of_loans = 1 }
+			hidden_trigger = {
+				is_bankrupt = no
+			}
+		}
+	}
+    task_completed_effect = {
+		on_completed_agenda_effect = {
+			estate = estate_ufc_staff
+		}
+		add_estate_loyalty = {
+			estate = estate_ufc_staff
+			loyalty = 10
+		}
+		generate_scaled_advisor_of_type_and_religion_effect = {
+			type = master_of_mint
+			religion = root
+			discount = yes
+		}
+    }
+    failing_effect = {
+		on_failed_agenda_effect = yes
+		clr_auto_complete_flag = yes
+        add_estate_loyalty_modifier = {
+            estate = estate_ufc_staff
+			desc = EST_VAL_AGENDA_DENIED
+			loyalty = -5
+			duration = 7300
+        }
+    }
+}
+
+#Restore republican tradition
+estate_ufc_staff_restore_republican_tradition = {
+	can_select = {
+		NOT = { republican_tradition = 80 }
+		NOT = { has_country_modifier = agenda_republicanism_restored }
+	}
+	selection_weight = {
+		factor = 2
+		modifier = {
+			factor = 1.5
+			NOT = { republican_tradition = 50 }
+		}
+		modifier = {
+			factor = 1.5
+			NOT = { republican_tradition = 35 }
+		}
+	}
+	fail_if = {
+		NOT = { government = republic }
+		NOT = { government = dictatorship }
+	}
+	task_requirements = {
+		if = {
+			limit = {
+				has_estate_agenda_auto_completion = {
+					estate = estate_ufc_staff
+				}
+			}
+			has_estate_agenda_auto_completion = {
+				estate = estate_ufc_staff
+			}
+		}
+		else = {
+			republican_tradition = 90
+		}
+	}
+    task_completed_effect = {
+		on_completed_agenda_effect = {
+			estate = estate_ufc_staff
+		}
+		add_estate_loyalty = {
+			estate = estate_ufc_staff
+			loyalty = 10
+		}
+		add_country_modifier = {
+			name = agenda_republicanism_restored
+			duration = 5475
+		}
+    }
+    failing_effect = {
+		on_failed_agenda_effect = yes
+		clr_auto_complete_flag = yes
+        add_estate_loyalty_modifier = {
+            estate = estate_ufc_staff
+			desc = EST_VAL_AGENDA_DENIED
+			loyalty = -5
+			duration = 7300
+        }
+    }
+}
+
+#Reduce Inflation
+estate_ufc_staff_restore_currency = {
+	can_select = {
+		inflation = 3
+		NOT = { has_country_modifier = boom_economy }
+	}
+	selection_weight = {
+		factor = 1.5
+		modifier = {
+			factor = 4
+			inflation = 5
+		}
+	}
+	fail_if = {
+		inflation = 10
+	}
+	task_requirements = {
+		if = {
+			limit = {
+				has_estate_agenda_auto_completion = {
+					estate = estate_ufc_staff
+				}
+			}
+			has_estate_agenda_auto_completion = {
+				estate = estate_ufc_staff
+			}
+		}
+		else = {
+			NOT = { inflation = 0.5 }
+		}
+	}
+    task_completed_effect = {
+		on_completed_agenda_effect = {
+			estate = estate_ufc_staff
+		}
+		add_estate_loyalty = {
+			estate = estate_ufc_staff
+			loyalty = 10
+		}
+		add_country_modifier = {
+			name = boom_economy
+			duration = 5475
+		}
+    }
+    failing_effect = {
+		on_failed_agenda_effect = yes
+		clr_auto_complete_flag = yes
+        add_estate_loyalty_modifier = {
+            estate = estate_ufc_staff
+			desc = EST_VAL_AGENDA_DENIED
+			loyalty = -5
+			duration = 7300
+        }
+    }
+}
+
+#Bigger Army
+estate_ufc_staff_build_an_army = {
+	can_select = {
+		NOT = { has_country_modifier = thriving_arms_industry }
+		NOT = { army_size_percentage = 0.5 }
+		NOT = { army_size = 300 }
+	}
+	selection_weight = {
+		factor = 3
+		modifier = {
+			factor = 2
+			any_rival_country = {
+				NOT = { truce_with = root }
+				army_size = root
+			}
+		}
+		modifier = {
+			factor = 2.0
+			NOT = { army_size_percentage = 0.3 }
+		}
+		modifier = { #this could be really annoying in the late game
+			factor = 0.5
+			army_size = 150
+		}
+	}
+	task_requirements = {
+		if = {
+			limit = {
+				has_estate_agenda_auto_completion = {
+					estate = estate_ufc_staff
+				}
+			}
+			has_estate_agenda_auto_completion = {
+				estate = estate_ufc_staff
+			}
+		}
+		else = {
+			if = {
+				limit = {
+					is_emperor = yes
+				}
+				army_size_percentage = 0.5
+			}
+			else = {
+				army_size_percentage = 0.75
+			}
+		}
+	}
+	task_completed_effect = {
+		on_completed_agenda_effect = {
+			estate = estate_ufc_staff
+		}
+		add_estate_loyalty = {
+			estate = estate_ufc_staff
+			loyalty = 10
+		}
+		add_army_tradition_or_mil_power = 15
+	}
+	failing_effect = {
+		on_failed_agenda_effect = yes
+		clr_auto_complete_flag = yes
+		add_estate_loyalty_modifier = {
+			estate = estate_ufc_staff
+			desc = EST_VAL_AGENDA_DENIED
+			loyalty = -5
+			duration = 7300
+		}
+	}
+}
+
+#Bigger Fleet
+estate_ufc_staff_build_a_fleet = {
+	can_select = {
+		primitives = no
+		any_owned_province = {
+			has_port = yes
+			is_core = root
+		}
+		navy_size = 1
+		NOT = { navy_size_percentage = 0.5 }
+		NOT = { navy_size = 500 }
+		NOT = { has_country_modifier = thriving_ship_building_sector }
+	}
+	selection_weight = {
+		factor = 3
+		modifier = {
+			factor = 1.5
+			any_rival_country = {
+				NOT = { truce_with = root }
+				navy_size = root
+			}
+		}
+		modifier = {
+			factor = 2.0
+			NOT = { navy_size_percentage = 0.3 }
+			NOT = { navy_size = 150 }
+		}
+		modifier = {
+			factor = 0.5
+			navy_size = 100
+		}
+		modifier = {
+			factor = 0.25
+			navy_size = 200
+		}
+		modifier = {
+			factor = 0.5
+			NOT = { num_of_ports = 3 }
+		}
+		modifier = {
+			factor = 2
+			OR = {
+				has_idea_group = quality_ideas
+				has_idea_group = naval_ideas
+			}
+			navy_size_percentage = 0.05
+		}
+	}
+	task_requirements = {
+		if = {
+			limit = {
+				has_estate_agenda_auto_completion = {
+					estate = estate_ufc_staff
+				}
+			}
+			has_estate_agenda_auto_completion = {
+				estate = estate_ufc_staff
+			}
+		}
+		else = {
+			navy_size_percentage = 0.75
+		}
+	}
+	fail_if = {
+		NOT = {
+			any_owned_province = {
+				has_port = yes
+			}
+		}
+	}
+	task_completed_effect = {
+		on_completed_agenda_effect = {
+			estate = estate_ufc_staff
+		}
+		add_estate_loyalty = {
+			estate = estate_ufc_staff
+			loyalty = 10
+		}
+		add_navy_tradition = 20
+		create_admiral = {
+			tradition = 80
+		}
+	}
+	failing_effect = {
+		on_failed_agenda_effect = yes
+		clr_auto_complete_flag = yes
+		add_estate_loyalty_modifier = {
+			estate = estate_ufc_staff
+			desc = EST_VAL_AGENDA_DENIED
+			loyalty = -5
+			duration = 7300
+		}
+	}
+}
+
+#Discover X in America
+estate_ufc_staff_discover_X_in_america = {
+	can_select = {
+		OR = {
+			num_of_conquistadors = 1
+			num_of_explorers = 1
+		}
+		has_any_exploration_idea = yes
+		num_of_ports = 1
+		any_province = {
+			range = root
+			has_port = yes
+			is_wasteland = no
+			is_city = no
+			NOT = { has_discovered = root }
+			area_for_scope_province = {
+				type = all
+				NOT = { has_discovered = root }
+			}
+		}
+		NOT = { has_country_modifier = colonial_enthusiasm }
+	}
+	selection_weight = {
+		factor = 2.5
+		modifier = {
+			factor = 0.5
+			NOT = { num_of_colonists = 1 }
+		}
+		modifier = {
+			factor = 2
+			num_of_colonists = 2
+		}
+		modifier = {
+			factor = 2
+			OR = {
+				num_of_conquistadors = 2
+				num_of_explorers = 2
+			}
+		}
+	}
+	pre_effect = {
+		random_province = {
+			limit = {
+				range = root
+				has_port = yes
+				is_wasteland = no
+				is_city = no
+				NOT = { has_discovered = root }
+				area_for_scope_province = {
+					type = all
+					NOT = { has_discovered = root }
+				}
+			}
+			save_event_target_as = agenda_province
+		}
+	}
+	task_requirements = {
+		if = {
+			limit = {
+				has_estate_agenda_auto_completion = {
+					estate = estate_ufc_staff
+				}
+			}
+			has_estate_agenda_auto_completion = {
+				estate = estate_ufc_staff
+			}
+		}
+		else = {
+			event_target:agenda_province = {
+				area_for_scope_province = {
+					custom_trigger_tooltip = {
+						tooltip = discovered_by_root
+						has_discovered = root
+					}
+				}
+			}
+		}
+	}
+    task_completed_effect = {
+		on_completed_agenda_effect = {
+			estate = estate_ufc_staff
+		}
+		add_estate_loyalty = {
+			estate = estate_ufc_staff
+			loyalty = 10
+		}
+		add_country_modifier = {
+			name = colonial_enthusiasm
+			duration = 3650
+		}
+	}
+	fail_if = {
+		OR = {
+			NOT = { num_of_ports = 1 }
+			has_not_any_exploration_ideas = yes
+		}
+	}
+    failing_effect = {
+		on_failed_agenda_effect = yes
+		clr_auto_complete_flag = yes
+        add_estate_loyalty_modifier = {
+            estate = estate_ufc_staff
+			desc = EST_VAL_AGENDA_DENIED
+			loyalty = -5
+			duration = 7300
+        }
+    }
+}
+
+
+#Colonise something in X area
+estate_ufc_staff_colonise_X = {
+	can_select = {
+		num_of_colonists = 1
+		num_of_ports = 1
+		any_province = {
+			range = root
+			is_city = no
+			is_wasteland = no
+			OR = {
+				has_port = yes
+				any_neighbor_province = {
+					OR = {
+						owned_by = root
+						owner = {
+							is_colonial_nation_of = root
+						}
+					}
+				}
+			}
+			has_discovered = root
+			area_for_scope_province = {
+				type = all
+				NOT = { owned_by = root }
+				NOT = {
+					owner = {
+						is_colonial_nation_of = root
+					}
+				}
+			}
+			OR = {
+				NOT = { colonial_claim_by_anyone_of_religion = root }
+				is_religion_grant_colonial_claim = root
+			}
+		}
+		NOT = { has_country_modifier = colonial_enthusiasm }
+	}
+	selection_weight = {
+		factor = 1.5
+		modifier = {
+			factor = 2
+			num_of_colonists = 2
+		}
+		modifier = {
+			factor = 1.5
+			any_country = {
+				is_colonial_nation_of = root
+			}
+		}
+	}
+	pre_effect = {
+		random_province = {
+			limit = {
+				range = root
+				is_city = no
+				is_wasteland = no
+				OR = {
+					has_port = yes
+					any_neighbor_province = {
+						OR = {
+							owned_by = root
+							owner = {
+								is_colonial_nation_of = root
+							}
+						}
+					}
+				}
+				has_discovered = root
+				area_for_scope_province = {
+					type = all
+					NOT = { owned_by = root }
+					NOT = {
+						owner = {
+							is_colonial_nation_of = root
+						}
+					}
+				}
+				OR = {
+					NOT = { colonial_claim_by_anyone_of_religion = root }
+					is_religion_grant_colonial_claim = root
+				}
+			}
+			save_event_target_as = agenda_province
+		}
+		random_province = {
+			limit = {
+				range = root
+				is_city = no
+				is_wasteland = no
+				any_neighbor_province = {
+					OR = {
+						owned_by = root
+						owner = {
+							is_colonial_nation_of = root
+						}
+					}
+				}
+				has_discovered = root
+				area_for_scope_province = {
+					type = all
+					NOT = { owned_by = root }
+					NOT = {
+						owner = {
+							is_colonial_nation_of = root
+						}
+					}
+				}
+				OR = {
+					NOT = { colonial_claim_by_anyone_of_religion = root }
+					is_religion_grant_colonial_claim = root
+				}
+			}
+			save_event_target_as = agenda_province
+		}
+	}
+	provinces_to_highlight = {
+		area_for_scope_province = {
+			province_id = event_target:agenda_province
+		}
+	}
+	task_requirements = {
+		if = {
+			limit = {
+				has_estate_agenda_auto_completion = {
+					estate = estate_ufc_staff
+				}
+			}
+			has_estate_agenda_auto_completion = {
+				estate = estate_ufc_staff
+			}
+		}
+		else = {
+			custom_trigger_tooltip = {
+				tooltip = estate_burghers_colonise_X_requirements
+				event_target:agenda_province = {
+					area_for_scope_province = {
+						is_city = yes
+						OR = {
+							owned_by = root
+							owner = {
+								is_colonial_nation_of = root
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+    task_completed_effect = {
+		on_completed_agenda_effect = {
+			estate = estate_ufc_staff
+		}
+		add_estate_loyalty = {
+			estate = estate_ufc_staff
+			loyalty = 10
+		}
+		add_country_modifier = {
+			name = colonial_enthusiasm
+			duration = 3650
+		}
+	}
+	fail_if = {
+		OR = {
+			AND = {
+				NOT = { num_of_colonists = 1 }
+				event_target:agenda_province = {
+					NOT = { country_or_non_sovereign_subject_holds = root }
+				}
+			}
+			event_target:agenda_province = {
+				NOT = { range = root }
+				is_colony = no
+				NOT = { country_or_non_sovereign_subject_holds = ROOT }
+			}
+			event_target:agenda_province = {
+				area_for_scope_province = {
+					type = all
+					is_city = yes
+					NOT = { country_or_non_sovereign_subject_holds = root }
+				}
+			}
+		}
+	}
+    failing_effect = {
+		on_failed_agenda_effect = yes
+		clr_auto_complete_flag = yes
+        add_estate_loyalty_modifier = {
+            estate = estate_ufc_staff
+			desc = EST_VAL_AGENDA_DENIED
+			loyalty = -5
+			duration = 7300
+        }
+    }
+}
+
+#Reduce corruption
+estate_ufc_staff_reduce_corruption = {
+	can_select = {
+		is_bankrupt = no
+		NOT = { has_country_modifier = freedom_from_corruption }
+		has_government_power = {
+			mechanic_type = ufc_mechanic_mechanical_clock
+			power_type = mechanical_clock_adm_power
+			value = 40
+		}
+	}
+	selection_weight = {
+		factor = 5
+		modifier = {
+			factor = 1.5
+			has_government_power = {
+				mechanic_type = ufc_mechanic_mechanical_clock
+				power_type = mechanical_clock_adm_power
+				value = 60
+			}
+		}
+		modifier = {
+			factor = 2
+			has_government_power = {
+				mechanic_type = ufc_mechanic_mechanical_clock
+				power_type = mechanical_clock_adm_power
+				value = 80
+			}
+		}
+	}
+	pre_effect = {
+		set_variable = {
+			which = estate_ufc_staff_reduce_corruption_var
+			value = 0
+		}
+		if = {
+			limit = {
+				has_government_power = {
+					mechanic_type = ufc_mechanic_mechanical_clock
+					power_type = mechanical_clock_adm_power
+					value = 60
+				}
+			}
+			set_variable = {
+				which = estate_ufc_staff_reduce_corruption_var
+				value = 1
+			}
+		}
+		if = {
+			limit = {
+				has_government_power = {
+					mechanic_type = ufc_mechanic_mechanical_clock
+					power_type = mechanical_clock_adm_power
+					value = 80
+				}
+			}
+			set_variable = {
+				which = estate_ufc_staff_reduce_corruption_var
+				value = 2
+			}
+		}
+	}
+	task_requirements = {
+		if = {
+			limit = {
+				has_estate_agenda_auto_completion = {
+					estate = estate_ufc_staff
+				}
+			}
+			has_estate_agenda_auto_completion = {
+				estate = estate_ufc_staff
+			}
+		}
+		else = {
+			if = {
+				limit = {
+					check_variable = {
+						which = estate_ufc_staff_reduce_corruption_var
+						value = 2
+					}
+				}
+				NOT = {
+					has_government_power = {
+						mechanic_type = ufc_mechanic_mechanical_clock
+						power_type = mechanical_clock_adm_power
+						value = 60
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					check_variable = {
+						which = estate_ufc_staff_reduce_corruption_var
+						value = 1
+					}
+				}
+				NOT = {
+					has_government_power = {
+						mechanic_type = ufc_mechanic_mechanical_clock
+						power_type = mechanical_clock_adm_power
+						value = 40
+					}
+				}
+			}
+			else = {
+				NOT = {
+					has_government_power = {
+						mechanic_type = ufc_mechanic_mechanical_clock
+						power_type = mechanical_clock_adm_power
+						value = 20
+					}
+				}
+			}
+		}
+	}
+    task_completed_effect = {
+		on_completed_agenda_effect = {
+			estate = estate_ufc_staff
+		}
+		add_estate_loyalty = {
+			estate = estate_ufc_staff
+			loyalty = 10
+		}
+		add_country_modifier = {
+			name = freedom_from_corruption
+			duration = 5475
+		}
+		add_government_power = {
+			mechanic_type = ufc_mechanic_mechanical_clock
+			power_type = mechanical_clock_adm_power
+			value = -5
+		}
+    }
+    failing_effect = {
+		on_failed_agenda_effect = yes
+		clr_auto_complete_flag = yes
+        add_estate_loyalty_modifier = {
+            estate = estate_ufc_staff
+			desc = EST_VAL_AGENDA_DENIED
+			loyalty = -5
+			duration = 7300
+        }
+    }
+}
+
+#Reduce wealth gap
+estate_ufc_staff_reduce_wealth_gap = {
+	can_select = {
+		is_bankrupt = no
+		NOT = { has_country_modifier = ufc_modifier_domestic_demand }
+		has_government_power = {
+			mechanic_type = ufc_mechanic_mechanical_clock
+			power_type = mechanical_clock_dip_power
+			value = 40
+		}
+	}
+	selection_weight = {
+		factor = 5
+		modifier = {
+			factor = 1.5
+			has_government_power = {
+				mechanic_type = ufc_mechanic_mechanical_clock
+				power_type = mechanical_clock_dip_power
+				value = 60
+			}
+		}
+		modifier = {
+			factor = 2
+			has_government_power = {
+				mechanic_type = ufc_mechanic_mechanical_clock
+				power_type = mechanical_clock_dip_power
+				value = 80
+			}
+		}
+	}
+	pre_effect = {
+		set_variable = {
+			which = estate_ufc_staff_reduce_wealth_gap_var
+			value = 0
+		}
+		if = {
+			limit = {
+				has_government_power = {
+					mechanic_type = ufc_mechanic_mechanical_clock
+					power_type = mechanical_clock_dip_power
+					value = 60
+				}
+			}
+			set_variable = {
+				which = estate_ufc_staff_reduce_wealth_gap_var
+				value = 1
+			}
+		}
+		if = {
+			limit = {
+				has_government_power = {
+					mechanic_type = ufc_mechanic_mechanical_clock
+					power_type = mechanical_clock_dip_power
+					value = 80
+				}
+			}
+			set_variable = {
+				which = estate_ufc_staff_reduce_wealth_gap_var
+				value = 2
+			}
+		}
+	}
+	task_requirements = {
+		if = {
+			limit = {
+				has_estate_agenda_auto_completion = {
+					estate = estate_ufc_staff
+				}
+			}
+			has_estate_agenda_auto_completion = {
+				estate = estate_ufc_staff
+			}
+		}
+		else = {
+			if = {
+				limit = {
+					check_variable = {
+						which = estate_ufc_staff_reduce_wealth_gap_var
+						value = 2
+					}
+				}
+				NOT = {
+					has_government_power = {
+						mechanic_type = ufc_mechanic_mechanical_clock
+						power_type = mechanical_clock_dip_power
+						value = 60
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					check_variable = {
+						which = estate_ufc_staff_reduce_wealth_gap_var
+						value = 1
+					}
+				}
+				NOT = {
+					has_government_power = {
+						mechanic_type = ufc_mechanic_mechanical_clock
+						power_type = mechanical_clock_dip_power
+						value = 40
+					}
+				}
+			}
+			else = {
+				NOT = {
+					has_government_power = {
+						mechanic_type = ufc_mechanic_mechanical_clock
+						power_type = mechanical_clock_dip_power
+						value = 20
+					}
+				}
+			}
+		}
+	}
+	task_completed_effect = {
+		on_completed_agenda_effect = {
+			estate = estate_ufc_staff
+		}
+		add_estate_loyalty = {
+			estate = estate_ufc_staff
+			loyalty = 10
+		}
+		add_country_modifier = {
+			name = ufc_modifier_domestic_demand
+			duration = 5475
+		}
+		add_government_power = {
+			mechanic_type = ufc_mechanic_mechanical_clock
+			power_type = mechanical_clock_dip_power
+			value = -5
+		}
+	}
+	failing_effect = {
+		on_failed_agenda_effect = yes
+		clr_auto_complete_flag = yes
+		add_estate_loyalty_modifier = {
+			estate = estate_ufc_staff
+			desc = EST_VAL_AGENDA_DENIED
+			loyalty = -5
+			duration = 7300
+		}
+	}
+}
+
+#Reduce army disloyalty
+estate_ufc_staff_reduce_army_disloyalty = {
+	can_select = {
+		is_bankrupt = no
+		NOT = { has_country_modifier = ufc_modifier_army_loyalty }
+		has_government_power = {
+			mechanic_type = ufc_mechanic_mechanical_clock
+			power_type = mechanical_clock_mil_power
+			value = 40
+		}
+	}
+	selection_weight = {
+		factor = 5
+		modifier = {
+			factor = 1.5
+			has_government_power = {
+				mechanic_type = ufc_mechanic_mechanical_clock
+				power_type = mechanical_clock_mil_power
+				value = 60
+			}
+		}
+		modifier = {
+			factor = 2
+			has_government_power = {
+				mechanic_type = ufc_mechanic_mechanical_clock
+				power_type = mechanical_clock_mil_power
+				value = 80
+			}
+		}
+	}
+	pre_effect = {
+		set_variable = {
+			which = estate_ufc_staff_reduce_army_disloyalty_var
+			value = 0
+		}
+		if = {
+			limit = {
+				has_government_power = {
+					mechanic_type = ufc_mechanic_mechanical_clock
+					power_type = mechanical_clock_mil_power
+					value = 60
+				}
+			}
+			set_variable = {
+				which = estate_ufc_staff_reduce_army_disloyalty_var
+				value = 1
+			}
+		}
+		if = {
+			limit = {
+				has_government_power = {
+					mechanic_type = ufc_mechanic_mechanical_clock
+					power_type = mechanical_clock_mil_power
+					value = 80
+				}
+			}
+			set_variable = {
+				which = estate_ufc_staff_reduce_army_disloyalty_var
+				value = 2
+			}
+		}
+	}
+	task_requirements = {
+		if = {
+			limit = {
+				has_estate_agenda_auto_completion = {
+					estate = estate_ufc_staff
+				}
+			}
+			has_estate_agenda_auto_completion = {
+				estate = estate_ufc_staff
+			}
+		}
+		else = {
+			if = {
+				limit = {
+					check_variable = {
+						which = estate_ufc_staff_reduce_army_disloyalty_var
+						value = 2
+					}
+				}
+				NOT = {
+					has_government_power = {
+						mechanic_type = ufc_mechanic_mechanical_clock
+						power_type = mechanical_clock_mil_power
+						value = 60
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					check_variable = {
+						which = estate_ufc_staff_reduce_army_disloyalty_var
+						value = 1
+					}
+				}
+				NOT = {
+					has_government_power = {
+						mechanic_type = ufc_mechanic_mechanical_clock
+						power_type = mechanical_clock_mil_power
+						value = 40
+					}
+				}
+			}
+			else = {
+				NOT = {
+					has_government_power = {
+						mechanic_type = ufc_mechanic_mechanical_clock
+						power_type = mechanical_clock_mil_power
+						value = 20
+					}
+				}
+			}
+		}
+	}
+	task_completed_effect = {
+		on_completed_agenda_effect = {
+			estate = estate_ufc_staff
+		}
+		add_estate_loyalty = {
+			estate = estate_ufc_staff
+			loyalty = 10
+		}
+		add_country_modifier = {
+			name = ufc_modifier_army_loyalty
+			duration = 5475
+		}
+		add_government_power = {
+			mechanic_type = ufc_mechanic_mechanical_clock
+			power_type = mechanical_clock_mil_power
+			value = -5
+		}
+	}
+	failing_effect = {
+		on_failed_agenda_effect = yes
+		clr_auto_complete_flag = yes
+		add_estate_loyalty_modifier = {
+			estate = estate_ufc_staff
+			desc = EST_VAL_AGENDA_DENIED
+			loyalty = -5
+			duration = 7300
+		}
+	}
+}

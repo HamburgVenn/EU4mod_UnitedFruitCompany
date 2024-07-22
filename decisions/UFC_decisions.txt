@@ -796,11 +796,12 @@ country_decisions = {
         }
         allow = {
             custom_trigger_tooltip = {
-                not = {
+                OR = {
                     had_country_flag = {
                         flag = UFC_flag_intellectual_army_policy_cooldown
                         days = 1825
                     }
+                    has_country_flag = UFC_flag_intellectual_army_policy_start
                 }
                 tooltip = UFC_tooltip_policy_cooldown
             }
@@ -809,34 +810,7 @@ country_decisions = {
             country_event = {
                 id = flavor_UFC.9009
             }
-        }
-    }
 
-    UFC_decision_intellectual_army_policy = {
-        potential = {
-            tag = UFC
-            mission_completed = UFC_mission_intellectual_army
-        }
-        color = {
-            255 50 50
-        }
-        provinces_to_highlight = {
-        }
-        allow = {
-            custom_trigger_tooltip = {
-                not = {
-                    had_country_flag = {
-                        flag = UFC_flag_intellectual_army_policy_cooldown
-                        days = 1825
-                    }
-                }
-                tooltip = UFC_tooltip_policy_cooldown
-            }
-        }
-        effect = {
-            country_event = {
-                id = flavor_UFC.9009
-            }
         }
     }
 
@@ -852,11 +826,12 @@ country_decisions = {
         }
         allow = {
             custom_trigger_tooltip = {
-                not = {
+                or = {
                     had_country_flag = {
                         flag = UFC_flag_agrarian_reform_policy_cooldown
                         days = 1825
                     }
+                    has_country_flag = UFC_flag_agrarian_reform_policy_start
                 }
                 tooltip = UFC_tooltip_policy_cooldown
             }
@@ -865,6 +840,7 @@ country_decisions = {
             country_event = {
                 id = flavor_UFC.9010
             }
+
         }
     }
 
@@ -880,11 +856,12 @@ country_decisions = {
         }
         allow = {
             custom_trigger_tooltip = {
-                not = {
+                or = {
                     had_country_flag = {
                         flag = UFC_flag_armed_literacy_policy_cooldown
                         days = 1825
                     }
+                    has_country_flag = UFC_flag_armed_literacy_policy_start
                 }
                 tooltip = UFC_tooltip_policy_cooldown
             }
@@ -893,6 +870,7 @@ country_decisions = {
             country_event = {
                 id = flavor_UFC.9011
             }
+
         }
     }
 
@@ -908,11 +886,12 @@ country_decisions = {
         }
         allow = {
             custom_trigger_tooltip = {
-                not = {
+                or = {
                     had_country_flag = {
                         flag = UFC_flag_gender_equality_cooldown
                         days = 1825
                     }
+                    has_country_flag = UFC_flag_gender_equality_start
                 }
                 tooltip = UFC_tooltip_policy_cooldown
             }
@@ -936,11 +915,12 @@ country_decisions = {
         }
         allow = {
             custom_trigger_tooltip = {
-                not = {
+                or = {
                     had_country_flag = {
                         flag = UFC_flag_self_limitation_of_power_cooldown
                         days = 1825
                     }
+                    has_country_flag = UFC_flag_self_limitation_of_power_start
                 }
                 tooltip = UFC_tooltip_policy_cooldown
             }
@@ -949,6 +929,7 @@ country_decisions = {
             country_event = {
                 id = flavor_UFC.9013
             }
+
         }
     }
 
@@ -964,11 +945,12 @@ country_decisions = {
         }
         allow = {
             custom_trigger_tooltip = {
-                not = {
+                or = {
                     had_country_flag = {
                         flag = UFC_flag_eight_hours_day_cooldown
                         days = 1825
                     }
+                    has_country_flag = UFC_flag_eight_hours_day_start
                 }
                 tooltip = UFC_tooltip_policy_cooldown
             }
@@ -1159,6 +1141,9 @@ country_decisions = {
             not = {
                 war_with = ADU
             }
+            ADU = {
+                is_revolutionary = no
+            }
         }
         color = {
             255 100 100
@@ -1221,6 +1206,11 @@ country_decisions = {
             not = {
                 war_with = POR
             }
+            NOT = {
+                POR = {
+                    is_subject_of = UFC
+                }
+            }
         }
         color = {
             255 100 100
@@ -1248,6 +1238,11 @@ country_decisions = {
             }
             not = {
                 war_with = CAS
+            }
+            NOT = {
+                CAS = {
+                    is_subject_of = UFC
+                }
             }
         }
         color = {
@@ -1277,6 +1272,9 @@ country_decisions = {
             not = {
                 war_with = ARA
             }
+            not = {
+                has_country_flag = UFC_flag_ask_ara
+            }
         }
         color = {
             255 100 100
@@ -1288,7 +1286,127 @@ country_decisions = {
             }
         }
         effect = {
+            set_country_flag = UFC_flag_ask_ara
             country_event = { id = flavor_UFC.8935 days = 5 random = 5 }
+        }
+    }
+
+    UFC_decision_territory_de_jure= {
+        potential = {
+            tag = UFC
+            has_country_modifier = UFC_modifier_future_for_freedom
+        }
+        color = {
+            255 100 100
+        }
+        allow = {
+            is_at_war = no
+        }
+        effect = {
+            custom_tooltip = UFC_tooltip_territory_de_jure
+            hidden_effect = {
+                every_subject_country = {
+                    if = {
+                        limit = {
+                            is_subject_of_type = ufc_cooperative
+                        }
+                        save_event_target_as = ufc_target_cooperative_country
+                        capital_scope = {
+                            region = {
+                                if = {
+                                    limit = {
+                                        owned_by = UFC
+                                    }
+                                    cede_province = event_target:ufc_target_cooperative_country
+                                    add_territorial_core = event_target:ufc_target_cooperative_country
+                                }
+                            }
+                        }
+                        capital_scope = {
+                            region = {
+                                if = {
+                                    limit = {
+                                        owned_by = event_target:ufc_target_cooperative_country
+                                    }
+                                    set_province_flag = UFC_flag_cooperative_capital_region
+                                }
+                            }
+                        }
+                        every_owned_province = {
+                            limit = {
+                                not = {
+                                    has_province_flag = UFC_flag_cooperative_capital_region
+                                }
+                            }
+                            add_territorial_core = UFC
+                            cede_province = UFC
+                        }
+                        every_owned_province = {
+                            clr_province_flag = UFC_flag_cooperative_capital_region
+                        }
+                    }
+                }
+                every_subject_country = {
+                    if = {
+                        limit = {
+                            is_subject_of_type = ufc_cooperative
+                        }
+                        save_event_target_as = ufc_target_cooperative_country
+                        capital_scope = {
+                            region = {
+                                if = {
+                                    limit = {
+                                        owned_by = UFC
+                                    }
+                                    cede_province = event_target:ufc_target_cooperative_country
+                                    add_territorial_core = event_target:ufc_target_cooperative_country
+                                }
+                            }
+                        }
+                        capital_scope = {
+                            region = {
+                                if = {
+                                    limit = {
+                                        owned_by = event_target:ufc_target_cooperative_country
+                                    }
+                                    set_province_flag = UFC_flag_cooperative_capital_region
+                                }
+                            }
+                        }
+                        every_owned_province = {
+                            limit = {
+                                not = {
+                                    has_province_flag = UFC_flag_cooperative_capital_region
+                                }
+                            }
+                            add_territorial_core = UFC
+                            cede_province = UFC
+                        }
+                        every_owned_province = {
+                            clr_province_flag = UFC_flag_cooperative_capital_region
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    UFC_decision_reduce_sailors_recovery= {
+        potential = {
+            tag = UFC
+            has_country_flag = UFC_flag_reduce_sailors_recovery
+            not = {
+                has_country_modifier = UFC_modifier_reduce_sailors_recovery
+            }
+        }
+        allow = {
+            max_sailors = 1400000
+        }
+        effect = {
+            add_country_modifier = {
+                name = UFC_modifier_reduce_sailors_recovery
+                duration = -1
+            }
         }
     }
 }

@@ -608,9 +608,11 @@ ufc_subsidiary = {
 	transfer_trade_power = yes
 	modifier_subject = clear
 	liberty_desire_development_ratio = 0.025
-	max_government_rank = 2
+	max_government_rank = 3
 	embargo_rivals = yes
 	return_land = yes
+	subsidize_armies = yes
+	send_additional_troops = yes
 	modifier_subject = {
 		modifier = UFC_modifier_subsidiary_basic_modifier
 		trigger = {
@@ -958,6 +960,12 @@ ufc_subsidiary = {
 					value = 2.0
 				}
 			}
+		}
+	}
+	modifier_subject = {
+		modifier = UFC_modifier_ban_adu_colonize
+		trigger = {
+			num_of_colonists = 1
 		}
 	}
 	modifier_overlord = {
@@ -1015,6 +1023,10 @@ ufc_cooperative = {
 	max_government_rank = 2
 	embargo_rivals = yes
 	return_land = yes
+	subsidize_armies = yes
+	send_additional_troops = yes
+	base_liberty_desire = -0.25
+	liberty_desire_revolution = 0
 	modifier_subject = {
 		modifier = UFC_modifier_subsidiary_basic_modifier
 		trigger = {
@@ -1391,7 +1403,1015 @@ ufc_cooperative = {
 			}
 		}
 	}
+	modifier_overlord = {
+		modifier = UFC_modifier_edinburgh_castle
+		trigger = {
+			any_owned_province = {
+				has_great_project = {
+					type = edinburgh_castle
+					tier = 3
+				}
+			}
+			overlord = {
+				mission_completed = UFC_mission_sweeping_the_class
+				has_country_modifier = UFC_modifier_future_for_freedom
+			}
+		}
+	}
+	modifier_overlord = {
+		modifier = UFC_modifier_tower_of_london
+		trigger = {
+			any_owned_province = {
+				has_great_project = {
+					type = tower_of_london
+					tier = 3
+				}
+			}
+			overlord = {
+				mission_completed = UFC_mission_sweeping_the_class
+				has_country_modifier = UFC_modifier_future_for_freedom
+			}
+		}
+	}
+	modifier_overlord = {
+		modifier = UFC_modifier_stonehenge
+		trigger = {
+			any_owned_province = {
+				has_great_project = {
+					type = stonehenge
+					tier = 3
+				}
+			}
+			overlord = {
+				mission_completed = UFC_mission_sweeping_the_class
+				has_country_modifier = UFC_modifier_future_for_freedom
+			}
+		}
+	}
+	modifier_overlord = {
+		modifier = UFC_modifier_versailles
+		trigger = {
+			any_owned_province = {
+				has_great_project = {
+					type = versailles
+					tier = 3
+				}
+			}
+			overlord = {
+				mission_completed = UFC_mission_sweeping_the_class
+				has_country_modifier = UFC_modifier_future_for_freedom
+			}
+		}
+	}
+	modifier_overlord = {
+		modifier = UFC_modifier_aljaferia_palace
+		trigger = {
+			any_owned_province = {
+				has_great_project = {
+					type = aljaferia_palace
+					tier = 3
+				}
+			}
+			overlord = {
+				mission_completed = UFC_mission_sweeping_the_class
+				has_country_modifier = UFC_modifier_future_for_freedom
+			}
+		}
+	}
+	modifier_overlord = {
+		modifier = UFC_modifier_el_escorial
+		trigger = {
+			any_owned_province = {
+				has_great_project = {
+					type = el_escorial
+					tier = 3
+				}
+			}
+			overlord = {
+				mission_completed = UFC_mission_sweeping_the_class
+				has_country_modifier = UFC_modifier_future_for_freedom
+			}
+		}
+	}
+	modifier_overlord = {
+		modifier = UFC_modifier_belem_tower
+		trigger = {
+			any_owned_province = {
+				has_great_project = {
+					type = belem_tower
+					tier = 3
+				}
+			}
+			overlord = {
+				mission_completed = UFC_mission_sweeping_the_class
+				has_country_modifier = UFC_modifier_future_for_freedom
+			}
+		}
+	}
+	modifier_overlord = {
+		modifier = UFC_modifier_stpeters_cathedral
+		trigger = {
+			any_owned_province = {
+				has_great_project = {
+					type = stpeters_cathedral
+				}
+			}
+			overlord = {
+				mission_completed = UFC_mission_sweeping_the_class
+				has_country_modifier = UFC_modifier_future_for_freedom
+				mission_completed = UFC_mission_rising_pragmatism
+			}
+		}
+	}
+	modifier_overlord = {
+		modifier = UFC_modifier_royal_palace_caserta
+		trigger = {
+			any_owned_province = {
+				has_great_project = {
+					type = royal_palace_caserta
+					tier = 3
+				}
+			}
+			overlord = {
+				mission_completed = UFC_mission_sweeping_the_class
+				has_country_modifier = UFC_modifier_future_for_freedom
+			}
+		}
+	}
+	modifier_overlord = {
+		modifier = UFC_modifier_venetian_arsenal_gp
+		trigger = {
+			any_owned_province = {
+				has_great_project = {
+					type = venetian_arsenal_gp
+					tier = 3
+				}
+			}
+			overlord = {
+				mission_completed = UFC_mission_sweeping_the_class
+				has_country_modifier = UFC_modifier_future_for_freedom
+			}
+		}
+	}
+	modifier_overlord = {
+		modifier = UFC_modifier_doges_palace
+		trigger = {
+			any_owned_province = {
+				has_great_project = {
+					type = doges_palace
+					tier = 3
+				}
+			}
+			overlord = {
+				mission_completed = UFC_mission_sweeping_the_class
+				has_country_modifier = UFC_modifier_future_for_freedom
+			}
+		}
+	}
+	modifier_overlord = {
+		modifier = UFC_modifier_ambras_castle
+		trigger = {
+			any_owned_province = {
+				has_great_project = {
+					type = ambras_castle
+					tier = 3
+				}
+			}
+			overlord = {
+				mission_completed = UFC_mission_sweeping_the_class
+				has_country_modifier = UFC_modifier_future_for_freedom
+			}
+		}
+	}
+	modifier_overlord = {
+		modifier = UFC_modifier_ulm_minster_great_project
+		trigger = {
+			any_owned_province = {
+				has_great_project = {
+					type = ulm_minster_great_project
+					tier = 3
+				}
+			}
+			overlord = {
+				mission_completed = UFC_mission_sweeping_the_class
+				has_country_modifier = UFC_modifier_future_for_freedom
+			}
+		}
+	}
+	modifier_overlord = {
+		modifier = UFC_modifier_amsterdam_bourse
+		trigger = {
+			any_owned_province = {
+				has_great_project = {
+					type = amsterdam_bourse
+					tier = 3
+				}
+			}
+			overlord = {
+				mission_completed = UFC_mission_sweeping_the_class
+				has_country_modifier = UFC_modifier_future_for_freedom
+			}
+		}
+	}
+	modifier_overlord = {
+		modifier = UFC_modifier_malta_forts
+		trigger = {
+			any_owned_province = {
+				has_great_project = {
+					type = malta_forts
+					tier = 3
+				}
+			}
+			overlord = {
+				mission_completed = UFC_mission_sweeping_the_class
+				has_country_modifier = UFC_modifier_future_for_freedom
+			}
+		}
+	}
+	modifier_overlord = {
+		modifier = UFC_modifier_dutch_polders
+		trigger = {
+			any_owned_province = {
+				has_great_project = {
+					type = dutch_polders
+					tier = 3
+				}
+			}
+			overlord = {
+				mission_completed = UFC_mission_sweeping_the_class
+				has_country_modifier = UFC_modifier_future_for_freedom
+			}
+		}
+	}
+	modifier_overlord = {
+		modifier = UFC_modifier_brandenburg_gate
+		trigger = {
+			any_owned_province = {
+				has_great_project = {
+					type = brandenburg_gate
+					tier = 3
+				}
+			}
+			overlord = {
+				mission_completed = UFC_mission_sweeping_the_class
+				has_country_modifier = UFC_modifier_future_for_freedom
+			}
+		}
+	}
+	modifier_overlord = {
+		modifier = UFC_modifier_kronborg
+		trigger = {
+			any_owned_province = {
+				has_great_project = {
+					type = kronborg
+					tier = 3
+				}
+			}
+			overlord = {
+				mission_completed = UFC_mission_sweeping_the_class
+				has_country_modifier = UFC_modifier_future_for_freedom
+			}
+		}
+	}
+	modifier_overlord = {
+		modifier = UFC_modifier_falun_copper_mine
+		trigger = {
+			any_owned_province = {
+				has_great_project = {
+					type = falun_copper_mine
+					tier = 3
+				}
+			}
+			overlord = {
+				mission_completed = UFC_mission_sweeping_the_class
+				has_country_modifier = UFC_modifier_future_for_freedom
+			}
+		}
+	}
+	modifier_overlord = {
+		modifier = UFC_modifier_visby_city
+		trigger = {
+			any_owned_province = {
+				has_great_project = {
+					type = visby_city
+					tier = 3
+				}
+			}
+			overlord = {
+				mission_completed = UFC_mission_sweeping_the_class
+				has_country_modifier = UFC_modifier_future_for_freedom
+			}
+		}
+	}
+	modifier_overlord = {
+		modifier = UFC_modifier_winter_palace
+		trigger = {
+			any_owned_province = {
+				has_great_project = {
+					type = winter_palace
+					tier = 3
+				}
+			}
+			overlord = {
+				mission_completed = UFC_mission_sweeping_the_class
+				has_country_modifier = UFC_modifier_future_for_freedom
+			}
+		}
+	}
+	modifier_overlord = {
+		modifier = UFC_modifier_malbork_castle
+		trigger = {
+			any_owned_province = {
+				has_great_project = {
+					type = malbork_castle
+					tier = 3
+				}
+			}
+			overlord = {
+				mission_completed = UFC_mission_sweeping_the_class
+				has_country_modifier = UFC_modifier_future_for_freedom
+			}
+		}
+	}
+	modifier_overlord = {
+		modifier = UFC_modifier_trakai_castle
+		trigger = {
+			any_owned_province = {
+				has_great_project = {
+					type = trakai_castle
+					tier = 3
+				}
+			}
+			overlord = {
+				mission_completed = UFC_mission_sweeping_the_class
+				has_country_modifier = UFC_modifier_future_for_freedom
+			}
+		}
+	}
+	modifier_overlord = {
+		modifier = UFC_modifier_kremlin
+		trigger = {
+			any_owned_province = {
+				has_great_project = {
+					type = kremlin
+					tier = 3
+				}
+			}
+			overlord = {
+				mission_completed = UFC_mission_sweeping_the_class
+				has_country_modifier = UFC_modifier_future_for_freedom
+			}
+		}
+	}
+	modifier_overlord = {
+		modifier = UFC_modifier_krakow_cloth_hall
+		trigger = {
+			any_owned_province = {
+				has_great_project = {
+					type = krakow_cloth_hall
+					tier = 3
+				}
+			}
+			overlord = {
+				mission_completed = UFC_mission_sweeping_the_class
+				has_country_modifier = UFC_modifier_future_for_freedom
+			}
+		}
+	}
+	modifier_overlord = {
+		modifier = UFC_modifier_golden_kremnica
+		trigger = {
+			any_owned_province = {
+				has_great_project = {
+					type = golden_kremnica
+					tier = 3
+				}
+			}
+			overlord = {
+				mission_completed = UFC_mission_sweeping_the_class
+				has_country_modifier = UFC_modifier_future_for_freedom
+			}
+		}
+	}
+	modifier_overlord = {
+		modifier = UFC_modifier_buda_castle
+		trigger = {
+			any_owned_province = {
+				has_great_project = {
+					type = buda_castle
+					tier = 3
+				}
+			}
+			overlord = {
+				mission_completed = UFC_mission_sweeping_the_class
+				has_country_modifier = UFC_modifier_future_for_freedom
+			}
+		}
+	}
+	modifier_overlord = {
+		modifier = UFC_modifier_bran_castle
+		trigger = {
+			any_owned_province = {
+				has_great_project = {
+					type = bran_castle
+					tier = 3
+				}
+			}
+			overlord = {
+				mission_completed = UFC_mission_sweeping_the_class
+				has_country_modifier = UFC_modifier_future_for_freedom
+			}
+		}
+	}
+	modifier_overlord = {
+		modifier = UFC_modifier_parthenon
+		trigger = {
+			any_owned_province = {
+				has_great_project = {
+					type = parthenon
+					tier = 3
+				}
+			}
+			overlord = {
+				mission_completed = UFC_mission_sweeping_the_class
+				has_country_modifier = UFC_modifier_future_for_freedom
+			}
+		}
+	}
+	modifier_overlord = {
+		modifier = UFC_modifier_kazan_kremlin
+		trigger = {
+			any_owned_province = {
+				has_great_project = {
+					type = kazan_kremlin
+					tier = 3
+				}
+			}
+			overlord = {
+				mission_completed = UFC_mission_sweeping_the_class
+				has_country_modifier = UFC_modifier_future_for_freedom
+			}
+		}
+	}
+	modifier_overlord = {
+		modifier = UFC_modifier_ait_benhaddou
+		trigger = {
+			any_owned_province = {
+				has_great_project = {
+					type = ait_benhaddou
+					tier = 3
+				}
+			}
+			overlord = {
+				mission_completed = UFC_mission_the_origin
+				has_country_modifier = UFC_modifier_future_for_freedom
+			}
+		}
+	}
+	modifier_overlord = {
+		modifier = UFC_modifier_sankore_madrasah
+		trigger = {
+			any_owned_province = {
+				has_great_project = {
+					type = sankore_madrasah
+					tier = 3
+				}
+			}
+			overlord = {
+				mission_completed = UFC_mission_the_origin
+				has_country_modifier = UFC_modifier_future_for_freedom
+			}
+		}
+	}
+	modifier_overlord = {
+		modifier = UFC_modifier_mbanza_kongo
+		trigger = {
+			any_owned_province = {
+				has_great_project = {
+					type = mbanza_kongo
+					tier = 3
+				}
+			}
+			overlord = {
+				mission_completed = UFC_mission_the_origin
+				has_country_modifier = UFC_modifier_future_for_freedom
+			}
+		}
+	}
+	modifier_overlord = {
+		modifier = UFC_modifier_khami_ruins
+		trigger = {
+			any_owned_province = {
+				has_great_project = {
+					type = khami_ruins
+					tier = 3
+				}
+			}
+			overlord = {
+				mission_completed = UFC_mission_the_origin
+				has_country_modifier = UFC_modifier_future_for_freedom
+			}
+		}
+	}
+	modifier_overlord = {
+		modifier = UFC_modifier_al_azhar_university
+		trigger = {
+			any_owned_province = {
+				has_great_project = {
+					type = al_azhar_university
+					tier = 3
+				}
+			}
+			overlord = {
+				mission_completed = UFC_mission_the_origin
+				has_country_modifier = UFC_modifier_future_for_freedom
+			}
+		}
+	}
+	modifier_overlord = {
+		modifier = UFC_modifier_pyramid_of_cheops
+		trigger = {
+			any_owned_province = {
+				has_great_project = {
+					type = pyramid_of_cheops
+					tier = 3
+				}
+			}
+			overlord = {
+				mission_completed = UFC_mission_the_origin
+				has_country_modifier = UFC_modifier_future_for_freedom
+			}
+		}
+	}
+	modifier_overlord = {
+		modifier = UFC_modifier_hagia_sophia
+		trigger = {
+			any_owned_province = {
+				has_great_project = {
+					type = hagia_sophia
+				}
+			}
+			overlord = {
+				mission_completed = UFC_mission_sweeping_the_class
+				has_country_modifier = UFC_modifier_future_for_freedom
+				mission_completed = UFC_mission_rising_pragmatism
+			}
+		}
+	}
+	modifier_overlord = {
+		modifier = UFC_modifier_sultan_ahmed_mosque
+		trigger = {
+			any_owned_province = {
+				has_great_project = {
+					type = sultan_ahmed_mosque
+				}
+			}
+			overlord = {
+				mission_completed = UFC_mission_sweeping_the_class
+				has_country_modifier = UFC_modifier_future_for_freedom
+				mission_completed = UFC_mission_rising_pragmatism
+			}
+		}
+	}
+	modifier_overlord = {
+		modifier = UFC_modifier_mausoleum_at_halicarnassus
+		trigger = {
+			any_owned_province = {
+				has_great_project = {
+					type = mausoleum_at_halicarnassus
+					tier = 3
+				}
+			}
+			overlord = {
+				mission_completed = UFC_mission_rebuild_the_lighthouse
+				has_country_modifier = UFC_modifier_future_for_freedom
+			}
+		}
+	}
+	modifier_overlord = {
+		modifier = UFC_modifier_divrigi_hospital_mosque
+		trigger = {
+			any_owned_province = {
+				has_great_project = {
+					type = divrigi_hospital_mosque
+					tier = 3
+				}
+			}
+			overlord = {
+				mission_completed = UFC_mission_rebuild_the_lighthouse
+				has_country_modifier = UFC_modifier_future_for_freedom
+			}
+		}
+	}
+	modifier_overlord = {
+		modifier = UFC_modifier_petra
+		trigger = {
+			any_owned_province = {
+				has_great_project = {
+					type = petra
+					tier = 3
+				}
+			}
+			overlord = {
+				mission_completed = UFC_mission_rebuild_the_lighthouse
+				has_country_modifier = UFC_modifier_future_for_freedom
+			}
+		}
+	}
+	modifier_overlord = {
+		modifier = UFC_modifier_holy_city_jerusalem
+		trigger = {
+			any_owned_province = {
+				has_great_project = {
+					type = holy_city_jerusalem
+				}
+			}
+			overlord = {
+				mission_completed = UFC_mission_rebuild_the_lighthouse
+				has_country_modifier = UFC_modifier_future_for_freedom
+				mission_completed = UFC_mission_rising_pragmatism
+			}
+		}
+	}
+	modifier_overlord = {
+		modifier = UFC_modifier_kaaba
+		trigger = {
+			any_owned_province = {
+				has_great_project = {
+					type = kaaba
+					tier = 3
+				}
+			}
+			overlord = {
+				mission_completed = UFC_mission_rebuild_the_lighthouse
+				has_country_modifier = UFC_modifier_future_for_freedom
+				mission_completed = UFC_mission_rising_pragmatism
+			}
+		}
+	}
+	modifier_overlord = {
+		modifier = UFC_modifier_city_of_sanaa
+		trigger = {
+			any_owned_province = {
+				has_great_project = {
+					type = city_of_sanaa
+					tier = 3
+				}
+			}
+			overlord = {
+				mission_completed = UFC_mission_rebuild_the_lighthouse
+				has_country_modifier = UFC_modifier_future_for_freedom
+			}
+		}
+	}
+	modifier_overlord = {
+		modifier = UFC_modifier_nizwa_fort
+		trigger = {
+			any_owned_province = {
+				has_great_project = {
+					type = nizwa_fort
+					tier = 3
+				}
+			}
+			overlord = {
+				mission_completed = UFC_mission_rebuild_the_lighthouse
+				has_country_modifier = UFC_modifier_future_for_freedom
+			}
+		}
+	}
+	modifier_overlord = {
+		modifier = UFC_modifier_imam_hussein_al-abbas
+		trigger = {
+			any_owned_province = {
+				has_great_project = {
+					type = imam_hussein_al-abbas
+				}
+			}
+			overlord = {
+				mission_completed = UFC_mission_rebuild_the_lighthouse
+				has_country_modifier = UFC_modifier_future_for_freedom
+				mission_completed = UFC_mission_rising_pragmatism
+			}
+		}
+	}
+	modifier_overlord = {
+		modifier = UFC_modifier_golestan_palace
+		trigger = {
+			any_owned_province = {
+				has_great_project = {
+					type = golestan_palace
+					tier = 3
+				}
+			}
+			overlord = {
+				mission_completed = UFC_mission_rebuild_the_lighthouse
+				has_country_modifier = UFC_modifier_future_for_freedom
+			}
+		}
+	}
+	modifier_overlord = {
+		modifier = UFC_modifier_bam_citadel
+		trigger = {
+			any_owned_province = {
+				has_great_project = {
+					type = bam_citadel
+					tier = 3
+				}
+			}
+			overlord = {
+				mission_completed = UFC_mission_rebuild_the_lighthouse
+				has_country_modifier = UFC_modifier_future_for_freedom
+			}
+		}
+	}
+	modifier_overlord = {
+		modifier = UFC_modifier_itchan_kala
+		trigger = {
+			any_owned_province = {
+				has_great_project = {
+					type = itchan_kala
+					tier = 3
+				}
+			}
+			overlord = {
+				mission_completed = UFC_mission_rebuild_the_lighthouse
+				has_country_modifier = UFC_modifier_future_for_freedom
+			}
+		}
+	}
+	modifier_overlord = {
+		modifier = UFC_modifier_afaq_khoja_mausoleum
+		trigger = {
+			any_owned_province = {
+				has_great_project = {
+					type = afaq_khoja_mausoleum
+					tier = 3
+				}
+			}
+			overlord = {
+				mission_completed = UFC_mission_rebuild_the_lighthouse
+				has_country_modifier = UFC_modifier_future_for_freedom
+			}
+		}
+	}
+	modifier_overlord = {
+		modifier = UFC_modifier_jokhang_temple
+		trigger = {
+			any_owned_province = {
+				has_great_project = {
+					type = jokhang_temple
+				}
+			}
+			overlord = {
+				mission_completed = UFC_mission_rebuild_the_lighthouse
+				has_country_modifier = UFC_modifier_future_for_freedom
+				mission_completed = UFC_mission_rising_pragmatism
+			}
+		}
+	}
+	modifier_overlord = {
+		modifier = UFC_modifier_golden_temple
+		trigger = {
+			any_owned_province = {
+				has_great_project = {
+					type = golden_temple
+				}
+			}
+			overlord = {
+				mission_completed = UFC_mission_no_more_caste
+				has_country_modifier = UFC_modifier_future_for_freedom
+				mission_completed = UFC_mission_rising_pragmatism
+			}
+		}
+	}
+	modifier_overlord = {
+		modifier = UFC_modifier_kashi_vishwanath
+		trigger = {
+			any_owned_province = {
+				has_great_project = {
+					type = kashi_vishwanath
+				}
+			}
+			overlord = {
+				mission_completed = UFC_mission_no_more_caste
+				has_country_modifier = UFC_modifier_future_for_freedom
+				mission_completed = UFC_mission_rising_pragmatism
+			}
+		}
+	}
+	modifier_overlord = {
+		modifier = UFC_modifier_murud_janjira
+		trigger = {
+			any_owned_province = {
+				has_great_project = {
+					type = murud_janjira
+					tier = 3
+				}
+			}
+			overlord = {
+				mission_completed = UFC_mission_no_more_caste
+				has_country_modifier = UFC_modifier_future_for_freedom
+			}
+		}
+	}
+	modifier_overlord = {
+		modifier = UFC_modifier_mehrangarh_fort
+		trigger = {
+			any_owned_province = {
+				has_great_project = {
+					type = mehrangarh_fort
+					tier = 3
+				}
+			}
+			overlord = {
+				mission_completed = UFC_mission_no_more_caste
+				has_country_modifier = UFC_modifier_future_for_freedom
+			}
+		}
+	}
+	modifier_overlord = {
+		modifier = UFC_modifier_bara_katra
+		trigger = {
+			any_owned_province = {
+				has_great_project = {
+					type = bara_katra
+					tier = 3
+				}
+			}
+			overlord = {
+				mission_completed = UFC_mission_no_more_caste
+				has_country_modifier = UFC_modifier_future_for_freedom
+			}
+		}
+	}
+	modifier_overlord = {
+		modifier = UFC_modifier_kanbawzathadi_palace
+		trigger = {
+			any_owned_province = {
+				has_great_project = {
+					type = kanbawzathadi_palace
+					tier = 3
+				}
+			}
+			overlord = {
+				mission_completed = UFC_mission_no_more_caste
+				has_country_modifier = UFC_modifier_future_for_freedom
+			}
+		}
+	}
+	modifier_overlord = {
+		modifier = UFC_modifier_the_grand_palace
+		trigger = {
+			any_owned_province = {
+				has_great_project = {
+					type = the_grand_palace
+					tier = 3
+				}
+			}
+			overlord = {
+				mission_completed = UFC_mission_no_more_caste
+				has_country_modifier = UFC_modifier_future_for_freedom
+			}
+		}
+	}
+	modifier_overlord = {
+		modifier = UFC_modifier_borobudur_temple
+		trigger = {
+			any_owned_province = {
+				has_great_project = {
+					type = borobudur_temple
+					tier = 3
+				}
+			}
+			overlord = {
+				mission_completed = UFC_mission_no_more_caste
+				has_country_modifier = UFC_modifier_future_for_freedom
+			}
+		}
+	}
+	modifier_overlord = {
+		modifier = UFC_modifier_dujiangyan
+		trigger = {
+			any_owned_province = {
+				has_great_project = {
+					type = dujiangyan
+					tier = 3
+				}
+			}
+			overlord = {
+				mission_completed = UFC_mission_never_fallen_empire
+				has_country_modifier = UFC_modifier_future_for_freedom
+			}
+		}
+	}
+	modifier_overlord = {
+		modifier = UFC_modifier_the_great_wall_of_china
+		trigger = {
+			any_owned_province = {
+				has_great_project = {
+					type = the_great_wall_of_china
+					tier = 3
+				}
+			}
+			overlord = {
+				mission_completed = UFC_mission_never_fallen_empire
+				has_country_modifier = UFC_modifier_future_for_freedom
+			}
+		}
+	}
+	modifier_overlord = {
+		modifier = UFC_modifier_porcelain_tower_nanjing
+		trigger = {
+			any_owned_province = {
+				has_great_project = {
+					type = porcelain_tower_nanjing
+					tier = 3
+				}
+			}
+			overlord = {
+				mission_completed = UFC_mission_never_fallen_empire
+				has_country_modifier = UFC_modifier_future_for_freedom
+			}
+		}
+	}
+	modifier_overlord = {
+		modifier = UFC_modifier_temple_of_confucius
+		trigger = {
+			any_owned_province = {
+				has_great_project = {
+					type = temple_of_confucius
+				}
+			}
+			overlord = {
+				mission_completed = UFC_mission_never_fallen_empire
+				has_country_modifier = UFC_modifier_future_for_freedom
+				mission_completed = UFC_mission_rising_pragmatism
+			}
+		}
+	}
+	modifier_overlord = {
+		modifier = UFC_modifier_himeji_castle
+		trigger = {
+			any_owned_province = {
+				has_great_project = {
+					type = himeji_castle
+					tier = 3
+				}
+			}
+			overlord = {
+				mission_completed = UFC_mission_never_fallen_empire
+				has_country_modifier = UFC_modifier_future_for_freedom
+			}
+		}
+	}
+	modifier_overlord = {
+		modifier = UFC_modifier_imperial_city_kyoto
+		trigger = {
+			any_owned_province = {
+				has_great_project = {
+					type = imperial_city_kyoto
+					tier = 3
+				}
+			}
+			overlord = {
+				mission_completed = UFC_mission_never_fallen_empire
+				has_country_modifier = UFC_modifier_future_for_freedom
+			}
+		}
+	}
+	modifier_overlord = {
+		modifier = UFC_modifier_sankin_kotai_palaces
+		trigger = {
+			any_owned_province = {
+				has_great_project = {
+					type = sankin_kotai_palaces
+					tier = 3
+				}
+			}
+			overlord = {
+				mission_completed = UFC_mission_never_fallen_empire
+				has_country_modifier = UFC_modifier_future_for_freedom
+			}
+		}
+	}
+	modifier_subject = {
+		modifier = UFC_modifier_ban_adu_colonize
+		trigger = {
+			num_of_colonists = 1
+		}
+	}
 	start_colonial_war = no
 	customize_subject = no
 }
 
+ufc_granada_tributary_state = {
+	copy_from = tributary_state
+	overlord_can_attack = no
+	is_voluntary = no
+	can_be_annexed = no
+	overlord_can_attack = no
+	can_ally = {
+		independent_nations = no
+		same_overlord = ufc_granada_tributary_state
+	}
+}

@@ -791,14 +791,14 @@ UFC_modifier_negara_agung = {
 }
 
 UFC_modifier_subsidiary_basic_modifier = {
-	development_cost_modifier = -0.05
+	development_cost = -0.1
 	global_sailors_modifier = 1
 	allowed_marine_fraction = 0.5
 	infantry_power = 0.1
 }
 
 UFC_modifier_subsidiary_more_production = {
-	development_cost_modifier = -0.05
+	development_cost = -0.1
 	global_sailors_modifier = 1
 	allowed_marine_fraction = 0.5
 	infantry_power = 0.1
@@ -904,6 +904,7 @@ UFC_modifier_untrustable_government = {
 	min_autonomy_in_territories = 0.2
 	diplomatic_reputation = -5
 	diplomatic_annexation_cost = 1
+	ae_impact = -0.95
 }
 
 UFC_modifier_the_end_of_doom = {
@@ -967,6 +968,7 @@ UFC_modifier_get_the_drop_on = {
 	movement_speed = 0.33
 	siege_ability = 0.33
 	global_regiment_recruit_speed = -0.66
+	artillery_levels_available_vs_fort = 2
 }
 
 UFC_modifier_crowns_into_plowshares = {
@@ -1090,8 +1092,8 @@ UFC_modifier_revolution_zeal_for_army = {
 }
 
 UFC_modifier_military_tactics_for_army = {
-	military_tactics = 0.15
-	leader_land_fire = 1
+	artillery_level_modifier = 1
+	leader_siege = 1
 	ufc_corsica_influence = 0.05
 }
 
@@ -1143,7 +1145,7 @@ UFC_modifier_not_against_people = {
 
 UFC_modifier_staff_cocoa_for_everyone = {
 	trade_value_modifier = 0.15
-	development_cost_modifier = -0.05
+	local_development_cost_modifier = -0.05
 }
 
 UFC_modifier_universal_higher_education_1 = {
@@ -1167,7 +1169,7 @@ UFC_modifier_women_in_university = {
 	global_institution_spread = 0.25
 	yearly_corruption = -0.1
 	global_tax_modifier = -0.05
-	ufc_laplata_influence = 0.05
+	ufc_manhattan_influence = 0.05
 }
 
 UFC_modifier_women_in_army = {
@@ -1221,7 +1223,7 @@ UFC_modifier_ten_hours_day = {
 
 UFC_modifier_balance = {
 	country_admin_power = 5
-	country_diplomatic_power = 10
+	country_diplomatic_power = 5
 	country_military_power = 5
 }
 
@@ -1239,6 +1241,488 @@ UFC_modifier_electricity_use = {
 }
 
 UFC_modifier_autonomy_of_catalonia = {
-	min_autonomy = 20
+	min_local_autonomy = 20
 	land_forcelimit = -0.2
+}
+
+UFC_modifier_infrastructure_era = {
+	build_time = -0.25
+	build_cost = -0.15
+	inflation_reduction = -0.25
+}
+
+UFC_modifier_edinburgh_castle = {
+	nobles_loyalty_modifier = 0.15
+	free_mil_policy = 1
+}
+
+UFC_modifier_tower_of_london = {
+	army_tradition = 0.5
+	prestige = 0.5
+	max_absolutism = 10
+	max_revolutionary_zeal = 10
+}
+
+UFC_modifier_stonehenge = {
+	tolerance_heretic = 1
+	tolerance_heathen = 1
+	stability_cost_modifier = -0.25
+	global_missionary_strength = 0.01
+	tolerance_own = 2
+	same_religion_advisor_cost = -0.15
+}
+
+UFC_modifier_malta_forts = {
+	warscore_cost_vs_other_religion = -0.15
+}
+
+UFC_modifier_versailles = {
+	global_tax_modifier = 0.2
+	improve_relation_modifier = 0.15
+	vassal_income = 0.2
+	nobles_loyalty_modifier = 0.15
+	nobles_influence_modifier = 0.1
+	leader_land_fire = 1
+	reinforce_speed = 0.2
+}
+
+UFC_modifier_aljaferia_palace = {
+	harsh_treatment_cost = -0.33
+	global_missionary_strength = 0.02
+	global_religious_conversion_resistance = 0.5
+}
+
+UFC_modifier_el_escorial = {
+	global_autonomy = -0.05
+	governing_capacity_modifier = 0.1
+	global_tariffs = 0.2
+	treasure_fleet_income = 0.2
+}
+
+UFC_modifier_belem_tower = {
+	global_trade_power = 0.15
+	global_sailors_modifier = 0.25
+}
+
+UFC_modifier_stpeters_cathedral = {
+	appoint_cardinal_cost = -0.2
+	curia_powers_cost = -0.1
+	idea_cost = -0.1
+	church_influence_modifier = 0.1
+}
+
+UFC_modifier_royal_palace_caserta = {
+	prestige = 1
+	reform_progress_growth = 0.15
+	governing_capacity = 100
+}
+
+UFC_modifier_venetian_arsenal_gp = {
+	allowed_galleass_fraction = 0.25
+	has_galleass = yes
+}
+
+UFC_modifier_doges_palace = {
+	reform_progress_growth = 0.3
+	republican_tradition = 0.5
+	monthly_authority_power = -0.05
+}
+
+UFC_modifier_ambras_castle = {
+	prestige = 0.5
+	drill_gain_modifier = 0.5
+}
+
+UFC_modifier_ulm_minster_great_project = {
+	free_city_imperial_authority = 0.2
+	prestige = 1
+	tolerance_own = 1
+	church_loyalty_modifier = 0.15
+}
+
+UFC_modifier_amsterdam_bourse = {
+	trade_steering = 0.25
+	inflation_reduction = 0.1
+	trade_company_investment_cost = -0.1
+}
+
+UFC_modifier_dutch_polders = {
+	global_trade_goods_size_modifier = 0.1
+	burghers_loyalty_modifier = 0.15
+}
+
+UFC_modifier_brandenburg_gate = {
+	prestige_from_land = 1.5
+	army_tradition_from_battle = 0.5
+}
+
+UFC_modifier_kronborg = {
+	naval_tradition_from_trade = 1
+}
+
+UFC_modifier_falun_copper_mine = {
+	artillery_cost = -0.2
+}
+
+UFC_modifier_visby_city = {
+	privateer_efficiency = 0.5
+	global_own_trade_power = 0.25
+}
+
+UFC_modifier_winter_palace = {
+	yearly_absolutism = 0.5
+	reform_progress_growth = 0.2
+}
+
+UFC_modifier_malbork_castle = {
+	legitimacy = 1
+	devotion = 1
+	mercenary_cost = -0.1
+	garrison_size = 0.25
+}
+
+UFC_modifier_trakai_castle = {
+	prestige = 1
+	monthly_splendor = 1.5
+	reform_progress_growth = 0.2
+	advisor_pool = 2
+}
+
+UFC_modifier_kremlin = {
+	global_regiment_cost = -0.1
+}
+
+UFC_modifier_krakow_cloth_hall = {
+	merchants = 2
+	global_trade_power = 0.1
+}
+
+UFC_modifier_golden_kremnica = {
+	monthly_gold_inflation_modifier = -0.33
+	gold_depletion_chance_modifier = -0.33
+	interest = -1
+}
+
+UFC_modifier_buda_castle = {
+	global_institution_spread = 0.3
+	embracement_cost = -0.1
+	idea_cost = -0.05
+}
+
+UFC_modifier_bran_castle = {
+	rival_border_fort_maintenance = -0.3
+	global_garrison_growth = 0.3
+}
+
+UFC_modifier_parthenon = {
+	advisor_cost = -0.2
+	advisor_pool = 1
+	yearly_corruption = -0.1
+}
+
+UFC_modifier_kazan_kremlin = {
+	great_project_upgrade_time = -0.25
+	global_autonomy = -0.05
+	garrison_damage = 1
+}
+
+UFC_modifier_ait_benhaddou = {
+	caravan_power = 0.33
+	trade_efficiency = 0.10
+	global_trade_power = 0.05
+}
+
+UFC_modifier_sankore_madrasah = {
+	global_institution_spread = 0.5
+	technology_cost = -0.1
+	church_loyalty_modifier = 0.15
+}
+
+UFC_modifier_mbanza_kongo = {
+	institution_spread_from_true_faith = 0.5
+	reform_progress_growth = 0.2
+	legitimacy = 1
+	allow_free_estate_privilege_revocation = yes
+}
+
+UFC_modifier_khami_ruins = {
+	technology_cost = -0.05
+	fabricate_claims_cost = -0.3
+}
+
+UFC_modifier_al_azhar_university = {
+	advisor_pool = 2
+	idea_cost = -0.05
+	yearly_government_power = 1
+}
+
+UFC_modifier_pyramid_of_cheops = {
+	yearly_government_power = 1
+	all_estate_loyalty_equilibrium = 0.05
+	prestige_decay = -0.01
+	no_stability_loss_on_monarch_death = yes
+}
+
+UFC_modifier_hagia_sophia = {
+	tolerance_own = 1
+	tolerance_heretic = 1
+	monthly_piety_accelerator = 0.002
+	yearly_patriarch_authority = 0.005
+	papal_influence = 1
+	church_loyalty_modifier = 0.15
+}
+
+UFC_modifier_sultan_ahmed_mosque = {
+	prestige_per_development_from_conversion = 0.3
+	tolerance_own = 1
+}
+
+UFC_modifier_mausoleum_at_halicarnassus = {
+	prestige = 1
+	monthly_splendor = 1.5
+	monarch_lifespan = 0.1
+}
+
+UFC_modifier_divrigi_hospital_mosque = {
+	monthly_piety_accelerator = 0.001
+	innovativeness_gain = 0.33
+	reinforce_speed = 0.25
+}
+
+UFC_modifier_petra = {
+	diplomatic_reputation = 2
+	envoy_travel_time = -0.33
+	diplomatic_upkeep = 1
+	fabricate_claims_cost = -0.2
+}
+
+UFC_modifier_holy_city_jerusalem = {
+	prestige = 0.5
+	global_heretic_missionary_strength = 0.03
+	missionaries = 1
+	monthly_fervor_increase = 1
+	church_power_modifier = 0.15
+	papal_influence = 1
+}
+
+UFC_modifier_kaaba = {
+	prestige = 0.5
+	religious_unity = 0.2
+	warscore_cost_vs_other_religion = -0.1
+}
+
+UFC_modifier_city_of_sanaa = {
+	mercantilism_cost = -0.33
+	merchants = 1
+	manpower_in_true_faith_provinces = 0.25
+	dip_tech_cost_modifier = -0.1
+	tolerance_own = 2
+	global_missionary_strength = 0.03
+}
+
+UFC_modifier_nizwa_fort = {
+	autonomy_change_time = -0.25
+	all_estate_possible_privileges = 1
+	max_absolutism = 10
+	fort_maintenance_modifier = -0.15
+	reduced_trade_penalty_on_non_main_tradenode = 0.3
+}
+
+UFC_modifier_imam_hussein_al-abbas = {
+	monthly_piety_accelerator = 0.003
+	global_heretic_missionary_strength = 0.03
+	church_loyalty_modifier = 0.15
+}
+
+UFC_modifier_golestan_palace = {
+	diplomatic_reputation = 2
+	monthly_persian_influence = 0.1
+	monthly_splendor = 2
+}
+
+UFC_modifier_bam_citadel = {
+	caravan_power = 0.4
+	merchants = 1
+}
+
+UFC_modifier_itchan_kala = {
+	placed_merchant_power_modifier = 1
+	center_of_trade_upgrade_cost = -0.2
+	reduced_trade_penalty_on_non_main_tradenode = 0.25
+}
+
+UFC_modifier_afaq_khoja_mausoleum = {
+	monthly_piety_accelerator = 0.003
+	religious_unity = 0.5
+	church_loyalty_modifier = 0.15
+}
+
+UFC_modifier_golden_temple = {
+	global_autonomy = -0.1
+	min_autonomy_in_territories = -0.15
+}
+
+UFC_modifier_kashi_vishwanath = {
+	core_creation = -0.1
+	ae_impact = -0.1
+	brahmins_hindu_loyalty_modifier = 0.15
+}
+
+UFC_modifier_murud_janjira = {
+	naval_forcelimit_modifier = 0.3
+	naval_maintenance_modifier = -0.2
+	navy_tradition = 1
+	admiral_cost = -0.1
+}
+
+UFC_modifier_mehrangarh_fort = {
+	prestige = 1
+	advisor_cost = -0.2
+	special_unit_forcelimit = 0.1
+}
+
+UFC_modifier_bara_katra = {
+	trade_steering = 0.2
+	global_ship_trade_power = 0.3
+	merchants = 1
+	burghers_loyalty_modifier = 0.15
+	jains_loyalty_modifier = 0.15
+}
+
+UFC_modifier_kanbawzathadi_palace = {
+	diplomatic_reputation = 1
+	diplomatic_upkeep = 2
+	advisor_cost = -0.2
+}
+
+UFC_modifier_the_grand_palace = {
+	yearly_absolutism = 1
+	governing_capacity_modifier = 0.15
+	vassal_forcelimit_bonus = 0.5
+	ae_impact = -0.1
+}
+
+UFC_modifier_borobudur_temple = {
+	culture_conversion_cost = -0.25
+	global_unrest = -2
+	num_accepted_cultures = 1
+	global_autonomy = -0.05
+}
+
+UFC_modifier_dujiangyan = {
+	global_monthly_devastation = -0.05
+}
+
+UFC_modifier_the_great_wall_of_china = {
+	hostile_attrition = 2
+	garrison_size = 0.25
+}
+
+UFC_modifier_porcelain_tower_nanjing = {
+	meritocracy = 0.5
+	global_institution_spread = 0.3
+	embracement_cost = -0.15
+}
+
+UFC_modifier_temple_of_confucius = {
+	yearly_harmony = 0.5
+	religious_unity = 0.5
+	prestige = 1
+}
+
+UFC_modifier_himeji_castle = {
+	prestige = 0.5
+	spy_offence = 0.15
+	global_spy_defence = 0.25
+}
+
+UFC_modifier_imperial_city_kyoto = {
+	all_estate_loyalty_equilibrium = 0.05
+	reduced_liberty_desire = 10
+	legitimacy = 0.5
+}
+
+UFC_modifier_sankin_kotai_palaces = {
+	war_taxes_cost_modifier = -1
+	prestige_from_land = 1
+	general_cost = -0.1
+}
+
+UFC_modifier_ban_cas_nostrict_war = {
+	province_warscore_cost = 0.25
+	unjustified_demands = 1
+}
+
+UFC_modifier_the_executed_chemist = {
+	technology_cost = 0.05
+	yearly_revolutionary_zeal = 1
+}
+
+UFC_modifier_the_collapse_of_family = {
+	chance_to_inherit = -0.25
+	heir_chance = -0.5
+	yearly_corruption = -0.15
+	diplomatic_upkeep = -1
+	administrative_efficiency = 0.025
+}
+
+UFC_modifier_never_give_up_learning = {
+	technology_cost = -0.1
+	inflation_reduction = -0.15
+	build_cost = -0.1
+	interest = 0.1
+	global_trade_goods_size_modifier = 0.1
+}
+
+UFC_modifier_urgent_land_reform = {
+	production_efficiency = -0.1
+}
+
+ufc_modifier_domestic_demand = {
+	monthly_mechanical_clock_dip_power = -0.05
+	production_efficiency = 0.1
+}
+
+ufc_modifier_army_loyalty = {
+	monthly_mechanical_clock_mil_power = -0.05
+	global_manpower_modifier = 0.1
+}
+
+UFC_modifier_estate_ufc_staff_quick_secularization = {
+	tolerance_own = 1
+}
+
+UFC_modifier_estate_ufc_staff_slow_secularization = {
+	harmonization_speed = 0.1
+}
+
+UFC_modifier_early_environmentalism = {
+	development_cost = 0.05
+	all_power_cost = -0.01
+}
+
+UFC_modifier_ciudad_liberada = {
+	fort_level = 1
+	local_development_cost = -0.1
+	trade_value_modifier = 0.15
+}
+
+UFC_modifier_coffee_machine = {
+	local_unrest = 8
+	local_development_cost = -0.2
+}
+
+UFC_modifier_backtracking_colony_policy = {
+	can_not_build_colonies = yes
+}
+
+UFC_modifier_reduce_sailors_recovery = {
+	global_sailors_modifier = -0.5
+	sailors_recovery_speed = -0.5
+}
+
+UFC_modifier_prism_weapon = {
+	fort_level = 8
+	local_assault_fort_ability = -0.9
+	fire_damage = 0.1
 }

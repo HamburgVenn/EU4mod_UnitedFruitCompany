@@ -3727,7 +3727,18 @@ iron_crowned_personality = {
 
 peasant_revolt_leader_personality = {
 	
-	allow = { has_government_attribute = is_peasants_republic }
+	allow = {
+		OR = {
+			has_government_attribute = is_peasants_republic
+			has_reform = UFC_labor_cooperative_reform
+		}
+	}
+	chance = {
+		modifier = {
+			factor = 100
+			has_reform = UFC_labor_cooperative_reform
+		}
+	}
 	morale_damage = 0.1
 	global_unrest = -1
 	nation_designer_cost = 30
@@ -3736,8 +3747,7 @@ peasant_revolt_leader_personality = {
 	war_chance_multiplier = 2.5
 	wants_land = yes
 	
-	chance = {	
-	}
+
 }
 
 merchant_basileus_personality = {

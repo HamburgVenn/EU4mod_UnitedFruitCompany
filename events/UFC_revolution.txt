@@ -205,9 +205,12 @@ country_event = {
 						infantry = 0.5
 						cavalry = 0.1
 						artillery = 0.5
+						heavy_ship = 0.5
+						light_ship = 0.5
 					}
 				}
 			}
+			set_country_flag = changed_from_colonial_nation
 		}
 	}
 	after = {
@@ -307,6 +310,24 @@ country_event = {
 				}
 			}
 		}
+		if = {
+			limit = {
+				UFC = {
+					has_country_modifier = the_absolutism
+				}
+			}
+			UFC = {
+				remove_country_modifier = the_absolutism
+			}
+			XIU = {
+				capital_scope = {
+					build_to_forcelimit = {
+						infantry = 0.2
+						artillery = 0.2
+					}
+				}
+			}
+		}
 	}
 	after = {
 		country_event = { id = flavor_UFC.8907 days = 6 random = 2 }
@@ -379,6 +400,12 @@ country_event = {
 			baleares_area = {
 				add_core = ARA
 			}
+			every_owned_province = {
+				limit = {
+					region = iberia_region
+				}
+				cede_province = ADU
+			}
 		}
 		ADU = {
 			release = CAS
@@ -391,6 +418,11 @@ country_event = {
 				set_capital = 217
 				change_government = republic
 				change_religion = catholic
+				add_country_modifier = {
+					name = UFC_revolution_buff
+					duration = 7300
+					hidden = yes
+				}
 				capital_scope = {
 					build_to_forcelimit = {
 						infantry = 0.5
@@ -406,6 +438,11 @@ country_event = {
 				set_capital = 231
 				change_government = monarchy
 				change_religion = catholic
+				add_country_modifier = {
+					name = UFC_revolution_buff
+					duration = 7300
+					hidden = yes
+				}
 				capital_scope = {
 					build_to_forcelimit = {
 						infantry = 0.5
@@ -422,6 +459,11 @@ country_event = {
 				change_government = republic
 				add_government_reform = lottery_reform
 				change_religion = root
+				add_country_modifier = {
+					name = UFC_revolution_buff
+					duration = 7300
+					hidden = yes
+				}
 				capital_scope = {
 					build_to_forcelimit = {
 						infantry = 0.5
@@ -442,6 +484,7 @@ country_event = {
 	}
 	after = {
 		country_event = { id = flavor_UFC.8909 days = 6 random = 2 }
+		country_event = { id = flavor_UFC.8952 days = 3 }
 	}
 }
 
@@ -455,6 +498,16 @@ country_event = {
 	fire_only_once = yes
 	option = {
 		name = flavor_UFC.8909.a
+		if = {
+			limit = {
+				AZT = {
+					is_subject_of = ROOT
+				}
+			}
+			AZT = {
+				grant_independence = yes
+			}
+		}
 		hidden_effect = {
 			mexico_region = {
 				remove_core = AZT
@@ -890,6 +943,9 @@ country_event = {
 		add_ruler_personality = just_personality
 		add_ruler_personality = free_thinker_personality
 		add_stability = -3
+		CUA = {
+			disband_all_units = yes
+		}
 		inherit = CUA
 		835 = {
 			spawn_center_of_revolution = this
@@ -901,6 +957,26 @@ country_event = {
 		}
 		756 = {
 			set_revolution_in_province = yes
+		}
+		remove_country_modifier = UFC_modifier_brave_new_world
+	}
+	after = {
+		country_event = { id = flavor_UFC.8946 days = 60 random = 30 }
+		if = {
+			limit = {
+				EIC = {
+					is_subject_of = root
+				}
+			}
+			country_event = { id = flavor_UFC.8960 days = 60 random = 30 }
+		}
+		if = {
+			limit = {
+				KON = {
+					is_subject_of = root
+				}
+			}
+			country_event = { id = flavor_UFC.8961 days = 60 random = 30 }
 		}
 	}
 }
@@ -919,7 +995,7 @@ country_event = {
 		name = flavor_UFC.8921.a
 		custom_tooltip = UFC_tooltip_start_the_revolution_crisis
 		define_general = {
-			name = "FrancescoBuonaparte"
+			name = "Francesco Buonaparte"
 			fire = 8
 			shock = 4
 			manuever = 6
@@ -958,9 +1034,17 @@ country_event = {
 						add_local_autonomy = -5
 					}
 					2 = {
-						spawn_rebels = {
-							type = noble_rebels
-							size = 1
+						if = {
+							limit = {
+								or = {
+									continent = north_america
+									continent = south_america
+								}
+							}
+							spawn_rebels = {
+								type = noble_rebels
+								size = 1
+							}
 						}
 					}
 				}
@@ -1000,6 +1084,7 @@ country_event = {
 	option = {
 		name = flavor_UFC.8924.a
 		add_revolutionary_zeal = 10
+		inherit = AZT
 	}
 }
 
@@ -1010,6 +1095,11 @@ country_event = {
 	picture = DECLARATION_INDEPENDENCE_eventPicture
 	is_triggered_only = yes
 	fire_only_once = yes
+	immediate = {
+		hidden_effect = {
+			remove_country_modifier = UFC_modifier_get_the_drop_on
+		}
+	}
 	option = {
 		name = flavor_UFC.8925.a
 		add_revolutionary_zeal = 100
@@ -1340,6 +1430,12 @@ country_event = {
 		add_stability = 1
 		custom_tooltip = UFC_tooltip_yusuf_agree_event
 		set_country_flag = UFC_flag_yusuf_agree
+		GRA = {
+			add_opinion = {
+				who = ROOT
+				modifier = ufc_yusuf_agree
+			}
+		}
 		hidden_effect = {
 			every_owned_province = {
 				add_local_autonomy = -15
@@ -1380,6 +1476,7 @@ country_event = {
 	option = {
 		name = flavor_UFC.8935.a
 		hidden_effect = {
+			clr_country_flag = UFC_flag_ask_ara
 			ARA = {
 				every_owned_province = {
 					add_permanent_province_modifier = {
@@ -1429,9 +1526,1128 @@ country_event = {
 		}
 		ADU = {
 			add_government_reform = revolutionary_republic_reform
-			restore_country_name_effect = yes
+			restore_country_name = yes
 			add_yearly_manpower = 5
 		}
 	}
+}
 
+#first congress
+country_event = {
+	id = flavor_UFC.8937
+	title = flavor_UFC.8937.title
+	desc = flavor_UFC.8937.desc
+	picture = COUNCIL_TRENT_eventPicture
+	is_triggered_only = yes
+	fire_only_once = yes
+	goto = 835
+	option = {
+		name = flavor_UFC.8937.a
+		add_dip_power = 50
+		ENG = {
+			change_innovativeness = 2
+		}
+		FRA = {
+			change_innovativeness = 2
+		}
+		JAP = {
+			change_innovativeness = 2
+		}
+	}
+	after = {
+		country_event = { id = flavor_UFC.8938 days = 10 random = 5 }
+	}
+}
+
+country_event = {
+	id = flavor_UFC.8938
+	title = flavor_UFC.8938.title
+	desc = flavor_UFC.8938.desc
+	picture = muslimgfx_ELECTION_REPUBLICAN_eventPicture
+	is_triggered_only = yes
+	fire_only_once = yes
+	goto = 835
+	option = {
+		name = flavor_UFC.8938.a
+		add_adm_power = 10
+		change_government_reform_progress = 25
+	}
+	after = {
+		country_event = { id = flavor_UFC.8939 days = 10 random = 5  }
+	}
+}
+
+country_event = {
+	id = flavor_UFC.8939
+	title = flavor_UFC.8939.title
+	desc = flavor_UFC.8939.desc
+	picture = ATMOSPHERIC_ENGINE_eventPicture
+	is_triggered_only = yes
+	fire_only_once = yes
+	goto = 835
+	option = {
+		name = flavor_UFC.8939.a
+		add_country_modifier = {
+			name = UFC_modifier_infrastructure_era
+			duration = 3650
+		}
+	}
+	after = {
+		country_event = { id = flavor_UFC.8940 days = 10 random = 5 }
+	}
+}
+
+country_event = {
+	id = flavor_UFC.8940
+	title = flavor_UFC.8940.title
+	desc = flavor_UFC.8940.desc
+	picture = MILITARISTICALLY_TALENTED_RULER_eventPicture
+	is_triggered_only = yes
+	fire_only_once = yes
+	goto = 835
+	option = {
+		name = flavor_UFC.8940.a
+		add_dip_power = 10
+		custom_tooltip = UFC_tooltip_manhattan_influence
+	}
+	option = {
+		name = flavor_UFC.8940.b
+		add_mil_power = 10
+		custom_tooltip = UFC_tooltip_corsica_influence
+	}
+	option = {
+		name = flavor_UFC.8940.c
+		add_adm_power = 10
+		custom_tooltip = UFC_tooltip_laplata_influence
+	}
+	after = {
+		country_event = { id = flavor_UFC.8941 days = 10 random = 5 }
+	}
+}
+
+
+country_event = {
+	id = flavor_UFC.8941
+	title = flavor_UFC.8941.title
+	desc = flavor_UFC.8941.desc
+	picture = USA_CONGRESS_eventPicture
+	is_triggered_only = yes
+	fire_only_once = yes
+	goto = 835
+	option = {
+		name = flavor_UFC.8941.a
+		add_adm_power = -10
+	}
+	after = {
+		country_event = { id = flavor_UFC.8942 days = 10 random = 5 }
+	}
+}
+
+country_event = {
+	id = flavor_UFC.8942
+	title = flavor_UFC.8942.title
+	desc = flavor_UFC.8942.desc
+	picture = QUEEN_AT_COUNCIL_TABLE_eventPicture
+	is_triggered_only = yes
+	fire_only_once = yes
+	goto = 835
+	option = {
+		name = flavor_UFC.8942.a
+		add_dip_power = 25
+		add_adm_power = 25
+		add_mil_power = -50
+		custom_tooltip = UFC_tooltip_manhattan_influence
+		custom_tooltip = UFC_tooltip_laplata_influence
+	}
+	option = {
+		name = flavor_UFC.8942.b
+		add_adm_power = -25
+		add_mil_power = 50
+		add_dip_power = -25
+		custom_tooltip = UFC_tooltip_corsica_influence
+	}
+	after = {
+		country_event = { id = flavor_UFC.8943 days = 10 random = 5 }
+	}
+}
+
+country_event = {
+	id = flavor_UFC.8943
+	title = flavor_UFC.8943.title
+	desc = flavor_UFC.8943.desc
+	picture = ARTWORK_eventPicture
+	is_triggered_only = yes
+	fire_only_once = yes
+	goto = 835
+	option = {
+		name = flavor_UFC.8943.a
+		add_dip_power = 25
+		custom_tooltip = UFC_tooltip_manhattan_influence
+	}
+	option = {
+		name = flavor_UFC.8943.b
+		add_mil_power = 25
+		custom_tooltip = UFC_tooltip_corsica_influence
+	}
+	option = {
+		name = flavor_UFC.8943.c
+		add_adm_power = 25
+		custom_tooltip = UFC_tooltip_laplata_influence
+	}
+	after = {
+		country_event = { id = flavor_UFC.8944 days = 10 random = 5 }
+	}
+}
+
+country_event = {
+	id = flavor_UFC.8944
+	title = flavor_UFC.8944.title
+	desc = flavor_UFC.8944.desc
+	picture = ECONOMY_eventPicture
+	is_triggered_only = yes
+	fire_only_once = yes
+	goto = 835
+	option = {
+		name = flavor_UFC.8944.a
+		add_innovativeness_or_monarch_power = {
+			amount = 5
+		}
+		change_government_reform_progress = 25
+	}
+	after = {
+		country_event = { id = flavor_UFC.8945 days = 10 random = 5 }
+	}
+}
+
+country_event = {
+	id = flavor_UFC.8945
+	title = flavor_UFC.8945.title
+	desc = flavor_UFC.8945.desc
+	picture = WESTERNISATION_eventPicture
+	is_triggered_only = yes
+	fire_only_once = yes
+	goto = 835
+	option = {
+		name = flavor_UFC.8945.a
+		set_country_flag = UFC_flag_end_congress
+		custom_tooltip = UFC_modifier_end_congress
+	}
+}
+
+country_event = {
+	id = flavor_UFC.8946
+	title = flavor_UFC.8946.title
+	desc = flavor_UFC.8946.desc
+	picture = AFRICAN_EUROPEAN_DEBATE_eventPicture
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = flavor_UFC.8946.a
+		add_prestige_or_monarch_power = {
+			amount = 5
+		}
+		add_country_modifier = {
+			name = innovative_modifier
+			duration = 3650
+		}
+		add_country_modifier = {
+			name = "the_abolish_slavery_act"
+			duration = -1
+		}
+		custom_tooltip = abolished_slavery_act_tooltip
+		hidden_effect = {
+			every_owned_province = {
+				limit = {
+					trade_goods = slaves
+				}
+				change_trade_goods = unknown
+				remove_building = tradecompany
+				if = {
+					limit = { has_province_modifier = slave_entrepot }
+					remove_province_modifier = slave_entrepot
+				}
+			}
+		}
+	}
+}
+
+#revolution crisis pulse
+country_event = {
+	id = flavor_UFC.8947
+	title = flavor_UFC.8947.title
+	desc = flavor_UFC.8947.desc
+	picture = GUILLOTINE_eventPicture
+	is_triggered_only = yes
+	fire_only_once = yes
+	trigger = {
+		is_revolutionary = yes
+	}
+	option = {
+		#  Execute the enemies of the Revolution!
+		name = flavor_UFC.8947.a
+		add_yearly_manpower = -0.3
+		add_sailors = -0.1
+		add_country_modifier = {
+			name = the_reign_of_terror
+			duration = 3650
+		}
+	}
+	option = {
+		name = flavor_UFC.8947.b
+		add_stability = -1
+		add_revolutionary_zeal = -25
+	}
+}
+
+country_event = {
+	id = flavor_UFC.8948
+	title = flavor_UFC.8948.title
+	desc = flavor_UFC.8948.desc
+	picture = GUILLOTINE_eventPicture
+	is_triggered_only = yes
+	fire_only_once = yes
+	trigger = {
+		is_revolutionary = yes
+	}
+	option = {
+		name = flavor_UFC.8948.a
+		add_dip_power = 50
+		add_stability = -1
+		GRA = {
+			add_opinion = {
+				who = ROOT
+				modifier = ufc_reserve_monarch
+			}
+		}
+	}
+	option = {
+		name = flavor_UFC.8948.b
+		add_adm_power = 50
+		add_revolutionary_zeal = 10
+		custom_tooltip = UFC_tooltip_laplata_influence
+	}
+	option = {
+		name = flavor_UFC.8948.c
+		add_stability = 1
+		add_revolutionary_zeal = 10
+		GRA = {
+			add_opinion = {
+				who = ROOT
+				modifier = executed_monarch
+			}
+		}
+	}
+}
+
+country_event = {
+	id = flavor_UFC.8949
+	title = flavor_UFC.8949.name
+	desc = flavor_UFC.8949.desc
+	picture = REVOLT_HUNGARIAN_eventPicture
+	is_triggered_only = yes
+	trigger = {
+		is_revolutionary = yes
+		is_at_war = yes
+		had_country_flag = {
+			flag = UFC_flag_start_the_revolution_crisis
+			days = 730
+		}
+	}
+	fire_only_once = yes
+	option = {
+		name = flavor_UFC.8949.a
+		add_revolutionary_zeal = -10
+		add_republican_tradition = -5
+		add_yearly_manpower = 0.25
+	}
+}
+country_event = {
+	id = flavor_UFC.8950
+	title = flavor_UFC.8950.name
+	desc = flavor_UFC.8950.desc
+	picture = muslimgfx_BANKRUPTCY_eventPicture
+	is_triggered_only = yes
+	trigger = {
+		is_revolutionary = yes
+		AZT = {
+			exists = yes
+		}
+		had_country_flag = {
+			flag = UFC_flag_start_the_revolution_crisis
+			days = 365
+		}
+	}
+	fire_only_once = yes
+	option = {
+		name = flavor_UFC.8950.a
+		add_revolutionary_zeal = -10
+		add_republican_tradition = -5
+		add_years_of_income = 0.25
+	}
+}
+
+country_event = {
+	id = flavor_UFC.8951
+	title = flavor_UFC.8951.name
+	desc = flavor_UFC.8951.desc
+	picture = CONSPIRACY_eventPicture
+	is_triggered_only = yes
+	trigger = {
+		is_revolutionary = yes
+		had_country_flag = {
+			flag = UFC_flag_start_the_revolution_crisis
+			days = 1095
+		}
+	}
+	fire_only_once = yes
+	option = {
+		name ="flavor_fra.EVTOPTA116"
+		add_republican_tradition = -5
+		add_revolutionary_zeal = -10
+	}
+	option = { 	#  Increase public relief program
+		name = "flavor_fra.EVTOPTB116"
+		add_adm_power = -50
+		add_revolutionary_zeal = 10
+	}
+	option = { 	#  Cut back on diplomatic spending
+		name = "flavor_fra.EVTOPTC116"
+		add_dip_power = -50
+		add_revolutionary_zeal = 10
+	}
+	option = { 	#  Cut back on military spending
+		name = "flavor_fra.EVTOPTD116"
+		add_mil_power = -50
+		add_revolutionary_zeal = 10
+	}
+}
+
+country_event = {
+	id = flavor_UFC.8952
+	title = flavor_UFC.8952.name
+	desc = flavor_UFC.8952.desc
+	picture = indiangfx_COUNTRY_COLLAPSE_eventPicture
+	is_triggered_only = yes
+	immediate = {
+		hidden_effect = {
+			free_vassal = UFT
+			UFT = {
+				release_all_possible_countries = yes
+				UFT = {
+					release_all_possible_countries = yes
+					every_core_province = {
+						cede_province = previous_owner
+					}
+				}
+			}
+			every_province = {
+				limit = {
+					has_province_modifier = UFC_modifier_treaty_port_province_bonus
+				}
+				remove_province_modifier = UFC_modifier_treaty_port_province_bonus
+			}
+		}
+	}
+	option = {
+		name = flavor_UFC.8952.a
+		tooltip = {
+			free_vassal = UFT
+			UFT = {
+				release_all_possible_countries = yes
+			}
+		}
+	}
+}
+
+country_event = {
+	id = flavor_UFC.8953
+	title = flavor_UFC.8953.name
+	desc = flavor_UFC.8953.desc
+	picture = UNIVERSITY_eventPicture
+	is_triggered_only = yes
+	fire_only_once = yes
+	goto = 116
+	option = {
+		name = flavor_UFC.8953.a
+		add_mil_power = 10
+	}
+	after = {
+		country_event = { id = flavor_UFC.8954 days = 185 random = 180 }
+	}
+}
+
+country_event = {
+	id = flavor_UFC.8954
+	title = flavor_UFC.8954.name
+	desc = flavor_UFC.8954.desc
+	picture = WESTERNISATION_eventPicture
+	is_triggered_only = yes
+	fire_only_once = yes
+	goto = 1247
+	immediate = {
+		hidden_effect = {
+			1247 = {
+				owner = {
+					save_event_target_as = ufc_target_corsica_owner
+				}
+			}
+		}
+	}
+	option = {
+		name = flavor_UFC.8954.a
+		add_mil_power = 10
+		custom_tooltip = UFC_modifier_the_executed_chemist_desc
+		add_country_modifier = {
+			name = UFC_modifier_the_executed_chemist
+			duration = 1825
+		}
+	}
+	after = {
+		country_event = { id = flavor_UFC.8955 days = 730 random = 365 }
+	}
+}
+
+country_event = {
+	id = flavor_UFC.8955
+	title = flavor_UFC.8955.name
+	desc = flavor_UFC.8955.desc
+	picture = northamericagfx_BAD_WITH_MONARCH_eventPicture
+	is_triggered_only = yes
+	fire_only_once = yes
+	goto = 835
+	option = {
+		name = flavor_UFC.8955.a
+		add_stability_or_adm_power = yes
+		add_country_modifier = {
+			name = UFC_modifier_the_collapse_of_family
+			duration = 9125
+		}
+	}
+}
+
+
+country_event = {
+	id = flavor_UFC.8956
+	title = flavor_UFC.8956.name
+	desc = flavor_UFC.8956.desc
+	picture = muslimgfx_PILGRIMAGE_eventPicture
+	is_triggered_only = yes
+	fire_only_once = yes
+	goto = 385
+	option = {
+		name = flavor_UFC.8956.a
+		add_dip_power = 10
+		define_advisor = {
+			type = statesman
+			name = "Yusuf Egalite"
+			skill = 3
+			culture = andalucian
+			religion = root
+			cost_multiplier = 0.1
+			age = 30
+		}
+	}
+	after = {
+		country_event = { id = flavor_UFC.8957 days = 185 random = 180 }
+	}
+}
+
+country_event = {
+	id = flavor_UFC.8957
+	title = flavor_UFC.8957.name
+	desc = flavor_UFC.8957.desc
+	picture = GLOBAL_TRADE_eventPicture
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = flavor_UFC.8957.a
+		add_dip_power = 25
+	}
+	after = {
+		country_event = { id = flavor_UFC.8958 days = 730 random = 365 }
+	}
+}
+
+country_event = {
+	id = flavor_UFC.8958
+	title = flavor_UFC.8958.name
+	desc = flavor_UFC.8958.desc
+	picture = east_asian_UNIVERSITY_eventPicture
+	is_triggered_only = yes
+	fire_only_once = yes
+	goto = 835
+	option = {
+		name = flavor_UFC.8958.a
+		add_stability_or_adm_power = yes
+		custom_tooltip = UFC_modifier_never_give_up_learning_desc
+		add_country_modifier = {
+			name = UFC_modifier_never_give_up_learning
+			duration = 9125
+		}
+	}
+}
+
+country_event = {
+	id = flavor_UFC.8959
+	title = flavor_UFC.8959.name
+	desc = flavor_UFC.8959.desc
+	picture = CITY_DEVELOPMENT_eventPicture
+	is_triggered_only = yes
+	fire_only_once = yes
+	goto = 778
+	option = {
+		name = flavor_UFC.8959.a
+		add_adm_power = 25
+		add_country_modifier = {
+			name = UFC_modifier_urgent_land_reform
+			duration = -1
+			desc = UNTIL_THE_LAND_REFORM
+		}
+	}
+}
+
+country_event = {
+	id = flavor_UFC.8960
+	title = flavor_UFC.8960.name
+	desc = flavor_UFC.8960.desc
+	picture = iberian_GREAT_BUILDING_eventPicture
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = flavor_UFC.8960.a
+		custom_tooltip = ufc_laplata_influence
+		inherit = EIC
+	}
+	option = {
+		name = flavor_UFC.8960.b
+		custom_tooltip = ufc_manhattan_influence
+		create_subject = {
+			subject_type = ufc_cooperative
+			who = EIC
+		}
+		EIC = {
+			add_government_reform = junior_revolutionary_republic_reform
+			restore_country_name = yes
+			override_country_name = UFC_EIC_REVOLUTION_NAME
+			add_yearly_manpower = 5
+		}
+	}
+}
+
+country_event = {
+	id = flavor_UFC.8961
+	title = flavor_UFC.8961.name
+	desc = flavor_UFC.8961.desc
+	picture = iberian_GREAT_BUILDING_eventPicture
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = flavor_UFC.8960.a
+		custom_tooltip = ufc_laplata_influence
+		inherit = KON
+	}
+	option = {
+		name = flavor_UFC.8960.b
+		custom_tooltip = ufc_manhattan_influence
+		create_subject = {
+			subject_type = ufc_cooperative
+			who = KON
+		}
+		KON = {
+			add_government_reform = junior_revolutionary_republic_reform
+			restore_country_name = yes
+			add_yearly_manpower = 5
+		}
+	}
+}
+
+#revolution coalition white peace
+country_event = {
+	id = flavor_UFC.8962
+	title = flavor_UFC.8962.name
+	desc = flavor_UFC.8962.desc
+	picture = FAILED_REVOLUTION_eventPicture
+	major = yes
+	trigger = {
+		has_global_flag = UFC_flag_global_coalition_war
+		war_with = UFC
+		capital_scope = {
+			controlled_by = UFC
+			has_revolution_in_province = yes
+		}
+		not = {
+			or = {
+				tag = UFC
+				tag = event_target:ufc_target_emperor
+			}
+		}
+	}
+	mean_time_to_happen = {
+		months = 1
+	}
+	immediate = {
+		hidden_effect = {
+			white_peace = UFC
+			kill_ruler = yes
+			UFC = {
+				add_revolutionary_zeal = 25
+			}
+			every_owned_province = {
+				add_permanent_claim = UFC
+			}
+		}
+	}
+	option = {
+		name = flavor_UFC.8962.a
+		tooltip = {
+			white_peace = UFC
+			UFC = {
+				add_revolutionary_zeal = 25
+			}
+			kill_ruler = yes
+		}
+		ai_chance = {
+			factor = 1
+		}
+	}
+}
+
+country_event = {
+	id = flavor_UFC.8963
+	title = flavor_UFC.8963.name
+	desc = flavor_UFC.8963.desc
+	picture = ATMOSPHERIC_ENGINE_eventPicture
+	trigger = {
+		tag = UFC
+		mission_completed = UFC_mission_plantation_and_industry
+		num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+			has_manufactory_trigger = yes
+			value = 1000
+		}
+	}
+	mean_time_to_happen = {
+		months = 3
+	}
+	fire_only_once = yes
+	option = {
+		name = flavor_UFC.8963.a
+		change_price = {
+			trade_goods = iron
+			key = COAK_IRON
+			value = 0.25
+			duration = -1
+		}
+		set_global_flag = UFC_flag_enable_coal
+		custom_tooltip = UFC_tooltip_enable_coal
+	}
+}
+
+country_event = {
+	id = flavor_UFC.8964
+	title = flavor_UFC.8964.name
+	desc = flavor_UFC.8964.desc
+	picture = CARIBBEAN_PIRATE_FORT_eventPicture
+	is_triggered_only = yes
+	fire_only_once = yes
+	goto = 490
+	option = {
+		name = flavor_UFC.8964.a
+		add_country_modifier = {
+			name = UFC_modifier_early_environmentalism
+			duration = 1825
+		}
+		custom_tooltip = UFC_tooltip_early_environmentalism
+		490 = {
+			change_province_name = "Ciudad Liberada"
+			add_permanent_province_modifier = {
+				name = UFC_modifier_ciudad_liberada
+				duration = -1
+			}
+		}
+	}
+}
+
+country_event = {
+	id = flavor_UFC.8965
+	title = flavor_UFC.8965.name
+	desc = flavor_UFC.8965.desc
+	picture = indiangfx_SPY_eventPicture
+	trigger = {
+		tag = UFC
+		not = { mission_completed = UFC_mission_global_counterrevolutionary }
+		or = {
+			had_country_flag = {
+				flag = UFC_flag_start_the_revolution_crisis
+				days = 1825
+			}
+			mission_completed = UFC_mission_the_first_congress
+			any_known_country = {
+				has_spy_network_from = {
+					who = ROOT
+					value = 30
+				}
+			}
+		}
+		is_revolutionary = yes
+	}
+	fire_only_once = yes
+	mean_time_to_happen = {
+		months = 1
+	}
+	option = {
+		name = flavor_UFC.8965.a
+		custom_tooltip = UFC_tooltip_coalition_is_forming
+	}
+}
+
+country_event = {
+	id = flavor_UFC.8966
+	title = flavor_UFC.8966.name
+	desc = flavor_UFC.8966.desc
+	picture = CARIBBEAN_PIRATE_FORT_eventPicture
+	major = yes
+	trigger = {
+		is_emperor = yes
+		UFC = {
+			not = { mission_completed = UFC_mission_global_counterrevolutionary }
+			had_country_flag = {
+				flag = UFC_flag_start_the_revolution_crisis
+				days = 2555
+			}
+		}
+	}
+	fire_only_once = yes
+	mean_time_to_happen = {
+		months = 3
+	}
+	option = {
+		name = flavor_UFC.8966.a
+		UFC = {
+			every_country = {
+				limit = {
+					OR = {
+						is_great_power = yes
+						government_rank = 2
+						government_rank = 3
+					}
+					total_development = 50
+					OR = {
+						government = monarchy
+						government = theocracy
+					}
+					is_free_or_tributary_trigger = yes
+				}
+				form_coalition_against = UFC
+			}
+			declare_war_with_cb = {
+				who = emperor
+				casus_belli = cb_spread_the_revolution
+			}
+			complete_mission = UFC_mission_global_counterrevolutionary
+			hidden_effect = {
+				emperor = {
+					save_global_event_target_as = ufc_target_emperor
+				}
+				set_global_flag = UFC_flag_global_coalition_war
+			}
+		}
+	}
+}
+
+country_event = {
+	id = flavor_UFC.8967
+	title = flavor_UFC.8967.name
+	desc = flavor_UFC.8967.desc
+	picture = RIOTING_workers_eventPicture
+	trigger = {
+		tag = UFC
+		has_global_flag = UFC_flag_enable_coal
+		any_owned_province = {
+			continent = south_america
+			trade_goods = coffee
+			base_production = 8
+		}
+		is_revolutionary = yes
+	}
+	mean_time_to_happen = {
+		months = 12
+	}
+	immediate = {
+		hidden_effect = {
+			random_owned_province = {
+				limit = {
+					continent = south_america
+					trade_goods = coffee
+					base_production = 8
+				}
+				save_event_target_as = ufc_target_coffee_machine_province
+			}
+		}
+	}
+	goto = ufc_target_coffee_machine_province
+	fire_only_once = yes
+	option = {
+		name = flavor_UFC.8967.a
+		event_target:ufc_target_coffee_machine_province = {
+			add_base_production = 2
+			add_permanent_province_modifier = {
+				name = UFC_modifier_coffee_machine
+				duration = 3650
+			}
+		}
+	}
+}
+
+country_event = {
+	id = flavor_UFC.8968
+	title = flavor_UFC.8968.name
+	desc = flavor_UFC.8968.desc
+	picture = DIPLOMACY_SIGNING_eventPicture
+	trigger = {
+		tag = UFC
+		has_country_modifier = UFC_modifier_future_for_egality
+		any_subject_country = {
+			is_subject_of_type = ufc_cooperative
+			NOT = {
+				any_neighbor_country = {
+					NOT = {
+						tag = UFC
+					}
+				}
+			}
+			NOT = { has_country_flag = UFC_flag_refuse_annex_cooperative }
+		}
+	}
+	mean_time_to_happen = {
+		months = 3
+	}
+	immediate = {
+		hidden_effect = {
+			random_subject_country = {
+				limit = {
+					is_subject_of_type = ufc_cooperative
+					NOT = {
+						any_neighbor_country = {
+							NOT = {
+								tag = UFC
+							}
+						}
+					}
+					NOT = { has_country_flag = UFC_flag_refuse_annex_cooperative }
+				}
+				save_event_target_as = ufc_target_cooperative_annex_country
+				capital_scope = {
+					save_event_target_as = ufc_target_cooperative_annex_country_capital
+				}
+			}
+		}
+	}
+	goto = ufc_target_cooperative_annex_country_capital
+	option = {
+		name = flavor_UFC.8968.a
+		event_target:ufc_target_cooperative_annex_country = {
+			UFC = {
+				inherit = Prev
+			}
+		}
+	}
+	option = {
+		name = flavor_UFC.8968.b
+		event_target:ufc_target_cooperative_annex_country = {
+			set_country_flag = UFC_flag_refuse_annex_cooperative
+		}
+	}
+}
+
+country_event = {
+	id = flavor_UFC.8969
+	title = flavor_UFC.8969.title
+	desc = flavor_UFC.8969.desc
+	picture = AZTEC_PYRAMID_eventPicture
+	is_triggered_only = yes
+	fire_only_once = yes
+	goto = 846
+	option = {
+		name = flavor_UFC.8969.a
+		add_country_modifier = {
+			name = UFC_modifier_world_prism
+			duration = -1
+		}
+		846 = {
+			add_permanent_province_modifier = {
+				name = UFC_modifier_prism_weapon
+				duration = -1
+			}
+		}
+	}
+}
+
+country_event = {
+	id = flavor_UFC.8970
+	title = flavor_UFC.8970.title
+	desc = flavor_UFC.8970.desc
+	picture = ATMOSPHERIC_ENGINE_eventPicture
+	is_triggered_only = yes
+	fire_only_once = yes
+	goto = 236
+	option = {
+		name = flavor_UFC.8970.a
+		add_country_modifier = {
+			name = UFC_modifier_electricity_use
+			duration = -1
+		}
+	}
+}
+
+country_event = {
+	id = flavor_UFC.8971
+	title = flavor_UFC.8971.title
+	desc = flavor_UFC.8971.desc
+	picture = SCIENTISTS_eventPicture
+	is_triggered_only = yes
+	fire_only_once = yes
+	goto = 1988
+	option = {
+		name = flavor_UFC.8971.a
+		add_innovativeness_or_monarch_power = {
+			amount = 10
+		}
+	}
+}
+
+country_event = {
+	id = flavor_UFC.8972
+	title = flavor_UFC.8972.title
+	desc = flavor_UFC.8972.desc
+	picture = northamericagfx_COMET_SIGHTED_eventPicture
+	is_triggered_only = yes
+	fire_only_once = yes
+	goto = 1988
+	option = {
+		name = flavor_UFC.8972.a
+		add_adm_power = -100
+		add_dip_power = -100
+		add_mil_power = -100
+		add_innovativeness_or_monarch_power = {
+			amount = 10
+		}
+	}
+}
+
+country_event = {
+	id = flavor_UFC.8973
+	title = flavor_UFC.8973.title
+	desc = flavor_UFC.8973.desc
+	picture = MYSTIC_IN_PRAYER_eventPicture
+	is_triggered_only = yes
+	fire_only_once = yes
+	goto = 1988
+	option = {
+		name = flavor_UFC.8973.a
+		add_innovativeness_or_monarch_power = {
+			amount = 100
+		}
+		set_country_flag = UFC_flag_ready_for_space_exploration
+	}
+}
+
+country_event = {
+	id = flavor_UFC.8990
+	title = flavor_UFC.8990.title
+	desc = flavor_UFC.8990.desc
+	picture = INVASION_ALLIES_eventPicture
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = flavor_UFC.8990.a
+		custom_tooltip = UFC_tooltip_ummayad_alive
+		country_event = { id = flavor_UFC.8991 days = 5 random = 5}
+	}
+}
+
+country_event = {
+	id = flavor_UFC.8991
+	title = flavor_UFC.8991.title
+	desc = flavor_UFC.8991.desc
+	picture = INVASION_ALLIES_eventPicture
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = flavor_UFC.8991.a
+		custom_tooltip = UFC_tooltip_colombus_alive
+		add_stability = -1
+		add_stability = 1
+		country_event = { id = flavor_UFC.8992 days = 5 random = 5}
+	}
+}
+
+country_event = {
+	id = flavor_UFC.8992
+	title = flavor_UFC.8992.title
+	desc = flavor_UFC.8992.desc
+	picture = INVASION_ALLIES_eventPicture
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = flavor_UFC.8992.a
+		custom_tooltip = UFC_tooltip_erikson_and_cooper_alive
+		add_adm_power = 50
+		add_mil_power = 50
+		country_event = { id = flavor_UFC.8993 days = 5 random = 5}
+	}
+}
+
+country_event = {
+	id = flavor_UFC.8993
+	title = flavor_UFC.8993.title
+	desc = flavor_UFC.8993.desc
+	picture = INVASION_ALLIES_eventPicture
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = flavor_UFC.8993.a
+		custom_tooltip = UFC_tooltip_marquez_alive
+		country_event = { id = flavor_UFC.8994 days = 5 random = 5}
+	}
+}
+
+country_event = {
+	id = flavor_UFC.8994
+	title = flavor_UFC.8994.title
+	desc = flavor_UFC.8994.desc
+	picture = INVASION_ALLIES_eventPicture
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = flavor_UFC.8994.a
+		custom_tooltip = UFC_tooltip_revolution_alive
+		country_event = { id = flavor_UFC.8995 days = 5 random = 5}
+	}
+}
+
+country_event = {
+	id = flavor_UFC.8995
+	title = flavor_UFC.8995.title
+	desc = flavor_UFC.8995.desc
+	picture = HEIR_AND_FOREIGN_ADVISOR_eventPicture
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = flavor_UFC.8995.a
+		custom_tooltip = UFC_tooltip_end
+	}
+}
+
+#test
+country_event = {
+	id = flavor_UFC.10086
+	picture = TRADEGOODS_eventPicture
+	is_triggered_only = yes
+	trigger = {
+
+	}
+	option = {
+		name = flavor_UFC.10086.a
+		unlock
+	}
 }

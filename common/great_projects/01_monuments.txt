@@ -8009,8 +8009,16 @@ fire_temple_of_ateshgah = {
 
 	#can we build it?
 	build_trigger = {
-		province_is_or_accepts_religion = {
-			religion = zoroastrian
+		OR = {
+			owner = {
+				religion = secularism
+				has_harmonized_with = zoroastrian_group
+				mission_completed = UFC_mission_rebuild_the_lighthouse
+				has_country_modifier = UFC_modifier_future_for_egality
+			}
+			province_is_or_accepts_religion = {
+				religion = zoroastrian
+			}
 		}
 	}
 
@@ -8026,15 +8034,31 @@ fire_temple_of_ateshgah = {
 
 	#can our country use it?
 	can_use_modifiers_trigger = {
-		province_is_or_accepts_religion = {
-			religion = zoroastrian
+		OR = {
+			owner = {
+				religion = secularism
+				has_harmonized_with = zoroastrian_group
+				mission_completed = UFC_mission_rebuild_the_lighthouse
+				has_country_modifier = UFC_modifier_future_for_egality
+			}
+			province_is_or_accepts_religion = {
+				religion = zoroastrian
+			}
 		}
 	}
 
 	#can our country upgrade it?
 	can_upgrade_trigger = {
-		province_is_or_accepts_religion = {
-			religion = zoroastrian
+		OR = {
+			owner = {
+				religion = secularism
+				has_harmonized_with = zoroastrian_group
+				mission_completed = UFC_mission_rebuild_the_lighthouse
+				has_country_modifier = UFC_modifier_future_for_egality
+			}
+			province_is_or_accepts_religion = {
+				religion = zoroastrian
+			}
 		}
 	}
 
@@ -11700,8 +11724,11 @@ cahokia = {
 
 	build_trigger = {
 		OR = {
-			owner = {
-				mission_complete = UFC_mission_universal_higher_education
+			custom_trigger_tooltip = {
+				tooltip = UFC_tooltip_mission_universal_higher_education
+				owner = {
+					has_country_flag = UFC_flag_universal_higher_education
+				}
 			}
 			province_is_or_accepts_religion = {
 				religion = totemism
@@ -11717,8 +11744,11 @@ cahokia = {
 
 	can_use_modifiers_trigger = {
 		OR = {
-			owner = {
-				mission_complete = UFC_mission_universal_higher_education
+			custom_trigger_tooltip = {
+				tooltip = UFC_tooltip_mission_universal_higher_education
+				owner = {
+					has_country_flag = UFC_flag_universal_higher_education
+				}
 			}
 			province_is_or_accepts_religion = {
 				religion = totemism
@@ -11728,8 +11758,11 @@ cahokia = {
 
 	can_upgrade_trigger = {
 		OR = {
-			owner = {
-				mission_complete = UFC_mission_universal_higher_education
+			custom_trigger_tooltip = {
+				tooltip = UFC_tooltip_mission_universal_higher_education
+				owner = {
+					has_country_flag = UFC_flag_universal_higher_education
+				}
 			}
 			province_is_or_accepts_religion = {
 				religion = totemism

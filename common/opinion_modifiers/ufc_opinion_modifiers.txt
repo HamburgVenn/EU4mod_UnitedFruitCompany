@@ -7,3 +7,21 @@ ufc_award_grand_prize = {
     opinion = 30
     yearly_decay = 1
 }
+
+ufc_reserve_monarch = {
+    opinion = 25
+    years = 25
+    yearly_decay = 1
+}
+
+ufc_allow_tributary = {
+    opinion = 200
+    years = 25
+    yearly_decay = 8
+}
+
+ufc_yusuf_agree = {
+    opinion = 100
+    years = 25
+    yearly_decay = -4
+}

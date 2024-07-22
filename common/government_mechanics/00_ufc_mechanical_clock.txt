@@ -21,6 +21,7 @@ ufc_mechanic_mechanical_clock = {
 					yearly_corruption = 0.5
 					inflation_reduction = -1
 					global_unrest = -3
+					min_autonomy_in_territories = 0.1
 					administrative_efficiency = -0.05
 					monthly_mechanical_clock_dip_power = -0.2
 					monthly_mechanical_clock_mil_power = -0.1

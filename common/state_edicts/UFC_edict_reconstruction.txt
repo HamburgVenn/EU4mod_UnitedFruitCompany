@@ -18,7 +18,7 @@ UFC_edict_reconstruction = {
 		NOT = {
 			from = {
 				any_province_in_state = {
-					devastation = 1
+					devastation = 0.01
 				}
 			}
 		}

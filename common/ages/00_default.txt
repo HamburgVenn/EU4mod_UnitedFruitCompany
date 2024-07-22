@@ -600,7 +600,10 @@ age_of_absolutism = {
 		}
 		ab_dutch_trade = {
 			allow = {
-				tag = NED
+				OR = {
+					tag = NED
+					mission_completed = UFC_mission_sweeping_the_class
+				}
 			}
 			modifier = {
 				trade_steering = 0.33

@@ -1112,6 +1112,16 @@ printing_press = {
 			}
 		}
 		modifier = {
+			factor = 1
+			scale = yes
+			custom_trigger_tooltip = {
+				tooltip = UFC_tooltip_province_secularism
+				OR = {
+					religion = secularism
+				}
+			}
+		}
+		modifier = {
 			factor = 3
 			scale = yes
 			potential = {

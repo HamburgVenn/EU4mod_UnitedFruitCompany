@@ -46,7 +46,7 @@ on_colony_finished = { #ROOT - Province
 			add_government_power = { # adds the specified amount of power
 				mechanic_type = ufc_calibrate_the_clock
 				power_type = mechanical_reform_power
-				value = 0.25
+				value = 0.5
 			}
 		}
 	}
@@ -56,20 +56,6 @@ on_colony_finished = { #ROOT - Province
 # country
 # root = winning country, from = loser country
 on_war_won = {
-	if = {
-		limit = {
-			from = {
-				or = {
-					tag = CAS
-					tag = ARA
-				}
-			}
-			root = {
-				tag = GRA
-			}
-		}
-		ROOT = { country_event = { id = flavor_UFC.15 } }
-	}
 	if = {
 		limit = {
 			from = {
@@ -139,6 +125,9 @@ on_siege_won_province = {
 		limit = {
 			from = {
 				war_with = UFC
+				not = {
+					is_native_tribe = yes
+				}
 			}
 			UFC = {
 				has_country_flag = UFC_flag_arm_for_justice
@@ -165,7 +154,7 @@ on_siege_won_province = {
 on_battle_won_unit = {
 	if = {
 		limit = {
-			general_with_name = "FrancescoBuonaparte"
+			general_with_name = "Francesco Buonaparte"
 			unit_owner = {
 				has_country_flag = UFC_flag_buonaparte_start
 			}
@@ -181,14 +170,12 @@ on_battle_won_unit = {
 
 on_yearly_pulse = {
 	events = {
+		flavor_mos.3 #Yearly Tatar Yoke Tribute
 		flavor_UFC.21
-	}
-}
-on_monthly_pulse = {
-	events = {
 		flavor_UFC.32
 	}
 }
+
 on_harmonized_pagan = {
 	on_harmonized_effect = yes
 	on_harmonized_religion_estate_privileges_effect = yes
@@ -322,6 +309,7 @@ on_parliament_seat_given = {
 			value = -0.1
 		}
 	}
+	on_parliament_seat_given_effect = yes
 }
 
 on_adm_development = {
@@ -452,6 +440,18 @@ on_dip_development = {
 	}
 	if = {
 		limit = {
+			trade_goods = coal
+			has_global_flag = UFC_flag_enable_coal
+			base_production = 20
+		}
+		add_building_construction = {
+			building = furnace
+			speed = 0.5
+			cost = 1
+		}
+	}
+	if = {
+		limit = {
 			owner = {
 				overlord = {
 					mission_completed = UFC_mission_the_origin
@@ -551,7 +551,7 @@ on_battle_won_country = {
 		add_government_power = { # adds the specified amount of power
 			mechanic_type = ufc_calibrate_the_clock
 			power_type = mechanical_reform_power
-			value = 0.25
+			value = 0.5
 		}
 	}
 }
@@ -559,6 +559,21 @@ on_battle_won_country = {
 # country
 # root = winning country, from = loser country
 on_main_war_won = {
+	if = {
+		limit = {
+			from = {
+				or = {
+					tag = CAS
+					tag = ARA
+					tag = POR
+				}
+			}
+			root = {
+				tag = GRA
+			}
+		}
+		ROOT = { country_event = { id = flavor_UFC.15 } }
+	}
 	if = {
 		limit = {
 			has_government_mechanic = ufc_calibrate_the_clock
@@ -618,6 +633,22 @@ on_main_war_won = {
 		}
 		country_event = { id = flavor_UFC.8936 }
 	}
+	if = {
+		limit = {
+			from = {
+				tag = event_target:ufc_target_emperor
+			}
+			root = {
+				tag = UFC
+				is_revolutionary = yes
+				has_global_flag = UFC_flag_global_coalition_war
+			}
+		}
+		clr_global_flag = UFC_flag_global_coalition_war
+		complete_mission = UFC_mission_stabilize_africa
+		complete_mission = UFC_mission_destroy_the_feudal_system
+		complete_mission = UFC_mission_dethrone_the_chinese_empire
+	}
 }
 
 # country
@@ -645,6 +676,172 @@ on_yearly_pulse_2  = {
 		100 = flavor_UFC.2011
 		100 = flavor_UFC.2012
 		2200 = 0
+	}
+}
+
+
+# Estates pulse
+on_five_year_pulse_2 = {
+	random_events = {
+		# Burghers
+		100 = burghers_estate_events.1
+		100 = burghers_estate_events.2
+		100 = burghers_estate_events.3
+		100 = burghers_estate_events.4
+		100 = burghers_estate_events.5
+		100 = burghers_estate_events.6
+		100 = burghers_estate_events.7
+		100 = burghers_estate_events.8
+		100 = burghers_estate_events.9
+		400 = burghers_estate_events.10 #Demands
+		100 = burghers_estate_events.11 #Bonus
+		100 = burghers_estate_events.12
+		100 = burghers_estate_events.13
+		400 = burghers_estate_events.14 #Demands
+		100 = burghers_estate_events.15 #Disloyal
+		# Nobles
+		100 = nobles_estate_events.1 #Demands
+		100 = nobles_estate_events.2
+		100 = nobles_estate_events.3
+		100 = nobles_estate_events.4
+		400 = nobles_estate_events.5 #Demands
+		100 = nobles_estate_events.6
+		100 = nobles_estate_events.7
+		400 = nobles_estate_events.8 #Disloyal
+		400 = nobles_estate_events.9 #Disloyal
+		50 = nobles_estate_events.10
+		100 = nobles_estate_events.11 #Bonus
+		# Clergy
+		100 = church_estate_events.1
+		#Regional Variations:
+		100 = church_estate_events.101
+		100 = church_estate_events.102
+		100 = church_estate_events.103
+		100 = church_estate_events.104
+		100 = church_estate_events.105
+		100 = church_estate_events.2
+		100 = church_estate_events.3
+		100 = church_estate_events.4
+		400 = church_estate_events.5 #Disloyal
+		400 = church_estate_events.6 #Demands
+		100 = church_estate_events.7 #Bonus
+		100 = church_estate_events.8
+		100 = church_estate_events.9
+		100 = church_estate_events.10
+		# Dhimmi
+		100 = dhimmi_estate_events.1
+		400 = dhimmi_estate_events.2 #Demands
+		100 = dhimmi_estate_events.3
+		100 = dhimmi_estate_events.4
+		100 = dhimmi_estate_events.5
+		100 = dhimmi_estate_events.6
+		400 = dhimmi_estate_events.7 #Disloyal
+		100 = dhimmi_estate_events.8
+		# Cossacks
+		100 = cossack_estate_events.1
+		#100 = cossack_estate_events.2 (triggers in neighbor country)
+		100 = cossack_estate_events.6
+		100 = cossack_estate_events.7
+		100 = cossack_estate_events.8
+		100 = cossack_estate_events.9
+		100 = cossack_estate_events.10
+		100 = cossack_estate_events.11
+		400 = cossack_estate_events.12 #Disloyal
+		100 = cossack_estate_events.13
+		400 = cossack_estate_events.14 #Demands
+		# Tribes
+		100 = tribal_estate_events.1
+		100 = tribal_estate_events.2
+		100 = tribal_estate_events.3
+		100 = tribal_estate_events.4
+		100 = tribal_estate_events.5
+		100 = tribal_estate_events.6
+		100 = tribal_estate_events.7
+		100 = tribal_estate_events.8
+		100 = tribal_estate_events.9
+		150 = tribal_estate_events.11 #Demands
+		150 = tribal_estate_events.12 #Demands
+		150 = tribal_estate_events.13 #Demands
+		150 = tribal_estate_events.14 #Demands
+		# Marathas
+		100 = marathas_estate_events.2
+		100 = marathas_estate_events.3
+		100 = marathas_estate_events.4
+		100 = marathas_estate_events.5
+		100 = marathas_estate_events.6
+		400 = marathas_estate_events.7 # Demands
+		100 = marathas_estate_events.8
+		100 = marathas_estate_events.9
+		100 = marathas_estate_events.10
+		400 = marathas_estate_events.11 # Disloyal
+		# Brahmins
+		400 = brahmins_estate_events.2 # demands
+		100 = brahmins_estate_events.3
+		100 = brahmins_estate_events.4
+		100 = brahmins_estate_events.5
+		400 = brahmins_estate_events.6 # disloyal
+		100 = brahmins_estate_events.7
+		100 = brahmins_estate_events.8
+		100 = brahmins_estate_events.9
+		100 = brahmins_estate_events.10
+		100 = brahmins_estate_events.11
+		# Jains
+		100 = jains_estate_events.2
+		100 = jains_estate_events.3
+		100 = jains_estate_events.4
+		100 = jains_estate_events.5
+		100 = jains_estate_events.6
+		100 = jains_estate_events.7
+		400 = jains_estate_events.8 # Disloyal
+		100 = jains_estate_events.9
+		400 = jains_estate_events.10 # Demands
+		100 = jains_estate_events.11
+		# Vaishyas
+		100 = vaisyas_estate_events.2
+		100 = vaisyas_estate_events.3
+		100 = vaisyas_estate_events.4
+		100 = vaisyas_estate_events.5
+		100 = vaisyas_estate_events.6
+		100 = vaisyas_estate_events.7
+		100 = vaisyas_estate_events.8
+		400 = vaisyas_estate_events.9
+		100 = vaisyas_estate_events.10
+		100 = vaisyas_estate_events.11
+		# Rajputs
+		100 = rajputs_estate_events.2
+		100 = rajputs_estate_events.3
+		100 = rajputs_estate_events.4
+		100 = rajputs_estate_events.5
+		400 = rajputs_estate_events.6
+		100 = rajputs_estate_events.7
+		400 = rajputs_estate_events.8
+		100 = rajputs_estate_events.9
+		100 = rajputs_estate_events.10
+		100 = rajputs_estate_events.11
+		# Janissaries
+		100 = janissaries_estate_events.1
+		100 = janissaries_estate_events.2
+		100 = janissaries_estate_events.3
+		100 = janissaries_estate_events.4
+		100 = janissaries_estate_events.5
+		100 = janissaries_estate_events.6
+		100 = janissaries_estate_events.7
+		400 = janissaries_estate_events.8 # Disloyal
+		400 = janissaries_estate_events.9 # Demands
+		100 = janissaries_estate_events.10
+		100 = janissaries_estate_events.11
+		100 = janissaries_estate_events.12
+		100 = janissaries_estate_events.13
+		# Random
+		5 = flavor_fra.9500
+		1000 = 0
+		# ufc staff
+		100 = flavor_UFC.2015
+		100 = flavor_UFC.2016
+		100 = flavor_UFC.2017
+		100 = flavor_UFC.2018
+		200 = flavor_UFC.2019
+		100 = flavor_UFC.2020
 	}
 }
 
@@ -691,5 +888,58 @@ on_alliance_broken = {
 			}
 		}
 		remove_country_modifier = UFC_modifier_ally_with_hsa
+	}
+}
+
+on_revolutionary_guard_raised = {
+	owner = {
+		if = {
+			limit = {
+				mission_completed = UFC_mission_military_reform
+			}
+			add_army_tradition = 0.1
+		}
+	}
+}
+
+on_marine_raised = {
+	owner = {
+		if = {
+			limit = {
+				mission_completed = UFC_mission_military_reform
+			}
+			add_navy_tradition = 0.1
+		}
+	}
+}
+
+on_alliance_created = { #ROOT - Alliance sender, FROM - Alliance accepter
+	if = {
+		limit = {
+			UFC = {
+				has_disaster = ufc_revolution_government
+			}
+			OR = {
+				tag = POR
+				tag = CAS
+				tag = ARA
+			}
+		}
+		break_alliance = From
+	}
+	if = {
+		limit = {
+			UFC = {
+				has_disaster = ufc_revolution_government
+			}
+			From = {
+				OR = {
+					tag = POR
+					tag = CAS
+					tag = ARA
+				}
+			}
+		}
+		break_alliance = From
 	}
 }

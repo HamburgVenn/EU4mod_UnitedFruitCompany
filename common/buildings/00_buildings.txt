@@ -1249,7 +1249,7 @@ university = {
 				add_government_power = { # adds the specified amount of power
 					mechanic_type = ufc_mechanic_mechanical_clock
 					power_type = mechanical_clock_dip_power
-					value = -0.1
+					value = -0.15
 				}
 			}
 		}

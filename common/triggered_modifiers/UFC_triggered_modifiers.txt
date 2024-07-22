@@ -49,3 +49,19 @@ UFC_triggered_modifier_the_trade_embargo = {
 	trade_efficiency = 0.1
 	embargo_efficiency = 0.5
 }
+
+UFC_triggered_modifier_the_revolution_zeal = {
+	potential = {
+		tag = UFC
+		is_revolutionary = yes
+	}
+
+	trigger = {
+		tag = UFC
+		is_revolutionary = yes
+		revolutionary_zeal = 150
+	}
+	administrative_efficiency = 0.1
+	allowed_rev_guard_fraction = 0.15
+	discipline = 0.025
+}
