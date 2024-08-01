@@ -1376,6 +1376,14 @@ ufc_cooperative = {
 			}
 		}
 	}
+	modifier_subject = {
+		modifier = UFC_modifier_subsidiary_we_are_the_world
+		trigger = {
+			overlord = {
+				mission_completed = UFC_mission_we_are_the_world
+			}
+		}
+	}
 	modifier_overlord = {
 		modifier = UFC_modifier_subsidiary_overlord_basic_modifier
 		trigger = {

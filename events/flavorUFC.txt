@@ -33,6 +33,16 @@ country_event = {
 		highlight = yes
 		hidden_effect = {
 			add_truce_with = CAS
+			MOR = {
+				add_truce_with = CAS
+				add_truce_with = ARA
+				add_truce_with = POR
+			}
+			TUN = {
+				add_truce_with = CAS
+				add_truce_with = ARA
+				add_truce_with = POR
+			}
 			add_ruler_modifier = {
 				name = UFC_modifier_MIX_infertility
 				duration = 36500
@@ -195,7 +205,7 @@ country_event = {
 			country_event = { id = flavor_UFC.5 days = 50 }
 			country_event = { id = flavor_UFC.6 days = 365 }
 			country_event = { id = flavor_UFC.102 days = 1095 random = 60 }
-			country_event = { id = flavor_UFC.28 days = 365 random = 180}
+			#country_event = { id = flavor_UFC.28 days = 365 random = 180}
 		}
 	}
 }
@@ -435,20 +445,7 @@ country_event = {
 	}
 }
 
-country_event = {
-	id = flavor_UFC.13
-	title = flavor_UFC.13.title
-	desc = flavor_UFC.13.desc
-	picture = HARBOUR_eventPicture
-	is_triggered_only = yes
-	option = {
-		name = flavor_UFC.13.a
-		add_country_modifier = {
-			name = UFC_modifier_cultural_tolerance
-			duration = -1
-		}
-	}
-}
+
 
 #granada ask to war
 country_event = {
@@ -488,6 +485,7 @@ country_event = {
 			name = UFC_modifier_join_defence_of_gra
 			duration = 3650
 		}
+		remove_country_modifier = UFC_modifier_ready_to_war
 		hidden_effect = {
 			if = {
 				limit = {
@@ -1349,25 +1347,7 @@ country_event = {
 	}
 }
 
-#new culture?
-country_event = {
-	id = flavor_UFC.28
-	title = flavor_UFC.28.title
-	desc = flavor_UFC.28.desc
-	picture = muslimgfx_CULTURE_eventPicture
-	fire_only_once = yes
-	is_triggered_only = yes
-	option = {
-		name = flavor_UFC.28.a
-		clr_country_flag = rejected_new_colonial_culture
-		custom_tooltip =  UFC_tooltip_may_change_culture
-	}
-	option = {
-		name = flavor_UFC.28.b
-		set_country_flag = rejected_new_colonial_culture
-		custom_tooltip =  UFC_tooltip_not_change_culture
-	}
-}
+
 country_event = {
 	id = flavor_UFC.29
 	title = flavor_UFC.29.title
@@ -1727,10 +1707,12 @@ country_event = {
 				large_cast_bronze_mortar = ROOT
 				large_cast_bronze_mortar = ROOT
 				large_cast_bronze_mortar = ROOT
+				large_cast_bronze_mortar = ROOT
 			}
 		}
 		else = {
 			capital_scope = {
+				artillery = ROOT
 				artillery = ROOT
 				artillery = ROOT
 				artillery = ROOT
@@ -1845,22 +1827,84 @@ country_event = {
 
 country_event = {
 	id = flavor_UFC.37
+	title = flavor_UFC.37.title
+	desc = flavor_UFC.37.desc
+	picture = DIPLOMAT_INTERROGATION_eventPicture
+	is_triggered_only = yes
+	fire_only_once = yes
+	immediate = {
+		hidden_effect = {
+			CAS = {
+				every_subject_country = {
+					limit = {
+						is_subject_of_type = ufc_granada_tributary_state
+					}
+					grant_independence = yes
+				}
+			}
+		}
+	}
+	option = {
+		name = flavor_UFC.37.a
+		add_country_modifier = {
+			name = UFC_modifier_ready_to_war
+			duration = 1825
+			desc = UNTIL_THE_GRANADA_DEFENCE
+		}
+		custom_tooltip = UFC_tooltip_initiative_granada_war
+		set_country_flag = UFC_flag_enable_initiative_granada_war
+	}
+	option = {
+		name = flavor_UFC.37.b
+		add_republican_tradition = -10
+		GRA = {
+			add_legitimacy = -25
+		}
+		custom_tooltip = UFC_tooltip_extend_tribute
+		hidden_effect = {
+			CAS = {
+				set_country_flag = forced_tributary_state
+				create_subject = {
+					subject_type = ufc_granada_tributary_state
+					subject = GRA
+				}
+				add_opinion = {
+					who = GRA
+					modifier = ufc_allow_tributary
+				}
+			}
+			country_event = { id = flavor_UFC.370 days = 3650}
+		}
+	}
+}
+
+
+country_event = {
+	id = flavor_UFC.370
 	hidden = yes
 	is_triggered_only = yes
 	fire_only_once = yes
 	immediate = {
-		CAS = {
-			every_subject_country = {
-				limit = {
-					is_subject_of_type = ufc_granada_tributary_state
+		hidden_effect = {
+			CAS = {
+				every_subject_country = {
+					limit = {
+						is_subject_of_type = ufc_granada_tributary_state
+					}
+					grant_independence = yes
 				}
-				grant_independence = yes
 			}
 		}
-
+		hidden_effect = {
+			CAS = {
+				declare_war_with_cb = {
+					who = GRA
+					casus_belli = cb_crusade
+				}
+			}
+		}
 	}
 }
-
 #merchant ship events
 country_event = {
 	id = flavor_UFC.38
@@ -2065,6 +2109,9 @@ country_event = {
 				hidden = yes
 			}
 		}
+		hidden_effect = {
+			join_all_defensive_wars_of = ADU
+		}
 		ADU = {
 			add_mercantilism = 75
 		}
@@ -2124,6 +2171,7 @@ country_event = {
 			add_government_reform = trade_company_government
 			change_religion = ROOT
 			add_harmonized_religion = sunni
+			add_harmonized_religion = catholic
 			override_country_name = UFC_string_ADU
 		}
 		hidden_effect = {
@@ -2415,10 +2463,18 @@ country_event = {
 				truce_with = GRA
 			}
 		}
+		not = {
+			CAS = {
+				any_subject_country = {
+					tag = GRA
+				}
+			}
+		}
 	}
 	mean_time_to_happen = {
 		months = 3
 	}
+	major = yes
 	immediate = {
 		hidden_effect = {
 			CAS = {
@@ -5446,6 +5502,14 @@ country_event = {
 		add_truce_with = event_target:ufc_target_subsidiary_corporation_event_country
 		custom_tooltip = UFC_tooltip_treaty_port_value
 	}
+	option = {
+		name = flavor_UFC.77.b
+		country_event = { id = flavor_UFC.77 days = 7}
+	}
+	option = {
+		name = flavor_UFC.77.c
+		country_event = { id = flavor_UFC.77 days = 7}
+	}
 }
 
 #tech 14 to 13
@@ -5719,7 +5783,7 @@ country_event = {
 		is_year = 1449
 	}
 	mean_time_to_happen = {
-		months = 60
+		months = 24
 	}
 	option = {
 		name = flavor_UFC.133.a
@@ -6057,6 +6121,7 @@ country_event = {
 		add_dip_power = 10
 		hidden_effect = {
 			country_event = { id = flavor_UFC.1024 days = 2920 }
+			country_event = { id = flavor_UFC.28 days = 30 } #nationalism dlc
 		}
 	}
 }
@@ -6573,11 +6638,16 @@ country_event = {
 			add_core = root
 			change_controller = root
 		}
-		event_target:ufc_target_tonga = {
-			break_alliance = LAI
-			break_alliance = VIL
-			break_alliance = VNL
-			break_alliance = SAM
+		hidden_effect = {
+			event_target:ufc_target_tonga = {
+				#break_alliance = LAI
+				#break_alliance = VIL
+				#break_alliance = VNL
+				#break_alliance = SAM
+				every_ally = {
+					break_alliance = Prev
+				}
+			}
 		}
 		declare_war_with_cb = {
 			who = event_target:ufc_target_tonga

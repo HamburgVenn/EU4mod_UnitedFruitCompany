@@ -1726,3 +1726,24 @@ UFC_modifier_prism_weapon = {
 	local_assault_fort_ability = -0.9
 	fire_damage = 0.1
 }
+
+UFC_modifier_subsidiary_we_are_the_world = {
+	development_cost = -0.2
+	land_forcelimit_modifier = -0.9
+	capped_by_forcelimit = yes
+	global_unrest = -10
+}
+
+UFC_modifier_ready_to_war = {
+	global_ship_recruit_speed = -0.33
+	global_regiment_recruit_speed = -0.33
+	special_unit_cost_modifier = -0.2
+	special_unit_manpower_cost_modifier = -0.2
+}
+
+UFC_modifier_staff_culture_assimilation = {
+	local_tax_modifier = -0.1
+	local_manpower_modifier = -0.1
+	local_sailors_modifier = -0.05
+	local_unrest = 0.5
+}

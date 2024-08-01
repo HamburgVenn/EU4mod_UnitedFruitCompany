@@ -1409,5 +1409,38 @@ country_decisions = {
             }
         }
     }
+
+    UFC_decision_initiative_granada_war= {
+        potential = {
+            tag = UFC
+            has_country_flag = UFC_flag_enable_initiative_granada_war
+            GRA = {
+                exists = yes
+            }
+        }
+        allow = {
+            GRA = {
+                exists = yes
+                is_at_war = no
+                not = {
+                    truce_with = CAS
+                }
+                not = {
+                    is_subject = yes
+                }
+            }
+        }
+        effect = {
+            GRA = {
+                declare_war_with_cb = {
+                    who = CAS
+                    casus_belli = cb_crusade
+                }
+            }
+            join_all_offensive_wars_of = GRA
+            clr_country_flag = UFC_flag_enable_initiative_granada_war
+            clr_country_flag = UFC_support_granada
+        }
+    }
 }
 

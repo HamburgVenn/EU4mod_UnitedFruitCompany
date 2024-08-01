@@ -1,0 +1,429 @@
+namespace = flavor_UFC
+
+#new culture?
+country_event = {
+	id = flavor_UFC.28
+	title = flavor_UFC.28.title
+	desc = flavor_UFC.28.desc
+	picture = muslimgfx_CULTURE_eventPicture
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = flavor_UFC.28.a
+		clr_country_flag = rejected_new_colonial_culture
+		custom_tooltip =  UFC_tooltip_may_change_culture
+	}
+	option = {
+		name = flavor_UFC.28.b
+		set_country_flag = rejected_new_colonial_culture
+		custom_tooltip =  UFC_tooltip_not_change_culture
+	}
+	option = {
+		name = flavor_UFC.28.c
+		trigger = {
+			custom_trigger_tooltip = {
+				always = yes
+				tooltip = UFC_tooltip_enable_nationalism_dlc
+			}
+		}
+		highlight = yes
+		set_country_flag = rejected_new_colonial_culture
+		hidden_effect = {
+			country_event = { id = flavor_UFC.1401 days = 7 random = 7}
+		}
+		custom_tooltip = UFC_tooltip_abandon_the_tradition_to_form_the_culture
+	}
+}
+
+country_event = {
+	id = flavor_UFC.1401
+	title = flavor_UFC.1401.title
+	desc = flavor_UFC.1401.desc
+	picture = PRAYER_IN_MOSQUE_eventPicture
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = flavor_UFC.1401.a
+		country_event = {
+			id = flavor_UFC.1402
+			days = 7
+			random = 7
+		}
+	}
+}
+
+country_event = {
+	id = flavor_UFC.1402
+	title = flavor_UFC.1402.title
+	desc = flavor_UFC.1402.desc
+	picture = BIG_ARABIAN_CITY_eventPicture
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = flavor_UFC.1402.a
+		change_primary_culture = ufc_colombian
+		add_accepted_culture_or_dip_power = {
+			culture = andalucian
+			dip_reward = yes
+		}
+		835 = {
+			change_culture = ufc_colombian
+		}
+		set_country_flag = UFC_flag_start_culture_assimilation
+		hidden_effect = {
+			remove_estate_privilege = estate_ufc_staff_culture_assimilation
+		}
+		set_estate_privilege = estate_ufc_staff_culture_assimilation
+	}
+}
+
+country_event = {
+	id = flavor_UFC.13
+	title = flavor_UFC.13.title
+	desc = flavor_UFC.13.desc
+	picture = HARBOUR_eventPicture
+	is_triggered_only = yes
+	option = {
+		name = flavor_UFC.13.a
+		add_country_modifier = {
+			name = UFC_modifier_cultural_tolerance
+			duration = -1
+		}
+		custom_tooltip = UFC_tooltip_shorten_the_time_of_culture_assimilation
+		hidden_effect = {
+			every_owned_province = {
+				limit = {
+					has_province_modifier = UFC_modifier_staff_culture_assimilation
+				}
+				extend_province_modifier = {
+					name = UFC_modifier_staff_culture_assimilation
+					duration = 2147481823  # -1825 days
+				}
+			}
+		}
+		tooltip = {
+			random_owned_province = {
+				limit = {
+					has_province_modifier = UFC_modifier_staff_culture_assimilation
+				}
+				extend_province_modifier = {
+					name = UFC_modifier_staff_culture_assimilation
+					duration = 2147481823  # -1825 days
+				}
+			}
+		}
+	}
+}
+
+country_event = {
+	id = flavor_UFC.1403
+	title = flavor_UFC.1403.title
+	desc = flavor_UFC.1403.desc
+	picture = EXPLORERS_eventPicture
+	fire_only_once = yes
+	trigger = {
+		has_country_flag = UFC_flag_start_culture_assimilation
+		mission_completed = UFC_mission_caribbean
+	}
+	mean_time_to_happen = {
+		months = 3
+	}
+	option = {
+		name = flavor_UFC.1403.a
+		custom_tooltip = UFC_tooltip_caribbean_assimilation
+	}
+}
+
+country_event = {
+	id = flavor_UFC.1404
+	title = flavor_UFC.1404.title
+	desc = flavor_UFC.1404.desc
+	picture = southamericagfx_GREAT_BUILDING_eventPicture
+	fire_only_once = yes
+	trigger = {
+		has_country_flag = UFC_flag_start_culture_assimilation
+		mission_completed = UFC_mission_doomsayer
+	}
+	mean_time_to_happen = {
+		months = 3
+	}
+	option = {
+		name = flavor_UFC.1404.a
+		custom_tooltip = UFC_tooltip_mexico_assimilation
+	}
+}
+
+country_event = {
+	id = flavor_UFC.1405
+	title = flavor_UFC.1405.title
+	desc = flavor_UFC.1405.desc
+	picture = SIERRA_DE_LA_PLATA_eventPicture
+	fire_only_once = yes
+	trigger = {
+		has_country_flag = UFC_flag_start_culture_assimilation
+		mission_completed = UFC_mission_cerro_de_potosi
+	}
+	mean_time_to_happen = {
+		months = 3
+	}
+	option = {
+		name = flavor_UFC.1405.a
+		custom_tooltip = UFC_tooltip_peru_assimilation
+	}
+}
+
+country_event = {
+	id = flavor_UFC.1406
+	title = flavor_UFC.1406.title
+	desc = flavor_UFC.1406.desc
+	picture = JESUTIS_IN_BRAZIL_eventPicture
+	fire_only_once = yes
+	trigger = {
+		has_country_flag = UFC_flag_start_culture_assimilation
+		mission_completed = UFC_mission_brazilian_wood
+	}
+	mean_time_to_happen = {
+		months = 3
+	}
+	option = {
+		name = flavor_UFC.1406.a
+		custom_tooltip = UFC_tooltip_brazil_assimilation
+	}
+}
+
+country_event = {
+	id = flavor_UFC.1407
+	title = flavor_UFC.1407.title
+	desc = flavor_UFC.1407.desc
+	picture = SIERRA_DE_LA_PLATA_eventPicture
+	fire_only_once = yes
+	trigger = {
+		has_country_flag = UFC_flag_start_culture_assimilation
+		mission_completed = UFC_mission_mapuche
+	}
+	mean_time_to_happen = {
+		months = 3
+	}
+	option = {
+		name = flavor_UFC.1407.a
+		custom_tooltip = UFC_tooltip_laplata_assimilation
+	}
+}
+
+country_event = {
+	id = flavor_UFC.1408
+	title = flavor_UFC.1408.title
+	desc = flavor_UFC.1408.desc
+	picture = CITY_DEVELOPMENT_eventPicture
+	fire_only_once = yes
+	trigger = {
+		has_country_flag = UFC_flag_start_culture_assimilation
+		mission_completed = UFC_mission_the_golden_rush
+	}
+	mean_time_to_happen = {
+		months = 3
+	}
+	option = {
+		name = flavor_UFC.1408.a
+		custom_tooltip = UFC_tooltip_california_assimilation
+	}
+}
+
+country_event = {
+	id = flavor_UFC.1409
+	title = flavor_UFC.1409.title
+	desc = flavor_UFC.1409.desc
+	picture = northamericagfx_CITY_VIEW_eventPicture
+	fire_only_once = yes
+	trigger = {
+		has_country_flag = UFC_flag_start_culture_assimilation
+		num_of_owned_provinces_with = {
+			value = 5
+			colonial_region = colonial_louisiana
+		}
+	}
+	mean_time_to_happen = {
+		months = 3
+	}
+	option = {
+		name = flavor_UFC.1409.a
+		custom_tooltip = UFC_tooltip_louisiana_assimilation
+	}
+}
+
+country_event = {
+	id = flavor_UFC.1410
+	title = flavor_UFC.1410.title
+	desc = flavor_UFC.1410.desc
+	picture = KING_OF_FOREIGN_CUSTOMS_eventPicture
+	fire_only_once = yes
+	trigger = {
+		has_country_flag = UFC_flag_start_culture_assimilation
+		965 = {
+			trade_goods = silk
+		}
+		mission_completed = UFC_mission_coast_of_freedom
+	}
+	mean_time_to_happen = {
+		months = 3
+	}
+	option = {
+		name = flavor_UFC.1410.a
+		custom_tooltip = UFC_tooltip_newgranada_assimilation
+	}
+}
+
+country_event = {
+	id = flavor_UFC.1411
+	title = flavor_UFC.1411.title
+	desc = flavor_UFC.1411.desc
+	picture = COASTLINE_MAP_eventPicture
+	fire_only_once = yes
+	trigger = {
+		has_country_flag = UFC_flag_start_culture_assimilation
+		num_of_owned_provinces_with = {
+			value = 2
+			colonial_region = colonial_alaska
+		}
+	}
+	mean_time_to_happen = {
+		months = 3
+	}
+	option = {
+		name = flavor_UFC.1410.a
+		custom_tooltip = UFC_tooltip_alaska_assimilation
+	}
+}
+
+country_event = {
+	id = flavor_UFC.1412
+	title = flavor_UFC.1412.title
+	desc = flavor_UFC.1412.desc
+	picture = RUNESTONE_eventPicture
+	fire_only_once = yes
+	trigger = {
+		has_country_flag = UFC_flag_start_culture_assimilation
+		980 = {
+			has_province_modifier = UFC_modifier_erikson_monuments
+		}
+	}
+	mean_time_to_happen = {
+		months = 3
+	}
+	option = {
+		name = flavor_UFC.1412.a
+		custom_tooltip = UFC_tooltip_canada_assimilation
+	}
+}
+
+country_event = {
+	id = flavor_UFC.1413
+	title = flavor_UFC.1413.title
+	desc = flavor_UFC.1413.desc
+	picture = EP_MANIHOLE_HELMET_eventPicture
+	fire_only_once = yes
+	trigger = {
+		has_country_flag = UFC_flag_start_culture_assimilation
+		has_country_modifier = UFC_modifier_cooper
+		mission_completed = UFC_mission_the_moais
+	}
+	mean_time_to_happen = {
+		months = 3
+	}
+	option = {
+		name = flavor_UFC.1413.a
+		custom_tooltip = UFC_tooltip_polynesia_assimilation
+	}
+}
+
+country_event = {
+	id = flavor_UFC.1414
+	title = flavor_UFC.1414.title
+	desc = flavor_UFC.1414.desc
+	picture = indiangfx_CULTURE_eventPicture
+	is_triggered_only = yes
+	trigger = {
+		has_estate_privilege = estate_ufc_staff_culture_assimilation
+	}
+	immediate = {
+		hidden_effect = {
+			random_owned_province = {
+				limit = {
+					has_province_modifier = UFC_modifier_staff_culture_assimilation
+					not = {
+						has_owner_accepted_culture = yes
+					}
+				}
+				save_event_target_as = ufc_target_assimilation_province
+			}
+		}
+	}
+	option = {
+		name = flavor_UFC.1414.a
+		event_target:ufc_target_assimilation_province = {
+			extend_province_modifier = {
+				name = UFC_modifier_staff_culture_assimilation
+				duration = 2147481823  # -1825 days
+			}
+			every_neighbor_province = {
+				limit = {
+					has_province_modifier = UFC_modifier_staff_culture_assimilation
+				}
+				extend_province_modifier = {
+					name = UFC_modifier_staff_culture_assimilation
+					duration = 2147481823  # -1825 days
+				}
+			}
+		}
+	}
+	option = {
+		name = flavor_UFC.1414.b
+		event_target:ufc_target_assimilation_province = {
+			add_base_production = 1
+		}
+	}
+}
+
+country_event = {
+	id = flavor_UFC.1415
+	title = flavor_UFC.1415.title
+	desc = flavor_UFC.1415.desc
+	picture = indiangfx_CULTURE_eventPicture
+	is_triggered_only = yes
+	trigger = {
+		has_estate_privilege = estate_ufc_staff_culture_assimilation
+	}
+	immediate = {
+		hidden_effect = {
+			random_owned_province = {
+				limit = {
+					has_province_modifier = UFC_modifier_staff_culture_assimilation
+					not = {
+						has_owner_accepted_culture = yes
+					}
+				}
+				save_event_target_as = ufc_target_assimilation_province
+			}
+		}
+	}
+	option = {
+		name = flavor_UFC.1415.a
+		event_target:ufc_target_assimilation_province = {
+			extend_province_modifier = {
+				name = UFC_modifier_staff_culture_assimilation
+				duration = 2147481823  # -1825 days
+			}
+		}
+		adm_power_cost = 25
+	}
+	option = {
+		name = flavor_UFC.1415.b
+		event_target:ufc_target_assimilation_province = {
+			extend_province_modifier = {
+				name = UFC_modifier_staff_culture_assimilation
+				duration = 1825
+			}
+		}
+		add_dip_power = 25
+	}
+}

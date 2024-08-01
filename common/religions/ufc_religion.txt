@@ -1,0 +1,22 @@
+secular_humanism_group = {
+	flag_emblem_index_range = { 110 110 }
+	center_of_religion = 835
+	defender_of_faith = no
+	secularism = {
+		icon = 30
+		color = { 70 140 210 }
+		province = {
+			local_missionary_strength = -0.02
+		}
+		country = {
+			tolerance_own = 2
+			tolerance_heathen = 2
+		}
+		country_as_secondary = {
+			tolerance_heathen = 1
+			tolerance_own = 1
+		}
+		uses_harmony = yes
+		heretic = { ANTITHEISM }
+	}
+}

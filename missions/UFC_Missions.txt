@@ -1278,6 +1278,18 @@ UFC_mission_slot_2 = {
 				tooltip = UFC_tooltip_flag_cooper_aztec
 				has_country_flag = UFC_flag_cooper_aztec
 			}
+			if = {
+				limit = {
+					AZT = {
+						is_subject_of = root
+					}
+				}
+				AZT = {
+					not = {
+						liberty_desire = 50
+					}
+				}
+			}
 		}
 		effect = {
 			country_event = { id = flavor_UFC.9 }
@@ -3177,6 +3189,17 @@ UFC_mission_slot_3_revolution = {
 		}
 		effect = {
 			custom_tooltip = UFC_tooltip_we_are_the_world_effect
+			tooltip = {
+				random_subject_country = {
+					limit = {
+						is_subject_of_type = ufc_cooperative
+					}
+					add_country_modifier = {
+						name = UFC_modifier_subsidiary_we_are_the_world
+						duration = -1
+					}
+				}
+			}
 			set_country_flag = UFC_flag_can_upgrade_lapanui_1
 		}
 	}
@@ -3442,7 +3465,7 @@ UFC_mission_slot_3_revolution = {
 				duration = -1
 			}
 			set_country_flag = UFC_flag_can_upgrade_lapanui_3
-			custom_tooltip = UFC_tooltip_we_are_the_world_effect
+			#custom_tooltip = UFC_tooltip_we_are_the_world_effect
 		}
 	}
 

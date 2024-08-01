@@ -2298,7 +2298,10 @@ machu_picchu = {
 
 	#can we build it?
 	build_trigger = {
-		culture_group = andean_group
+		OR = {
+			culture_group = andean_group
+			culture = ufc_quechuan
+		}
 		province_is_or_accepts_culture = yes
 	}
 
@@ -2314,13 +2317,19 @@ machu_picchu = {
 
 	#can our country use it?
 	can_use_modifiers_trigger = {
-		culture_group = andean_group
+		OR = {
+			culture_group = andean_group
+			culture = ufc_quechuan
+		}
 		province_is_or_accepts_culture = yes
 	}
 
 	#can our country upgrade it?
 	can_upgrade_trigger = {
-		culture_group = andean_group
+		OR = {
+			culture_group = andean_group
+			culture = ufc_quechuan
+		}
 		province_is_or_accepts_culture = yes
 	}
 
@@ -2491,7 +2500,10 @@ chichen_itza = {
 	build_trigger = {
 		OR = {
 			AND = {
-				culture_group = maya
+				OR = {
+					culture_group = maya
+					culture = ufc_mexihcon
+				}
 				province_is_or_accepts_culture = yes
 			}
 			owner = {
@@ -2514,7 +2526,10 @@ chichen_itza = {
 	can_use_modifiers_trigger = {
 		OR = {
 			AND = {
-				culture_group = maya
+				OR = {
+					culture_group = maya
+					culture = ufc_mexihcon
+				}
 				province_is_or_accepts_culture = yes
 			}
 			owner = {
@@ -2527,7 +2542,10 @@ chichen_itza = {
 	can_upgrade_trigger = {
 		OR = {
 			AND = {
-				culture_group = maya
+				OR = {
+					culture_group = maya
+					culture = ufc_mexihcon
+				}
 				province_is_or_accepts_culture = yes
 			}
 			owner = {
@@ -2886,7 +2904,10 @@ moai = {
 
 	#can we build it?
 	build_trigger = {
-		culture = polynesian
+		OR = {
+			culture = polynesian
+			culture = ufc_polynesian
+		}
 		province_is_or_accepts_culture = yes
 	}
 
@@ -2902,13 +2923,19 @@ moai = {
 
 	#can our country use it?
 	can_use_modifiers_trigger = {
-		culture = polynesian
+		OR = {
+			culture = polynesian
+			culture = ufc_polynesian
+		}
 		province_is_or_accepts_culture = yes
 	}
 
 	#can our country upgrade it?
 	can_upgrade_trigger = {
-		culture = polynesian
+		OR = {
+			culture = polynesian
+			culture = ufc_polynesian
+		}
 		province_is_or_accepts_culture = yes
 	}
 
@@ -3608,7 +3635,10 @@ tenochtitlan = {
 
 	#can we build it?
 	build_trigger = {
-		culture_group = central_american
+		OR = {
+			culture_group = central_american
+			culture = ufc_mexihcon
+		}
 		province_is_or_accepts_culture = yes
 	}
 
@@ -3624,13 +3654,19 @@ tenochtitlan = {
 
 	#can our country use it?
 	can_use_modifiers_trigger = {
-		culture_group = central_american
+		OR = {
+			culture_group = central_american
+			culture = ufc_mexihcon
+		}
 		province_is_or_accepts_culture = yes
 	}
 
 	#can our country upgrade it?
 	can_upgrade_trigger = {
-		culture_group = central_american
+		OR = {
+			culture_group = central_american
+			culture = ufc_mexihcon
+		}
 		province_is_or_accepts_culture = yes
 	}
 
@@ -15132,6 +15168,7 @@ qhapaq_nam = {
 	build_trigger = {
 		OR = {
 			culture_group = andean_group
+			culture_group = ufc_newworld
 			culture = cara
 			culture = chachapoyan
 		}
@@ -15147,6 +15184,7 @@ qhapaq_nam = {
 	can_use_modifiers_trigger = {
 		OR = {
 			culture_group = andean_group
+			culture_group = ufc_newworld
 			culture = cara
 			culture = chachapoyan
 		}
@@ -15156,6 +15194,7 @@ qhapaq_nam = {
 	can_upgrade_trigger = {
 		OR = {
 			culture_group = andean_group
+			culture_group = ufc_newworld
 			culture = cara
 			culture = chachapoyan
 		}
@@ -16626,7 +16665,10 @@ tikal = {
 	type = monument
 
 	build_trigger = {
-		culture_group = maya
+		OR = {
+			culture_group = maya
+			culture = ufc_mexihcon
+		}
 		province_is_or_accepts_culture = yes
 	}
 
@@ -16637,12 +16679,18 @@ tikal = {
 	}
 
 	can_use_modifiers_trigger = {
-		culture_group = maya
+		OR = {
+			culture_group = maya
+			culture = ufc_mexihcon
+		}
 		province_is_or_accepts_culture = yes
 	}
 
 	can_upgrade_trigger = {
-		culture_group = maya
+		OR = {
+			culture_group = maya
+			culture = ufc_mexihcon
+		}
 		province_is_or_accepts_culture = yes
 	}
 

@@ -58,6 +58,7 @@ estate_ufc_staff = {
 		estate_ufc_staff_arm_surgeon_with_obsidian_scalpel
 		estate_ufc_staff_black_staffs
 		estate_ufc_staff_cocoa_for_everyone
+		estate_ufc_staff_culture_assimilation
 	}
 
 	agendas = {
