@@ -59,6 +59,8 @@ estate_ufc_staff = {
 		estate_ufc_staff_black_staffs
 		estate_ufc_staff_cocoa_for_everyone
 		estate_ufc_staff_culture_assimilation
+		estate_ufc_recruit_marine
+		estate_ufc_recruit_continent_army
 	}
 
 	agendas = {

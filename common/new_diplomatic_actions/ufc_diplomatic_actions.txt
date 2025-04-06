@@ -512,6 +512,8 @@ ufc_diplomatic_actions_cooperative_transformation = {
 			add_government_reform = junior_revolutionary_republic_reform
 			restore_country_name = yes
 			add_yearly_manpower = 2
+			change_religion = ROOT
+			add_harmonized_religion = FROM
 		}
 	}
 	ai_will_do = {

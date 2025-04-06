@@ -362,8 +362,15 @@ on_adm_development = {
 	}
 	if = {
 		limit = {
-			owner = {
-				has_country_flag = UFC_flag_full_speed_industrialization
+			OR = {
+				owner = {
+					has_country_flag = UFC_flag_full_speed_industrialization
+				}
+				owner = {
+					overlord = {
+						has_country_flag = UFC_flag_full_speed_industrialization
+					}
+				}
 			}
 		}
 		add_base_tax = -1
@@ -535,6 +542,11 @@ on_mil_development = {
 			owner = {
 				has_country_flag = UFC_flag_full_speed_industrialization
 			}
+			owner = {
+				overlord = {
+					has_country_flag = UFC_flag_full_speed_industrialization
+				}
+			}
 		}
 		add_base_manpower = -1
 		add_base_production = 1
@@ -675,6 +687,10 @@ on_yearly_pulse_2  = {
 		100 = flavor_UFC.2010
 		100 = flavor_UFC.2011
 		100 = flavor_UFC.2012
+		300 = flavor_UFC.1414
+		300 = flavor_UFC.1415
+		300 = flavor_UFC.1416
+		300 = flavor_UFC.1417
 		2200 = 0
 	}
 }
@@ -941,5 +957,44 @@ on_alliance_created = { #ROOT - Alliance sender, FROM - Alliance accepter
 			}
 		}
 		break_alliance = From
+	}
+}
+
+
+on_bankruptcy = {
+	add_government_power = {
+		mechanic_type = ufc_mechanic_mechanical_clock
+		power_type = mechanical_clock_adm_power
+		value = 50
+	}
+	add_government_power = {
+		mechanic_type = ufc_mechanic_mechanical_clock
+		power_type = mechanical_clock_dip_power
+		value = 50
+	}
+	add_government_power = {
+		mechanic_type = ufc_mechanic_mechanical_clock
+		power_type = mechanical_clock_mil_power
+		value = 50
+	}
+}
+
+on_colony_finished = {
+	if = {
+		limit = {
+			owner = {
+				mission_completed = UFC_mission_panama
+				not = { has_country_flag = UFC_flag_disable_colony_venture }
+			}
+			NOT = { has_province_flag = had_trade_good_change_event }
+		}
+		set_province_flag = had_trade_good_change_event
+		province_event = { id = flavor_UFC.200 }
+	}
+}
+
+on_successive_emperor = {
+	emperor = {
+		save_global_event_target_as = ufc_target_emperor
 	}
 }

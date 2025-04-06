@@ -714,19 +714,36 @@ estate_ufc_staff_culture_assimilation = {
 	on_granted_province = {
 		if = {
 			limit = {
-				or = {
-					continent = south_america
-					continent = north_america
-					continent = oceania
-				}
-				not = {
-					culture_group = ufc_newworld
+				OR = {
+					AND = {
+						or = {
+							continent = south_america
+							continent = north_america
+							continent = oceania
+						}
+						not = {
+							culture_group = ufc_newworld
+						}
+					}
+					AND = {
+						OR = {
+							continent = south_america
+							continent = north_america
+							continent = oceania
+						}
+						NOT = {
+							OR = {
+								colonial_region = colonial_colombia
+								colonial_region = colonial_the_carribean
+							}
+						}
+						culture = ufc_colombian
+					}
 				}
 			}
 			set_province_flag = UFC_flag_assimilating_province
 			add_province_triggered_modifier = UFC_province_triggered_modifier_culture_assimilation
 		}
-
 	}
 	can_revoke = {
 		always = no
@@ -748,6 +765,75 @@ estate_ufc_staff_culture_assimilation = {
 		modifier = { monthly_russian_modernization = -0.03 }
 	}
 	cooldown_years = 15
+	ai_will_do = {
+		factor = 0
+	}
+}
+
+estate_ufc_recruit_marine = {
+	icon = privilege_heavy_ship
+	max_absolutism = -5
+	influence = 0.1
+	loyalty = 0
+	can_select = {
+		tag = UFC
+		not = {
+			has_estate_privilege = estate_ufc_recruit_continent_army
+		}
+	}
+	can_revoke = {
+
+	}
+	on_granted = {
+
+	}
+	penalties = {
+		global_manpower_modifier = -0.5
+		manpower_recovery_speed = -0.5
+		global_sailors_modifier = 0.5
+		sailors_recovery_speed = 0.5
+	}
+	benefits = {
+		infantry_power = 0.1
+		is_marine_modifier = yes
+	}
+	on_revoked = {
+
+	}
+	ai_will_do = {
+		factor = 0
+	}
+}
+
+estate_ufc_recruit_continent_army = {
+	icon = privilege_artillery
+	max_absolutism = -5
+	influence = 0.1
+	loyalty = 0
+	can_select = {
+		tag = UFC
+		not = {
+			has_estate_privilege = estate_ufc_recruit_marine
+		}
+	}
+	can_revoke = {
+
+	}
+	on_granted = {
+
+	}
+	penalties = {
+		global_manpower_modifier = 0.5
+		manpower_recovery_speed = 0.5
+		global_sailors_modifier = -0.5
+		sailors_recovery_speed = -0.5
+	}
+	benefits = {
+		artillery_power = 0.05
+	}
+	on_revoked = {
+
+	}
 	ai_will_do = {
 		factor = 0
 	}

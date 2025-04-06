@@ -1394,10 +1394,6 @@ country_decisions = {
     UFC_decision_reduce_sailors_recovery= {
         potential = {
             tag = UFC
-            has_country_flag = UFC_flag_reduce_sailors_recovery
-            not = {
-                has_country_modifier = UFC_modifier_reduce_sailors_recovery
-            }
         }
         allow = {
             max_sailors = 1400000
@@ -1414,6 +1410,7 @@ country_decisions = {
         potential = {
             tag = UFC
             has_country_flag = UFC_flag_enable_initiative_granada_war
+            has_country_flag = UFC_support_granada
             GRA = {
                 exists = yes
             }
@@ -1440,6 +1437,36 @@ country_decisions = {
             join_all_offensive_wars_of = GRA
             clr_country_flag = UFC_flag_enable_initiative_granada_war
             clr_country_flag = UFC_support_granada
+        }
+    }
+
+    UFC_decision_disable_colony_venture= {
+        potential = {
+            tag = UFC
+            not = { has_country_flag = UFC_flag_disable_colony_venture}
+            mission_completed = UFC_mission_panama
+        }
+        allow = {
+            always = yes
+        }
+        effect = {
+            custom_tooltip = UFC_tooltip_disable_colony_venture
+            set_country_flag = UFC_flag_disable_colony_venture
+        }
+    }
+
+    UFC_decision_enable_colony_venture = {
+        potential = {
+            tag = UFC
+            has_country_flag = UFC_flag_disable_colony_venture
+            mission_completed = UFC_mission_panama
+        }
+        allow = {
+            always = yes
+        }
+        effect = {
+            custom_tooltip = UFC_tooltip_enable_colony_venture
+            clr_country_flag = UFC_flag_disable_colony_venture
         }
     }
 }

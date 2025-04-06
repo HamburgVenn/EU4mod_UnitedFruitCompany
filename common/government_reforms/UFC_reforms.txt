@@ -56,6 +56,7 @@ UFC_the_labor_union = {
 		yearly_corruption = -0.1
 		max_possible_parliament_seats = 8
 		#can_revoke_parliament_seats = yes
+		estate_ufc_staff_privilege_slots = 2
 	}
 	effect = {
 		custom_tooltip = UFC_tooltip_staff_enable
@@ -124,13 +125,43 @@ UFC_the_secularism_reform = {
 		}
 	}
 	modifiers = {
-		tolerance_own = 1
+		global_tax_modifier = -0.1
+		stability_cost_modifier = 0.1
+		religious_unity = 0.25
+		harmonization_speed = 0.5
+		#envoy_travel_time = -0.15
+		yearly_harmony = 1
 		native_uprising_chance = -0.5
 		native_assimilation = 0.5
-		idea_cost = -0.05
 	}
 	custom_attributes = {
 		full_loyalty_on_harmonization = yes
+	}
+}
+
+UFC_the_propagation_secularism_reform = {
+	icon = "arabian_plutocracy_reform"
+	lock_level_when_selected = yes
+	potential = {
+		tag = UFC
+		or = {
+			has_reform = UFC_the_propagation_secularism_reform
+			have_had_reform = UFC_the_propagation_secularism_reform
+		}
+	}
+	modifiers = {
+		global_tax_modifier = -0.1
+		stability_cost_modifier = 0.1
+		envoy_travel_time = -0.25
+		placed_merchant_power = 20
+		global_foreign_trade_power = 0.5
+		province_warscore_cost = -0.25
+		warscore_cost_vs_other_religion = 0.25
+		global_missionary_strength = 0.33
+		can_not_build_missionaries = yes
+	}
+	effect = {
+		custom_tooltip = UFC_tooltip_can_propagate_religion
 	}
 }
 

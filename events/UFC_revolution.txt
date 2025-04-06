@@ -68,7 +68,6 @@ country_event = {
 				add_country_modifier = {
 					name = UFC_revolution_buff
 					duration = 7300
-					hidden = yes
 				}
 				capital_scope = {
 					build_to_forcelimit = {
@@ -121,7 +120,6 @@ country_event = {
 				add_country_modifier = {
 					name = UFC_revolution_buff
 					duration = 7300
-					hidden = yes
 				}
 				capital_scope = {
 					build_to_forcelimit = {
@@ -159,13 +157,13 @@ country_event = {
 	option = {
 		name = flavor_UFC.8904.a
 		hidden_effect = {
-			2805 = {
-				remove_core = CAB
-			}
-			741 = {
-				remove_core = CAB
-			}
-			2803 = {
+			every_owned_province = {
+				limit = {
+					colonial_region = colonial_colombia
+					any_core_country = {
+						tag = CAB
+					}
+				}
 				remove_core = CAB
 			}
 		}
@@ -198,7 +196,6 @@ country_event = {
 				add_country_modifier = {
 					name = UFC_revolution_buff
 					duration = 7300
-					hidden = yes
 				}
 				capital_scope = {
 					build_to_forcelimit = {
@@ -256,7 +253,6 @@ country_event = {
 				add_country_modifier = {
 					name = UFC_revolution_buff
 					duration = 7300
-					hidden = yes
 				}
 				capital_scope = {
 					build_to_forcelimit = {
@@ -299,7 +295,6 @@ country_event = {
 				add_country_modifier = {
 					name = UFC_revolution_buff
 					duration = 7300
-					hidden = yes
 				}
 				capital_scope = {
 					build_to_forcelimit = {
@@ -322,8 +317,8 @@ country_event = {
 			XIU = {
 				capital_scope = {
 					build_to_forcelimit = {
-						infantry = 0.2
-						artillery = 0.2
+						infantry = 0.3
+						artillery = 0.3
 					}
 				}
 			}
@@ -421,7 +416,6 @@ country_event = {
 				add_country_modifier = {
 					name = UFC_revolution_buff
 					duration = 7300
-					hidden = yes
 				}
 				capital_scope = {
 					build_to_forcelimit = {
@@ -441,7 +435,6 @@ country_event = {
 				add_country_modifier = {
 					name = UFC_revolution_buff
 					duration = 7300
-					hidden = yes
 				}
 				capital_scope = {
 					build_to_forcelimit = {
@@ -462,7 +455,6 @@ country_event = {
 				add_country_modifier = {
 					name = UFC_revolution_buff
 					duration = 7300
-					hidden = yes
 				}
 				capital_scope = {
 					build_to_forcelimit = {
@@ -537,7 +529,6 @@ country_event = {
 				add_country_modifier = {
 					name = UFC_revolution_buff
 					duration = 7300
-					hidden = yes
 				}
 				capital_scope = {
 					build_to_forcelimit = {
@@ -1808,6 +1799,9 @@ country_event = {
 	fire_only_once = yes
 	trigger = {
 		is_revolutionary = yes
+		GRA = {
+			exists = yes
+		}
 	}
 	option = {
 		name = flavor_UFC.8948.a
@@ -2643,23 +2637,11 @@ country_event = {
 	id = flavor_UFC.10086
 	picture = TRADEGOODS_eventPicture
 	is_triggered_only = yes
+	title = flavor_UFC.10086.title
+	hidden = yes
 	trigger = {
-		ironman = yes
-		if = {
-			limit = {
-				AZT = {
-					is_subject_of = root
-				}
-			}
-			AZT = {
-				not = {
-					liberty_desire = 50
-				}
-			}
-		}
 	}
 	option = {
 		name = flavor_UFC.10086.a
-		unlock
 	}
 }

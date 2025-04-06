@@ -13,4 +13,11 @@ estate_ufc_staff = {
 			has_estate = estate_ufc_staff
 		}
 	}
+	modifier_definition = {
+		type = privileges
+		key = estate_ufc_staff_privilege_slots
+		trigger = {
+			has_estate = estate_ufc_staff
+		}
+	}
 }
